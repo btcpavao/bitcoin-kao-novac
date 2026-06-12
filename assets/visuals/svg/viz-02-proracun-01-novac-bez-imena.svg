@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Novac bez imena</title>
+  <desc id="desc">Shema prikazuje jedan neoznačeni iznos iz kojeg različite potrebe i impulsi vuku novac prije nego što dobije zadatak.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222222; }
+      .title { font-size: 30px; font-weight: 700; }
+      .mid { font-size: 24px; font-weight: 650; }
+      .small { font-size: 18px; }
+      .center { fill: #FFFFFF; stroke: #222222; stroke-width: 3; }
+      .box { fill: #F7F7F5; stroke: #555555; stroke-width: 2; }
+      .line { stroke: #333333; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #888888; stroke-width: 2; stroke-dasharray: 8 8; fill: none; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+  <text x="600" y="64" text-anchor="middle" class="label title">Novac bez imena</text>
+  <text x="600" y="103" text-anchor="middle" class="label small">Ako novac nema zadatak, prvi ga uzme ono što najglasnije traži pažnju.</text>
+
+  <circle cx="600" cy="350" r="126" class="center"/>
+  <text x="600" y="338" text-anchor="middle" class="label mid">sadašnji novac</text>
+  <text x="600" y="372" text-anchor="middle" class="label small">bez imena</text>
+
+  <rect x="112" y="146" width="202" height="78" rx="10" class="box"/>
+  <text x="213" y="194" text-anchor="middle" class="label mid">hrana</text>
+  <path d="M 501 287 C 422 222 356 194 324 187" class="line"/>
+
+  <rect x="850" y="146" width="202" height="78" rx="10" class="box"/>
+  <text x="951" y="194" text-anchor="middle" class="label mid">želja</text>
+  <path d="M 696 286 C 766 221 821 194 840 188" class="line"/>
+
+  <rect x="104" y="476" width="202" height="78" rx="10" class="box"/>
+  <text x="205" y="524" text-anchor="middle" class="label mid">dug</text>
+  <path d="M 500 413 C 415 483 349 510 316 515" class="line"/>
+
+  <rect x="498" y="566" width="204" height="78" rx="10" class="box"/>
+  <text x="600" y="614" text-anchor="middle" class="label mid">panika</text>
+  <path d="M 600 478 L 600 556" class="line"/>
+
+  <rect x="874" y="476" width="202" height="78" rx="10" class="box"/>
+  <text x="975" y="524" text-anchor="middle" class="label mid">Bitcoin</text>
+  <path d="M 699 413 C 788 485 846 511 864 516" class="line"/>
+
+  <path d="M 430 350 C 360 350 320 350 270 350" class="dash"/>
+  <text x="270" y="342" text-anchor="middle" class="label small">nema kategorije</text>
+  <text x="270" y="368" text-anchor="middle" class="label small">nema odluke</text>
+</svg>

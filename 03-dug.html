@@ -1,0 +1,599 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dug - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html" class="active"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dug"><a class="header" href="#dug">Dug</a></h1>
+<p>Dug je budući novac koji ste već potrošili.</p>
+<p>Ta rečenica mora ostati neugodna. Ako postane previše ugodna, dug se opet počne skrivati iza ljepših riječi: kredit, rata, leasing, minus, limit, financiranje, poluga, stambeno rješenje, poslovna likvidnost, investicija u budućnost.</p>
+<p>Sve te riječi mogu imati svoj kontekst. Ali ispod njih stoji ista stvar: dio budućeg rada već je obećan.</p>
+<p>Zato je dug najvažnija stvar koju treba riješiti prije ozbiljnog Bitcoin standarda.</p>
+<p>Ne nakon što se skupi više Bitcoina.</p>
+<p>Ne paralelno s agresivnom akumulacijom.</p>
+<p>Ne kad jednog dana plaća naraste.</p>
+<p>Prvo.</p>
+<p>To će nekome zvučati radikalno, osobito ako se radi o stambenom kreditu. Ali ova knjiga ne pokušava učiniti dug ugodnim samo zato što je društveno normalan. Ako je cilj živjeti s Bitcoinom kao novcem, onda budućnost ne smije biti unaprijed prodana banci, kartici, leasing kući, dobavljaču, državi, rodbini ili poslovnoj kreditnoj liniji.</p>
+<p>Proračun je prvi korak jer pokazuje što sadašnji novac mora napraviti.</p>
+<p>Dug je drugi korak jer pokazuje koliko budućeg novca više nije slobodno.</p>
+<p>Dok god dug stoji na bilanci, puni Bitcoin standard ne počinje.</p>
+<p>Može postojati mali iznos Bitcoina za učenje, naviku i razumijevanje. Ako je to stvarno mali iznos, primjerice manje od jedne šezdesetine neto imovine, to ne mijenja životnu sliku. Za nekoga je to 20 eura mjesečno, za nekoga 50, za nekoga 200. Poanta nije u dojmu, nego u učinku: takav iznos ne odgađa uplatu duga, ne vraća hranu na karticu, ne smanjuje zaštitni jastuk i ne mora se skrivati od osobe s kojom dijelite novac. On može pomoći čovjeku da nauči što je Bitcoin, kako izgleda novčanik, kako se ponaša cijena i zašto je bolji novac vrijedan ozbiljnog reda.</p>
+<p>Ali ozbiljno držanje Bitcoina dolazi poslije duga.</p>
+<p>Prvo čista bilanca.</p>
+<p>Zatim davanje.</p>
+<p>Zatim ravnoteža imovine.</p>
+<p>Zatim Bitcoin kao glavni novac u toj ravnoteži.</p>
+<p>Ako vam treba samo prvi potez za danas, ne čekajte savršen plan. Zaustavite novi dug. Izvadite karticu iz novčanika i mobitela ako krpa mjesec. Popišite sve dugove na jedno mjesto. Odaberite jedan dug koji napadate prvi. To nije cijela strategija, ali je izlaz iz magle.</p>
+<h2 id="zašto-dug-mora-izaći-prvi"><a class="header" href="#zašto-dug-mora-izaći-prvi">Zašto dug mora izaći prvi</a></h2>
+<p>Bitcoin traži strpljenje. Dug traži uplatu.</p>
+<p>Bitcoin traži dug horizont. Dug ga skraćuje.</p>
+<p>Bitcoin traži miran višak. Dug često proizvodi privid viška.</p>
+<p>Bitcoin traži da možete čekati kada cijena padne i ne poludjeti kada cijena raste. Dug vas tjera da svaki mjesec prvo platite prošlost, bez obzira na tržište, zdravlje, posao, djecu, kvar auta ili kašnjenje klijenta.</p>
+<p>Zato dug nije samo financijski trošak. Dug je stanje.</p>
+<p><img src="assets/visuals/svg/03-dug-kao-zauzeta-buducnost.svg" alt="Timeline od nekoliko mjeseci u kojem svaki mjesec dio prihoda prvo odlazi na ratu duga, a tek ostatak ostaje slobodan." /></p>
+<p><em>Dug nije samo broj u sadašnjosti. On unaprijed zauzima buduće mjesece.</em></p>
+<p>Dok ste u dugu, dio života se događa pod pritiskom koji možda više ni ne primjećujete. Rata je u kalendaru. Kartica je u novčaniku. Minus je na računu. Leasing je u cijeni auta. Stambeni kredit je u pozadini svakog većeg razgovora, čak i kada ga nitko ne spominje.</p>
+<p>Čovjek se navikne.</p>
+<p>To je najopasniji dio.</p>
+<p>Velik dug ponekad brže probudi čovjeka nego mali dug. Ako imate imovinu 100, a dug 80, voda je visoko. Teško je glumiti da se ništa ne događa. Jasno je da se morate izvući. Takav dug može biti dubok, neugodan i opasan, ali često čovjeku pokaže stvarnost bez puno objašnjavanja.</p>
+<p>Suptilniji problem je dug koji izgleda podnošljivo.</p>
+<p>Imovina 100, dug 20.</p>
+<p>Rata nije strašna.</p>
+<p>Kredit je &quot;normalan&quot;.</p>
+<p>Kamata nije dramatična.</p>
+<p>Auto služi.</p>
+<p>Stan je lijep.</p>
+<p>Posao ide.</p>
+<p>I tako prođe petnaest, dvadeset ili trideset godina u stanju zaduženosti.</p>
+<p>To je skupo na način koji se ne vidi samo u kamati. Čovjek je u tim godinama propustio prilike za veći prihod jer nije mogao mirno riskirati. Propustio je zadovoljstvo rada i štednje prije kupnje. Propustio je naučiti čekati. Propustio je kupovati stvari iz slobode, a ne iz buduće plaće. Propustio je davati iz čistog proračuna. Propustio je držati Bitcoin bez pozadinskog pritiska.</p>
+<p>Dug ima dubinu i trajanje.</p>
+<p>Dubina je veličina duga u odnosu na imovinu.</p>
+<p>Trajanje je vrijeme provedeno u stanju duga.</p>
+<p>Ne treba podcijeniti dubinu, ali trajanje je ono što polako odgaja čovjeka. Ako predugo živite s dugom, dug prestane izgledati kao privremeni problem i postane normalna pozadina života. Tada više nije samo broj. Postaje navika.</p>
+<p>Ova knjiga želi što prije izvaditi čovjeka iz tog stanja.</p>
+<p>Ne urediti dug.</p>
+<p>Ne optimizirati dug.</p>
+<p>Ne učiniti dug ugodnijim.</p>
+<p>Izvaditi ga van.</p>
+<h2 id="sitni-bitcoin-i-ozbiljan-bitcoin-nisu-ista-stvar"><a class="header" href="#sitni-bitcoin-i-ozbiljan-bitcoin-nisu-ista-stvar">Sitni Bitcoin i ozbiljan Bitcoin nisu ista stvar</a></h2>
+<p>Kad razgovaram s ljudima o Bitcoinu, ne smeta mi ako netko tko ima dug drži mali iznos Bitcoina. Mali iznos može biti koristan. Čovjek uči, prati, razumije razliku između Bitcoina i &quot;kripta&quot;, vidi volatilnost vlastitim očima i prestaje gledati Bitcoin kao apstraktnu stvar.</p>
+<p>To ne vrijedi za altcoin utrke, trgovanje s polugom, signale za trgovanje, kladionicu, Telegram grupe i pokušaj da se dug &quot;riješi&quot; jednim dobrim potezom. Ako dug skraćuje horizont, poluga ga uništava. Bitcoin kao novac traži red, a ne nadu da će sljedeći skok cijene platiti karticu.</p>
+<p>Ali taj iznos mora ostati mali.</p>
+<p>Ako netko ima dug i istovremeno počinje ozbiljno graditi Bitcoin poziciju, redoslijed se pokvario.</p>
+<p>Ozbiljan Bitcoin standard nije &quot;imam nešto Bitcoina&quot;. Ozbiljan Bitcoin standard počinje tek kada je bilanca čista od duga, kada proračun ima stvarne kategorije, kada davanje ima svoje mjesto i kada neto imovina ide prema ravnoteži u kojoj najmanje trećina stoji u novcu, a taj novac dominantno postaje Bitcoin.</p>
+<p>To je potpuno drukčije stanje od kupovanja Bitcoina dok kartica, minus, leasing ili stambeni kredit stoje sa strane.</p>
+<p>Mali Bitcoin dok učite može biti sjeme.</p>
+<p>Veliki Bitcoin prije razduživanja često postane izgovor.</p>
+<p>Čovjek kaže: imam Bitcoin, zato sam dugoročno dobro.</p>
+<p>Ali u stvarnosti ima dug, nema davanje, nema čistu bilancu i nema slobodu da gleda Bitcoin kroz vrijeme bez prisile.</p>
+<p>To nije Bitcoin standard.</p>
+<p>To je držanje Bitcoina u zaduženom životu.</p>
+<p>Praktično pravilo je jednostavno. Ako kartica ili minus rastu, nova kupnja Bitcoina staje. Ako imate potrošački dug, ali mjesec se više ne krpa novim dugom, može ostati samo mali iznos za učenje. Ako postojeći Bitcoin više nije sitan iznos za učenje i može zatvoriti skup dug, prodaja dijela Bitcoina nije izdaja. Ako se isti dug može zatvoriti u 30 ili 60 dana iz prihoda i prodaje stvari koje nisu važne, možda nije potrebno dirati Bitcoin. Ali ta odluka treba biti napisana, ne opravdana osjećajem.</p>
+<p>Prodaja Bitcoina ne radi se panično, preko sumnjivih kanala, pod pritiskom poruke ili telefonskog poziva. Nitko ne smije tražiti vaše riječi za oporavak, lozinke ili pristup novčaniku da bi vam &quot;pomogao&quot; oko duga. Ako prodajete veći iznos Bitcoina, financijske imovine ili nekretnine, provjerite porezne, pravne i evidencijske posljedice u stvarnom sustavu u kojem živite.</p>
+<h2 id="stambeni-kredit-nije-iznimka"><a class="header" href="#stambeni-kredit-nije-iznimka">Stambeni kredit nije iznimka</a></h2>
+<p>Ovdje treba biti posebno jasno.</p>
+<p>Stambeni kredit se ne izuzima iz ovog pravila.</p>
+<p>U hrvatskom kontekstu to će mnogima zvučati najtvrđe. Dom se doživljava kao sigurnost, vlasništvo kao odraslost, najam kao privremeno stanje, a kredit kao nužna cijena &quot;normalnog života&quot;. Razumijem zašto se tako misli. Ljudi žele mir, mjesto, djecu, susjede, školu, poznatu ulicu, osjećaj da nešto grade.</p>
+<p>Ako živite u inozemstvu, ista tema može imati dva sloja: stan ili najam vani, a kuća, kat obiteljske kuće, zemljište ili apartman u Hrvatskoj. Tada treba još jasnije pitati je li kuća stvaran plan povratka, obiteljska obveza, investicija, nasljedstvo ili skupa rečenica kojom umirujemo nostalgiju. Veća plaća vani ne znači automatski slobodan novac ako najam, osiguranje, putovanja kući, pomoć roditeljima i gradnja u Hrvatskoj već pojedu budućnost.</p>
+<p>Ali stambeni kredit je i dalje dug.</p>
+<p>Ako je dom pod kreditom, dio budućnosti pripada banci. Možda je rata podnošljiva. Možda je kamata razumna. Možda je nekretnina dobra. Možda bi prodaja bila neugodna. Sve to može biti istina.</p>
+<p>I dalje ostaje dug.</p>
+<p>Ako treba prodati stan ili kuću, zatvoriti kredit, izaći iz zaduženosti, otići u najam i imati čistu bilancu, to nije financijski poraz. Ali to nije ni brz zaključak jedne osobe. Prodaja doma traži ozbiljan obiteljski razgovor: gdje se živi, koliko stoji najam, koliko je stabilan ugovor, što je s djecom, školom, poslom, zdravljem, roditeljima, troškovima selidbe i kapitalom koji ostaje nakon svega.</p>
+<p>Ako vam je ta misao teška, to ne znači da ste nerazumni. Znači da dom nije samo financijska stavka.</p>
+<p>Najam nije dokaz neuspjeha. Može biti alat slobode kada je stabilan, priuštiv i bolji od života pod dugom. Može biti i novi rizik ako je tržište najma skupo, nesigurno ili neprikladno za obitelj. Zato se ne uspoređuju samo kredit i ideja najma, nego stvarna rata, kamata, trošak prodaje, trošak najma, sigurnost stanovanja, alternativa ubrzane otplate i mir kuće. Ako nakon takve provjere prodaja i zatvaranje kredita daju čistu bilancu, stvarno davanje i više prostora za novac, tada prodaja nije pad. To je promjena stanja.</p>
+<p>Nekretnina se može ponovno kupiti kasnije.</p>
+<p>Ali samo iz drugog stanja.</p>
+<p>Bez duga.</p>
+<p>Bez žurbe.</p>
+<p>Bez toga da nekretnina prelazi razumnu mjeru u neto imovini.</p>
+<p>U ovoj knjizi nekretnina u kojoj živite nije novac. Ona je osobna uporabna imovina: služi životu, obitelji, stabilnosti i mjestu. Može biti lijepa, korisna, obiteljski važna i emocionalno vrijedna. Ali ne smije pojesti bilancu. Ako se nekretnina kupuje kasnije, neka bude u okviru u kojem imovina koja služi životu ne preuzima cijeli život. Okvir trećina u ovoj knjizi nije zakon za svaku obitelj, nego disciplina koja čuva da dom, auto, apartman ili status ne progutaju novac, davanje, proizvodnu imovinu i Bitcoin.</p>
+<p>Dom treba služiti životu.</p>
+<p>Dom ne treba prezirati da bismo priznali da dug na domu nije sloboda.</p>
+<h2 id="davanje-ne-raste-na-dugu"><a class="header" href="#davanje-ne-raste-na-dugu">Davanje ne raste na dugu</a></h2>
+<p>Drugi razlog zašto dug mora izaći prije ozbiljnog Bitcoina jest davanje.</p>
+<p>Nakon proračuna i razduživanja treba uspostaviti kategoriju Davanje. Ne kao ukras i ne kao slučajni ostatak, nego kao stvarnu kategoriju. U osobnom Bitcoin standardu davanje nije dodatak za bogate. To je praksa koja mijenja čovjeka.</p>
+<p>Dok dug stoji na bilanci, davanje je ograničeno.</p>
+<p>Može postojati simbolično davanje. Može postojati mali iznos koji čuva srce otvorenim. Ali ozbiljnije davanje dolazi kada budući novac više ne mora prvo plaćati stare odluke.</p>
+<p>Kad čovjek izađe iz duga i počne u proračunu držati 10 do 20 posto za davanje, događa se velika promjena. Novac više nije samo obrana. Nije samo štednja. Nije samo Bitcoin. Dio novca aktivno ide prema drugima.</p>
+<p>Taj postotak nije nova batina za kućanstvo koje je tek došlo do zraka. Davanje se ne gradi preko lijekova, hrane, režija i osnovne sigurnosti. Kod promjenjivih prihoda, mirovine ili obitelji koja šalje novac roditeljima, prvi korak može biti mali, unaprijed određen iznos. Pomoć obitelji treba ime i granicu; inače se lako pretvori u dug bez papira.</p>
+<p>To mijenja način rada.</p>
+<p>Čovjek koji daje počinje drukčije gledati prihod. Lakše vidi da novac dolazi kroz stvaranje vrijednosti za ljude. Lakše preuzima razborit rizik. Lakše radi, prodaje, uči i služi jer novac nije samo nešto što mora zadržati. Dio mora proći kroz njega.</p>
+<p>Zato je dug problem i za prihod.</p>
+<p>Dug zatvara čovjeka. Davanje ga otvara.</p>
+<p>Ako želite da Bitcoin ne stvori tvrdu osobu, prvo treba maknuti dug, zatim otvoriti davanje. Tek tada ozbiljan Bitcoin saldo ima gdje zdravo stajati.</p>
+<h2 id="redoslijed-je-stroži-nego-što-ljudi-žele"><a class="header" href="#redoslijed-je-stroži-nego-što-ljudi-žele">Redoslijed je stroži nego što ljudi žele</a></h2>
+<p>Redoslijed ove knjige nije slučajan:</p>
+<ol>
+<li>Proračun.</li>
+<li>Dug van.</li>
+<li>Davanje.</li>
+<li>Ravnoteža imovine.</li>
+<li>Bitcoin kroz vrijeme.</li>
+<li>Skrbništvo i sigurnost.</li>
+<li>Puni Bitcoin standard.</li>
+</ol>
+<p>Proračun ide prvi jer bez njega ne znate što novac radi.</p>
+<p>Dug ide odmah zatim jer budućnost mora prestati pripadati prošlim odlukama.</p>
+<p>Davanje dolazi nakon razduživanja jer otvorena ruka treba slobodan proračun.</p>
+<p>Ravnoteža imovine dolazi zatim jer čista bilanca mora dobiti oblik: novac, imovina koja služi životu i proizvodna imovina.</p>
+<p>Bitcoin kroz vrijeme dolazi tek kada čovjek može gledati volatilnost bez toga da ga rata prisiljava na lošu odluku.</p>
+<p>Skrbništvo i sigurnost dolaze prije punog standarda jer veći Bitcoin saldo traži ozbiljan sigurnosni sustav.</p>
+<p>Tek tada dolazi puni Bitcoin standard: najmanje trećina neto imovine u novcu, a taj novac dominantno u Bitcoinu.</p>
+<p>Ta trećina je okvir ove knjige, ne individualna preporuka za svaku osobu u svakoj fazi. Novac koji treba platiti poznate obveze u sljedećih nekoliko godina ne smije automatski ovisiti o cijeni Bitcoina. Uvjerenje nije isto što i sposobnost da se izdrži volatilnost, pogotovo kada su u pitanju djeca, zdravlje, posao, mirovina ili plan povratka u Hrvatsku.</p>
+<p>Ako preskočite dug, preskočili ste temelj.</p>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Prvo zatvorite ulaz u novi dug.</p>
+<p>Ako kartica krpa mjesec, izvadite je iz novčanika i uklonite iz aplikacija za plaćanje. To uključuje Apple Pay, Google Pay, internetske trgovine, aplikacije za dostavu, preglednik i pretplate koje se naplaćuju bez razmišljanja. Ako minus stoji na računu, prestanite ga gledati kao novac. Ako rata zvuči kao normalan način kupnje, vratite se u proračun i pitajte iz koje kategorije stvar mora biti plaćena.</p>
+<p>Zatim popišite svaki dug. Za svaki dug zapišite preostali iznos, ratu, kamatu, rok, vjerovnika i posljedice kašnjenja. U isti popis ulaze kartice, minus, leasing, potrošački krediti, stambeni kredit, privatne posudbe, poslovne kreditne linije, dugovi prema dobavljačima, porezne obveze, mobitel na rate, &quot;kupi sada, plati kasnije&quot; obveze, rate za opremu i edukacije te dugovi ili računi u drugoj državi ako živite između dva sustava.</p>
+<p>Ako vodite posao, osobne dugove i poslovne obveze stavite u odvojene popise. Poslovni račun nije obiteljska rezerva, a obiteljski Bitcoin nije kreditna linija firme. Prije bilo kakve kupnje Bitcoina iz poslovnog novca moraju biti odvojeni PDV, doprinosi, plaće, dobavljači, najam prostora, porez i operativna rezerva.</p>
+<p>Nakon toga popišite imovinu koja se može prodati. Auto, drugi auto, oprema koja stoji, apartman, višak stvari, financijska imovina, dio Bitcoina koji nije samo mali iznos za učenje, pa i nekretnina pod kreditom. Prvi scenarij treba biti ozbiljno razmatranje neposrednog zatvaranja duga likvidacijom imovine. Tek ako to nije izvedivo, ako bi stvorilo novu ozbiljnu opasnost ili ako bi porezne, ugovorne, obiteljske ili poslovne posljedice bile veće od koristi, birajte snježnu grudu ili snježnu lavinu.</p>
+<p>Na kraju odredite sljedeću konkretnu akciju. Ne &quot;raditi na dugu&quot;, nego prodati određenu stvar, zatvoriti karticu, zatvoriti minus, poslati dodatnu uplatu, razgovarati s bankom ili staviti oglas danas. Velike odluke ne donose se isti dan kad se pojavio strah, pritisak ili poruka koja traži hitnost.</p>
+<h2 id="prvi-posao-zatvoriti-ulaz"><a class="header" href="#prvi-posao-zatvoriti-ulaz">Prvi posao: zatvoriti ulaz</a></h2>
+<p>Razduživanje počinje granicom.</p>
+<p>Nema novog duga.</p>
+<p>Ne kartica.</p>
+<p>Ne minus.</p>
+<p>Ne novi leasing za status ili komfor.</p>
+<p>Ne potrošački kredit.</p>
+<p>Ne &quot;samo ovaj put&quot;.</p>
+<p>Ne poslovni kredit za ideju koja nije prošla test stvarne žrtve, kapaciteta i naplate.</p>
+<p>Ne stambeni kredit kao trajno stanje koje se više ne propituje.</p>
+<p>Ako se nešto ne može kupiti iz postojećeg proračuna, ne kupuje se. Ako je stvar važna, za nju se štedi. Ako se za nju ne može štedjeti, onda vjerojatno nije dovoljno važna ili život još nije u fazi za tu kupnju. Iznimke nisu kupnje za dojam, nego zdravlje, osnovna sigurnost, nužan prijevoz za rad ili alat bez kojeg se prihod stvarno ne može stvarati.</p>
+<p>Prvi potezi trebaju biti konkretni.</p>
+<p>Karticu izvaditi iz novčanika ako služi za krpanje mjeseca. Ukloniti je iz aplikacija za plaćanje, dostave, internetskih trgovina i preglednika. Minus prestati zvati dostupnim novcem. Rate prestati gledati kao neutralan način kupnje. Ako se u obitelji o većim kupnjama razgovara tek kad se pojavi ponuda, promijeniti razgovor: prvo kategorija, zatim odluka.</p>
+<p>Ne pokušava se istovremeno graditi ozbiljan Bitcoin saldo i održavati dug.</p>
+<p>Dug mora izaći.</p>
+<h2 id="popis-koji-ne-zaobilazi-ništa"><a class="header" href="#popis-koji-ne-zaobilazi-ništa">Popis koji ne zaobilazi ništa</a></h2>
+<p>Nakon granice dolazi popis.</p>
+<p>Zapišite sve dugove na jedno mjesto:</p>
+<ul>
+<li>minus po računu</li>
+<li>kreditne kartice</li>
+<li>potrošačke kredite</li>
+<li>leasing</li>
+<li>stambeni kredit</li>
+<li>privatne posudbe</li>
+<li>dug prema obitelji</li>
+<li>jamstva i sudužništva</li>
+<li>neplaćene račune</li>
+<li>poslovne kreditne linije</li>
+<li>dugove prema dobavljačima</li>
+<li>porezne obveze</li>
+<li>rate za mobitel, opremu, edukacije ili &quot;kupi sada, plati kasnije&quot;</li>
+<li>obveze u drugoj državi ako živite, radite ili imate imovinu između dva sustava</li>
+<li>sve drugo što traži budući novac</li>
+</ul>
+<p>Za svaki dug zapišite preostali iznos, minimalnu mjesečnu uplatu, kamatu, rok, posljedicu kašnjenja i emocionalnu težinu.</p>
+<p>Ako ste jamac ili sudužnik, nemojte to držati izvan popisa samo zato što rata još ne izlazi s vašeg računa. Jamstvo nije pristojna usluga bez rizika. To je mogući budući dug koji često nastane iz ljubavi, srama ili pritiska obitelji.</p>
+<p>Emocionalna težina je važna. Dug prema sestri može biti manji od kartice, ali teže sjediti na duši. Stomatolog može biti manji od auta, ali svaki pogled na račun podsjeća na odgađanje zdravlja. Poslovni dobavljač može biti samo jedna stavka u tablici, ali ako znate čovjeka, taj dug nosi odnos.</p>
+<p>Kad je sve na papiru, dug prestaje biti magla.</p>
+<p>Možda boli.</p>
+<p>Ali sada se može raditi.</p>
+<h2 id="dubina-i-trajanje"><a class="header" href="#dubina-i-trajanje">Dubina i trajanje</a></h2>
+<p>Svaki dug ima dvije dimenzije: dubinu i trajanje.</p>
+<p>Dubina je koliko je dug velik u odnosu na imovinu i prihod.</p>
+<p>Trajanje je koliko dugo čovjek ostaje u stanju duga.</p>
+<p>Dubok dug traži hitnost. Ako dug ugrožava osnovnu stabilnost, ako imovina jedva pokriva obveze, ako jedna pogreška može srušiti kućanstvo ili posao, nema vremena za filozofiranje. Treba prodati, smanjiti, pregovarati, povećati prihod i zatvoriti što se može zatvoriti.</p>
+<p>Ali nemojte podcijeniti plitak dug koji dugo traje.</p>
+<p>Plitak dug je varljiv jer se s njim može živjeti. Može se putovati, kupovati, držati malo Bitcoina, imati lijep stan, uredan auto i izgledati normalno. Rata ne guši. Kamata ne boli dovoljno. Obitelj se navikne.</p>
+<p>Posebno vara mlade koji još žive s roditeljima. Ako ne plaćate puni najam, hranu, režije i pričuvu, a svejedno nemate višak, problem možda nije plaća nego sustav. Roditeljski dom tada nije slobodan novac za veći auto, izlaske, mobitel na rate i klađenje, nego prozor u kojem se dug može ubiti prije nego odrasli troškovi dođu u punoj veličini.</p>
+<p>Baš zato je opasan.</p>
+<p>Godine prolaze u stanju u kojem dio budućnosti uvijek pripada nekome drugome. Čovjek ne nauči u potpunosti kupiti iz ušteđenog novca. Ne nauči dovoljno jasno odgoditi želju. Ne razvije punu radost stvari koje je kupio iz slobode. Ne razvije isti odnos prema radu jer plod rada stalno prvo ide prema starim odlukama.</p>
+<p>Vrijeme u dugu se akumulira.</p>
+<p>Svaki mjesec u dugu nije samo mjesec u kojem je plaćena kamata. To je mjesec u kojem je budući novac već imao vlasnika prije nego što je stigao. To je mjesec u kojem je rizik teže podnijeti, davanje teže uspostaviti, prihod teže povećati, a Bitcoin teže držati mirno. Zato vrijeme provedeno u dugu nije neutralno. Ono odgađa cijeli ostatak knjige.</p>
+<p>Ne želimo da čitatelj provede još pet, deset ili dvadeset godina u &quot;podnošljivom&quot; dugu.</p>
+<p>Želimo ga izvaditi što prije.</p>
+<h2 id="prodaja-nije-poraz"><a class="header" href="#prodaja-nije-poraz">Prodaja nije poraz</a></h2>
+<p>Ako dug treba izaći brzo, prodaja mora biti normalna opcija.</p>
+<p>Prodati auto.</p>
+<p>Prodati drugi auto.</p>
+<p>Prodati apartman.</p>
+<p>Prodati opremu koja ne radi.</p>
+<p>Prodati stvari koje čuvaju status, ali ne služe životu.</p>
+<p>Prodati dio financijske imovine.</p>
+<p>Neka financijska imovina ima porezne, mirovinske ili ugovorne posljedice. ETF, treći stup, depozit, poslovni udio, Bitcoin i auto nisu ista stvar. Zajedničko im je samo pitanje: služi li prodaja stvarnom izlasku iz duga ili stvara novi problem koji niste vidjeli?</p>
+<p>Prodati nekretninu pod kreditom.</p>
+<p>Prodati dio Bitcoina ako je Bitcoin već značajniji od sitnog iznosa za učenje i ako dug time može nestati.</p>
+<p>To nije izdaja Bitcoina. Ako Bitcoin služi tome da zatvorite dug i dođete do čiste bilance, on je poslužio novcu bolje nego da stoji kao simbol budućnosti pored stare obveze.</p>
+<p>Ali prodaja nije panika. Ne prodaje se dom, apartman, financijska imovina ili Bitcoin zato što vas je netko nazvao, poslao poruku, obećao brzu pomoć ili rekao da odluka mora biti donesena odmah. Ne instalirajte aplikacije po uputi nepoznate osobe, ne šaljite Bitcoin nikome tko obećava izlaz iz duga i ne dajte lozinke, riječi za oporavak ili pristup novčaniku. Razduživanje traži mir, papir i provjeru, ne hitnost.</p>
+<p>Prodaja najviše boli kada stvar koju prodajemo čuva sliku koju imamo o sebi.</p>
+<p>Auto nije samo auto. Ponekad je dokaz napretka.</p>
+<p>Stan nije samo stan. Ponekad je dokaz odraslosti.</p>
+<p>Apartman nije samo apartman. Ponekad je dokaz da smo &quot;pametno ulagali&quot;.</p>
+<p>Poslovna oprema nije samo oprema. Ponekad je dokaz da projekt mora uspjeti.</p>
+<p>Ali ako ta stvar stoji između vas i čiste bilance, treba je pogledati bez romantike.</p>
+<p>Prava sloboda nije u tome da zadržite sliku o sebi.</p>
+<p>Prava sloboda je da budući novac ponovno pripada vama.</p>
+<h2 id="poslovni-dug-mora-proći-test-žrtve"><a class="header" href="#poslovni-dug-mora-proći-test-žrtve">Poslovni dug mora proći test žrtve</a></h2>
+<p>Poslovni dug često ima najbolji jezik.</p>
+<p>Rast. Poluga. Investicija. Likvidnost. Skaliranje. Prilika.</p>
+<p>Ponekad je taj jezik opravdan. Posao može trebati kapital. Ali prije duga treba proći test žrtve.</p>
+<p>Biste li za isti posao radili dodatne sezone?</p>
+<p>Biste li smanjili vlastiti komfor?</p>
+<p>Biste li odgodili putovanja?</p>
+<p>Biste li prodali višak imovine?</p>
+<p>Biste li nekoliko godina skupljali kapital bez duga?</p>
+<p>Ako ne biste, možda posao još nije vizija. Možda je želja financirana tuđim novcem.</p>
+<p>Zatim dolazi test kapaciteta. Donosi li taj dug više naplativog rada, kraći rok izvedbe, manje kvarova, bolju maržu, sigurniju isporuku ili stvaran pristup kupcima? Novi alat od 1.800 eura koji skraćuje posao s dva dana na jedan dan nije isto što i oprema koja stoji u skladištu da vlasnik izgleda ozbiljnije. Leasing kombija koji nosi posao nije isto što i leasing auta koji nosi dojam.</p>
+<p>Dug može platiti početak. Ne može kupiti kupce, strpljenje, prodaju, naplatu, dobar proizvod i sposobnost da se nosi loš mjesec.</p>
+<p>Kod poduzetnika je posebno važno odvojiti osobnu i poslovnu bilancu. Poslovni dug ne smije tiho postati obiteljski pritisak. Ako tvrtka kasni s naplatom, a obitelj prodaje Bitcoin ili reže osnovne kategorije da bi posao izgledao stabilno, dug je već prešao granicu.</p>
+<p>Tvrtka mora znati koji je novac za PDV, doprinose, plaće, dobavljače, najam prostora, gorivo, materijal i osnovni rad. Mora znati i starost potraživanja: što kasni 15 dana, što 30, što 60, što već izgleda kao problem. Ako poslovna kreditna linija stalno spašava lošu naplatu, preniske cijene, previše projekata ili vlasnikovu nedisciplinu, ona nije alat. Ona je dug s boljim rječnikom.</p>
+<p>Posao treba stvarati vrijednost.</p>
+<p>Ne gutati budućnost.</p>
+<h2 id="kako-zatvoriti-dug"><a class="header" href="#kako-zatvoriti-dug">Kako zatvoriti dug</a></h2>
+<p>Nakon popisa i prodaje, ostaje metoda.</p>
+<p>Ako se dug može zatvoriti odmah bez stvaranja nove opasnosti, zatvorite ga.</p>
+<p>Osnovni put nije uredno živjeti uz dug, nego što hitnije zatvoriti dug kada je to izvedivo: prodajom imovine, smanjenjem životnog stila, povećanjem prihoda i usmjeravanjem stvarnog viška prema zatvaranju obveza. Tek kada neposredno zatvaranje nije razborito ili moguće, metode otplate imaju svoje mjesto.</p>
+<p>Ako ne može, koristite snježnu grudu ili snježnu lavinu.</p>
+<p>Snježna gruda znači da zatvarate dugove od najmanjeg prema najvećem. Nije uvijek matematički najjeftinija, ali daje brze pobjede. Jedan dug nestane. Jedna rata nestane. Jedan odnos nestane. Oslobođena uplata zatim ide na sljedeći dug.</p>
+<p>Snježna lavina znači da zatvarate najskuplji dug prvi. Matematički je često bolja. Kod nje treba gledati stvarnu kamatu, naknade, promjenjivu kamatu i rizik novčanog toka, ne samo naziv proizvoda. Ako ste dovoljno mirni i disciplinirani, može imati smisla.</p>
+<p>Ovdje nema potrebe za ponosom. Plan koji ćete provesti bolji je od plana koji izgleda pametnije, ali ga napustite nakon dva mjeseca.</p>
+<p>U oba slučaja vrijedi pravilo: svi dugovi dobivaju minimum, a sav dodatni novac ide na jedan glavni dug dok ne nestane.</p>
+<p>Oslobođene rate ne vraćaju se u potrošnju.</p>
+<p>One idu na sljedeći dug.</p>
+<p>To je ritam dok dug ne izađe iz bilance.</p>
+<h2 id="mali-jastuk-ne-udobna-rezerva"><a class="header" href="#mali-jastuk-ne-udobna-rezerva">Mali jastuk, ne udobna rezerva</a></h2>
+<p>Tijekom razduživanja treba imati mali zaštitni novčani jastuk.</p>
+<p>Ne veliku rezervu koja usporava izlazak iz skupog duga.</p>
+<p>Ne nulu koja svaku sitnicu vraća na karticu.</p>
+<p>Dovoljno za manji popravak, lijek, nekoliko dana hrane, osnovnu obiteljsku potrebu ili kratki zastoj u prihodu. Taj jastuk nije osjećaj bogatstva. To je zaštita od povratka u dug zbog malog udarca.</p>
+<p>Veličina jastuka nije ista za svakoga. Samac sa stabilnom plaćom i obitelj s djecom ne nose isti rizik. Freelanceru kratki zastoj u prihodu nije iznimka, nego dio godine. Ako vam prihod varira, razduživanje se ne planira prema najboljem mjesecu. Poduzetnik treba odvojenu operativnu rezervu za plaće, porezne obveze, dobavljače i osnovni rad. Starija ili bolesna osoba treba veću sigurnosnu marginu nego mladi zaposlenik koji može lakše povećati prihod. Ako živite u inozemstvu, jastuk mora vidjeti i hitan put kući, bolest roditelja, kvar na kući u Hrvatskoj ili zastoj prihoda vani.</p>
+<p>Nakon što dug nestane, rezerva i budući troškovi grade se ozbiljnije. Registracija auta, stomatolog, škola, Božić, servis uređaja i odjeća za djecu prestaju biti &quot;iznenađenja&quot; i dobivaju kategorije u proračunu.</p>
+<p>Ali dok dug postoji, jastuk ne smije postati izgovor da dug traje godinama.</p>
+<p>Cilj je izaći.</p>
+<h2 id="prvih-180-dana"><a class="header" href="#prvih-180-dana">Prvih 180 dana</a></h2>
+<p>Prvih 180 dana razduživanja treba biti sezona promjene.</p>
+<p>U tih šest mjeseci ne pokušavate dokazati da se stari život može nastaviti bez posljedica. Pokušavate dokazati da dug može početi nestajati.</p>
+<p>U tih 180 dana:</p>
+<ul>
+<li>proračun se vodi precizno</li>
+<li>novi dug je zatvoren kao opcija</li>
+<li>svi dugovi su zapisani</li>
+<li>prodaja je na stolu</li>
+<li>stambeni kredit nije izvan slike</li>
+<li>kartice, minusi i digitalni novčanici prestaju biti alati za krpanje mjeseca</li>
+<li>pretplate, rate i &quot;kupi sada, plati kasnije&quot; obveze su pregledane</li>
+<li>klađenje, poluga i trgovanje kao način spašavanja duga su zatvoreni kao opcija</li>
+<li>troškovi koji su navika režu se bez drame</li>
+<li>dodatni prihod se traži gdje je stvarno moguće</li>
+<li>kućanstvo zna koji dug se napada prvi</li>
+<li>veće odluke ne donose se isti dan kad se pojavi strah ili pritisak</li>
+<li>kupnja Bitcoina ostaje mala ili staje, osim sitnog iznosa za učenje</li>
+</ul>
+<p>To nije kazna. Obitelj treba hranu, zdravlje, osnovnu radost i mir. Ali razduživanje ne smije biti samo ideja. Mora se vidjeti u kalendaru, proračunu, prodaji, navikama i razgovorima.</p>
+<p>Šest mjeseci ozbiljnog rada može promijeniti stanje čovjeka više nego deset godina podnošljivog duga.</p>
+<h2 id="kad-dug-nestane"><a class="header" href="#kad-dug-nestane">Kad dug nestane</a></h2>
+<p>Kad zadnji dug nestane, posao nije gotov.</p>
+<p>Tada počinje sljedeći redoslijed.</p>
+<p>Prvo se davanje uspostavlja kao stvarna kategorija. Ne kao povremena gesta, nego kao dio proračuna. Cilj nije odmah dokazati savršenstvo, ali davanje mora postati normalan tok novca.</p>
+<p>Zatim se gradi ravnoteža imovine. Novac, imovina koja služi životu i proizvodna imovina dobivaju svoje mjesto. Dom, auto, apartman za odmor i statusne stvari ne smiju progutati bilancu. Proizvodna imovina mora stvarno stvarati vrijednost. Novac mora biti dovoljno velik da čuva odluku.</p>
+<p>Zatim Bitcoin postaje glavni novac unutar tog novčanog sloja.</p>
+<p>Puni Bitcoin standard znači da najmanje trećina neto imovine stoji u novcu, a taj novac dominantno u Bitcoinu. Do toga se ne dolazi preko duga. Dolazi se iz čiste bilance. I tada se ne glumi da je svaki euro za sljedećih nekoliko godina spreman podnijeti svaki pad cijene.</p>
+<p>To je drugačiji unutarnji prostor.</p>
+<p>Čovjek bez duga, s proračunom, davanjem, ravnotežom imovine i Bitcoinom kao glavnim novcem ne gleda cijenu isto kao čovjek koji ima rate iza leđa. Pad cijene ne prijeti isto. Rast cijene ne opija isto. Potrošnja ne boli isto. Davanje ne izgleda isto. Rad ne zvuči isto.</p>
+<p>Zato dug mora izaći prvi.</p>
+<h2 id="Četiri-zamišljene-situacije"><a class="header" href="#Četiri-zamišljene-situacije">Četiri zamišljene situacije</a></h2>
+<p>Ana, Matej, Marko i Ivana te Marin i Petra ne trebaju &quot;bolje upravljati dugom&quot;. Trebaju izaći iz njega. Njihove situacije su različite, ali redoslijed je isti: proračun, razduživanje, davanje, ravnoteža, Bitcoin kroz vrijeme, sigurnost, puni standard.</p>
+<h3 id="ana-mali-dug-koji-ne-smije-postati-dug-život"><a class="header" href="#ana-mali-dug-koji-ne-smije-postati-dug-život">Ana: mali dug koji ne smije postati dug život</a></h3>
+<p>Ana živi u Rijeci i zarađuje oko 1.120 eura neto. Najam joj je 420 eura, režije oko 120, hrana i prijevoz uzmu velik dio ostatka. Ima 400 eura Bitcoina i 850 eura na kreditnoj kartici. Još 220 eura duguje stomatologu, a 140 eura sestri.</p>
+<p>Ukupno 1.210 eura.</p>
+<p>To nije velik dug u apsolutnom smislu. Ali za Anu je dovoljno velik da joj plaća nikad ne sjedne potpuno slobodna.</p>
+<p>Najgore što bi Ana mogla napraviti jest reći: dug je mali, nastavit ću kupovati Bitcoin redovito, a karticu ću malo-pomalo. Tako mali dug može trajati godinama. Navika ostaje. Kartica ostaje. Osjećaj da se mjesec krpa ostaje.</p>
+<p>Ana zato zaustavlja sve osim malog iznosa Bitcoina koji već ima. Ne kupuje ozbiljno novi Bitcoin dok dug ne nestane.</p>
+<p>Prvi potez je kartica izvan novčanika i izvan mobitela.</p>
+<p>Drugi potez je popis.</p>
+<p>Treći potez je prodaja: stari mobitel, bicikl koji stoji u hodniku, nekoliko komada opreme i odjeće. Skupi 260 eura. Vraća sestri dug i zatvara dio stomatologa.</p>
+<p>Zatim ide snježna gruda: stomatolog, pa kartica.</p>
+<p>Sedam mjeseci živi jednostavnije. Nema dostava. Nema &quot;samo ovaj put&quot; kupnji. Slobodna potrošnja je mala, ali nije nula. Jedan vikend zamjenjuje odlaskom roditeljima na Krk. Bitcoin ne kupuje osim jednog simboličnog iznosa od 20 eura iz stvarnog viška, čisto da ostane u dodiru s dugoročnim ciljem.</p>
+<p>Kad kartica dođe na nulu, ne događa se čudo.</p>
+<p>Ali događa se nešto važnije.</p>
+<p>Sljedeća plaća ne mora prvo liječiti prošli mjesec.</p>
+<p>Ana tada povećava kategoriju Davanje s malog simboličnog iznosa na stvaran mjesečni iznos koji može nositi. Zatim gradi novčani temelj. Tek nakon toga ozbiljnije povećava Bitcoin, ne iz straha da kasni, nego iz čistog viška.</p>
+<p>Za Anu je najvažnije da mali dug ne postane dugi dug.</p>
+<h3 id="matej-roditeljski-dom-nije-dozvola-za-dug"><a class="header" href="#matej-roditeljski-dom-nije-dozvola-za-dug">Matej: roditeljski dom nije dozvola za dug</a></h3>
+<p>Matej ima 26 godina, radi u logistici i živi s roditeljima u predgrađu Splita. Nema najam, polog, pričuvu ni puni trošak hrane. Na papiru bi trebao imati višak.</p>
+<p>Ali ima auto-kredit, mobitel na rate, minus od 600 eura, nekoliko pretplata i nešto novca na aplikaciji za Bitcoin. Povremeno se kladi. Povremeno kupi neki altcoin jer mu netko pošalje signal. Nisu to uvijek veliki iznosi, ali svaki mjesec pojedu mogućnost da odraste financijski.</p>
+<p>Najgore što Matej može napraviti jest reći: živim doma, zato si mogu priuštiti malo više. Roditeljski dom nije hotelski popust za veći auto, izlaske, dostave, klađenje i trgovanje. To je privremeni prozor u kojem može ugasiti dug prije nego ga život natjera da plati puni račun odraslosti.</p>
+<p>Prvih sedam dana ne kupuje ništa novo. Iz bankovne aplikacije izvlači zadnjih trideset dana i označuje auto, gorivo, dostave, izlaske, kladionicu, pretplate, rate, karticu, minus i kupnje kriptoimovine. Briše karticu iz mobitela. Zaustavlja klađenje, polugu i nove kupnje altcoina. Bitcoin ostavlja kao mali iznos za učenje, ali prestaje kupovati iz osjećaja da kasni.</p>
+<p>Prvi dug koji napada je minus. Nakon toga mobitel na rate. Nakon toga auto mora proći pitanje: služi li poslu i životu ili samo slici koju želi imati o sebi?</p>
+<p>Ako živi s roditeljima i svejedno nema višak, problem možda nije plaća nego sustav.</p>
+<h3 id="marko-i-ivana-stambeni-kredit-nije-sveta-iznimka"><a class="header" href="#marko-i-ivana-stambeni-kredit-nije-sveta-iznimka">Marko i Ivana: stambeni kredit nije sveta iznimka</a></h3>
+<p>Marko i Ivana žive u okolici Zagreba. Imaju dvoje djece, stambeni kredit, auto na kredit, karticu, potrošački kredit za namještaj i oko 3.500 eura Bitcoina. Zajedno zarađuju oko 2.930 eura neto.</p>
+<p>Proračun im je već pokazao da problem nije samo &quot;sve je skupo&quot;. Problem je da novac dolazi u kuću, ali budućnost je već djelomično zauzeta.</p>
+<p>Na papir stavljaju sve:</p>
+<p>Auto: 9.800 eura.</p>
+<p>Kartica: 1.600 eura.</p>
+<p>Namještaj: 1.200 eura.</p>
+<p>Stambeni kredit: 112.000 eura.</p>
+<p>Prva odluka je laka na papiru, teška u životu: prodati noviji auto. Rata, registracija, osiguranje, servis, gume i gorivo više ne smiju gutati višak. Imaju stariji auto koji može izdržati. Prodaju noviji auto, zatvaraju najveći dio duga za auto i oslobađaju ratu.</p>
+<p>Zatim prodaju dio Bitcoina, oko 1.500 eura, i zatvaraju karticu i namještaj.</p>
+<p>Tu Marku najviše zapne. Osjeća da prodaje budućnost. Ali Ivana ga vraća na papir: ako Bitcoin stoji pored kartice i potrošačkog kredita, onda budućnost nije čista. Nisu prodali Bitcoin jer ne vjeruju u njega. Prodali su dio jer ne žele da dug određuje njihov Bitcoin standard.</p>
+<p>Za nekoliko mjeseci kratkoročni dugovi nestaju.</p>
+<p>Onda dolazi najteži razgovor: stambeni kredit.</p>
+<p>Ranije bi ga nazvali normalnim. Sada ga ne mogu preskočiti. Ako ozbiljno žele čistu bilancu, moraju pitati: treba li prodati kuću, zatvoriti kredit i otići u najam?</p>
+<p>To nije Markova Bitcoin pobjeda i nije Ivanin poraz. To nije odluka koja se donosi zato što je netko našao rečenicu u knjizi. To je obiteljski proces.</p>
+<p>Nije lagan razgovor. Djeca, škola, kvart, osjećaj doma, strah od najma, mišljenje roditelja, vlastita slika o sebi. Sve ulazi u sobu.</p>
+<p>Ali sada imaju novo pitanje: što će nam dati veću budućnost?</p>
+<p>Kuća pod dugom ili čista bilanca?</p>
+<p>Prije odluke pišu stvarne brojeve: kolika je rata, kolika je kamata, koliko bi koštao najam, koliko bi ostalo nakon prodaje, koliko stoji preseljenje, što se događa sa školom, koliko im treba sigurnosne rezerve i mogu li isti cilj postići agresivnom otplatom bez prodaje doma.</p>
+<p>Ako nakon toga prodajom mogu zatvoriti kredit, zadržati kapital, otići u izvediv najam, uspostaviti ozbiljno davanje i kasnije imati zdraviji novčani sloj, tada prodaja nije pad. To nije zamjena doma Bitcoinom. To je uklanjanje duga i vraćanje slobode odlučivanja.</p>
+<p>Možda će jednog dana opet kupiti nekretninu. Ali tada neće kupovati iz potrebe da budu &quot;normalni&quot;. Kupovat će iz čiste bilance, i samo ako nekretnina kao imovina koja služi životu ne preuzme cijelu bilancu.</p>
+<p>Kad to shvate, Bitcoin prestaje biti Markova tema protiv obiteljskog mira.</p>
+<p>Postaje dio sustava koji počinje tek nakon što dug ode.</p>
+<h3 id="marin-i-petra-bogatstvo-koje-je-još-uvijek-bilo-zaduženo"><a class="header" href="#marin-i-petra-bogatstvo-koje-je-još-uvijek-bilo-zaduženo">Marin i Petra: bogatstvo koje je još uvijek bilo zaduženo</a></h3>
+<p>Marin i Petra žive u Splitu. Marin vodi tvrtku s klijentima iz inozemstva. Petra radi kao arhitektica. Imaju stan, apartman, poslovni automobil, ulaganja, značajnu Bitcoin poziciju i djecu koja ulaze u skuplje životne faze.</p>
+<p>Izvana izgledaju snažno.</p>
+<p>Na papiru imaju imovinu.</p>
+<p>Ali kada sve stave na jedno mjesto, vide više od 300.000 eura dugoročnih i poslovnih obveza: poslovna kreditna linija, leasing za automobil, kredit vezan uz apartman, obveze prema dobavljačima, stambeni dug i nekoliko projekata u kojima naplata kasni. U tablici potraživanja stoji 38.000 eura starijih od četrdeset pet dana.</p>
+<p>Marin svaki dug može objasniti.</p>
+<p>Petra više ne pita može li se objasniti. Pita mora li ostati.</p>
+<p>Prvo zatvaraju poslovnu kreditnu liniju. Marin je zvao alatom, ali alat koji stalno spašava kašnjenje naplate nije alat. To je navika. Uvode strože rokove naplate, zaustavljaju projekt koji troši previše radnog kapitala, zovu klijente koji kasne i prodaju opremu koja stoji.</p>
+<p>Zatim gledaju apartman.</p>
+<p>Na papiru je investicija. U stvarnosti je dug, sezona, čišćenje, platforme, održavanje, poruke gostiju, porez, popravci, Petrina pažnja i stalna mala briga. Prije odluke računaju bruto prihod, prazne mjesece, porez, popravke, amortizaciju namještaja i vlastito vrijeme. Tek tada vide da apartman ne nosi onoliko slobode koliko su mu pripisivali. Prodaju ga i zatvaraju dio obveza.</p>
+<p>Zatim gledaju poslovni automobil. Ako je stvarno potreban i stvara prihod, ostaje. Ako je djelomično status, ide. Računaju koliko donosi, koliko štedi, koliko košta stajanje i što se događa ako ga nema. Nema više skrivanja iza poslovnog jezika.</p>
+<p>Na kraju gledaju i privatni dom pod dugom. I on ulazi u istu raspravu. Ne zato što dom nije važan, nego zato što čist život bez duga postaje važniji od slike stabilnosti koja se održava obvezama.</p>
+<p>Marin i Petra pritom ne postaju manje ambiciozni.</p>
+<p>Postaju stroži.</p>
+<p>Nakon što se razduže, davanje dobiva ozbiljan fond. Ne više povremeno i impulzivno, nego planirano. Dio ide ljudima u stvarnoj potrebi, dio edukaciji, dio mladima koji žele naučiti raditi, stvarati i razumjeti novac.</p>
+<p>Tada grade ravnotežu imovine. Dio u novcu, dominantno Bitcoinu. Imovina koja služi životu pod kontrolom. Proizvodna imovina samo tamo gdje stvarno stvara vrijednost.</p>
+<p>Marin prvi put osjeća da ne mora svaku priliku pretvoriti u projekt.</p>
+<p>Petra prvi put osjeća da imovina nije samo velika brojka, nego mirniji sustav.</p>
+<p>Bitcoin im više nije protuteža kaosu.</p>
+<p>Postaje glavni novac u čistijoj bilanci.</p>
+<h2 id="zaključak"><a class="header" href="#zaključak">Zaključak</a></h2>
+<p>Dug ne treba uljepšavati.</p>
+<p>Treba ga zatvoriti.</p>
+<p>Proračun pokazuje sadašnji novac. Dug pokazuje budućnost koja je već obećana. Dok god je ta budućnost obećana, ozbiljan Bitcoin standard ne počinje.</p>
+<p>Mali iznos Bitcoina za učenje može postojati. Ali ozbiljno držanje Bitcoina dolazi nakon duga, ne prije njega.</p>
+<p>Stambeni kredit nije iznimka.</p>
+<p>Poslovni dug nije iznimka.</p>
+<p>Mali dug nije bezopasan ako traje godinama.</p>
+<p>Cilj nije provesti život u podnošljivom dugu. Cilj je što prije izaći iz stanja duga, uspostaviti davanje, složiti ravnotežu imovine i tek tada graditi puni Bitcoin standard: najmanje trećina neto imovine u novcu, dominantno u Bitcoinu, uz dom, posao, auto, apartman i druge oblike imovine koji ne preuzimaju cijeli život.</p>
+<p>Ovo poglavlje ne može znati vašu kamatu, ugovor, porezni položaj, zdravlje, obitelj, rezidentnost, posao i stvarno tržište najma. Ono zato ne donosi odluku umjesto vas. Ono odbija jednu opasnu iznimku: da dug nazovete normalnim i nastavite graditi budućnost na novcu koji već pripada prošlim odlukama.</p>
+<p>To je strogo.</p>
+<p>Ali strogost ovdje nije protiv čovjeka.</p>
+<p>Strogost je protiv nereda koji bi mu ukrao desetljeća.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada dug više nije normalno stanje života.</p>
+<ul>
+<li>Nema novog duga.</li>
+<li>Svi dugovi su popisani na jednom mjestu.</li>
+<li>Jamstva, sudužništva, digitalne rate i obveze u drugim državama nisu ostale izvan popisa.</li>
+<li>Likvidacija imovine je prvo ozbiljno razmotrena.</li>
+<li>Velika prodaja imovine ima obiteljski, porezni, pravni i sigurnosni filter.</li>
+<li>Dug je zatvoren ili postoji najagresivniji izvediv plan zatvaranja.</li>
+<li>Snježna gruda ili snježna lavina koriste se samo kao rezervni postupci kada neposredno zatvaranje nije izvedivo.</li>
+<li>Bitcoin se ne koristi kao izgovor za ostanak u dugu.</li>
+<li>Znate kada kupnja Bitcoina staje, kada ostaje samo mali iznos za učenje i kada prodaja dijela Bitcoina ima smisla.</li>
+<li>Stambeni kredit nije mentalno izuzet iz kategorije duga.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako…</a></h2>
+<p>Ne idite dalje ako dug još smatrate normalnim stanjem.</p>
+<p>Ne idite dalje ako gradite ozbiljnu Bitcoin poziciju dok dug stoji na bilanci, ako zadržavate imovinu iz sentimentalnosti dok vas dug drži u mjesečnoj obvezi ili ako snježnu grudu i lavinu koristite da dug postane ugodniji, umjesto da nestane što prije.</p>
+<p>Ne idite dalje ni ako ste stambeni kredit proglasili iznimkom samo zato što ga društvo zove normalnim. Ne idite dalje ako vas netko nagovara da prodate imovinu, dignete kredit, pošaljete Bitcoin ili donesete veliku odluku odmah.</p>
+<p>Ovdje se dug ne uređuje da bi duže trajao. Ovdje se uklanja. Ali uklanja se redom, uz obiteljsku istinu, sigurnosnu marginu i provjeru stvarnih posljedica.</p>
+<p>Cilj nije upravljati dugom. Cilj je izaći iz stanja duga.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="02-proracun.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="04-davanje.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="02-proracun.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="04-davanje.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

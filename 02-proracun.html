@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Proračun - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html" class="active"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="proračun"><a class="header" href="#proračun">Proračun</a></h1>
+<p>Proračun počinje kada sjednete pred novac koji već imate.</p>
+<p>Ne računa na plaću koja sjeda za pet dana, bonus, povrat poreza, uplatu klijenta, rast Bitcoina ili nečiju dobru volju.</p>
+<p>Samo na sadašnji novac.</p>
+<p>To može biti neugodan trenutak. Otvorena bankovna aplikacija. Papir na stolu. Računi sa strane. Kartica u novčaniku. Jedan iznos na tekućem računu koji je na prvi pogled jednostavan, a nakon pet minuta više nije. Jer taj iznos već ima poslove. Stanarina. Režije. Hrana. Prijevoz. Djeca. Dug. Stomatolog. Registracija auta. Davanje. Budući troškovi. Možda i Bitcoin.</p>
+<p>Proračun je prvi stvarni susret s vlastitim novcem zato što uklanja najopasniju riječ iz osobnih financija: otprilike.</p>
+<p>Mnogi ljudi imaju samo približnu sliku prihoda, troškova, očekivanog viška, duga, štednje, Bitcoina, troškova koji dolaze i promjena koje odgađaju.</p>
+<p>&quot;Otprilike&quot; nije dovoljno za osobni Bitcoin standard.</p>
+<p>Poanta nije u tome da svaki račun već plaćate iz Bitcoina, nego da Bitcoin ulazi u život koji zna što mora platiti, što duguje i što smije riskirati.</p>
+<p>Bitcoin traži red. Ne savršenstvo, ali red. Dobar novac ne spašava neuredan život od posljedica neurednih odluka. To nije moralna presuda. Neuredan proračun često nastane iz umora, djece, duga, bolesti, posla, sezonalnosti, obiteljskih pritisaka i previše malih odluka koje nitko nije imenovao. Ali posljedice svejedno dođu.</p>
+<p>Ako sadašnji novac nema posao, Bitcoin će lako postati još jedna stvar koja stvara pritisak. Kupuje se kada cijena raste, preskače se kada padne, prodaje se kada se pojavi trošak koji se mogao vidjeti prije šest mjeseci. Ako kupite 100 eura Bitcoina, a isti mjesec karticom platite hranu jer je novac za hranu već otišao negdje drugdje, niste štedjeli. Samo ste problemu promijenili redoslijed. Tada problem nije volatilnost. Problem je proračun.</p>
+<p>Zato ova knjiga počinje ovdje, dok dug, davanje, ravnoteža imovine i ozbiljan Bitcoin još čekaju svoj red.</p>
+<p>Proračun ne rješava sve, ali pokazuje gdje sve počinje.</p>
+<p>Ako večeras imate samo dvadeset minuta, nemojte tražiti savršen sustav. Otvorite račune. Zapišite samo novac koji stvarno postoji. Napravite nekoliko grubih kategorija. Sljedećih sedam dana pratite svaku transakciju. To je dovoljno za početak jer prvi cilj nije dotjerati sustav, nego prekinuti maglu.</p>
+<h2 id="Što-novac-mora-napraviti"><a class="header" href="#Što-novac-mora-napraviti">Što novac mora napraviti</a></h2>
+<p>Prvo pitanje nije koliko ću zaraditi ovaj mjesec, nego što novac koji sada imam mora napraviti prije sljedeće uplate.</p>
+<p>To pitanje spušta čovjeka na zemlju. Ako imate 1.200 eura na računu, ne znači da imate 1.200 eura za potrošiti. Možda 450 eura pripada stanarini, 140 režijama, 300 hrani, 80 prijevozu, 60 zdravlju, 100 dugu i 70 nečemu što ste već obećali, ali niste zapisali.</p>
+<p>Tih 1.200 eura može izgledati kao saldo.</p>
+<p>U stvarnosti je raspored.</p>
+<p>Kod 10.000 eura na računu vrijedi ista stvar. Iznos je veći, ali pitanje je isto: što je stvarna rezerva, što pripada porezu, plaćama, budućem servisu auta, školi, odmoru, osiguranju, održavanju stana, davanju, dugu ili Bitcoinu? Veći saldo bez kategorija samo je skuplja magla.</p>
+<p>I kod zarade u inozemstvu vrijedi ista logika. Veća plaća ne znači automatski veći višak. Najam, osiguranje, auto, vrtić, putovanja u Hrvatsku, pomoć roditeljima, računi u dvije države i troškovi kuće &quot;dolje&quot; mogu pojesti razliku prije nego što se pojavi stvarno slobodan novac.</p>
+<p>Kuća, apartman ili naslijeđena zemlja ne mijenjaju pravilo. Imovina na papiru nije isto što i novac koji može platiti idući tjedan. Kuća može biti vrijedna, a proračun svejedno prazan.</p>
+<p>Proračun ne počinje rezanjem kave, zabranama i tablicom koja kažnjava svaku sitnicu. Počinje imenovanjem. Novac koji je bez imena lako ode u prvu stvar koja vikne dovoljno glasno. Novac koji ima ime teže je ukrasti samome sebi.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-01-novac-bez-imena.svg" alt="Shema prikazuje jedan neoznačeni iznos u sredini iz kojeg strelice vode prema hrani, želji, dugu, panici i Bitcoinu." /></p>
+<p><em>Novac bez imena prvi ode onome što najglasnije traži pažnju. Kategorija ga ne sputava, nego mu daje posao.</em></p>
+<p>Zato je proračun nulte osnove toliko važan. On raspoređuje samo novac koji postoji. Svaki euro dobiva zadatak. Ne morate odmah znati savršen plan za godinu dana. Trebate znati što sadašnji novac mora napraviti u sljedećih nekoliko tjedana.</p>
+<p>Bilo da imate 600 ili 6.000 eura, rasporedite samo ono što je stvarno tu. Očekivanih 1.500 eura pričekajte; kada dođu, tada ih rasporedite.</p>
+<p>Planiranje s novcem koji još nije stigao navikava čovjeka da troši budućnost prije nego što ju zaradi. To je isti mentalni teren na kojem dug kasnije postane normalan. Proračun radi suprotno. Vraća odluku u sadašnjost.</p>
+<h2 id="račun-nije-kategorija"><a class="header" href="#račun-nije-kategorija">Račun nije kategorija</a></h2>
+<p>Jedna od prvih stvari koju treba naučiti jest razlika između računa i kategorije.</p>
+<p>Račun govori gdje je novac.</p>
+<p>Kategorija govori čemu novac služi.</p>
+<p>Tekući račun, gotovina, štedni račun, poslovni račun, račun na burzi i Bitcoin novčanik su lokacije. Hrana, stanovanje, prijevoz, zdravlje, dug, davanje, budući troškovi, rezerva i Bitcoin su namjene.</p>
+<p>Ta razlika izgleda sitno dok je ne primijenite na stvarni život.</p>
+<p>Na tekućem računu može stajati 2.300 eura. Bez proračuna taj broj govori: ima novca. S proračunom taj isti broj može značiti:</p>
+<ul>
+<li>700 eura za stanovanje</li>
+<li>250 eura za režije</li>
+<li>420 eura za hranu</li>
+<li>180 eura za prijevoz</li>
+<li>150 eura za zdravlje</li>
+<li>200 eura za dug</li>
+<li>100 eura za davanje</li>
+<li>180 eura za buduće troškove</li>
+<li>120 eura za slobodnu potrošnju</li>
+</ul>
+<p><img src="assets/visuals/svg/02-saldo-nije-slobodan-novac.svg" alt="Dijagram koji pokazuje kako se saldo od 2.300 eura raspoređuje u kategorije poput stanovanja, hrane, duga, davanja i budućih troškova." /></p>
+<p><em>Saldo pokazuje gdje je novac, ali kategorije pokazuju što taj novac mora napraviti.</em></p>
+<p>Saldo nije nestao. Samo je prestao lagati.</p>
+<p>Prije veće kupnje više ne gledate samo račun. Gledate kategoriju. Ako kategorija ima novac, kupnja je mirna. Ako nema, nije automatski zabranjena, ali morate odlučiti odakle novac dolazi: iz hrane, odmora, rezerve, budućih troškova ili Bitcoina.</p>
+<p>Taj trenutak je dragocjen jer želja dobiva cijenu.</p>
+<p>Nije svaka promjena proračuna neuspjeh. Život se miče. Hrana poskupi. Dijete preraste tenisice. Auto traži servis. Dođe poziv na vjenčanje. Plan od 400 eura za hranu pokaže se prenizak. Dobar proračun se prilagođava. Loš proračun glumi da je bio točan i gura razliku na karticu.</p>
+<p>U proračunu nema časti u tvrdoglavosti.</p>
+<p>Ima časti u vraćanju stvarnosti.</p>
+<h2 id="novac-ima-starost"><a class="header" href="#novac-ima-starost">Novac ima starost</a></h2>
+<p>Proračun ne pokazuje samo gdje je novac. Pokazuje i koliko je dugo novac izdržao u vašem životu. Novac koji je sjeo jutros još je pun dojma, planova i tuđih zahtjeva. Novac koji je prošao nekoliko tjedana kroz kategorije već ima drukčiju težinu. Vidjeli ste što ga vuče. Vidjeli ste što se ponavlja. Vidjeli ste što ste prvo mislili kupiti, a onda više niste htjeli.</p>
+<p>Tu se vidi oportunitetni trošak, samo bez velike riječi. Ako 100 eura ode u jednu stvar, ne može istih 100 eura otići u drugu. To nije razlog za krivnju. To je razlog za jasnoću. Večera, gume, dug, poklon, stomatolog, rezerva ili Bitcoin više nisu odvojeni svjetovi. Svi traže isti novac.</p>
+<p>Oportunitetni trošak nije samo propušten rast Bitcoina. To može biti i nenapunjena rezerva, sporije gašenje duga, odgođen stomatolog, slabiji mir u kući ili novac koji će vam trebati prije nego što ste mislili. Proračun ne govori koju odluku vi osobno morate donijeti. Govori samo da svaka odluka treba pokazati iz koje kategorije dolazi novac, što se time odgađa i možete li mirno živjeti s tom zamjenom.</p>
+<p>Zato je korisno gledati proračun kao vremensku liniju. Dio novca je za ovaj tjedan. Dio je za kraj mjeseca. Dio čuva trošak koji dolazi za šest mjeseci. Dio možda nema hitan rok i tek tada može mirnije tražiti svoje mjesto.</p>
+<p>Na fiat standardu ta rečenica zvuči gotovo čudno. Ako vam je primarni novac euro, ne želite ga samo držati godinama i glumiti da se ništa ne događa. Inflacija polako jede kupovnu moć. Ne svaki dan dramatično, ne uvijek jednako, ali dovoljno da čovjek osjeti kako novac koji stoji bez prinosa s vremenom slabi.</p>
+<p>Fiat standard osobito kažnjava pasivno držanje novca bez prinosa, a ne svaku moguću štednju ili ulaganje u fiat sustavu. Ali taj osjećaj svejedno mijenja ponašanje. Kada inflacija jede gotovinu, a kredit je lako dostupan, mnogi ljudi nauče razmišljati kroz ratu, a ne kroz akumulirani novac. Dug lako postane zamjena za vremensku disciplinu.</p>
+<p>Proračun nulte osnove nije slavljenje fiata. To je trening vremenskog reda. Ne dopušta da se plaća koja još nije stigla već ponaša kao da je vaša. Ne dopušta da saldo glumi slobodu dok kategorije nisu imenovane. Uči vas razlikovati novac za ovaj tjedan, novac za poznati trošak, novac za dug, novac za rezervu i novac koji je stvarno slobodan.</p>
+<p>Dug radi suprotno. On spušta starost novca jer je budući novac već potrošen. Plaća koja dolazi za dva tjedna nije nova prilika ako je već čekaju kartica, minus, rata i stara odluka. U jeziku ovog poglavlja, dug spušta starost novca ispod nule: budući mjeseci već imaju posao prije nego što je novac uopće stigao. To nije računovodstvena formula, nego korisna slika. Što više budućeg prihoda već pripada starim obvezama, to manje sadašnji proračun ima slobode.</p>
+<p>Kasnije, ako dođete do ozbiljnijeg Bitcoin standarda, odnos prema starosti novca mijenja se. Tek ako Bitcoin za osobu stvarno postane dugoročni novac, a ne samo rizična pozicija koja će se prodati pri prvom većem trošku, tada ideja starijeg novca dobiva drukčije značenje. U Bitcoin tezi ove knjige, novac koji se ne mora dirati godinama može nositi očekivanje veće buduće kupovne moći. Ali to očekivanje nije isto što i kratkoročna sigurnost.</p>
+<p>To ne znači da je Bitcoin prikladan za novac koji treba za tri mjeseca, godinu dana ili poznati cilj u bliskoj budućnosti. Dugoročna monetarna teza ne uklanja kratkoročnu volatilnost. Bitcoin je novac koji se kasnije možda isplati stariti. Ali ne iz novca koji još nema ime, rok, rezervu i dogovor u kući.</p>
+<p>&quot;Stariji novac&quot; ovdje nije financijska formula ni univerzalno pravilo. To je način da razlikujete novac koji je već dobio posao od novca koji se na računu pojavio tek toliko da probudi osjećaj da ga imate više nego što ga stvarno imate. Često je mudrije donositi veće odluke iz novca koji je prošao barem jedan puni krug proračuna nego iz novca koji je upravo sjeo. Ne zato što je stariji novac matematički bolji, nego zato što je manje opterećen prvim impulsom.</p>
+<p>U praksi se starost novca može mjeriti u danima. Ne kao broj kojem treba robovati, nego kao znak smjera. Ako danas trošite novac koji je sjeo jučer, živite vrlo blizu ruba. Ako sve češće trošite novac koji je u kategoriji stajao trideset, šezdeset ili devedeset dana, proračun počinje stvarati udaljenost između impulsa i odluke.</p>
+<p>Stariji novac nije automatski Bitcoin novac. Ako mu treba likvidnost, ako pripada rezervi, dugu, porezu, djeci, poslu ili poznatom cilju, njegova starost ne mijenja njegovu namjenu. Ali ako je i nakon tih provjera slobodan, odluka iz njega obično je mirnija nego odluka iz novca koji je tek došao i još nema jasno ime.</p>
+<p>Upravljanje novcem zato nije samo matematika. Da jest, tablica bi bila dovoljna. Novac dira strah, nadu, ponos, umor, bračne razgovore, roditelje, djecu i osjećaj da možda kasnite za svima drugima. Ova knjiga ne pokušava ugasiti te emocije. Pokušava ih staviti na pravo mjesto. Proračun je prvi alat za to: ne da odlučuje umjesto vas, nego da vaše odluke prestanu izlaziti iz panike i počnu izlaziti iz reda.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-02-starost-novca-cijena-odluke.svg" alt="Vremenska crta uspoređuje svježu plaću, novac koji čeka nekoliko tjedana i novac koji mjesecima stoji u kategoriji." /></p>
+<p><em>Starost novca mjeri se u danima, ali poanta nije robovanje broju. Poanta je udaljenost između impulsa i odluke.</em></p>
+<h2 id="prve-kategorije"><a class="header" href="#prve-kategorije">Prve kategorije</a></h2>
+<p>Prvi proračun ne treba biti lijep.</p>
+<p>Treba biti upotrebljiv.</p>
+<p>Ako napravite četrdeset kategorija prvi dan, vjerojatno ćete se umoriti prije nego što sustav počne raditi. Ako napravite tri kategorije, vjerojatno ćete sakriti previše važnih odluka. Početak treba biti dovoljno jednostavan da ga možete voditi i dovoljno konkretan da govori istinu.</p>
+<p>Za većinu ljudi prvi skup kategorija može izgledati ovako:</p>
+<ul>
+<li>stanovanje</li>
+<li>režije</li>
+<li>hrana</li>
+<li>prijevoz</li>
+<li>zdravlje</li>
+<li>djeca ili obitelj</li>
+<li>dug</li>
+<li>davanje</li>
+<li>budući troškovi</li>
+<li>slobodna potrošnja</li>
+<li>likvidna rezerva</li>
+<li>Bitcoin</li>
+</ul>
+<p>Ovisno o tome kako živite, neke kategorije treba dodati odmah. Mladi čovjek koji živi s roditeljima možda treba auto, izlaske, dostave, pretplate, uređaje i odlazak od doma. Podstanar treba najam, polog i selidbu. Freelancer treba poreze, doprinose, opremu, softver i mjesece bez uplate. Obitelj iz dijaspore treba putovanja kući, pomoć roditeljima i troškove u dvije države. Vlasnik nekretnine treba pričuvu, održavanje i popravke. Umirovljenik treba lijekove, preglede, pomoć djeci i neplanirane zdravstvene troškove.</p>
+<p>Kasnije se kategorije mogu razdvojiti. Stanovanje može postati najam, rata, pričuva, režije i održavanje. Hrana može postati trgovina i restorani. Prijevoz može postati gorivo, javni prijevoz, servis, registracija i gume. Djeca mogu postati vrtić, škola, odjeća, aktivnosti, pokloni i izleti. Zdravlje može dobiti stomatologa, lijekove i preglede. Digitalni život može dobiti mobitel, pretplate, pohranu u oblaku, alate, edukaciju i zamjenu laptopa.</p>
+<p>Nemojte to raditi prerano.</p>
+<p>Prvih nekoliko mjeseci trebate kartu terena, a ne arhitektonski nacrt.</p>
+<p>Proračun prvo treba odgovoriti na nekoliko običnih pitanja: stvarni trošak hrane i auta, iznos koji mjesec traži prije nego što možete govoriti o višku, troškove koji se stalno vraćaju, dug koji nosite, davanje bez glume i Bitcoin koji možete kupiti iz viška koji stvarno postoji.</p>
+<p>Ako ta pitanja još nemaju odgovor, nije vrijeme za složene strategije.</p>
+<p>Vrijeme je za kategorije.</p>
+<h2 id="budući-troškovi-nisu-iznenađenje"><a class="header" href="#budući-troškovi-nisu-iznenađenje">Budući troškovi nisu iznenađenje</a></h2>
+<p>Velik dio financijske panike nastaje iz troškova koji nisu mjesečni.</p>
+<p>Registracija auta, Božić, rođendani i školske stvari nisu iznenađenja.</p>
+<p>Isto vrijedi za gume, servis, odmor, osiguranje, održavanje stana, zamjenu mobitela, stomatologa, veći pregled i poklone. Možda ne znate točan datum ili iznos, ali znate da život traži takav novac.</p>
+<p>Nekretnina također ima buduće troškove. Bojler, krov, klima, namještaj, majstori, pričuva, porez, prazni mjeseci apartmana i zimsko održavanje ne prestaju postojati zato što kuća &quot;mirno stoji&quot;. Apartman može dobro zaraditi u srpnju i kolovozu, ali taj novac nije slobodan dok ne pokrije cijelu godinu obveza.</p>
+<p>Proračun budući trošak vraća u sadašnjost.</p>
+<p>Trošak od 600 eura za šest mjeseci znači 100 eura mjesečno. Odmor od 1.200 eura za godinu dana traži isti ritam. Auto koji svake godine treba registraciju, osiguranje i barem jedan ozbiljniji servis ne košta samo gorivo i rata. Ima svoju kategoriju i dok mirno stoji pred kućom.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-03-buduci-trosak-u-sadasnjosti.svg" alt="Dijagram prikazuje trošak od 600 eura za šest mjeseci razlomljen na šest mjesečnih dijelova po 100 eura." /></p>
+<p><em>Poznati trošak prestaje biti panika kada dobije mjesečni ritam. Proračun ga vraća u sadašnjost prije nego što postane hitan.</em></p>
+<p>Ovo je posebno važno za Bitcoin.</p>
+<p>Ljudi često misle da prodaju Bitcoin jer &quot;moraju&quot;. Ponekad stvarno moraju. Ali često prodaju jer budući troškovi nisu dobili kategoriju na vrijeme. Zimske gume nisu bile budući trošak. Bile su problem u studenom. Stomatolog nije bio kategorija. Bio je panika. Odmor nije bio plan. Bio je kartica. Tada Bitcoin postane bankomat za nered koji je nastao ranije.</p>
+<p>Bitcoin može podnijeti volatilnost.</p>
+<p>Vaš kratkoročni život možda ne može.</p>
+<p>Zato kratkoročni život treba pripremiti prije nego što Bitcoin dobije veću ulogu u bilanci.</p>
+<h2 id="gdje-bitcoin-stoji-u-proračunu"><a class="header" href="#gdje-bitcoin-stoji-u-proračunu">Gdje Bitcoin stoji u proračunu</a></h2>
+<p>U početku Bitcoin treba voditi pošteno.</p>
+<p>Postojeći Bitcoin je imovina. Ako već imate Bitcoin, evidentirajte ga u neto imovini. Ako koristite You Need a Budget (YNAB) ili sličnu aplikaciju za proračun, početno ga je najčišće držati u praćenju imovine, odvojeno od svakodnevnih kategorija. Takvi alati mogu pomoći i zato što kroz vrijeme pokazuju starost novca u danima. Što ste ažurniji u proračunu i što dulje primjenjujete ova pravila, lakše vidite postaje li vaš novac u prosjeku stariji ili i dalje odlazi čim sjedne. To ne umanjuje Bitcoin. To priznaje da možda još ne živite iz Bitcoina kao iz primarnog novca.</p>
+<p>Dok je euro primarni novac za plaćanje života, euro u proračunu mora ostati vezan uz rokove: ovaj tjedan, ovaj mjesec, registracija za šest mjeseci, rezerva, dug i poznati ciljevi. Bitcoin može biti dio dugoročne monetarne slike, ali ne smije preuzeti posao novca koji ima kratak rok samo zato što vjerujete u njegovu budućnost.</p>
+<p>Ako imate 5.000 eura na računu i 800 eura u Bitcoinu, proračun za stanarinu, hranu, dug i režije najčešće se radi s onih 5.000 eura. Bitcoin postoji. Važan je. Ali ne glumite da je novac za kratkoročne obveze ako ga ne želite prodavati za svaku neugodnost.</p>
+<p>Ista logika vrijedi za nekretninu. Postojeći stan je imovina. Nova adaptacija, kapara za drugi stan, rata kredita ili ulaganje u apartman odluka je u proračunu. Imovina i nova obveza nisu ista stvar.</p>
+<p>Nova kupnja Bitcoina je odluka u proračunu i treba imati svoju kategoriju. Ako se to ne razdvoji, čovjek može istodobno misliti da štedi i ne primijetiti da mu mjesec krpa kartica.</p>
+<p>Evidencija Bitcoina u proračunu nije isto što i sigurnosni plan pristupa. Možete znati koliko imate, a da vaša obitelj još uvijek ne zna što napraviti ako vas nema, ako se izgubi uređaj ili ako netko mora pronaći upute u teškom trenutku. Kasnije treba izgraditi postupak u kojem pravi ljudi mogu doći do novca u pravom trenutku, a da se opasni podaci ne dijele svima. Nitko ne smije tražiti vaše riječi za oporavak, lozinke ili &quot;pomoć&quot; porukom ili telefonom. To pripada kasnijem, ozbiljnijem sloju Bitcoin standarda, ali ovdje ga vrijedi barem ne pobrkati s običnom evidencijom.</p>
+<p>Ova knjiga vodi prema tome da Bitcoin postane glavni novac u ravnoteži imovine. Ali redoslijed je važan. Prvo proračun. Zatim dug van. Zatim davanje. Zatim ravnoteža. Zatim sigurnost i ozbiljniji Bitcoin standard. Kasnije ćemo poštenije govoriti o volatilnosti, koncentraciji, nekretninama, drugim oblicima imovine, dugu i sigurnosti. Ovo poglavlje nije individualni financijski, porezni ili pravni savjet. Ono je okvir za redoslijed odluka.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-04-redoslijed-bitcoin-standarda.svg" alt="Dijagram prikazuje redoslijed: proračun, dug, davanje, ravnoteža imovine, sigurnost i ozbiljniji Bitcoin standard." /></p>
+<p><em>Bitcoin teza ostaje snažna, ali odluke moraju imati redoslijed. Bitcoin standard dolazi nakon reda, ne umjesto njega.</em></p>
+<p>Dok taj red nije uspostavljen, kategorija za novu kupnju Bitcoina mora biti skromna i stvarna.</p>
+<p>Nova kupnja ne ide iz magle, ne ide preko kartice i ne ide iz osjećaja da će vlak zauvijek otići bez vas. Novac za sljedećih nekoliko mjeseci života, za poznati trošak u sljedećih godinu dana ili za cilj koji dolazi u sljedećih nekoliko godina nije automatski Bitcoin novac. To je novac s rokom, a novac s rokom ne smije glumiti da može mirno podnijeti svaki pad.</p>
+<p>Ako imate potrošački dug, minus ili dug na kartici, nova kupnja Bitcoina ne smije konkurirati razduživanju, osim vrlo malog iznosa za učenje i održavanje navike. &quot;Vrlo mali&quot; znači da uplata duga, hrana i rezerva ostaju netaknuti, kartica se ne koristi i tu kupnju ne morate skrivati od osobe s kojom dijelite financijski život. Stambeni kredit, poslovni dug ili leasing za alat koji stvara prihod traže drukčiji kriterij, ali i dalje traže proračun. Ni jedan dug ne smije biti magla.</p>
+<p>Ako nemate likvidnu rezervu, nova kupnja ne smije biti način da pobjegnete od činjenice da vas jedan kvar može natjerati u dug. Ako ne znate mjesečni trošak, ne znate ni stvarni višak.</p>
+<p>Tu Bitcoineri najlakše sami sebe prevare. Monetarna teza može biti točna, a osobna odluka svejedno pogrešna. Ako imate potrošački dug i nemate rezervu, redovita kupnja Bitcoina možda nije disciplina, nego izbjegavanje istine. Možda si govorite da je kamata manji problem od propuštenog velikog rasta cijene. Proračun zato ne pita samo vjerujete li u Bitcoin. Pita iz kojeg novca ga kupujete.</p>
+<p>Ako Bitcoin kupujete iz novca koji je tek sjeo i još nije prošao kroz obveze, možda kupujete iz uvjerenja, ali možda kupujete i iz nestrpljenja. Proračun traži da se te dvije stvari ne miješaju.</p>
+<p>Ako već imate automatsku kupnju, nemojte je prvo braniti. Provjerite je. Iz koje kategorije dolazi? Što se odgađa zbog nje? Je li to stvarni višak ili samo uredniji oblik impulsa? Automatska kupnja može biti disciplina, ali može biti i strah da ćete zakasniti, samo uredno raspoređen.</p>
+<p>Pitanje &quot;koliko Bitcoina mogu kupiti&quot; dolazi nakon boljeg pitanja: koji novac je slobodan?</p>
+<p>Slobodan novac nije ono što ostane na računu prije nego što se sjetite svih obveza. Slobodan novac je ono što ostane nakon što je mjesec imenovan, dug vidljiv, budući troškovi pripremljeni, davanje odvojeno i rezerva pošteno shvaćena.</p>
+<p>Takav novac može ići u Bitcoin mirnije.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-05-koji-novac-u-bitcoin.svg" alt="Tok odluke prolazi kroz pitanja o mjesecu, budućim troškovima, dugu, rezervi, davanju i onome što se odgađa prije nego novac postane stvarno slobodan za Bitcoin." /></p>
+<p><em>Bitcoin se kupuje mirnije tek iz novca koji je stvarno slobodan. Ako pitanje zapne, novcu prvo treba dati jasniji posao.</em></p>
+<h2 id="tjedni-ritam"><a class="header" href="#tjedni-ritam">Tjedni ritam</a></h2>
+<p>Proračun se ne vodi u glavi.</p>
+<p>Mentalni proračun je osjećaj s boljim imenom.</p>
+<p>Treba vam evidencija. Papir može biti dovoljan za početak. Tablica može raditi. Aplikacija može pomoći. Alat nije poanta. Poanta je da transakcije uđu u kategorije i da se stanje redovito usklađuje sa stvarnim računima.</p>
+<p>Jednom tjedno sjednite petnaest do trideset minuta. Ritam neka bude jednostavan: uskladite račune s bankom, gotovinom i karticama; unesite transakcije koje nedostaju; premjestite novac između kategorija ako se život promijenio; odlučite što se ovaj tjedan ne kupuje. Tek tada pogledajte što vas je iznenadilo.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-06-tjedni-ritam-proracuna.svg" alt="Kružni tok prikazuje pet koraka tjednog proračuna: usklađivanje računa, unos transakcija, premještanje novca, odluku što se ne kupuje i zapisivanje iznenađenja." /></p>
+<p><em>Povjerenje u brojeve nastaje ponavljanjem. Tjedni ritam čuva proračun od povratka u dojam.</em></p>
+<p>To nije birokracija.</p>
+<p>To je održavanje povjerenja u vlastite brojeve.</p>
+<p>Ako brojevi ne odgovaraju stvarnosti, nećete donositi odluke iz proračuna. Vratit ćete se dojmu. Dobar proračun ne traži da nikada nema pogrešku, nego da mu se dovoljno brzo vratite.</p>
+<p>Prvih 180 dana treba gledati kao razdoblje učenja.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-07-prvih-180-dana.svg" alt="Vremenska crta prikazuje kako proračun kroz prvi mjesec, tri mjeseca, 180 dana i godinu dana daje sve jasniju sliku stvarnog novca." /></p>
+<p><em>Proračun postaje pametniji kroz vrijeme. Prvi mjesec daje sliku, a ponavljanje otkriva obrasce, višak i sezonske troškove.</em></p>
+<p>Prvi mjesec daje osnovnu sliku, tri mjeseca obrasce, šest mjeseci stvarni višak, a godina dana sezonske troškove.</p>
+<p>Ako su prihodi promjenjivi, ritam je još važniji. Dobar mjesec nemojte odmah proglasiti normalnim mjesecom. Najprije napunite slabije mjesece, poreze, opremu i rezervu, pa tek onda odlučite što je stvarni višak.</p>
+<p>Nakon toga više ne govorite o svom novcu napamet. Vidite koliko život traži, gdje novac bježi, koji troškovi nisu bili iznenađenje, koliko možete dati, što možete usmjeriti prema dugu i kada Bitcoin kupujete iz viška, a kada iz straha da ćete zakasniti.</p>
+<p>Ta razlika mijenja sve što dolazi poslije.</p>
+<h2 id="ana-prvi-proračun-zaustavio-je-karticu"><a class="header" href="#ana-prvi-proračun-zaustavio-je-karticu">Ana: prvi proračun zaustavio je karticu</a></h2>
+<p>Ana ima 29 godina i živi u Rijeci. Radi u trgovini i zarađuje 1.120 eura neto. Ponekad dobije dodatak za smjenu, ali na to ne računa. Stan plaća 420 eura. Režije su joj oko 120 eura, zimi više. Nema auto. Koristi autobus, povremeno taksi i jednom mjesečno ode roditeljima na Krk.</p>
+<p>Na računu ima oko 600 eura. Na kreditnoj kartici duguje 850 eura. U Bitcoinu ima oko 400 eura, kupljenih u malim iznosima kroz dvije godine.</p>
+<p>Prije proračuna Ana nije bila neodgovorna. Radila je, plaćala račune i nije kupovala velike gluposti. Problem je bio u sitnom nevidljivom curenju. Plaća sjedne. Stanarina ode. Režije odu. Mobitel, hrana, kartica. Zatim nekoliko malih kupnji nakon posla, dvije dostave, kozmetika, poklon prijateljici, majica na sniženju. Do zadnjeg tjedna opet stezanje.</p>
+<p>Bitcoin joj je bio nada i pritisak. Kada cijena raste, žao joj je što nema više. Kada pada, pita se je li pogriješila. Nekoliko je puta kupila 50 eura Bitcoina, a dva tjedna kasnije koristila karticu za hranu. Nije to spojila u istu odluku. Proračun joj je pokazao vezu.</p>
+<p>Prvi put je sjela u nedjelju navečer. Otvorila bankovnu aplikaciju, stavila papir na stol i zapisala 600 eura. Onda je krenula oduzimati ono što taj novac mora napraviti. Hrana do plaće. Prijevoz. Dio režija. Minimalna uplata za karticu. Lijekovi koje je odgađala. Sitni poklon koji je već obećala.</p>
+<p>Nije ostalo gotovo ništa.</p>
+<p>Prvi poriv bio je zatvoriti bilježnicu.</p>
+<p>Ako se to dogodi, proračun nije dokaz da ste zakasnili, nego da ste napokon prestali nagađati. Loša vijest na papiru bolja je od iste loše vijesti na kartici tri tjedna kasnije.</p>
+<p>Umjesto toga napravila je mali proračun: stanovanje, režije, hrana, prijevoz, kartica, zdravlje, davanje, slobodna potrošnja, budući troškovi. Bitcoin je stavila u neto imovinu. Nije ga dirala, ali ga više nije gledala kao rješenje za mjesec.</p>
+<p>Prvi mjesec samo je pratila.</p>
+<p>Najviše ju je iznenadila hrana. Mislila je da troši oko 220 eura, a stvarni iznos bio je bliže 330. Zatim je došla slobodna potrošnja: nije bila velika, ali je bila razlomljena na toliko malih odluka da ju nije osjećala. Kartica je bila treći nalaz. Nije rasla zato što Ana nema karakter, nego zato što budući troškovi nisu imali kategorije.</p>
+<p>Drugi mjesec podigla je hranu na realnih 300 eura. Slobodnu potrošnju stavila je na 80 eura, bez grižnje savjesti. Otvorila je &quot;stomatolog&quot; s 20 eura mjesečno i &quot;pokloni&quot; s 15 eura. Davanje je počelo s 10 eura. Činilo joj se premalo, ali bilo je prvi put da davanje nije čekalo ostatak mjeseca.</p>
+<p>Bitcoin nije kupovala redovito dok kartica nije počela padati. Jedan mjesec imala je stvarni višak od 30 eura i kupila ga bez napetosti. To je bio mali iznos, ali drukčija odluka. Nije kupila iz straha. Kupila je iz viška.</p>
+<p>Nakon šest mjeseci kartica je bila manja za 420 eura. Ana nije dobila povišicu. Nije postala druga osoba. Ali počela je gledati kategorije prije kupnje. Kada ju je prijateljica pozvala na večeru, nije gledala samo račun. Pogledala je slobodnu potrošnju. Ako je bilo novca, otišla je. Ako nije, predložila je kavu ili šetnju.</p>
+<p>To nije bilo siromaštvo.</p>
+<p>To je bila odrasla odluka.</p>
+<p>Proračun Ani nije povećao prihod, ali joj je zaustavio curenje. Prvi mir nije došao iz veće plaće. Došao je iz činjenice da je svaki euro prestao biti nečija improvizacija.</p>
+<h2 id="matej-prednost-roditeljskog-doma-nije-slobodan-novac"><a class="header" href="#matej-prednost-roditeljskog-doma-nije-slobodan-novac">Matej: prednost roditeljskog doma nije slobodan novac</a></h2>
+<p>Matej ima 26 godina i živi s roditeljima u predgrađu Splita. Radi u logistici i zarađuje 1.100 eura neto. Roditeljima daje 150 eura mjesečno za režije i hranu, ali ne plaća puni najam, polog, namještaj, internet, pričuvu ni većinu kućanskih troškova.</p>
+<p>Na papiru bi trebao imati veliki višak.</p>
+<p>U stvarnosti ga često nema.</p>
+<p>Auto uzme gorivo, registraciju, servis i gume. Vikend uzme izlazak, dostavu, kavu i taksi. Mobitel uzme ratu. Pretplate uzmu nekoliko malih iznosa koje ne osjeti dok ih ne zbroji. Kladionica i kripto aplikacije nisu stalno velike, ali su dovoljno česte da mu mjesec naprave mutnim. Kada mu prijatelj pošalje novu kripto kovanicu ili grupu za trgovanje, Matej ima osjećaj da bi ga proračun samo usporio.</p>
+<p>Proračun mu je pokazao nešto neugodno: roditeljski dom mu nije bio samo pomoć. Bio je i test. Ako sada, dok nema puni trošak života, ne može imenovati višak, kasnije će teže imenovati stanarinu, režije, djecu, dug i Bitcoin.</p>
+<p>Prve kategorije nisu bile velike: roditeljima, auto, hrana izvan kuće, izlasci, pretplate, odjeća, slobodna potrošnja, dug, rezerva, odlazak od doma i Bitcoin. Dodao je i jednu neugodnu kategoriju: klađenje i kratkoročno trgovanje. Nije ju dodao da bi si dao dopuštenje, nego da više ne može glumiti da to nije trošak.</p>
+<p>Prvi mjesec nije kupio više Bitcoina. Izvukao je zadnjih trideset dana iz bankovne aplikacije i označio pet curenja: dostave, gorivo, kave, pretplate i kladionicu. To nije bio financijski plan za život. Bio je prvi dokaz da mu novac ne nestaje sam od sebe.</p>
+<p>Nakon dva mjeseca ukinuo je nekoliko pretplata, prestao s klađenjem i otvorio kategoriju &quot;odlazak od doma&quot;. Prvih 50 eura u toj kategoriji nije mu promijenilo život. Ali mu je promijenilo smjer. Prvi put roditeljski dom nije bio izgovor da ima više za trošenje, nego prilika da vježba život prije nego što ga mora platiti u cijelosti.</p>
+<p>Tek tada je mala kupnja Bitcoina imala drugo značenje.</p>
+<p>Nije bila bijeg od odraslosti.</p>
+<p>Bila je dio odraslosti.</p>
+<h2 id="marko-i-ivana-brojke-su-postale-treća-strana-razgovora"><a class="header" href="#marko-i-ivana-brojke-su-postale-treća-strana-razgovora">Marko i Ivana: brojke su postale treća strana razgovora</a></h2>
+<p>Marko i Ivana žive u okolici Zagreba. Imaju dvoje djece, jedno u vrtiću i jedno u nižim razredima osnovne škole. Marko zarađuje oko 1.650 eura neto. Ivana zarađuje oko 1.280 eura. Zajedno imaju oko 2.930 eura mjesečno.</p>
+<p>Imaju stambeni kredit, auto na kredit, manji dug na kartici i oko 3.500 eura Bitcoina.</p>
+<p>Izvana nisu izgledali neuredno. Prihodi su bili pristojni. Djeca su zbrinuta. Računi se plaćaju. Auto radi. Bitcoin postoji. Ali novac je stalno bio tema u krivom trenutku: kada saldo padne, kada dođe registracija, kada djeci treba odjeća, kada Marko želi kupiti Bitcoin, kada Ivana kaže da kućanstvo košta više nego što on misli.</p>
+<p>Njihovi razgovori brzo bi postali osobni.</p>
+<p>Marko bi rekao da treba manje trošiti na sitnice.</p>
+<p>Ivana bi rekla da sitnice nisu problem, nego stvarni trošak kuće i djece.</p>
+<p>Marko bi spomenuo Bitcoin i budućnost.</p>
+<p>Ivana bi pitala zašto budućnost uvijek dobije kategoriju prije stomatologa, registracije i vrtićkih izleta.</p>
+<p>Nitko nije bio lud. Nitko nije bio neprijatelj. Oboje su govorili iz magle.</p>
+<p>U nekim kućama uloge su obrnute. Nije poanta tko voli Bitcoin, tko vodi kuhinju, tko plaća račune ili tko prvi vidi problem. Poanta je da zajednički novac ne smije biti privatni projekt jedne osobe.</p>
+<p>Prvi zajednički proračun nije bio romantičan. Sjedili su za stolom nakon što su djeca zaspala. Otvorili su bankovnu aplikaciju, karticu, kredite i popis redovitih troškova. Počeli su pisati kategorije: stanovanje, kredit, režije, hrana, vrtić, škola, prijevoz, auto, zdravlje, odjeća, djeca, pokloni, davanje, Markova slobodna potrošnja, Ivanina slobodna potrošnja, obiteljski odmor, budući troškovi, Bitcoin, rezerva.</p>
+<p>Brojke su postale treća strana razgovora.</p>
+<p>Više nije bilo potrebno dokazivati tko je kriv. Auto je pokazao koliko košta. Hrana je pokazala koliko košta. Djeca su pokazala koliko koštaju. Kartica je pokazala koliko prošlost još uzima. Bitcoin je pokazao da postoji, ali da ne može biti iznad svega ostalog.</p>
+<p>Najvažnija odluka bila je uvesti osobne kategorije za Marka i Ivanu. Svatko je dobio dogovoreni iznos koji nije morao opravdavati. Kava, knjiga, alat, kozmetika, mali hobi, ručak s prijateljem. Ako je kategorija imala novac, nije bilo rasprave. To je smanjilo sitnu kontrolu koja često uništava obiteljski proračun.</p>
+<p>Druga odluka bila je zaustaviti redovitu kupnju Bitcoina dok ne vide stvarni višak. Marku je to bilo teško. Imao je osjećaj da gube vrijeme. Ali Ivana je prvi put mogla jasno reći što joj smeta. Nije joj smetao Bitcoin. Smetalo joj je što se novac za Bitcoin pojavljivao brže od novca za registraciju, dječje izlete i dug na kartici.</p>
+<p>Marku se u početku činilo da Ivana ne razumije Bitcoin. Nakon nekoliko večeri s brojkama morao je priznati nešto neugodnije: on nije dovoljno razumio kuću.</p>
+<p>Dogovorili su pravilo: postojeći Bitcoin ide u neto imovinu i ne dira se. Nova kupnja ide samo nakon što su pokriveni mjesec, budući troškovi, minimalna rezerva i dogovorena uplata za dug.</p>
+<p>Dogovorili su i drugo pravilo: ako su dugovi, računi i djeca zajednički, onda se ne skrivaju ni kupnje Bitcoina, ni kartice, ni dug, ni stanje novčanika. Privatnost nije isto što i tajnost koja partnera ostavlja da živi s posljedicama odluke koju nije vidio.</p>
+<p>Nakon tri mjeseca napetost oko Bitcoina se smanjila. Ne zato što su kupovali više, nego zato što Bitcoin više nije izgledao kao Markova nestrpljivost. Postao je jedna kategorija u zajedničkom planu.</p>
+<p>Nakon šest mjeseci kartica se smanjila. Kategorija za auto više nije bila prazna. Božić nije završio na kartici. Obiteljski odmor punio se unaprijed. Davanje je bilo skromno, ali redovito. Djeca nisu znala sve detalje, ali su počela čuti drukčiji jezik: &quot;za to imamo kategoriju&quot;, &quot;za to još punimo&quot;, &quot;to ćemo odlučiti zajedno&quot;.</p>
+<p>Proračun nije riješio sve bračne razgovore.</p>
+<p>Ali je maknuo lažnu borbu.</p>
+<p>Marko više nije morao biti čovjek koji gleda samo budućnost. Ivana više nije morala biti kočnica. Mogli su zajedno gledati isti papir.</p>
+<p>Obiteljski novac treba zajednički jezik. Bez toga Bitcoin vrlo lako postane privatna tema jedne osobe i pritisak za drugu. S proračunom je postao dio kuće.</p>
+<p>Dobar proračun u obitelji nije alat za nadzor partnera. Ne služi tome da jedna osoba opravdava svaku kavu, a druga glumi financijskog suca. Služi tome da se kuća prestane oslanjati na dojmove, krivnju i nagađanje. Zato su osobne kategorije važne. One čuvaju slobodu unutar zajedničkog reda.</p>
+<h2 id="marin-i-petra-složen-novac-treba-stroža-pravila"><a class="header" href="#marin-i-petra-složen-novac-treba-stroža-pravila">Marin i Petra: složen novac treba stroža pravila</a></h2>
+<p>Marin i Petra žive u Splitu. Marin vodi malu tvrtku koja radi usluge za strane klijente. Prihodi su dobri, ali promjenjivi. Petra je arhitektica i radi na projektima s nekoliko ureda. Imaju jedno dijete u srednjoj školi i jedno na fakultetu u Zagrebu.</p>
+<p>Imaju stan u kojem žive, apartman koji iznajmljuju, poslovni automobil, poslovni novac, privatni novac, ulaganja i značajnu Bitcoin poziciju.</p>
+<p>Izvana je sve izgledalo uspješno. I mnogo toga jest bilo uspješno. Ali složen novac može biti neuredan na sofisticiran način. Osobni i poslovni tokovi ponekad su se miješali. Veći prihodi stvarali su osjećaj da se problemi uvijek mogu riješiti kasnije. Kada bi trebalo platiti, novac bi se našao. Kada bi posao imao dobar mjesec, kupovalo se, ulagalo, pomagalo i prebacivalo.</p>
+<p>Marin je gledao prilike. Novi klijent, oprema, zapošljavanje, apartman, Bitcoin, poslovna rezerva. Petra je gledala obiteljski ritam. Koliko je stvarno likvidno? Što ako klijent kasni? Koliko košta fakultet u Zagrebu? Što je privatno, a što poslovno? Što je sigurnost, a što samo velik broj u tablici?</p>
+<p>Njima proračun u početku nije zvučao dovoljno ozbiljno. Kao alat za ljude koji moraju paziti na svaki euro.</p>
+<p>Upravo je to bila pogreška.</p>
+<p>Što je novac složeniji, proračun mora biti jasniji.</p>
+<p>Kod poduzetnika saldo na računu često laže još uvjerljivije nego kod kućanstva. Na računu može stajati velik iznos, ali u njemu možda već sjede PDV, porez na dobit, doprinosi i plaće. Tu su i dobavljači, oprema i rezerva za mjesece u kojima klijent kasni s uplatom. Dobit nije isto što i likvidnost, a izdani račun nije isto što i novac koji je sjeo.</p>
+<p>Jedan mjesec to se pokazalo bez ikakve teorije. Račun velikom klijentu bio je izdan, posao dovršen, dobit na papiru lijepa. Ali uplata je kasnila četrdeset pet dana. PDV, plaće, leasing za automobil, knjigovođa i dobavljači nisu čekali s istim strpljenjem. Taj mjesec ih je naučio da poslovni novac ne smije ulaziti u obiteljski osjećaj sigurnosti dok ne odvoje obveze koje posao mora platiti i onda kada klijent kasni.</p>
+<p>Prvi korak bio je razdvojiti osobni i poslovni novac. Tvrtka je dobila svoje kategorije: plaće, doprinosi, PDV, porez na dobit, dobavljači, operativni troškovi i oprema. Odvojili su i rezervu za kašnjenje naplate potraživanja, ulaganje u rast i vlasničku isplatu. Osobni proračun dobio je svoje: stanovanje, hranu, prijevoz, djecu, fakultet, zdravlje, putovanja, davanje, održavanje nekretnina, slobodnu potrošnju, rezervu, Bitcoin i veće odluke.</p>
+<p>Poslovni račun više nije bio emocionalna sigurnost obitelji.</p>
+<p>Osobni račun više nije bio produžetak firme.</p>
+<p>Drugi korak bio je odrediti vlasničku isplatu. Umjesto da Marin povlači novac prema osjećaju, odredili su mjesečni iznos koji ulazi u osobni proračun. Kada posao ima bolji mjesec, višak prvo ostaje u poslovnim kategorijama. Prvo PDV, porezi, doprinosi, plaće, rezerva, obveze i plan. Tek nakon toga odlučuje se što se isplaćuje, što ostaje u poslu, što ide u Bitcoin, a što u druge oblike imovine.</p>
+<p>Apartman je dobio isti tretman. Ljetni prihod više nije automatski bio slobodan novac. Prvo su iz njega odvojeni čišćenje, platforme, popravci, klima, namještaj, porezi, prazni mjeseci i održavanje. Tek ono što ostane nakon cijele godine apartmana može biti stvarni višak.</p>
+<p>Treći korak bio je pogledati Bitcoin unutar neto imovine. Njihov Bitcoin nije bio sitan eksperiment. Bio je značajan dio života. Jedan dio bio je dugoročan. Jedan dio psihološki je služio kao sigurnost. Jedan dio bio je povezan s budućim odlukama. Ali dok sve to nije bilo napisano, Bitcoin je bio jak element bez jasne funkcije.</p>
+<p>Proračun ih nije učinio manje ambicioznima.</p>
+<p>Učinio ih je preciznijima.</p>
+<p>Marin je počeo postavljati bolje pitanje za svaku priliku: iz koje kategorije dolazi novac i što time odgađamo? Petra je dobila jasniji uvid u to koliko obitelj stvarno troši, koliko daju, koliko odlazi na djecu, koliko traži održavanje nekretnina, kolika je stvarna poslovna rezerva i koliko im treba da ne moraju prodavati Bitcoin u krivom trenutku.</p>
+<p>Davanje se također promijenilo. Prije su davali velikodušno, ali neravnomjerno. Nekada puno, nekada ništa. Nakon proračuna davanje je postalo kategorija, ne raspoloženje. Veće kupnje više nisu bile pitanje mogu li ih platiti. Gotovo sve su mogli platiti. Pitanje je bilo što ta odluka radi cijelom sustavu.</p>
+<p>&quot;Možemo si to priuštiti&quot; nije dovoljno precizno za ozbiljan život.</p>
+<p>Ozbiljnije pitanje glasi: što ova odluka radi našoj likvidnosti, poslu, obitelji, davanju, Bitcoinu i budućoj slobodi?</p>
+<p>Nakon godinu dana Marin i Petra nisu izgledali dramatično drukčije izvana. I dalje su imali posao, stan, apartman, Bitcoin i dobar život. Ali iznutra se promijenio nacrt. Novac više nije bio skup jakih dijelova. Postao je sustav s pravilima.</p>
+<p>Kod većih prihoda proračun često ne služi preživljavanju mjeseca.</p>
+<p>Služi tome da bogatstvo ne postane neuredno.</p>
+<h2 id="Što-se-mijenja-nakon-proračuna"><a class="header" href="#Što-se-mijenja-nakon-proračuna">Što se mijenja nakon proračuna</a></h2>
+<p>Nakon proračuna život ne postane automatski lak.</p>
+<p>Postane vidljiviji.</p>
+<p>Dug se više ne skriva u minimalnoj uplati. Davanje više ne čeka ostatak. Bitcoin više nije emocionalna reakcija na cijenu. Auto više nije samo gorivo. Djeca više nisu &quot;nepredviđeni troškovi&quot;. Posao više nije veliki saldo bez obveza. Slobodna potrošnja više nije krivnja ako je planirana. Odluka više nije svađa ako kategorija govori dovoljno jasno.</p>
+<p>To je posao ovog poglavlja.</p>
+<p>Ne zato da vas učini savršenima, odredi koliko trebate trošiti na svaku stavku ili zamijeni mudrost tablicom.</p>
+<p>Proračun treba napraviti jednu stvar: odvojiti stvarni novac od osjećaja o novcu.</p>
+<p>To ne znači da proračun uklanja emocije. Novac je uvijek emocionalan: sigurnost, strah, krivnja, nestrpljenje, ponos, želja da se nešto nadoknadi. Proračun ne liječi strah, nestrpljenje ni obiteljske napetosti. Ali ih iznosi na papir prije nego što postanu kupnja, svađa, kartica ili panična prodaja.</p>
+<p>Kada to napravi, sve iduće odluke postaju poštenije. Dug se može napasti bez nagađanja. Davanje može dobiti stvarno mjesto. Ravnoteža imovine može početi od točne bilance. Bitcoin se može kupovati iz novca koji je zaista slobodan. Sigurnost se može graditi oko iznosa koji stvarno postoji.</p>
+<p>Nije svaki višak automatski Bitcoin višak. Dio pripada rezervi, dugu, porezu, popravku koji dolazi, odlasku od doma ili partneru koji treba mir prije rizika. Proračun to ne odlučuje umjesto vas, ali vas prisili da odluku donesete otvorenih očiju.</p>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Prvi potez nije dotjerivanje sustava. Prvi potez je sjesti i otvoriti sve račune.</p>
+<p>Otvorite tekući račun, štedni račun, gotovinu, kartice, poslovni račun ako ga imate, mjenjačnicu, Bitcoin novčanik i sve drugo gdje stoji novac ili obveza. Zapišite samo novac koji stvarno postoji. Ne uključujte plaću, bonus, povrat poreza, uplatu klijenta ili bilo koji novac koji još nije stigao.</p>
+<p>Kada je taj popis previše, počnite s papirom, bankom, gotovinom i karticom. Ostalo dodajte kada prvi sloj prestane biti magla.</p>
+<p>Zatim napravite prve kategorije: stanovanje, režije, hrana, prijevoz, zdravlje, obitelj ili djeca, dug, davanje, budući troškovi, slobodna potrošnja, likvidna rezerva i Bitcoin. Budući troškovi neka odmah dobiju barem nekoliko stvarnih imena, primjerice auto, zdravlje, pokloni, blagdani, pričuva, putovanja kući, pretplate, lijekovi ili zamjena uređaja. Ne tražite savršen popis. Tražite popis koji možete koristiti.</p>
+<p>Za posao vrijedi strože pravilo: poslovni saldo nemojte držati kao osobnu sigurnost. Prvo odvojite poreze, doprinose, plaće, dobavljače, operativne troškove i leasing. Zatim poslovnu rezervu, rezervu za kašnjenje naplate potraživanja i vlasničku isplatu. Tek novac koji je stvarno isplaćen vlasniku ulazi u osobni proračun. Život ili poslovanje između dvije države traži provjeru rezidentnosti, poslovne strukture i poreznih obveza u državama u kojima stvarno živite i poslujete.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-08-poslovni-novac-u-kucu.svg" alt="Dijagram prikazuje kako poslovni saldo prolazi kroz PDV, poreze, doprinose, plaće, dobavljače, leasing i poslovnu rezervu prije vlasničke isplate i osobnog proračuna." /></p>
+<p><em>Poslovni saldo nije isto što i osobna sigurnost. Obitelj smije planirati tek s novcem koji je stvarno isplaćen.</em></p>
+<p>Rasporedite svaki euro koji sada postoji. Ako ne znate kamo pripada, to je znak da mu treba ime, a ne razlog da ga ostavite u magli. Sljedećih sedam dana unosite svaku transakciju. Hrana ide u hranu. Gorivo u prijevoz. Kartica u dug. Bitcoin ide u svoju kategoriju ili u praćenje imovine, ovisno o fazi u kojoj jeste.</p>
+<p>U paru neka prvi razgovor bude kratak i bez optuživanja. Trideset minuta je dovoljno za prvi popis računa, dugova i kategorija. Život s roditeljima traži kategoriju za odlazak od doma. Promjenjivi prihodi ne smiju najjači mjesec proglasiti normalnim mjesecom. Pomoć obitelji treba ime i granicu.</p>
+<p>Za početak izvucite zadnjih trideset dana iz bankovne aplikacije i označite samo pet curenja: hrana izvan kuće, dostave, gorivo, pretplate, kartica, kladionica, aplikacije za kratkoročno trgovanje ili sitne kupnje poslije posla. Ne morate odmah promijeniti sve. Prvo morate vidjeti što se ponavlja.</p>
+<p><img src="assets/visuals/svg/viz-02-proracun-09-pet-curenja.svg" alt="Shema prikazuje pet malih ponavljajućih transakcija koje se skupljaju u jedan mjesečni odljev." /></p>
+<p><em>Problem često nije jedna velika odluka, nego nevidljiv ritam malih odluka. Prvi cilj je vidjeti što se ponavlja.</em></p>
+<p>Jednom tjedno uskladite proračun sa stvarnim računima. Ako se brojevi ne slažu, pronađite razliku. To je dosadno samo dok ne shvatite da bez tog povjerenja u brojeve nema ozbiljnog Bitcoin standarda.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada proračun više nije ideja, nego ritam.</p>
+<ul>
+<li>Raspoređujete samo novac koji stvarno postoji.</li>
+<li>Svaki euro ima kategoriju.</li>
+<li>Svaki trošak ulazi u evidenciju.</li>
+<li>Vodite proračun nulte osnove.</li>
+<li>Svaki iznos ima posao.</li>
+<li>Poznat vam je stvarni mjesečni trošak.</li>
+<li>Stvarni višak više nije nagađanje.</li>
+<li>Prije veće odluke vidite što se tim novcem više ne može napraviti.</li>
+<li>Razlikujete novac koji je tek sjeo od novca koji je već prošao kroz kategorije, rokove i obveze.</li>
+<li>Razumijete razliku između novca koji mora ostati likvidan u eurima i novca koji smije dugo čekati u Bitcoinu.</li>
+<li>Imate kategorije za buduće troškove, dug, davanje, Bitcoin i rezervu.</li>
+<li>Nova kupnja Bitcoina ima jasnu kategoriju.</li>
+<li>Jasno je koji novac ne smije u Bitcoin zbog roka, rizika, duga ili obiteljske obveze.</li>
+<li>Ako vodite posao, vlasnička isplata je određena i ne miješa se s poslovnim saldom.</li>
+<li>Računi se usklađuju barem jednom tjedno.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako…</a></h2>
+<p>Stanite ovdje ako bilo što od ovoga još vrijedi: proračun se vodi samo u glavi, troškovi ne ulaze u kategorije, novac koji nije stigao već trošite u planu, ne znate stvarni višak ili Bitcoin kupujete iz magle, a ne iz kategorije.</p>
+<p>Isto vrijedi ako partner ne zna osnovni plan ili obitelj nema osnovnu sliku, a vaš je novac već zajednička stvarnost, čak i kada niste u istoj državi. Bitcoin standard ne može dugo biti privatni projekt u kući koja dijeli račune, djecu, dugove, brige i budućnost.</p>
+<p>Stanite i ako roditeljski dom koristite kao razlog da imate više za trošenje, a ne kao priliku da izgradite rezervu, izađete iz duga i počnete kupovati Bitcoin mirnije.</p>
+<p>Stanite i ako ideju &quot;starijeg Bitcoin novca&quot; koristite kao razlog da u Bitcoin gurate novac koji ima kratak rok, otvoren dug ili obiteljsku obvezu.</p>
+<p>Ovo nije kazna i nije dokaz da ste pali ispit. To je sigurnosna stanica. U tom slučaju sljedeće poglavlje još neće pomoći koliko treba. Prvi posao je vratiti se na sadašnji novac.</p>
+<p>Ako ovo još ne postoji, ne treba komplicirati.</p>
+<p>Sjednite.</p>
+<p>Otvorite račune.</p>
+<p>Zapišite sadašnji novac.</p>
+<p>Dajte mu posao.</p>
+<p>Tu počinje osobni Bitcoin standard.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="01-zasto-bitcoin-kao-novac.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="03-dug.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="01-zasto-bitcoin-kao-novac.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="03-dug.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

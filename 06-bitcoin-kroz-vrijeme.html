@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bitcoin kroz vrijeme - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html" class="active"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="bitcoin-kroz-vrijeme-volatilnost-trend-i-ulaganje"><a class="header" href="#bitcoin-kroz-vrijeme-volatilnost-trend-i-ulaganje">Bitcoin kroz vrijeme: volatilnost, trend i ulaganje</a></h1>
+<p>Nakon ravnoteže imovine dolazi pitanje vremena.</p>
+<p>Proračun pokazuje što sadašnji novac treba napraviti. Dug pokazuje koliko je budućnosti već zauzeto. Davanje otvara novac prema drugima. Ravnoteža imovine pokazuje gdje je vrijednost smještena: u novcu, potrošnim dobrima ili proizvodnoj imovini. Ali Bitcoin se ne može razumjeti samo kroz sadašnje stanje bilance. Bitcoin se mora gledati kroz vrijeme.</p>
+<p>To je jedna od najtežih stvari.</p>
+<p>Današnja cijena je jasna. Možete je otvoriti na ekranu i vidjeti u sekundi. Cijena je konkretna, emocionalna i stalno dostupna. Ako raste, lako je osjećati da se budućnost ubrzava. Ako pada, lako je osjećati da se nešto pokvarilo. Ako se dugo ne miče, lako je osjećati da vrijeme prolazi bez rezultata.</p>
+<p>Ali Bitcoin nije samo današnja cijena.</p>
+<p>Bitcoin je novac u procesu monetizacije. To znači da ga kroz vrijeme sve više ljudi, obitelji, poduzeća, investitora, institucija i možda jednog dana država počinje razumijevati kao novac. Taj proces nije ravan. Nije uredan. Nije lišen pretjerivanja, straha, euforije, razočaranja, političkih reakcija, tehničkog nerazumijevanja i tržišnih ciklusa. Tržište ne otkriva vrijednost novog novca mirno. Ono je otkriva kroz valove.</p>
+<p>Zato osoba koja želi živjeti s Bitcoinom kao novcem mora naučiti razlikovati šum od smjera.</p>
+<p>Kratkoročna cijena može biti vrlo bučna. Dugoročni smjer može biti puno mirniji, iako se nikada ne vidi savršeno. Ako gledate samo današnju cijenu, Bitcoin će vas stalno emocionalno pomicati. Ako gledate samo dugoročnu tezu, možete zanemariti stvarne rizike i vlastitu likvidnost. Potrebno je oboje: razumjeti dugoročni trend, ali živjeti u stvarnom proračunu; vjerovati u bolji novac, ali ne izgubiti trezvenost; znati da Bitcoin može rasti u kupovnoj moći, ali ne donositi odluke kao da sutrašnji rast već pripada današnjem proračunu.</p>
+<p>Zato ovo poglavlje ne pokušava pogoditi cijenu. Pokušava usporiti pogled.</p>
+<p>Treba naučiti gledati Bitcoin kroz vrijeme, a ne samo kroz trenutnu cijenu. Treba pokazati da volatilnost nije zapovijed, nego informacija o stanju iz kojeg odlučujete. I treba objasniti ulaganje na Bitcoin standardu: ako je Bitcoin novac, ulaganje više ne znači samo tražiti veći iznos u eurima, nego privremeno ili trajno premjestiti dio Bitcoina u rizik proizvodne imovine samo kada za to postoji dovoljno dobra teza.</p>
+<p>To je potpuno drugačiji početak od onoga na što nas državni novac navikava.</p>
+<p>U državnom novcu ljudi često osjećaju da novac mora stalno “raditi”, jer novac koji stoji gubi kupovnu moć. Na Bitcoin standardu taj pritisak se smanjuje. Ako je Bitcoin vaš novac, držanje novca nije prazna odluka. To je držanje opcionalnosti u novcu koji se još uvijek monetizira. Zato investicija mora zaslužiti mjesto u bilanci. Nije dovoljno da zvuči zanimljivo. Nije dovoljno da drugi ljudi zarađuju. Nije dovoljno da se bojite da propuštate priliku.</p>
+<p>Na Bitcoin standardu svaka ozbiljna investicija mora odgovoriti na pitanje: zašto je ovo bolje od držanja najboljeg novca koji poznajem?</p>
+<h2 id="zašto-bitcoin-treba-gledati-kroz-vrijeme"><a class="header" href="#zašto-bitcoin-treba-gledati-kroz-vrijeme">Zašto Bitcoin treba gledati kroz vrijeme?</a></h2>
+<p>Bitcoin je od nastanka prošao put koji je teško smjestiti u uobičajene financijske kategorije. Nije počeo kao dionica, tvrtka, obveznica, startup ili fond. Nije imao upravu, tržišni odjel, prodajni tim, sjedište, državu koja stoji iza njega ili središnju banku koja ga brani. Počeo je kao otvoreni protokol, objavljen svijetu, koji je spajao kriptografiju, računalne mreže, dokaz rada, ograničenu ponudu i ideju novca bez središnjeg izdavatelja.</p>
+<p>Prvi ljudi koji su ga koristili nisu mogli znati kako će ga svijet vrednovati. Ni danas nitko ne zna točno kako će izgledati njegova puna monetizacija, ako do nje dođe. Ali sada već imamo dovoljno dugu povijest da vidimo jednu stvar: Bitcoin se kroz vrijeme nije ponašao kao obična kratkoročna špekulacija. Imao je duboke padove, ali se nakon njih vraćao s većom mrežom, većom likvidnošću, većim razumijevanjem i većom cijenom izraženom u državnom novcu.</p>
+<p>To ne znači da se budućnost mora ponoviti.</p>
+<p>Ali znači da današnju cijenu ne treba gledati izolirano.</p>
+<p>Cijena Bitcoina je tržišni pokušaj da se u jednom trenutku izrazi vrijednost nečega što se monetizira globalno, pod fiksnom ponudom i promjenjivom potražnjom. Ako mali broj ljudi razumije Bitcoin, cijena može biti jedna. Ako ga razumije stotine milijuna ljudi, druga. Ako ga počnu koristiti obitelji, poduzeća, fondovi, gradovi ili države, treća. Ako dio svijeta u njemu počne mjeriti imovinu, dug, rad, štednju i ulaganje, tada se mijenja sama funkcija cijene.</p>
+<p>Zato rast Bitcoina ne treba zamišljati kao ravnu crtu. To bi bilo psihološki ugodno, ali tržišno nerealno. Kada se nova monetarna imovina širi, ljudi je ne razumiju svi odjednom. Ulaze u valovima. Prvo je ignoriraju, zatim joj se rugaju, zatim je dio ljudi kupuje iz znatiželje, zatim je neki kupuju iz pohlepe, zatim mnogi odustaju, zatim se vraćaju oni koji razumiju više, zatim dolazi nova skupina, zatim nova euforija, pa novo razočaranje. I tako kroz cikluse.</p>
+<p>U tim ciklusima događaju se dvije stvari.</p>
+<p>Prva je stvarni napredak: više korisnika, bolja infrastruktura, veće razumijevanje, bolji alati, ozbiljnije skrbništvo, veći kapital, veća politička i društvena vidljivost.</p>
+<p>Druga je psihološka pretjeranost: cijena ponekad ode ispred stvarnog razumijevanja, a ponekad padne ispod dugoročnog trenda jer tržište postane prestrašeno, umorno ili prezasićeno prethodnom euforijom.</p>
+<p>Zato čovjek treba okvir koji mu pomaže vidjeti širu sliku.</p>
+<p>Jedan od korisnih okvira je dugoročni trend, često opisan potencijskim zakonom. Ovdje ne treba početi formulom. Model nam ne treba da bismo pogodili cijenu. Treba nam da današnju cijenu ne čitamo kao cijeli svijet.</p>
+<p>Osnovna intuicija je važnija od zapisa: Bitcoinova cijena se kroz povijest kretala oko dugoročnog obrasca, uz velike odmake iznad i ispod njega. Ponekad je tržište daleko ispred trenda. Ponekad je iza. Ponekad je blizu. Potencijski zakon ovdje nije alat za pogađanje sutrašnje cijene, nego način da današnju cijenu usporedimo s dugim ritmom.</p>
+<p>Logaritamski graf samo pomaže da taj odnos uopće vidimo. Na običnom grafu veliki rast pojede sve ranije razlike. Na log-log grafu dugoročni obrazac može izgledati kao ravnija linija oko koje se tržište udaljava i vraća. Ne morate znati računati logaritme da biste razumjeli poantu: log skala stisne vrlo velike razlike da ih možemo usporediti. Ta linija nije zapovijed. Ona je karta.</p>
+<blockquote>
+<p>[VIZUAL: Model kao kompas, ne autopilot — polustranični crno-bijeli log-log graf s dugoročnom linijom &quot;dugi ritam&quot; i valovitom linijom &quot;tržišna cijena&quot;. Označiti zone &quot;iznad trenda&quot;, &quot;blizu trenda&quot; i &quot;ispod trenda&quot;. Uz graf dodati kratke negativne oznake: &quot;nije prognoza&quot;, &quot;nije kupi/prodaj signal&quot;, &quot;ne mijenja proračun&quot;. Poanta: trend postavlja pitanje, ali odluka i dalje prolazi kroz proračun, dug, likvidnost, obitelj i sigurnost.]</p>
+</blockquote>
+<p>U ovoj knjizi, kada govorimo o dugoročnom trendu, radni okvir je block-time pogled inspiriran Leo Heartovim Bitcoin Rainbow Wave modelom. To ne znači da je Leo Heart autor ove knjige, niti da se njegov model koristi kao signal za trgovanje. To znači samo da Bitcoinov dugoročni trend ne gledamo isključivo kroz kalendarske dane, nego i kroz vlastiti interni sat mreže.</p>
+<p>Bitcoin ne mjeri svoje monetarno vrijeme kalendarom, nego blokovima. Kalendar i dalje postoji za plaću, režije, porez, školu, sezonu i obiteljski život. Ali protokol diše u blokovima. Prvo gledamo gdje se Bitcoin nalazi u vlastitom halving ritmu. U block-time okviru osnovna varijabla može se zapisati ovako:</p>
+<pre><code class="language-text">h = block height / 210.000
+</code></pre>
+<p>Drugim riječima: broj do sada izrudarenih blokova dijeli se s 210.000, brojem blokova između dva halvinga. Svaki cijeli broj <code>h</code> označava jedan halving ciklus. Decimalni dio pokazuje koliko je Bitcoin napredovao prema sljedećem halvingu. Ako je broj blokova oko <code>840.000</code>, tada je <code>h = 4</code>. Ako je oko <code>945.000</code>, tada je <code>h = 4,5</code>, otprilike pola ciklusa kasnije. Blokovi nisu savršeno ravnomjerni u kalendarskom vremenu, ali su Bitcoinov vlastiti ritam izdavanja novog novca. Taj broj ne vodi vaš kućni budžet; on samo pokazuje gdje je mreža u svom protokolarnom vremenu.</p>
+<blockquote>
+<p>[RUBNA SHEMA: Halving clock kao vremenska crta — uska crno-bijela crta s oznakama <code>h = 4</code>, <code>h = 4,5</code> i <code>h = 5</code>. Kako čitati: cijeli brojevi označavaju halvinge, a decimalni dio kretanje prema sljedećem halvingu. Poanta: Bitcoin ima protokolarni ritam, ali ljudski proračun i dalje živi u mjesecima.]</p>
+</blockquote>
+<p>Za odluke u ovoj knjizi nije važno ručno računati power-law formulu. Važno je razumjeti odnos cijene prema trendu. Ako je trend 100, a tržišna cijena 130, cijena je 30% iznad trenda. Ako je trend 100, a tržišna cijena 70, cijena je 30% ispod trenda. Nijedno ni drugo nije naredba. To je samo kontekst.</p>
+<blockquote>
+<p>[RUBNA SHEMA: R² je retrovizor — točke iz prošlosti i crta koja ih dobro opisuje, a budući dio grafa ostaje prazan s upitnikom. Poanta: dobro uklapanje u prošlosti nije jamstvo budućeg ishoda.]</p>
+</blockquote>
+<p>Za tehnički znatiželjne, u najjednostavnijem obliku power-law model kaže da se cijena uspoređuje s izrazom tipa <code>BTC(h) = 10^a * h^b</code>, odnosno u log obliku <code>log10(BTC) = a + b * log10(h)</code>. Ne morate ovo računati da biste proveli poglavlje. Parametri <code>a</code> i <code>b</code> nisu vječni. Visok R² nije proročanstvo, nego ocjena prošlog uklapanja modela u podatke. Santostasijev days-since-genesis model i Leo Heartov block-based model zato je bolje gledati kao komplementarne okvire. Za ovu knjigu važnija je praktična upotreba od rasprave koji je model elegantniji: trend je orijentir za bolja pitanja, ne stroj za predviđanje cijene.</p>
+<blockquote>
+<p>[NAPOMENA ZA IZVORE: prije završne objave datirati korišteni power-law model i navesti izvor, primjerice Leo Heart / leoum, Bitcoin Rainbow Wave na TradingViewu i bitcoinwave.net; ako se spominju R², nagib, intercept, tržišna cijena ili projekcija, svaku brojku vezati uz točan datum i verziju modela.]</p>
+</blockquote>
+<p>To nije kristalna kugla.</p>
+<p>Dugoročni trend nije obećanje, ne uklanja rizik i ne govori točno što će cijena napraviti sljedeći mjesec ili sljedeće godine. Može se promijeniti, pokazati nepotpunim ili izgubiti korisnost. Ali može pomoći da današnju cijenu ne doživimo kao samostalnu dramu.</p>
+<p>Kad je Bitcoin iznad dugoročnog trenda, ne dobivate nalog za prodaju. Dobivate razlog za mirniji pregled bilance. Kad je ispod trenda, ne dobivate nalog za kupnju. Dobivate razlog da provjerite postoji li stvarni višak i je li sustav dovoljno stabilan. Kad je blizu trenda, odluka nije automatski laka. Cijena je samo manje ekstremna u odnosu na povijesni obrazac.</p>
+<p>U svim slučajevima, trend ne odlučuje umjesto vas.</p>
+<p>On samo dodaje kontekst.</p>
+<p>Taj kontekst možemo nazvati vremenski odmak. Ako je cijena daleko iznad trenda, možemo reći da tržište živi ispred dugoročnog ritma. Ako je daleko ispod, možemo reći da tržište zaostaje za dugoročnim ritmom. Ali taj jezik ne smije postati naredba. &quot;Ispred trenda&quot; ne znači prodaj sve. &quot;Iza trenda&quot; ne znači kupuj sve. Znači samo da današnju cijenu treba čitati sporije, u odnosu na proračun, dug, davanje, ravnotežu imovine i sigurnost.</p>
+<h2 id="dugoročni-trend-nije-dopuštenje-za-kratkoročni-nered"><a class="header" href="#dugoročni-trend-nije-dopuštenje-za-kratkoročni-nered">Dugoročni trend nije dopuštenje za kratkoročni nered</a></h2>
+<p>Dugoročni trend ne smije služiti kao izgovor za kratkoročni nered. Ako vam model kaže da Bitcoin ima velik potencijal, to ne znači da smijete preskočiti proračun, odgoditi razduživanje, povećati potrošnju ili koristiti polugu. Što je dugoročna teza snažnija, to osobni sustav mora biti zreliji.</p>
+<p>Trend, potencijski zakon, očekivani rast i monetizacija mogu pomoći da se današnja cijena stavi u širi kontekst. Ne smiju postati dopuštenje da kratkoročni život postane neuredan. Najbolja dugoročna teza ne spašava čovjeka koji je svoju likvidnost, obitelj i odluke predao nestrpljenju.</p>
+<p>Ako vam je za &quot;iskoristiti trend&quot; potreban novi dug, poluga ili novac koji pripada obvezama, to nije provedba ovog poglavlja. To je povratak na poglavlje o dugu.</p>
+<h2 id="volatilnost-kao-test-stanja"><a class="header" href="#volatilnost-kao-test-stanja">Volatilnost kao test stanja</a></h2>
+<p>Volatilnost sama po sebi nije neprijatelj.</p>
+<p>Ona je promjena cijene kroz vrijeme. Može biti neugodna, ali nije moralno loša. Problem nastaje kada čovjek živi u stanju iz kojeg volatilnost upravlja njegovim odlukama. Ako nema proračun, ako ima dug, ako ne zna stvarni višak, ako je imovina neravnotežna, ako su budući troškovi nepripremljeni, ako davanje nije uređeno i ako sigurnosni plan ne postoji, svaka veća promjena cijene Bitcoina postaje emocionalni događaj.</p>
+<p>Rast tada lako stvara nestrpljenje.</p>
+<p>Pad tada lako stvara strah.</p>
+<p>Dugo razdoblje bez jasnog smjera tada lako stvara dosadu i sumnju.</p>
+<p>Ali kada postoji sustav, volatilnost mijenja funkciju. Ona ne nestaje, ali prestaje biti zapovijed. Postaje informacija.</p>
+<p>Ako Bitcoin snažno raste, lako je u glavi već potrošiti dobitak koji još nije prošao kroz proračun. Tada prvo pitanje nije: što sada mogu kupiti? Prvo pitanje je: što se stvarno promijenilo u mojoj bilanci, likvidnosti, davanju, obiteljskim ciljevima i sigurnosti?</p>
+<p>Ako Bitcoin snažno pada, lako je osjetiti da je cijeli plan pogrešan. Tada prvo pitanje nije: jesam li pogriješio? Prvo pitanje je: jesu li kratkoročne potrebe pokrivene, postoji li dug i je li pad cijene problem za moj stvarni život ili samo za moj osjećaj?</p>
+<p>Ako se Bitcoin dugo ne miče, lako je tražiti dramu samo zato što je nema. Tada prvo pitanje nije: zašto se ništa ne događa? Prvo pitanje je: koristim li ovo vrijeme dobro, vodim li proračun, stvaram li vrijednost, dajem li, poboljšavam li sigurnost i odnos s obitelji?</p>
+<p>Cijena ne zna vaš život.</p>
+<p>Ne zna vaš prihod, djecu, posao, dugove, buduće troškove, brak, zdravlje, obiteljske obveze ni sposobnost podnošenja rizika. Cijena je tržišna informacija. Ne smije postati osobna presuda.</p>
+<p>Zato je najvažnije pitanje kod volatilnosti: u kakvom me stanju ova promjena cijene zatiče?</p>
+<p>Ako vas rast zatiče bez proračuna, može vas učiniti neopreznim. Ako vas pad zatiče u dugu, može vas učiniti paničnim. Ako vas stagnacija zatiče bez smisla i rada, može vas učiniti nestrpljivim. Ali ako vas volatilnost zatiče u uređenom sustavu, ona može biti korisna. Pokazuje vam gdje je bilanca napeta, gdje je likvidnost slaba, gdje je davanje premalo, gdje je koncentracija prevelika, gdje se javlja pohlepa i gdje se javlja strah.</p>
+<p>Volatilnost ne stvara karakter. Ona ga otkriva.</p>
+<h2 id="trošiti-bitcoin-nije-problem"><a class="header" href="#trošiti-bitcoin-nije-problem">Trošiti Bitcoin nije problem</a></h2>
+<p>Jedna od najopasnijih zabluda u životu s Bitcoinom jest da je svaka prodaja ili potrošnja Bitcoina problem.</p>
+<p>Ta zabluda nastaje iz stvarne činjenice: Bitcoin dugoročno može rasti u kupovnoj moći. Ako ga potrošite danas, možda ćete za deset godina gledati na taj iznos i reći da je mogao vrijediti mnogo više. To je stvaran oportunitetni trošak. Ne treba ga ignorirati.</p>
+<p>Ali oportunitetni trošak nije zabrana.</p>
+<p>Ako je Bitcoin novac, onda postoji da bi se koristio. Novac se čuva, troši, daje, ulaže, razmjenjuje i prenosi kroz vrijeme. Ako novac nikada ne smijete upotrijebiti, tada ga ne tretirate kao novac, nego kao predmet straha. To nije osobni Bitcoin standard. To je nova vrsta zarobljenosti.</p>
+<p>Nije problem potrošiti Bitcoin.</p>
+<p>Problem je potrošiti ga iz lošeg stanja.</p>
+<p>Ako je proračun jasan, dug uklonjen, davanje prisutno, imovina uravnotežena, a odluka promišljena, potrošnja Bitcoina može biti potpuno zdrava. Možete ga upotrijebiti za zdravlje, dom, obrazovanje, preseljenje, posao, opremu, putovanje, pomoć drugome, ulaganje ili bilo koju drugu odluku koja u vašem životu ima smisla. Pitanje nije smije li se Bitcoin potrošiti. Pitanje je što odluka radi vašem životu, bilanci i budućoj sposobnosti odlučivanja.</p>
+<p>Ako pak Bitcoin trošite zato što ste ignorirali buduće troškove, zadržali dug, držali svu imovinu u nelikvidnim stvarima, živjeli iznad mogućnosti ili koristili Bitcoin kao hitnu blagajnu za neuređen život, tada problem nije u tome što ste prodali Bitcoin. Problem je u stanju koje je proizvelo prisilu.</p>
+<p>Ovo treba jasno razlikovati.</p>
+<p>Osobni Bitcoin standard ne postoji zato da bi čovjek čuvao Bitcoin pod svaku cijenu. Postoji zato da bi Bitcoin mogao koristiti kao novac iz sve boljeg stanja. Ako je odluka dobra, prodaja ili potrošnja Bitcoina može biti dio mudrog života. Ako je odluka loša, ni čuvanje Bitcoina neće je automatski učiniti dobrom.</p>
+<p>Dobar novac ne oslobađa od rasuđivanja.</p>
+<p>Dobar novac povećava važnost rasuđivanja.</p>
+<h2 id="kako-donositi-odluke-kada-je-bitcoin-iznad-blizu-ili-ispod-trenda"><a class="header" href="#kako-donositi-odluke-kada-je-bitcoin-iznad-blizu-ili-ispod-trenda">Kako donositi odluke kada je Bitcoin iznad, blizu ili ispod trenda?</a></h2>
+<p>Dugoročni trend ne smije postati mehaničko pravilo, ali može biti koristan orijentir. Praktično gledano, postoje tri osnovna stanja: Bitcoin je iznad dugoročnog trenda, blizu njega ili ispod njega.</p>
+<p>Kada je Bitcoin znatno iznad dugoročnog trenda, tržište možda unaprijed cijeni budući rast. To je trenutak za trezveniji pregled, ne za automatsku prodaju. Ako je rast Bitcoina učinio da je novčani dio imovine znatno veći od planiranog, možete razmotriti što taj rast omogućuje: ojačati davanje, financirati buduće troškove unaprijed, smanjiti preostale obveze, ulagati u vlastitu produktivnost, poboljšati sigurnosni postav, pomoći djeci ili roditeljima, ili jednostavno ne raditi ništa.</p>
+<p>Važno je da odluka ne nastane iz euforije.</p>
+<p>Rast ne opravdava svaki trošak i ne čini svaku investiciju dobrom. Budući dobici još nisu vaši. Rast samo otvara dodatnu mogućnost pregleda. Tko ima sustav, može ga iskoristiti za bolju ravnotežu. Tko nema sustav, često ga iskoristi za povećanje potrošnje i rizika.</p>
+<p>Kada je Bitcoin blizu dugoročnog trenda, često nema potrebe za velikim odlukama. To je prostor običnog rada: voditi proračun, davati, graditi likvidnost, kupovati Bitcoin iz stvarnog viška, povećavati znanje, raditi na poslu, čuvati sigurnost i pregledavati imovinu. Većina života odvija se upravo u ovakvim razdobljima. Ona nisu dramatična, ali su presudna. Čovjek ne gradi Bitcoin standard samo u vrhovima i padovima, nego u normalnim mjesecima u kojima odluke djeluju male.</p>
+<p>Kada je Bitcoin znatno ispod dugoročnog trenda, tržište možda podcjenjuje budući rast. Tu je najopasnije pomiješati dobru cijenu s dozvolom za nered. Novac za režije, porez, hranu, djecu i dogovorene buduće troškove ne postaje slobodan samo zato što model izgleda povoljno. Kupnja iz unaprijed planiranog stvarnog viška može biti posebno vrijedna. Kupnja iz pritiska samo vraća čovjeka u isti nered iz kojeg je knjiga pokušala izaći.</p>
+<p>Razlika nije samo u tržištu.</p>
+<p>Razlika je u stanju čovjeka.</p>
+<p>Zato ova knjiga stalno vraća na isti temelj: proračun, dug, davanje, ravnoteža imovine, trend, ulaganje i sigurnost nisu odvojene teme. One zajedno oblikuju stanje iz kojeg odlučujete.</p>
+<blockquote>
+<p>[VIZUAL: Trend mijenja pitanja, ne odluku — tri stupca: &quot;Iznad trenda&quot;, &quot;Blizu trenda&quot;, &quot;Ispod trenda&quot;. Svaki stupac ima dva reda: &quot;što može značiti&quot; i &quot;što ne znači&quot;. Ispod stupaca ide zajednički filter: proračun, dug, likvidnost, davanje, ravnoteža, sigurnost, obitelj. Na dnu dodati upozorenje: bez duga, poluge i novca za obveze. Poanta: stanje u odnosu na trend ne daje kupi/prodaj signal, nego mijenja redoslijed pitanja.]</p>
+</blockquote>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Trend ne treba provjeravati za svaku sitnicu. Ako odluka ne mijenja životnu sliku, ne treba joj modelska drama. Kao praktičan prag možete koristiti jednu šezdesetinu neto imovine. To je samo <code>neto imovina / 60</code>: iznos kod kojeg zastajemo i provjeravamo širu sliku. Ako neto imovina iznosi 60.000 eura, to je 1.000 eura. Ako iznosi 120.000 eura, to je 2.000 eura. Prag se može prilagoditi, ali poanta ostaje: veće odluke traže hladniju provjeru. Jedna šezdesetina nije sveta brojka. To je obrazovni filter, ne osobno investicijsko pravilo.</p>
+<blockquote>
+<p>[RUBNA SHEMA: Prag jedne šezdesetine — mala formula <code>neto imovina / 60</code>; mala odluka ide kroz običan proračun, veća odluka prolazi dodatnu provjeru: trend, proračun, dug, davanje, ravnoteža, sigurnost i obitelj. Poanta: model se koristi za ozbiljne odluke, ne za svaku kupnju.]</p>
+</blockquote>
+<p>Prije nego što donesete novu veću odluku o Bitcoinu, zapišite gdje se Bitcoin nalazi u odnosu na dugoročni trend: znatno iznad, blizu ili znatno ispod. Koristite isti unaprijed odabrani model, a ne onaj koji tog dana najbolje opravdava željenu odluku. Ne morate pogoditi savršenu granicu. Dovoljno je da današnju cijenu prestanete gledati kao samostalnu zapovijed.</p>
+<p>Zatim zapišite što to stanje znači za vaše ponašanje, ne što vam tržište &quot;jamči&quot;. Ako je Bitcoin iznad trenda, prvo pitanje je što rast radi vašoj bilanci, davanju, sigurnosti i koncentraciji. Ako je ispod trenda, prvo pitanje je imate li stvarni višak za kupnju bez ugrožavanja obveza. Ako je blizu trenda, prvo pitanje je vodite li obične mjesece dovoljno dobro.</p>
+<p>Ni u jednom stanju ne koristite dug, polugu, novac za režije, novac za porez, novac za hranu, novac za djecu ili novac za dogovorene buduće troškove. Ako odluka traži takav novac, to nije odluka o Bitcoinu. To je povratak na nered iz ranijih poglavlja.</p>
+<p>Svaku veću investiciju usporedite s držanjem Bitcoina. Napišite koliko Bitcoina premještate, koliko Bitcoina očekujete natrag, u kojem roku, uz koji rizik i koliko vašeg vremena će to pojesti. Ako to ne možete napisati običnim jezikom, investicija još nije zrela. Čekanje je dopušteno.</p>
+<p>Ovaj okvir nije osobni financijski savjet. Ne zna vašu obitelj, poreze, posao, zdravlje, psihologiju, obveze ni sigurnosni plan. Njegova je svrha usporiti odluku i postaviti bolja pitanja.</p>
+<h3 id="okvir-za-tri-stanja"><a class="header" href="#okvir-za-tri-stanja">Okvir za tri stanja</a></h3>
+<p>Iznad trenda: usporite. Pregledajte ravnotežu imovine, davanje, sigurnost, buduće troškove i obiteljske ciljeve. Rast nije dopuštenje za veći životni stil.</p>
+<p>Blizu trenda: radite običan posao. Vodite proračun, kupujte iz stvarnog viška, povećavajte sposobnost zarade, učite i ne tražite dramu gdje je nema.</p>
+<p>Ispod trenda: provjerite jeste li stvarno spremni. Ako nema duga, ako proračun diše i ako unaprijed planirani višak postoji, pad može biti prostor za strpljivu kupnju. Ako sustav ne postoji, pad nije prilika nego test koji će otkriti slabost.</p>
+<h2 id="ulaganje-na-bitcoin-standardu"><a class="header" href="#ulaganje-na-bitcoin-standardu">Ulaganje na Bitcoin standardu</a></h2>
+<p>Na državnom novcu ulaganje često počinje iz pritiska.</p>
+<p>Čovjek zna da novac gubi kupovnu moć. Ako drži štednju, osjeća da zaostaje. Ako cijene nekretnina rastu, osjeća da mora kupiti. Ako dionice rastu, osjeća da mora sudjelovati. Ako čuje za novu priliku, boji se da će zakasniti. U takvom okruženju ulaganje često nije samo stvaranje vrijednosti, nego bijeg od novca koji propada.</p>
+<p>Bitcoin mijenja početnu točku.</p>
+<p>Ako je Bitcoin vaš novac, držanje novca nije prazno čekanje. Bitcoin može čuvati opcionalnost i kroz monetizaciju rasti u kupovnoj moći. Zato proizvodna imovina mora zaslužiti svoje mjesto. Investicija mora objasniti zašto je bolja od držanja novca.</p>
+<p>Proizvodna imovina i dalje ima mjesto. Posao, alati, znanje, oprema, sustavi, dobri projekti i kapital koji stvara vrijednost mogu biti iznimno korisni. Ali na Bitcoin standardu ulaganje mora biti jasnije nego na fiat standardu. Ne ulaže se zato što novac “mora raditi”. Bitcoin već radi jednu važnu stvar: čuva mogućnost odluke. Ulaže se onda kada postoji dovoljno dobra teza da će ulaganje stvoriti više kupovne moći nego držanje Bitcoina.</p>
+<p>Glavno pitanje zato glasi:</p>
+<p>Ako uložim Bitcoin, koliko Bitcoina očekujem natrag, u kojem roku i uz koji rizik?</p>
+<p>Ako ulažete jedan Bitcoin u posao, dionicu, fond, opremu, zemljište, udio u projektu ili bilo koju drugu investiciju, ne pitate samo koliko će to vrijediti u eurima. Pitate hoćete li nakon tri, pet ili deset godina imati više kupovne moći izražene u Bitcoinu nego da ste taj Bitcoin držali. Ako je odgovor nejasan, investicija možda nije dovoljno jasna. Ako je odgovor da, treba znati zašto.</p>
+<p>Isto vrijedi i za male iznose. Ako uložite <code>0,01 BTC</code>, pitanje nije samo koliko će to vrijediti u eurima. Pitanje je hoćete li nakon vremena, rizika, poreza, naknada i uloženog truda imati više od <code>0,01 BTC</code> vrijednosti. Tako Bitcoin postaje mjerna letvica, a ne samo imovina na grafu.</p>
+<blockquote>
+<p>[VIZUAL: Investicija mora pobijediti držanje Bitcoina — polustranični crno-bijeli dijagram grananja. Početna kutija: &quot;1 BTC danas&quot;. Gornja grana: &quot;držim Bitcoin&quot; vodi prema &quot;opcionalnost + vrijeme&quot;. Donja grana: &quot;premještam u rizik&quot; prolazi kroz kutije &quot;povoljan scenarij&quot;, &quot;nepovoljan scenarij&quot;, &quot;vrijeme i stres&quot;, &quot;porezi i naknade&quot;. Obje grane završavaju pitanjem: &quot;imam li više BTC vrijednosti nego držanjem?&quot; Poanta: povrat u eurima nije dovoljan ako je Bitcoin mjerilo.]</p>
+</blockquote>
+<p>Tu počinje investicijska teza. Ne mora biti duga. Mora biti poštena.</p>
+<p>Teza je pokušaj da prije ulaganja napišete zašto ulažete, što očekujete i što bi pokazalo da ste u krivu. Ima dva sloja. Prvi je razumijevanje: što točno kupujem, koji problem ta imovina rješava i zašto bi netko za tu vrijednost plaćao. Drugi je mjera: koliko Bitcoina premještam, koliko Bitcoina očekujem natrag, u kojem roku i uz koji rizik.</p>
+<p>Bez kvalitativnog dijela investicija je broj bez razumijevanja.</p>
+<p>Bez kvantitativnog dijela investicija je priča bez mjere.</p>
+<p>Ako uložite <code>0,01 BTC</code> i očekujete da ćete za nekoliko godina imati <code>0,012 BTC</code> vrijednosti, očekujete dobit od <code>0,002 BTC</code> prije vremena, rizika, poreza i naknada. Ako uložite 1 BTC i očekujete da ćete za pet godina imati 1,5 BTC vrijednosti, očekujete povrat od 0,5 BTC. Ali ni to nije dovoljno. Morate znati zašto mislite da je to moguće, što se mora dogoditi u stvarnosti, kakav je rizik, koliko vremena morate potrošiti i koliko bi Bitcoin sam mogao narasti u tom razdoblju.</p>
+<p>Ako u državnom novcu investicija izgleda dobro, a u Bitcoinu izgleda loše, tada na Bitcoin standardu nije dobra investicija.</p>
+<p>Ovo je kratko za reći, ali traži promjenu navike.</p>
+<h3 id="gdje-je-bitcoin-u-odnosu-na-dugoročni-trend"><a class="header" href="#gdje-je-bitcoin-u-odnosu-na-dugoročni-trend">Gdje je Bitcoin u odnosu na dugoročni trend?</a></h3>
+<p>Prije ozbiljne investicije treba pogledati gdje se Bitcoin nalazi u odnosu na dugoročni trend.</p>
+<p>Ako je Bitcoin daleko ispod trenda, držanje Bitcoina postaje vrlo zahtjevno mjerilo. U takvom razdoblju investicija mora biti posebno uvjerljiva da bi imalo smisla premjestiti Bitcoin u drugi rizik. Nije nemoguće. Možda imate vlastiti posao s iznimno jasnim povratom. Možda imate opremu koja odmah povećava prihod. Možda imate projekt koji razumijete bolje od tržišta. Ali prag je visok.</p>
+<p>Ako je Bitcoin daleko iznad trenda, djelomično preusmjeravanje može biti lakše opravdati. Možda je mudro financirati buduće troškove, davanje, sigurnost, proizvodnu imovinu ili obiteljski cilj. Ali ni tada se ne ulaže automatski. Visoka cijena Bitcoina ne čini svaku investiciju dobrom. Ona samo mijenja odnos oportunitetnog troška.</p>
+<p>Ako je Bitcoin blizu trenda, investicija mora stajati na vlastitoj tezi. Nema ekstremnog vjetra u leđa ni protiv nje. Tada je posebno važno razumjeti posao, povrat, rizik i vrijeme.</p>
+<p>Za vremenski horizont investicije treba procijeniti i očekivani rast samog Bitcoina. Ako ulažete na pet godina, ne pitate samo što investicija može napraviti u pet godina. Pitate i što bi Bitcoin mogao napraviti u istom razdoblju. Ako Bitcoin ima razumnu mogućnost rasta kupovne moći, investicija mora opravdati zašto je bolja od čekanja.</p>
+<p>Čekanje nije slabost. Na Bitcoin standardu čekanje može biti vrlo aktivna odluka. Čuvate kupovnu moć, čuvate opcionalnost, učite, radite, promatrate i ne ulazite u rizik koji ne razumijete. U državnom novcu čekanje se često kažnjava. U Bitcoinu čekanje može biti dio strategije.</p>
+<h3 id="ulaz-i-izlaz"><a class="header" href="#ulaz-i-izlaz">Ulaz i izlaz</a></h3>
+<p>Svaka investicija treba imati ulaznu i izlaznu strategiju.</p>
+<p>Ulazna strategija govori kako ulazite u investiciju. Možete ući jednokratno. Možete ući postupno kroz vrijeme. Možete ući u nekoliko dijelova prema unaprijed određenim cijenama. Možete prvo ući malim iznosom da provjerite razumijevanje, pa povećati tek ako se teza potvrđuje. Nema jednog ispravnog načina za sve. Ali mora postojati razlog.</p>
+<p>Ulaz ne smije biti samo reakcija na uzbuđenje.</p>
+<p>Ako ulazite zato što svi govore o prilici, zato što vas je strah da ćete zakasniti ili zato što je Bitcoin upravo snažno narastao pa vam se čini da “imate viška”, vrlo je moguće da ne ulazite iz teze, nego iz stanja. A stanje može prevariti.</p>
+<p>Izlazna strategija govori što radite nakon što ste ušli.</p>
+<p>Ako investicija naraste na određenu vrijednost izraženu u Bitcoinu, hoćete li dio prodati? Ako padne, hoćete li smanjiti poziciju, zadržati ili priznati da je teza pogrešna? Ako prođe vremenski rok, a teza se ne ostvaruje, što radite? Ako se pojavi bolja prilika, što radite? Ako investicija traži mnogo više vremena nego što ste očekivali, što radite?</p>
+<p>O izlazu treba razmišljati prije ulaska jer je kasnije čovjek emocionalno uključen.</p>
+<p>Kada je novac već uložen, ego počinje braniti odluku. Gubitak se ne želi priznati. Dobit se ne želi pustiti. Vrijeme se nastavlja trošiti jer je već mnogo vremena potrošeno. Čovjek počinje tražiti informacije koje potvrđuju njegovu odluku i izbjegavati one koje je dovode u pitanje. Zato izlazna pravila treba postaviti dok je glava hladna.</p>
+<p>Dobro pravilo ne uklanja potrebu za rasuđivanjem.</p>
+<p>Ali sprječava da prvi put razmišljate o izlazu onda kada ste najviše emocionalno vezani.</p>
+<h3 id="povoljan-i-nepovoljan-scenarij"><a class="header" href="#povoljan-i-nepovoljan-scenarij">Povoljan i nepovoljan scenarij</a></h3>
+<p>Povoljan scenarij nije dovoljan.</p>
+<p>Većina investicija izgleda dobro kada gledate samo ono što se može dogoditi ako sve uspije. Posao raste, dionica se udvostručuje, oprema povećava produktivnost, zemljište dobiva novu namjenu, projekt pronalazi kupce, fond ostvaruje izvanredan povrat. Takve slike mogu biti korisne, ali nisu dovoljne.</p>
+<p>Treba pogledati i nepovoljan scenarij.</p>
+<p>Što ako posao ne raste? Što ako dionica padne izraženo u Bitcoinu? Što ako oprema ne donese očekivani prihod? Što ako zemljište ostane nelikvidno? Što ako projekt ne pronađe kupce? Što ako fond ima lošu strategiju? Što ako se pokaže da niste razumjeli rizik? Što ako se Bitcoin u međuvremenu snažno monetizira, a vaša investicija u Bitcoinu izgleda sve lošije?</p>
+<p>Rizik treba pokušati kvantificirati.</p>
+<p>To nije čista znanost. Uvijek postoji procjena. Investitor nikada ne zna točne vjerojatnosti. Ali pokušaj procjene već mijenja kvalitetu razmišljanja. Ne tražimo savršenu statistiku. Tražimo pošteniji razgovor s rizikom. Nije isto reći “ovo mi se čini dobro” i reći “mislim da postoji 60% šanse za povrat od 0,5 BTC, 30% šanse za mali gubitak i 10% šanse za gubitak većine uloženog iznosa”. Takva procjena može biti pogrešna, ali prisiljava vas da razmišljate jasnije.</p>
+<p>Idemo polako kroz mali primjer.</p>
+<p>Ulažete 1 BTC i mislite da postoji 80% šanse da u pet godina dobijete ukupno 2 BTC vrijednosti. To znači da povoljan scenarij donosi dobit od 1 BTC. Ako gledate samo taj dio, investicija izgleda odlično. Ali postoji i 20% nepovoljnog scenarija. Ako u tom scenariju vaš 1 BTC padne na 0,5 BTC, gruba računica izgleda ovako: osam puta od deset završava s 2 BTC, a dva puta od deset završava s 0,5 BTC. Prosječna slika takve procjene bila bi oko 1,7 BTC prije poreza, naknada, vremena i stresa. Ako nepovoljan scenarij nije 0,5 BTC nego nula, slika pada na oko 1,6 BTC. Ako uz to morate potrošiti 200 sati praćenja, pregovaranja, analize i stresa, rezultat se dodatno mijenja. Dvjesto sati je gotovo pet punih radnih tjedana po 40 sati. I to je dio cijene.</p>
+<blockquote>
+<p>[RUBNA SHEMA: Povoljan scenarij nije cijela računica — jednostavna crno-bijela tablica s tri retka: 80% povoljan ishod, 20% nepovoljan ishod, dodatni trošak vremena. Bez stvarnih projekcija cijene. Poanta: rizik i vrijeme moraju ući u odluku.]</p>
+</blockquote>
+<p>Dobra investicija nije ona u kojoj povoljan scenarij zvuči lijepo.</p>
+<p>Dobra investicija je ona u kojoj povoljan i nepovoljan scenarij, uz vjerojatnost i usporedbu s držanjem Bitcoina, i dalje imaju smisla za vaš život.</p>
+<h3 id="oportunitetni-trošak-vremena"><a class="header" href="#oportunitetni-trošak-vremena">Oportunitetni trošak vremena</a></h3>
+<p>Vrijeme je najvažniji resurs.</p>
+<p>To zvuči kao opća rečenica, ali u ulaganju postaje vrlo konkretna. Svaka investicija traži vrijeme. Treba učiti područje, formulirati tezu, pronaći ulaz, provjeriti rizike, pratiti razvoj, čitati izvještaje, razgovarati s ljudima, donositi odluke, brinuti o poreznim i pravnim posljedicama, planirati izlaz i nositi emocionalni teret. To vrijeme nije besplatno.</p>
+<p>Ako investicija nakon pet godina donese dodatni povrat u Bitcoinu, taj povrat treba usporediti s vremenom koje je uloženo.</p>
+<p>Možda ste zaradili 0,2 BTC, ali ste potrošili 300 sati. Pitanje je koliko su vrijedila ta 300 sata u vašem primarnom poslu, vještini ili poslovnom području. Ako ste ta 300 sata mogli uložiti u posao u kojem već imate deset tisuća sati iskustva, možda biste zaradili više, uz manji rizik i manje stresa.</p>
+<p>Čovjek koji je stručan u nekom području ima akumuliranu prednost. Njegovi novi sati u tom području često vrijede više nego sati provedeni u području u kojem je početnik. To ne znači da nikada ne treba učiti novo. Ali znači da novo područje ima cijenu. Trebat će vam više vremena za greške koje stručnjak ne bi napravio. Trebat će vam duže da prepoznate rizik. Trebat će vam više energije da razumijete kontekst.</p>
+<p>Zato je oportunitetni trošak vremena jedan od najvažnijih filtera na Bitcoin standardu.</p>
+<p>U fiat svijetu ljudi često precjenjuju financijski prinos i podcjenjuju život koji su potrošili da ga dobiju. Na Bitcoin standardu, gdje je novac bolji i čekanje ima veću vrijednost, vrijeme treba mjeriti strože. Investicija koja vam pojede pažnju, mir i radnu sposobnost mora dati vrlo dobar razlog zašto je vrijedna.</p>
+<p>Ponekad će najbolja investicija biti izravno ulaganje u vlastiti posao ili vlastitu vještinu.</p>
+<p>Ako ste obrtnik, možda nova oprema povećava prihod jasnije od dionice koju ne razumijete. Ako ste liječnik, odvjetnik, programer, dizajner, savjetnik, profesor, prodavač ili poduzetnik, možda edukacija, bolji alat, bolji sustav, bolji marketing, bolja prodaja ili bolje upravljanje vremenom donosi veći povrat od pokušaja da postanete investitor u deset tuđih područja. Ako već imate klijente, reputaciju i znanje, možda je tu vaš informacijski rub.</p>
+<p>Vlastiti posao nije automatski najbolja investicija. I u njemu se može rasipati novac, braniti loša ideja i miješati ego s analizom. Ali često je to područje u kojem najbrže možete vidjeti stvaran povrat, jer već znate teren.</p>
+<p>Na Bitcoin standardu ulaganje u sposobnost stvaranja vrijednosti često je ozbiljnije od potrage za sljedećom velikom prilikom.</p>
+<h3 id="kada-prepustiti-ulaganje-drugome"><a class="header" href="#kada-prepustiti-ulaganje-drugome">Kada prepustiti ulaganje drugome?</a></h3>
+<p>Postoji i druga mogućnost.</p>
+<p>Ako imate dovoljno štednje u Bitcoinu i želite dio izložiti proizvodnoj imovini, a nemate vremena, interesa ili prednosti da sami analizirate investicije, možda ima smisla dio tog posla prepustiti nekome tko se time profesionalno bavi. Danas je takvih mogućnosti malo, posebno ako tražimo istinski Bitcoin standard, ali s vremenom će ih vjerojatno biti više.</p>
+<p>To nije odluka koja se nosi na reputaciji osobe ili lijepoj prezentaciji. Treba znati tko upravlja novcem, što pokušava napraviti, kako mjeri povrat u Bitcoinu, gdje se imovina stvarno drži, koliko se plaća, kakva je likvidnost, tko ima skrbništvo i što se događa u lošem scenariju. Ako netko ne može mirno i običnim jezikom objasniti kako pokušava ostvariti povrat izražen u Bitcoinu, oprez je opravdan.</p>
+<p>Ali treba priznati i drugu stranu.</p>
+<p>Možda je vaš sat vredniji u vlastitom poslu nego u pokušaju da postanete polovični analitičar dionica, nekretnina, fondova, tehnologije, startupa ili roba. Ako netko drugi ima duboku ekspertizu, sustav, vrijeme i disciplinu, a vi imate bolju priliku stvarati vrijednost u vlastitom području, delegiranje dijela investicijske aktivnosti može imati smisla.</p>
+<p>Odluka nije između “sve radim sam” i “slijepo vjerujem drugome”.</p>
+<p>Zrela odluka je razumjeti dovoljno da znate što prepuštate, zašto prepuštate i gdje su granice.</p>
+<h3 id="nema-žurbe"><a class="header" href="#nema-žurbe">Nema žurbe</a></h3>
+<p>Jedna od najzdravijih posljedica Bitcoin standarda jest smanjenje žurbe.</p>
+<p>Na državnom novcu čovjek se boji da će novac izgubiti vrijednost ako ga drži. Na Bitcoin standardu taj pritisak se smanjuje. Ako ne vidite jasnu investicijsku tezu, možete čekati. Ako ne razumijete rizik, možete učiti. Ako je prilika nejasna, možete je pustiti. Ako niste sigurni koliko vremena će vam uzeti, možete ne ulaziti. Ako vam vlastiti posao nudi jasniji povrat, možete ulagati tamo.</p>
+<p>Uvijek će biti prilika koje su uspjele bez vas.</p>
+<p>To nije razlog za žaljenje. Nitko ne može znati za sve prilike u svijetu. Nitko ne može biti prisutan u svakom tržištu, svakoj tehnologiji, svakoj dionici, svakoj nekretnini, svakom poslu i svakom ranom projektu. Ako svoj život mjerite svim prilikama koje niste uhvatili, živjet ćete u stalnom osjećaju propuštanja.</p>
+<p>Vaša zadaća nije uhvatiti sve.</p>
+<p>Vaša zadaća je koristiti vlastito vrijeme, znanje, novac i odgovornost na način koji najbolje služi vašem životu, obitelji, poslu, davanju i dugoročnom Bitcoin standardu.</p>
+<p>To znači da ponekad investirate.</p>
+<p>Ponekad držite Bitcoin.</p>
+<p>Ponekad trošite Bitcoin.</p>
+<p>Ponekad ga dajete.</p>
+<p>Ponekad ulažete u vlastitu vještinu.</p>
+<p>Ponekad propuštate priliku i ostajete mirni.</p>
+<p>U tome nema proturječja ako postoji sustav.</p>
+<h3 id="diverzifikacija-bez-raspršenosti"><a class="header" href="#diverzifikacija-bez-raspršenosti">Diverzifikacija bez raspršenosti</a></h3>
+<p>Diverzifikacija ima smisla kada ne možete biti sigurni u pojedinačni ishod.</p>
+<p>Ali diverzifikacija ne smije biti izgovor za površnost. Ako uložite male iznose u deset stvari koje ne razumijete, možda niste smanjili rizik. Možda ste samo povećali broj stvari koje vam troše pažnju. S druge strane, ako imate nekoliko dobro razumljenih ulaganja, svako s jasnom tezom, veličinom pozicije, rizikom i izlazom, diverzifikacija može imati smisla.</p>
+<p>Veličina ulaganja treba odgovarati snazi teze.</p>
+<p>Slabija teza znači manji iznos ili čekanje. Jača teza može opravdati veći iznos, ali i dalje unutar ravnoteže imovine. Pravilo trećina iz prethodnog poglavlja ne govori da morate imati trećinu neto imovine u proizvodnoj imovini. Govori da proizvodna imovina ne bi trebala preuzeti više od trećine. Najvažnije je imati snažan novčani temelj, najmanje trećinu neto imovine u novcu, jer upravo taj novac daje opcionalnost, mir, prostor za davanje i sposobnost da investicije ne birate iz pritiska.</p>
+<p>Ako nemate jasnu investiciju, držanje Bitcoina nije neaktivnost.</p>
+<p>To je držanje novca.</p>
+<p>Kasnije, ako Bitcoin postane zreliji i ako njegova stopa rasta kupovne moći bude niža nego danas, ulaganja će možda lakše pobjeđivati držanje Bitcoina. To je normalno. Mlad novac koji se monetizira postavlja visoko mjerilo. Zreliji novac i dalje može čuvati kupovnu moć, ali s manjim očekivanim rastom. Tada će prag za proizvodnu imovinu biti drukčiji.</p>
+<p>Ali dok je monetizacija još u tijeku, žurba nije vrlina.</p>
+<h3 id="kako-provjeriti-investiciju-prije-odluke"><a class="header" href="#kako-provjeriti-investiciju-prije-odluke">Kako provjeriti investiciju prije odluke?</a></h3>
+<p>Prije nego što dio Bitcoina ili novca usmjerite u investiciju, korisno je proći jednostavan filter.</p>
+<p>Prvo pitanje: što točno kupujem?</p>
+<p>Ako ne možete objasniti u jednoj ili dvije jasne rečenice što kupujete, niste spremni. To nije sramota; to je znak da odluka još treba sazrijeti. “Dionica koja bi mogla rasti”, “projekt koji svi hvale” ili “prilika koja zvuči dobro” nije dovoljno. Treba znati što imovina jest, što radi i odakle bi trebala doći vrijednost.</p>
+<p>Drugo pitanje: zašto očekujem povrat izražen u Bitcoinu?</p>
+<p>Ako ulažete 0,1 BTC, 1 BTC ili 5 BTC, morate znati koliki povrat očekujete u Bitcoinu i zašto. Ako je povrat samo nominalan u eurima, to nije dovoljno. Na Bitcoin standardu euro može rasti ili padati u odnosu na Bitcoin. Mjerilo je Bitcoin.</p>
+<p>Treće pitanje: koji je vremenski horizont?</p>
+<p>Investicija bez vremenskog horizonta lako postane vječna nada. Ako očekujete da se teza pokaže za tri godine, recite zašto tri. Ako za pet, zašto pet. Ako nema jasnog roka, treba barem znati u kojim fazama provjeravate tezu.</p>
+<p>Četvrto pitanje: gdje je Bitcoin u odnosu na dugoročni trend?</p>
+<p>Ako je odluka veća od unaprijed određenog praga, primjerice jedne šezdesetine neto imovine, pogledajte i trend. To je obrazovni filter, ne osobno investicijsko pravilo. Ako je Bitcoin relativno nisko u odnosu na trend, investicija mora biti jača da opravda izlazak iz Bitcoina. Ako je relativno visoko, možda postoji više prostora za preusmjeravanje, ali i dalje samo uz tezu. Ako je blizu trenda, investicija se procjenjuje bez ekstremnog konteksta.</p>
+<p>Peto pitanje: što je povoljan, a što nepovoljan scenarij?</p>
+<p>Ne pišite samo što se događa ako uspije. Napišite što se događa ako ne uspije. Koliko Bitcoina možete izgubiti? Koliko vremena? Koliko mira? Koliko likvidnosti? Koliko reputacije? Koliko drugih prilika?</p>
+<p>Šesto pitanje: koliko vremena traži?</p>
+<p>Ako investicija traži 100, 200 ili 500 sati vašeg vremena, taj trošak mora biti dio računice. Koliko biste mogli zaraditi ili stvoriti da to vrijeme uložite u vlastiti posao, vještinu, klijente, obiteljsku stabilnost ili učenje koje vam izravno povećava prihod?</p>
+<p>Sedmo pitanje: narušava li ravnotežu imovine?</p>
+<p>Ako vas investicija gura preko razumnog udjela proizvodne imovine, ako smanjuje novčani temelj ispod sigurnog praga, ako smanjuje davanje, ako otvara potrebu za dugom ili ako stvara preveliku koncentraciju, možda iznos treba smanjiti ili odluku odgoditi.</p>
+<p>Osmo pitanje: je li ovo investicija ili strah da propuštam priliku?</p>
+<p>To je možda najiskrenije pitanje.</p>
+<p>Ako biste istu investiciju mirno odbili da nitko o njoj ne govori, možda ne ulažete zbog teze, nego zbog društvenog pritiska. Ako je ne možete objasniti bez uzbuđenja, možda još nije dovoljno jasna.</p>
+<h2 id="tri-zamišljene-situacije"><a class="header" href="#tri-zamišljene-situacije">Tri zamišljene situacije</a></h2>
+<p>Ovo poglavlje ne znači isto za svaku osobu. Ana ne treba razmišljati kao profesionalni investitor. Marko i Ivana moraju naučiti razlikovati obiteljsku investiciju od straha da zaostaju. Marin i Petra imaju najviše prilika, ali i najveću opasnost da im prilike pojedu vrijeme i ponovno zakompliciraju bilancu.</p>
+<h3 id="ana-najbolja-investicija-bila-je-povećati-sposobnost-zarade"><a class="header" href="#ana-najbolja-investicija-bila-je-povećati-sposobnost-zarade">Ana: najbolja investicija bila je povećati sposobnost zarade</a></h3>
+<p>Ana je nakon proračuna, izlaska iz kratkoročnog duga, početka davanja i gradnje male likvidnosti prvi put imala osjećaj da može gledati malo dalje od sljedećeg mjeseca. Imala je oko 1.900 eura kratkoročne likvidnosti, 800 eura u Bitcoinu i mali mjesečni višak. Nije to bilo mnogo, ali za nju je bilo novo.</p>
+<p>U tom trenutku počela je primjećivati različite “prilike”. Netko joj je spomenuo dionice. Netko drugi kripto projekt. Na internetu je vidjela ljude koji govore o velikim povratima. U njoj se javio poznat osjećaj: možda ponovno kasni.</p>
+<p>Ali sada je imala sustav.</p>
+<p>Umjesto da odmah uloži 300 eura u nešto što ne razumije, postavila je pitanje iz ovog poglavlja: ako uložim ovaj novac, što očekujem dobiti izraženo u Bitcoinu, koliko vremena moram potrošiti i razumijem li uopće rizik?</p>
+<p>Nije imala dobar odgovor.</p>
+<p>Zatim je pogledala vlastiti život. Na poslu je već neko vrijeme vidjela da bi mogla prijeći u bolju ulogu ako nauči raditi s određenim alatima, preuzme više administrativne odgovornosti i pokaže da može organizirati narudžbe i komunikaciju. Edukacija i certifikat koštali su 280 eura i tražili oko 40 sati rada. To nije zvučalo uzbudljivo kao tržišna investicija, ali imalo je jasniju tezu: ako joj poveća plaću za 120 eura mjesečno, povrat će biti izravan i ponavljajući.</p>
+<p>Odlučila je uložiti u vještinu.</p>
+<p>Šest mjeseci kasnije dobila je bolju poziciju i nešto veću plaću. Povećanje nije promijenilo cijeli život preko noći, ali je promijenilo njezin mjesečni višak. Dio povećanja išao je u Bitcoin, dio u likvidnost, dio u davanje. Tek tada je ponovno razmišljala o drugim investicijama, ali s manje pritiska.</p>
+<p>Za Anu je lekcija bila jasna: najbolja investicija nije bila ona koja je zvučala najuzbudljivije, nego ona koja je povećala njezinu sposobnost stvaranja vrijednosti.</p>
+<p>U njezinoj fazi života najvažniji povrat nije bio skriven na tržištu.</p>
+<p>Bio je u njezinoj satnici.</p>
+<h3 id="marko-i-ivana-obiteljska-investicija-mora-biti-razumljiva-obitelji"><a class="header" href="#marko-i-ivana-obiteljska-investicija-mora-biti-razumljiva-obitelji">Marko i Ivana: obiteljska investicija mora biti razumljiva obitelji</a></h3>
+<p>Marko je nakon stabilizacije proračuna, smanjenja duga i ponovne izgradnje Bitcoin pozicije počeo razmišljati o ulaganju dijela novca u dionice. Čitao je o kompanijama koje se bave energijom, umjetnom inteligencijom i infrastrukturom. Neke su mu se činile ozbiljne. Nije više bio impulzivan kao prije, ali je osjećao da možda propušta nešto važno ako sve drže u Bitcoinu i likvidnosti.</p>
+<p>Ivana nije bila protiv ulaganja. Njezino pitanje bilo je jednostavno: koliko Bitcoina očekujemo natrag i koliko ćeš vremena trošiti na praćenje toga?</p>
+<p>Marko u početku nije imao jasan odgovor.</p>
+<p>Prije bi to možda doživio kao nepovjerenje. Sada je shvatio da je pitanje ispravno. Ako ulaže obiteljski novac, teza mora biti razumljiva obitelji. Ne mora Ivana znati svaki detalj poslovnog modela, ali mora razumjeti zašto se novac premješta iz Bitcoina ili likvidnosti u nešto drugo.</p>
+<p>Napravili su usporedbu.</p>
+<p>Jedna mogućnost bila je uložiti 2.000 eura u nekoliko dionica koje Marko još nije dovoljno razumio. Druga je bila uložiti dio novca u Markovu dodatnu edukaciju i alat koji bi mu mogao otvoriti bolju poziciju ili dodatni prihod. Treća je bila ostaviti novac u Bitcoinu i nastaviti jačati likvidnost. Četvrta je bila manji iznos staviti u dionice kao učenje, ali ne kao ozbiljnu obiteljsku alokaciju.</p>
+<p>Odlučili su kombinirati. Mali iznos za učenje, bez velikog rizika. Veći dio u Bitcoin i likvidnost. Dio u Markovu edukaciju. To nije bila dramatična odluka, ali bila je dobra jer je odgovarala njihovom stvarnom životu.</p>
+<p>Nakon godinu dana Marko je shvatio da aktivno praćenje dionica uz posao, djecu i obiteljske obveze traži više vremena nego što je mislio. Nije prestao učiti, ali nije povećao ulaganje. Vidio je da njihova obitelj u ovoj fazi više dobiva od povećanja prihoda i stabilnosti nego od pokušaja da on postane poluprofesionalni investitor.</p>
+<p>To nije značilo da su dionice loše.</p>
+<p>Značilo je da njihovo vrijeme, znanje i obiteljski ritam imaju cijenu.</p>
+<h3 id="marin-i-petra-prilika-koja-nije-pobijedila-vrijeme"><a class="header" href="#marin-i-petra-prilika-koja-nije-pobijedila-vrijeme">Marin i Petra: prilika koja nije pobijedila vrijeme</a></h3>
+<p>Marin i Petra imali su najviše imovine i najviše investicijskih mogućnosti. Nakon što su smanjili dug, uredili bilancu i jasnije definirali Bitcoin, počele su im dolaziti ponude: poslovni udjeli, nekretninski projekti, privatna ulaganja, tehnološke firme, fondovi, partnerstva. Marin je imao prirodan poduzetnički instinkt i znao je prepoznati mogućnosti. Petra je bila trezvenija i češće pitala što će im takva prilika učiniti životu.</p>
+<p>Jedna konkretna prilika izgledala je posebno zanimljivo. Poznanik je pokretao poslovni projekt s dobrim timom i rastućim tržištem. Povrat u državnom novcu mogao je biti velik. Marin je mogao uložiti dio Bitcoina ili dio poslovne likvidnosti. Na papiru je projekt imao smisla.</p>
+<p>Petra je tražila da ga procijene u Bitcoinu.</p>
+<p>Koliko Bitcoina ulažu? Koliko Bitcoina očekuju natrag? U kojem roku? Što se događa ako Bitcoin sam nastavi rasti prema dugoročnom trendu? Koliko sati će Marin morati posvetiti projektu? Što se događa ako tim treba njegovu pomoć više nego što sada kažu? Može li isti iznos vremena i pažnje Marin uložiti u postojeći posao i dobiti jasniji povrat?</p>
+<p>Kada su sve zapisali, projekt je izgledao manje očito.</p>
+<p>Povoljan scenarij bio je dobar. Nepovoljan scenarij značio je gubitak značajnog dijela uloženog Bitcoina i barem 150 sati Marinove pažnje. Tih 150 sati u njegovom postojećem poslu moglo je vjerojatno donijeti više vrijednosti, s manje informacijskog rizika. Marin je shvatio da ga prilika privlači djelomično zato što je nova, a ne zato što je bolja.</p>
+<p>Odlučio je ne ući velikim iznosom.</p>
+<p>Umjesto toga, uložio je manji iznos kao učenje i odnos, uz jasnu granicu. Veći dio kapitala usmjerio je u poboljšanje postojećeg poslovnog sustava: bolju naplatu, bolji prodajni proces, alat koji smanjuje vrijeme izvedbe i osobu koja preuzima dio operativnog posla. Povrat nije bio spektakularan za pričanje, ali je bio stvaran. Posao je postao profitabilniji i manje ovisan o njegovom stalnom radu.</p>
+<p>Za Marina i Petru ulaganje na Bitcoin standardu nije značilo izbjegavati rizik. Značilo je da rizik mora biti dovoljno dobro razumljen da zasluži Bitcoin, vrijeme i pažnju.</p>
+<p>To im je postao novi prag.</p>
+<h2 id="zaključak"><a class="header" href="#zaključak">Zaključak</a></h2>
+<p>Bitcoin kroz vrijeme traži drukčiji odnos prema cijeni, volatilnosti i ulaganju.</p>
+<p>Cijena je važna, ali nije zapovijed. Volatilnost je stvarna, ali nije presuda. Dugoročni trend može biti koristan okvir, ali nije kristalna kugla.</p>
+<p>Bitcoin oslobađa čovjeka od prisile da stalno bježi iz novca. Zato ulaganje mora zaslužiti svoje mjesto. Povrat se ne mjeri samo u eurima, nego u Bitcoinu, vremenu, pažnji i miru koji odluka traži. Ako tezu ne možete jasno izgovoriti, čekanje nije pasivnost. Može biti najmudriji oblik discipline.</p>
+<p>Na kraju, cijena i trend ne smiju govoriti glasnije od života. Plaća, proračun, dug, davanje, djeca, posao, obiteljski razgovor i sigurnost i dalje su stol na kojem se odluka donosi.</p>
+<p>Tek tada možemo prijeći na posljednje praktično pitanje drugog dijela knjige: kako čuvati ono što smo odlučili držati i kako taj sustav prenijeti obitelji.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada cijena više nije zapovijed.</p>
+<ul>
+<li>Razumijete razliku između današnje cijene i dugoročnog trenda.</li>
+<li>Znate što znači kada je Bitcoin iznad, ispod ili blizu trenda.</li>
+<li>Razumijete da block-time okvir koristi <code>h = block height / 210.000</code>, ali da vaš proračun i obitelj i dalje žive u kalendarskim mjesecima.</li>
+<li>Razumijete vremenski odmak: ispred trenda, blizu trenda ili iza trenda nije zapovijed za kupnju ili prodaju.</li>
+<li>Koristite isti unaprijed odabrani i datirani model, a ne trend koji najbolje opravdava današnju želju.</li>
+<li>Za veće odluke koristite prag, primjerice jednu šezdesetinu neto imovine, prije dodatne provjere trenda.</li>
+<li>Ne koristite potencijski zakon kao dozvolu za dug, polugu ili nered.</li>
+<li>Razumijete da R² mjeri povijesno uklapanje modela, ne sigurnost budućeg ishoda.</li>
+<li>Investicije mjerite prema Bitcoinu, ne samo prema euru.</li>
+<li>Razumijete da veći očekivani povrat zahtijeva veću toleranciju na rizik i bolji sustav.</li>
+<li>Ulaganje dolazi tek nakon proračuna, izlaska iz duga, davanja i ravnoteže imovine.</li>
+<li>Nijedna odluka o Bitcoinu ne koristi dug, polugu ili novac koji već ima drugi zadatak.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako…</a></h2>
+<p>Ne idite dalje ako vam je dugoročni trend postao izgovor za kratkoročni nered. Ne idite dalje ako kupujete zato što se bojite da kasnite, prodajete zato što ne možete podnijeti pad ili ulažete zato što vam je dosadno čekati.</p>
+<p>Ne idite dalje ako svaki put tražite novi graf koji potvrđuje ono što već želite napraviti. Ne idite dalje ako visok R² čujete kao jamstvo, ako &quot;ispod trenda&quot; čujete kao nalog za kupnju ili ako &quot;iznad trenda&quot; čujete kao nalog za prodaju.</p>
+<p>Ne idite dalje ako investiciju ne možete izraziti u Bitcoinu. Ako znate samo priču, ali ne znate koliko Bitcoina ulažete, koliko očekujete natrag, u kojem roku i uz koji nepovoljan scenarij, još nemate tezu. Imate dojam.</p>
+<p>Ne idite dalje ako cijena govori glasnije od proračuna. Tada problem nije tržište. Problem je stanje iz kojeg gledate tržište.</p>
+<p>Ovo poglavlje je provedeno kada volatilnost čitate iz uređenog stanja, a ne iz panike, pohlepe ili potrebe da se preskoči redoslijed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="05-ravnoteza-imovine.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="07-skrbnistvo-i-sigurnost.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="05-ravnoteza-imovine.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="07-skrbnistvo-i-sigurnost.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

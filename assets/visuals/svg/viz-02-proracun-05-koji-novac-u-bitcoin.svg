@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Koji novac razmjenjujem u Bitcoin</title>
+  <desc id="desc">Tok odluke prolazi kroz pitanja o mjesecu, budućim troškovima, dugu, rezervi, davanju i onome što se odgađa prije nego novac postane stvarno slobodan za Bitcoin.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222222; }
+      .title { font-size: 30px; font-weight: 700; }
+      .mid { font-size: 20px; font-weight: 650; }
+      .small { font-size: 17px; }
+      .box { fill: #FFFFFF; stroke: #333333; stroke-width: 2.3; }
+      .soft { fill: #F6F6F3; stroke: #B9B9B4; stroke-width: 2; }
+      .final { fill: #EFEFED; stroke: #333333; stroke-width: 2.6; }
+      .line { stroke: #333333; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .side { stroke: #888888; stroke-width: 2; stroke-dasharray: 7 7; fill: none; }
+    </style>
+  </defs>
+  <rect width="1200" height="820" fill="#FFFFFF"/>
+  <text x="600" y="62" text-anchor="middle" class="label title">Koji novac razmjenjujem u Bitcoin</text>
+  <text x="600" y="100" text-anchor="middle" class="label small">Kupnja je mirnija tek kada novac prođe kroz obveze i ostane stvarno slobodan.</text>
+
+  <rect x="430" y="138" width="340" height="56" rx="10" class="soft"/>
+  <text x="600" y="174" text-anchor="middle" class="label mid">novac koji sada postoji</text>
+
+  <path d="M 600 194 L 600 228" class="line"/>
+  <rect x="380" y="236" width="440" height="52" rx="8" class="box"/>
+  <text x="600" y="269" text-anchor="middle" class="label small">je li mjesec pokriven?</text>
+
+  <path d="M 600 288 L 600 322" class="line"/>
+  <rect x="380" y="330" width="440" height="52" rx="8" class="box"/>
+  <text x="600" y="363" text-anchor="middle" class="label small">jesu li budući troškovi imenovani?</text>
+
+  <path d="M 600 382 L 600 416" class="line"/>
+  <rect x="380" y="424" width="440" height="52" rx="8" class="box"/>
+  <text x="600" y="457" text-anchor="middle" class="label small">je li dug vidljiv?</text>
+
+  <path d="M 600 476 L 600 510" class="line"/>
+  <rect x="380" y="518" width="440" height="52" rx="8" class="box"/>
+  <text x="600" y="551" text-anchor="middle" class="label small">postoji li rezerva i je li davanje odvojeno?</text>
+
+  <path d="M 600 570 L 600 604" class="line"/>
+  <rect x="380" y="612" width="440" height="52" rx="8" class="box"/>
+  <text x="600" y="645" text-anchor="middle" class="label small">što se odgađa ovom kupnjom?</text>
+
+  <path d="M 600 664 L 600 698" class="line"/>
+  <rect x="404" y="706" width="392" height="76" rx="12" class="final"/>
+  <text x="600" y="737" text-anchor="middle" class="label mid">stvarno slobodan novac</text>
+  <text x="600" y="764" text-anchor="middle" class="label small">tek tada ide mirnije u Bitcoin</text>
+
+  <path d="M 820 262 C 966 262 986 356 840 356" class="side"/>
+  <text x="966" y="304" text-anchor="middle" class="label small">ako je odgovor ne,</text>
+  <text x="966" y="329" text-anchor="middle" class="label small">vrati novcu posao</text>
+</svg>

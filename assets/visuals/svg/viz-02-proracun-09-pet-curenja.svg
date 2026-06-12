@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Pet curenja</title>
+  <desc id="desc">Shema prikazuje pet malih ponavljajućih transakcija koje se skupljaju u jedan mjesečni odljev.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222222; }
+      .title { font-size: 30px; font-weight: 700; }
+      .mid { font-size: 20px; font-weight: 650; }
+      .small { font-size: 17px; }
+      .box { fill: #FFFFFF; stroke: #333333; stroke-width: 2.3; }
+      .soft { fill: #F6F6F3; stroke: #B9B9B4; stroke-width: 2; }
+      .line { stroke: #333333; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+  <text x="600" y="62" text-anchor="middle" class="label title">Pet curenja</text>
+  <text x="600" y="101" text-anchor="middle" class="label small">Problem često nije jedna velika odluka, nego nevidljiv ritam malih odluka.</text>
+
+  <g class="label small">
+    <rect x="108" y="170" width="160" height="74" rx="10" class="box"/>
+    <text x="188" y="214" text-anchor="middle">dostave</text>
+    <rect x="310" y="170" width="160" height="74" rx="10" class="box"/>
+    <text x="390" y="214" text-anchor="middle">kave</text>
+    <rect x="512" y="170" width="160" height="74" rx="10" class="box"/>
+    <text x="592" y="214" text-anchor="middle">gorivo</text>
+    <rect x="714" y="170" width="160" height="74" rx="10" class="box"/>
+    <text x="794" y="214" text-anchor="middle">pretplate</text>
+    <rect x="916" y="170" width="176" height="74" rx="10" class="box"/>
+    <text x="1004" y="214" text-anchor="middle">sitne kupnje</text>
+  </g>
+
+  <path d="M 188 244 C 188 330 424 370 540 422" class="line"/>
+  <path d="M 390 244 C 390 326 492 360 560 422" class="line"/>
+  <path d="M 592 244 L 592 418" class="line"/>
+  <path d="M 794 244 C 794 326 692 360 624 422" class="line"/>
+  <path d="M 1004 244 C 1004 330 768 370 652 422" class="line"/>
+
+  <rect x="392" y="438" width="416" height="118" rx="14" class="soft"/>
+  <text x="600" y="486" text-anchor="middle" class="label mid">jedan mjesečni odljev</text>
+  <text x="600" y="520" text-anchor="middle" class="label small">vidljiv tek kad se male odluke zbroje</text>
+
+  <rect x="238" y="596" width="724" height="54" rx="10" class="box"/>
+  <text x="600" y="630" text-anchor="middle" class="label small">Prvi cilj nije promijeniti sve, nego vidjeti što se ponavlja.</text>
+</svg>
