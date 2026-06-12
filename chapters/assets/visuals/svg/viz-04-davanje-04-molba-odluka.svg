@@ -28,7 +28,7 @@
 
   <rect x="482" y="266" width="236" height="112" rx="16" class="soft"/>
   <text x="600" y="305" text-anchor="middle" class="label head">Bolji oblik?</text>
-  <text x="600" y="341" text-anchor="middle" class="label small">račun, hrana, vrijeme</text>
+  <text x="600" y="341" text-anchor="middle" class="label small">račun, hrana, dar</text>
   <text x="600" y="365" text-anchor="middle" class="label small">posao, proračun</text>
 
   <rect x="800" y="266" width="236" height="112" rx="16" class="soft"/>

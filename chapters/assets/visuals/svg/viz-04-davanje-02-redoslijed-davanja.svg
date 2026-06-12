@@ -51,6 +51,6 @@
   <path d="M 708 300 L 722 270" class="line"/>
   <path d="M 900 240 L 914 210" class="line"/>
 
-  <rect x="426" y="492" width="348" height="42" rx="10" fill="#FFFFFF" stroke="#8D8D86" stroke-width="2"/>
-  <text x="600" y="520" text-anchor="middle" class="label note">Dok dug postoji, davanje može biti malo i redovito.</text>
+  <rect x="408" y="492" width="384" height="42" rx="10" fill="#FFFFFF" stroke="#8D8D86" stroke-width="2"/>
+  <text x="600" y="520" text-anchor="middle" class="label note">Sustavno davanje počinje tek nakon nula duga.</text>
 </svg>

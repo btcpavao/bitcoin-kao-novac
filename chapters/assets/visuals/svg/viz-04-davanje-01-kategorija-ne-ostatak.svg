@@ -28,7 +28,7 @@
   <rect x="340" y="205" width="165" height="54" rx="10" class="soft"/>
   <text x="423" y="240" text-anchor="middle" class="label small">hrana</text>
   <rect x="135" y="290" width="165" height="54" rx="10" class="soft"/>
-  <text x="218" y="325" text-anchor="middle" class="label small">dug</text>
+  <text x="218" y="325" text-anchor="middle" class="label small">rezerva</text>
   <rect x="340" y="290" width="165" height="54" rx="10" class="soft"/>
   <text x="423" y="325" text-anchor="middle" class="label small">režije</text>
   <path d="M 190 394 C 260 424 383 424 452 394" class="empty"/>
@@ -43,7 +43,7 @@
   <rect x="900" y="205" width="165" height="54" rx="10" class="soft"/>
   <text x="983" y="240" text-anchor="middle" class="label small">hrana</text>
   <rect x="695" y="290" width="165" height="54" rx="10" class="soft"/>
-  <text x="778" y="325" text-anchor="middle" class="label small">dug</text>
+  <text x="778" y="325" text-anchor="middle" class="label small">rezerva</text>
   <rect x="900" y="290" width="165" height="54" rx="10" class="soft"/>
   <text x="983" y="325" text-anchor="middle" class="label small">režije</text>
   <rect x="797" y="388" width="165" height="70" rx="12" class="box"/>

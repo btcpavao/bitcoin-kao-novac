@@ -40,5 +40,5 @@
   <text x="947" y="350" text-anchor="middle" class="label small">bez transakcije</text>
   <text x="947" y="379" text-anchor="middle" class="label small">bez stvarne odluke</text>
 
-  <text x="600" y="590" text-anchor="middle" class="label small">Nije formula za točan iznos. To je provjera stanja iz kojeg dajete.</text>
+  <text x="600" y="590" text-anchor="middle" class="label small">Iznos nije dojam: provjerava se prema novcu kojim raspolažete.</text>
 </svg>

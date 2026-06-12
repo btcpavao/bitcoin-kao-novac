@@ -22,11 +22,15 @@ Proračun je prvi korak jer pokazuje što sadašnji novac mora napraviti.
 
 Dug je drugi korak jer pokazuje koliko budućeg novca više nije slobodno.
 
+Proračun u ovoj knjizi znači da sav novac ima namjenu prije transakcije. Nula eura ostaje bez imena. Ako novac ide u jednu kategoriju, ne ide u drugu. Zato proračun nije samo evidencija troškova, nego alat za gledanje oportunitetnog troška.
+
+Proračun vas uči vremenu. Što dulje vodite proračun, to bolje vidite povijest vlastitog novca i lakše planirate budućnost. Dug taj proces prekida. Dio novca koji tek dolazi već je vezan za staru odluku. Novac ne može mirno stariti jer ga prošlost stalno povlači natrag.
+
 Dok god dug stoji na bilanci, puni Bitcoin standard ne počinje.
 
-Može postojati mali iznos Bitcoina za učenje, naviku i razumijevanje. Ako je to stvarno mali iznos, primjerice manje od jedne šezdesetine neto imovine, to ne mijenja životnu sliku. Za nekoga je to 20 eura mjesečno, za nekoga 50, za nekoga 200. Poanta nije u dojmu, nego u učinku: takav iznos ne odgađa uplatu duga, ne vraća hranu na karticu, ne smanjuje zaštitni jastuk i ne mora se skrivati od osobe s kojom dijelite novac. On može pomoći čovjeku da nauči što je Bitcoin, kako izgleda novčanik, kako se ponaša cijena i zašto je bolji novac vrijedan ozbiljnog reda.
+Bitcoin i dug ne idu zajedno.
 
-Ali ozbiljno držanje Bitcoina dolazi poslije duga.
+Ako imate Bitcoin i dug, taj Bitcoin ulazi u plan zatvaranja duga. To nekome može zvučati kao izdaja Bitcoina, ali nije. Bitcoin kao novac ne služi tome da čovjek pored njega zadrži staru obvezu i nazove se dugoročnim. Ako Bitcoin može pomoći da budući novac ponovno pripada vama, onda je poslužio slobodi.
 
 Prvo čista bilanca.
 
@@ -36,7 +40,7 @@ Zatim ravnoteža imovine.
 
 Zatim Bitcoin kao glavni novac u toj ravnoteži.
 
-Ako vam treba samo prvi potez za danas, ne čekajte savršen plan. Zaustavite novi dug. Izvadite karticu iz novčanika i mobitela ako krpa mjesec. Popišite sve dugove na jedno mjesto. Odaberite jedan dug koji napadate prvi. To nije cijela strategija, ali je izlaz iz magle.
+Ako vam treba samo prvi potez za danas, ne čekajte savršen plan. Zaustavite novi dug. Izvadite karticu iz novčanika i mobitela ako krpa mjesec. Popišite sve dugove na jedno mjesto. Popišite i imovinu koja može zatvoriti dug, uključujući Bitcoin. To nije cijela strategija, ali je izlaz iz magle.
 
 ## Zašto dug mora izaći prvi
 
@@ -49,6 +53,20 @@ Bitcoin traži miran višak. Dug često proizvodi privid viška.
 Bitcoin traži da možete čekati kada cijena padne i ne poludjeti kada cijena raste. Dug vas tjera da svaki mjesec prvo platite prošlost, bez obzira na tržište, zdravlje, posao, djecu, kvar auta ili kašnjenje klijenta.
 
 Zato dug nije samo financijski trošak. Dug je stanje.
+
+Temeljni problem duga je psihološko stanje u kojem čovjek živi dok je u dugu.
+
+Dug proizvodi nemir i nejasnoću jer smo današnju stvar platili budućim novcem. Vrednovali smo nešto sadašnje novcem koji još nemamo. Ne znamo koliko ćemo ga imati. Ne znamo pod kojim uvjetima ćemo ga zaraditi. Ne znamo hoćemo li u toj budućnosti biti zdravi, zaposleni, sposobni, prisutni, u istoj državi, u istom poslu ili u istoj obitelji.
+
+To je vremenska konfuzija.
+
+Stvar je sadašnja.
+
+Novac je budući.
+
+Odluka je donesena danas, ali posljedica sjedi u mjesecima i godinama koji još nisu došli.
+
+Zato dug oduzima slobodu. Stara rečenica da je dužnik rob vjerovnika ne mora se prvo čitati politički ni pravno. Dovoljno ju je pročitati psihološki. Čovjek pod dugom nema isti unutarnji položaj kao slobodan čovjek. Dio njegove budućnosti već ima vlasnika.
 
 ![Timeline od nekoliko mjeseci u kojem svaki mjesec dio prihoda prvo odlazi na ratu duga, a tek ostatak ostaje slobodan.](assets/visuals/svg/03-dug-kao-zauzeta-buducnost.svg)
 
@@ -82,11 +100,31 @@ I tako prođe petnaest, dvadeset ili trideset godina u stanju zaduženosti.
 
 To je skupo na način koji se ne vidi samo u kamati. Čovjek je u tim godinama propustio prilike za veći prihod jer nije mogao mirno riskirati. Propustio je zadovoljstvo rada i štednje prije kupnje. Propustio je naučiti čekati. Propustio je kupovati stvari iz slobode, a ne iz buduće plaće. Propustio je davati iz čistog proračuna. Propustio je držati Bitcoin bez pozadinskog pritiska.
 
+Nije isto deset godina štedjeti za auto i kupiti auto sada pa ga deset godina otplaćivati.
+
+Možda je auto na kraju sličan. Ali čovjek nije isti.
+
+Ako štedite, radite, čekate i istražujete, već u tom procesu postajete bolji kupac. Gledate alternative. Učite što vam stvarno treba. Razgovarate s ljudima. Uspoređujete rješenja. Možda na kraju kupite jeftinije jer nemate kamatu. Možda dobijete popust na gotovinu. Možda kupite bolji auto, bolji alat, bolju opremu ili bolju edukaciju jer ste imali vrijeme da odluka sazrije.
+
+Priprema je dio vrijednosti.
+
+Kao kod putovanja. Čovjek koji mjesecima istražuje gdje će ići, što će vidjeti, gdje će spavati i kako će provesti vrijeme, već živi dio tog putovanja prije polaska. Anticipacija nije sporedna. Ona povećava zahvalnost. Isto vrijedi za stvari koje kupujemo iz rada, štednje i odgođene konzumacije.
+
+Dug preskače taj proces.
+
+Daje stvar odmah, ali oduzima put do nje.
+
+Kamata je cijena tog preskakanja. To je cijena trošenja budućeg novca. Koliko dugo čovjek ostaje u dugu, toliko mu novac curi iz bilance. Taj novac je mogao ostati u rezervi, kasnije biti pretvoren u Bitcoin, povećati kupovnu moć ili otvoriti stvarnu priliku. Umjesto toga plaća cijenu nestrpljenja.
+
+Dug smanjuje i kapacitet za rizik. Što je dug dublji i što dulje traje, čovjek ima manje prostora za hrabru, ali razumnu odluku. Teže mijenja posao. Teže pokreće posao. Teže ulaže u alat. Teže uči novu vještinu. Teže podnosi Bitcoin volatilnost. Teže investira tvrdi novac. Dug skraćuje čovjekov potencijal prije nego što on uopće pokuša rasti.
+
 Dug ima dubinu i trajanje.
 
 Dubina je veličina duga u odnosu na imovinu.
 
 Trajanje je vrijeme provedeno u stanju duga.
+
+Možemo razlikovati hitnost, kamatu, vjerovnika, redoslijed zatvaranja i posljedice kašnjenja. Ali ova knjiga ne uvodi trajnu kategoriju dobrog i lošeg duga. Takva podjela prečesto postane dozvola da neki dug ostane. Ovdje je pravilo jednostavnije: sav dug treba izaći iz bilance.
 
 Ne treba podcijeniti dubinu, ali trajanje je ono što polako odgaja čovjeka. Ako predugo živite s dugom, dug prestane izgledati kao privremeni problem i postane normalna pozadina života. Tada više nije samo broj. Postaje navika.
 
@@ -100,35 +138,55 @@ Ne učiniti dug ugodnijim.
 
 Izvaditi ga van.
 
-## Sitni Bitcoin i ozbiljan Bitcoin nisu ista stvar
+## Bitcoin i dug ne idu zajedno
 
-Kad razgovaram s ljudima o Bitcoinu, ne smeta mi ako netko tko ima dug drži mali iznos Bitcoina. Mali iznos može biti koristan. Čovjek uči, prati, razumije razliku između Bitcoina i "kripta", vidi volatilnost vlastitim očima i prestaje gledati Bitcoin kao apstraktnu stvar.
+Ovdje ne želim ostaviti rupu.
 
-To ne vrijedi za altcoin utrke, trgovanje s polugom, signale za trgovanje, kladionicu, Telegram grupe i pokušaj da se dug "riješi" jednim dobrim potezom. Ako dug skraćuje horizont, poluga ga uništava. Bitcoin kao novac traži red, a ne nadu da će sljedeći skok cijene platiti karticu.
+Bitcoin koji čovjek drži dok drži dug jest Bitcoin koji treba ući u plan zatvaranja duga.
 
-Ali taj iznos mora ostati mali.
+Ne zato što Bitcoin nije važan.
 
-Ako netko ima dug i istovremeno počinje ozbiljno graditi Bitcoin poziciju, redoslijed se pokvario.
+Baš zato što jest.
 
-Ozbiljan Bitcoin standard nije "imam nešto Bitcoina". Ozbiljan Bitcoin standard počinje tek kada je bilanca čista od duga, kada proračun ima stvarne kategorije, kada davanje ima svoje mjesto i kada neto imovina ide prema ravnoteži u kojoj najmanje trećina stoji u novcu, a taj novac dominantno postaje Bitcoin.
+Bitcoin nije značka kojom pokrivamo neurednu bilancu. Bitcoin nije dokaz da smo dugoročno dobro dok kartica, minus, leasing, stambeni kredit ili poslovna kreditna linija još drže dio budućnosti. Ako Bitcoin stoji pored duga, redoslijed je pokvaren.
 
-To je potpuno drukčije stanje od kupovanja Bitcoina dok kartica, minus, leasing ili stambeni kredit stoje sa strane.
+Pravi Bitcoin standard ne živi jednom nogom u fiatu, a drugom u Bitcoinu. Ne možemo ozbiljno govoriti o tvrdom novcu dok istovremeno trošimo novac iz budućnosti. Koncept treba biti jednostavan: troši se novac koji već postoji u našoj bilanci. Budući novac ne troši se unaprijed.
 
-Mali Bitcoin dok učite može biti sjeme.
+Zato se postojeći Bitcoin ne štiti od poglavlja o dugu. Ulazi u isti papir kao auto, oprema, financijska imovina, drugi stan, apartman, poslovni višak i sve drugo što može pomoći da dug nestane.
 
-Veliki Bitcoin prije razduživanja često postane izgovor.
+Prodaja Bitcoina radi zatvaranja duga nije izdaja Bitcoina. To je priznanje da Bitcoin kao novac ne može stajati na vrhu zaduženog života. Ako može vratiti budućnost natrag u vaše ruke, poslužio je svojoj svrsi.
 
-Čovjek kaže: imam Bitcoin, zato sam dugoročno dobro.
+To ne znači da se Bitcoin prodaje panično, preko sumnjivih kanala, pod pritiskom poruke ili telefonskog poziva. Nitko ne smije tražiti vaše riječi za oporavak, lozinke ili pristup novčaniku da bi vam "pomogao" oko duga. Ako prodajete Bitcoin, financijsku imovinu ili nekretninu, provjerite porezne, pravne i evidencijske posljedice u stvarnom sustavu u kojem živite.
 
-Ali u stvarnosti ima dug, nema davanje, nema čistu bilancu i nema slobodu da gleda Bitcoin kroz vrijeme bez prisile.
+Ali nemojte koristiti tu provjeru kao izgovor da sačuvate sliku o sebi kao Bitcoineru dok dug ostaje.
 
-To nije Bitcoin standard.
+Prvo dug van.
 
-To je držanje Bitcoina u zaduženom životu.
+Tek nakon toga Bitcoin može postati glavni novac u čistoj bilanci.
 
-Praktično pravilo je jednostavno. Ako kartica ili minus rastu, nova kupnja Bitcoina staje. Ako imate potrošački dug, ali mjesec se više ne krpa novim dugom, može ostati samo mali iznos za učenje. Ako postojeći Bitcoin više nije sitan iznos za učenje i može zatvoriti skup dug, prodaja dijela Bitcoina nije izdaja. Ako se isti dug može zatvoriti u 30 ili 60 dana iz prihoda i prodaje stvari koje nisu važne, možda nije potrebno dirati Bitcoin. Ali ta odluka treba biti napisana, ne opravdana osjećajem.
+## Dug hrani fiat standard
 
-Prodaja Bitcoina ne radi se panično, preko sumnjivih kanala, pod pritiskom poruke ili telefonskog poziva. Nitko ne smije tražiti vaše riječi za oporavak, lozinke ili pristup novčaniku da bi vam "pomogao" oko duga. Ako prodajete veći iznos Bitcoina, financijske imovine ili nekretnine, provjerite porezne, pravne i evidencijske posljedice u stvarnom sustavu u kojem živite.
+Dug nije samo osobna pogreška u tablici.
+
+Kada banka odobri kredit, novi novac često nastaje u trenutku zaduženja. Ako ste podigli 100.000 eura kredita, tih 100.000 eura nije samo promijenilo vlasnika. U samoj mehanici fiat sustava novi novac nastaje kroz dug.
+
+Pojedinačno, to izgleda malo. Čovjek kaže: što moj kredit mijenja u velikom sustavu?
+
+Ali knjiga ne gleda samo veliki sustav. Gleda i standard u kojem čovjek sudjeluje.
+
+Kad živimo na dug, hranimo standard u kojem se sadašnje želje financiraju budućim novcem, a kupovna moć novca polako se razvodnjava. To najteže pogađa ljude koji najmanje mogu pobjeći iz novca. Oni koji imaju malo imovine često najveći dio imovine drže baš u novcu: na računu, u gotovini, u plaći koja tek treba sjesti, u maloj rezervi koju čuvaju za kvar, bolest ili djecu.
+
+Kada se kupovna moć tog novca topi, njih boli prvo.
+
+Zato razduživanje nije samo privatna higijena. U ovoj knjizi ono je i moralna gesta. Odbijanje novog duga znači odbijanje sudjelovanja u navici da se budućnost troši unaprijed i da se teret takvog standarda prelijeva na ljude koji imaju najmanje prostora za obranu.
+
+Bitcoin standard zato ne znači samo kupiti Bitcoin.
+
+Znači prestati živjeti kao fiat čovjek.
+
+Fiat čovjek troši budući novac.
+
+Bitcoin čovjek najprije očisti bilancu.
 
 ## Stambeni kredit nije iznimka
 
@@ -162,7 +220,7 @@ Bez žurbe.
 
 Bez toga da nekretnina prelazi razumnu mjeru u neto imovini.
 
-U ovoj knjizi nekretnina u kojoj živite nije novac. Ona je osobna uporabna imovina: služi životu, obitelji, stabilnosti i mjestu. Može biti lijepa, korisna, obiteljski važna i emocionalno vrijedna. Ali ne smije pojesti bilancu. Ako se nekretnina kupuje kasnije, neka bude u okviru u kojem imovina koja služi životu ne preuzima cijeli život. Okvir trećina u ovoj knjizi nije zakon za svaku obitelj, nego disciplina koja čuva da dom, auto, apartman ili status ne progutaju novac, davanje, proizvodnu imovinu i Bitcoin.
+U ovoj knjizi nekretnina u kojoj živite nije novac. Ona je osobna uporabna imovina: služi životu, obitelji, stabilnosti i mjestu. Može biti lijepa, korisna, obiteljski važna i emocionalno vrijedna. Ali ne smije pojesti bilancu. Ako se nekretnina kupuje kasnije, neka bude u okviru u kojem imovina koja služi životu ne preuzima cijeli život. Disciplina trećina čuva da dom, auto, apartman ili status ne progutaju novac, davanje, proizvodnu imovinu i Bitcoin.
 
 Dom treba služiti životu.
 
@@ -170,21 +228,35 @@ Dom ne treba prezirati da bismo priznali da dug na domu nije sloboda.
 
 ## Davanje ne raste na dugu
 
-Drugi razlog zašto dug mora izaći prije ozbiljnog Bitcoina jest davanje.
+Još jedan razlog zašto dug mora izaći prije ozbiljnog Bitcoina jest davanje.
+
+Dok dug postoji, ova knjiga ne uvodi praksu sustavnog davanja.
+
+Čovjek može pomoći konkretnoj osobi kao što je i dosad pomagao: prema savjesti, stvarnoj potrebi i trenutku. Može donijeti hranu, pomoći roditelju, dati vrijeme, učiniti uslugu ili nekome diskretno pomoći novcem. Ali to nije treći korak ove knjige.
+
+Kad ova knjiga kasnije kaže Davanje, misli na novac. Volontiranje, vrijeme i usluga mogu biti dobri, ali nisu ova kategorija. Ovdje govorimo o novcu koji ima ime u proračunu i stvarnu namjenu prije nego što se potroši.
+
+Treći korak počinje tek nakon nula duga na bilanci.
+
+Davanje ne raste na dugu. Davanje raste iz slobodnog proračuna.
 
 Nakon proračuna i razduživanja treba uspostaviti kategoriju Davanje. Ne kao ukras i ne kao slučajni ostatak, nego kao stvarnu kategoriju. U osobnom Bitcoin standardu davanje nije dodatak za bogate. To je praksa koja mijenja čovjeka.
 
-Dok dug stoji na bilanci, davanje je ograničeno.
+Kad čovjek izađe iz duga i počne u proračunu držati kategoriju Davanje od 10 do 20 posto ukupnog novca kojim raspolaže, događa se velika promjena. Novac više nije samo obrana. Nije samo štednja. Nije samo Bitcoin. Dio novca aktivno ide prema drugima.
 
-Može postojati simbolično davanje. Može postojati mali iznos koji čuva srce otvorenim. Ali ozbiljnije davanje dolazi kada budući novac više ne mora prvo plaćati stare odluke.
+To nije 10 do 20 posto plaće.
 
-Kad čovjek izađe iz duga i počne u proračunu držati 10 do 20 posto za davanje, događa se velika promjena. Novac više nije samo obrana. Nije samo štednja. Nije samo Bitcoin. Dio novca aktivno ide prema drugima.
+Nije 10 do 20 posto viška.
 
-Taj postotak nije nova batina za kućanstvo koje je tek došlo do zraka. Davanje se ne gradi preko lijekova, hrane, režija i osnovne sigurnosti. Kod promjenjivih prihoda, mirovine ili obitelji koja šalje novac roditeljima, prvi korak može biti mali, unaprijed određen iznos. Pomoć obitelji treba ime i granicu; inače se lako pretvori u dug bez papira.
+Nije iznos koji je emocionalno ugodan.
+
+To je 10 do 20 posto novca kojim čovjek raspolaže, nakon što je izašao iz duga.
 
 To mijenja način rada.
 
 Čovjek koji daje počinje drukčije gledati prihod. Lakše vidi da novac dolazi kroz stvaranje vrijednosti za ljude. Lakše preuzima razborit rizik. Lakše radi, prodaje, uči i služi jer novac nije samo nešto što mora zadržati. Dio mora proći kroz njega.
+
+U slobodnoj razmjeni veći prihod nije sramota ako je nastao stvaranjem veće vrijednosti za druge ljude. Zato davanje nije iskupljenje za zarađivanje. Ono trenira čovjeka da bolje vidi potrebe, odnose, kupce, klijente, obitelj i zajednicu. Ne jamči automatski veći prihod, ali povećava kapacitet iz kojeg veći prihod može nastati.
 
 Zato je dug problem i za prihod.
 
@@ -218,7 +290,11 @@ Skrbništvo i sigurnost dolaze prije punog standarda jer veći Bitcoin saldo tra
 
 Tek tada dolazi puni Bitcoin standard: najmanje trećina neto imovine u novcu, a taj novac dominantno u Bitcoinu.
 
-Ta trećina je okvir ove knjige, ne individualna preporuka za svaku osobu u svakoj fazi. Novac koji treba platiti poznate obveze u sljedećih nekoliko godina ne smije automatski ovisiti o cijeni Bitcoina. Uvjerenje nije isto što i sposobnost da se izdrži volatilnost, pogotovo kada su u pitanju djeca, zdravlje, posao, mirovina ili plan povratka u Hrvatsku.
+Trećina u novcu nije ukrasna brojka. Ova knjiga polazi od toga da novac mora ponovno postati ozbiljna kategorija imovine. Na fiat standardu ljudi često bježe iz novca jer novac gubi kupovnu moć. Jedni zato "štede" u nekretnini u kojoj žive, pa im potrošna imovina proguta bilancu. Drugi bježe u proizvodnu ili financijsku imovinu, pa im kapitalna imovina traži vrijeme, pažnju, likvidnost i upravljanje.
+
+Bitcoin standard ide u drugom smjeru. Novac ponovno raste u važnosti. Zato ova knjiga želi najmanje trećinu neto imovine u novcu, najviše trećinu u imovini koja služi životu i najviše trećinu u proizvodnoj imovini. Dom, auto, apartman, posao, alati i ulaganja imaju svoje mjesto. Ali nijedna od tih stvari ne smije preuzeti ulogu novca.
+
+Novac koji treba platiti poznate obveze u sljedećih nekoliko godina ne smije automatski ovisiti o cijeni Bitcoina. Uvjerenje nije isto što i sposobnost da se izdrži volatilnost, pogotovo kada su u pitanju djeca, zdravlje, posao, mirovina ili plan povratka u Hrvatsku.
 
 Ako preskočite dug, preskočili ste temelj.
 
@@ -230,9 +306,9 @@ Ako kartica krpa mjesec, izvadite je iz novčanika i uklonite iz aplikacija za p
 
 Zatim popišite svaki dug. Za svaki dug zapišite preostali iznos, ratu, kamatu, rok, vjerovnika i posljedice kašnjenja. U isti popis ulaze kartice, minus, leasing, potrošački krediti, stambeni kredit, privatne posudbe, poslovne kreditne linije, dugovi prema dobavljačima, porezne obveze, mobitel na rate, "kupi sada, plati kasnije" obveze, rate za opremu i edukacije te dugovi ili računi u drugoj državi ako živite između dva sustava.
 
-Ako vodite posao, osobne dugove i poslovne obveze stavite u odvojene popise. Poslovni račun nije obiteljska rezerva, a obiteljski Bitcoin nije kreditna linija firme. Prije bilo kakve kupnje Bitcoina iz poslovnog novca moraju biti odvojeni PDV, doprinosi, plaće, dobavljači, najam prostora, porez i operativna rezerva.
+Ako vodite posao, osobne dugove i poslovne obveze stavite u odvojene popise. Poslovni račun nije obiteljska rezerva, a obiteljski Bitcoin nije kreditna linija firme. Dok postoji dug, kupnja Bitcoina iz poslovnog ili osobnog novca ne rješava problem. Prvo moraju biti odvojeni PDV, doprinosi, plaće, dobavljači, najam prostora, porez i operativna rezerva. Zatim se gleda kako dug izlazi iz bilance.
 
-Nakon toga popišite imovinu koja se može prodati. Auto, drugi auto, oprema koja stoji, apartman, višak stvari, financijska imovina, dio Bitcoina koji nije samo mali iznos za učenje, pa i nekretnina pod kreditom. Prvi scenarij treba biti ozbiljno razmatranje neposrednog zatvaranja duga likvidacijom imovine. Tek ako to nije izvedivo, ako bi stvorilo novu ozbiljnu opasnost ili ako bi porezne, ugovorne, obiteljske ili poslovne posljedice bile veće od koristi, birajte snježnu grudu ili snježnu lavinu.
+Nakon toga popišite imovinu koja se može prodati. Auto, drugi auto, oprema koja stoji, apartman, višak stvari, financijska imovina, Bitcoin koji držite, pa i nekretnina pod kreditom. Prvi scenarij treba biti ozbiljno razmatranje neposrednog zatvaranja duga likvidacijom imovine. Tek ako to nije izvedivo, ako bi stvorilo novu ozbiljnu opasnost ili ako bi porezne, ugovorne, obiteljske ili poslovne posljedice bile veće od koristi, birajte snježnu grudu ili snježnu lavinu.
 
 Na kraju odredite sljedeću konkretnu akciju. Ne "raditi na dugu", nego prodati određenu stvar, zatvoriti karticu, zatvoriti minus, poslati dodatnu uplatu, razgovarati s bankom ili staviti oglas danas. Velike odluke ne donose se isti dan kad se pojavio strah, pritisak ili poruka koja traži hitnost.
 
@@ -312,7 +388,7 @@ Dubok dug traži hitnost. Ako dug ugrožava osnovnu stabilnost, ako imovina jedv
 
 Ali nemojte podcijeniti plitak dug koji dugo traje.
 
-Plitak dug je varljiv jer se s njim može živjeti. Može se putovati, kupovati, držati malo Bitcoina, imati lijep stan, uredan auto i izgledati normalno. Rata ne guši. Kamata ne boli dovoljno. Obitelj se navikne.
+Plitak dug je varljiv jer se s njim može živjeti. Može se putovati, kupovati, imati lijep stan, uredan auto, aplikaciju za Bitcoin i izgledati normalno. Rata ne guši. Kamata ne boli dovoljno. Obitelj se navikne.
 
 Posebno vara mlade koji još žive s roditeljima. Ako ne plaćate puni najam, hranu, režije i pričuvu, a svejedno nemate višak, problem možda nije plaća nego sustav. Roditeljski dom tada nije slobodan novac za veći auto, izlaske, mobitel na rate i klađenje, nego prozor u kojem se dug može ubiti prije nego odrasli troškovi dođu u punoj veličini.
 
@@ -348,7 +424,7 @@ Neka financijska imovina ima porezne, mirovinske ili ugovorne posljedice. ETF, t
 
 Prodati nekretninu pod kreditom.
 
-Prodati dio Bitcoina ako je Bitcoin već značajniji od sitnog iznosa za učenje i ako dug time može nestati.
+Prodati Bitcoin ako dug time može nestati ili se bitno skratiti.
 
 To nije izdaja Bitcoina. Ako Bitcoin služi tome da zatvorite dug i dođete do čiste bilance, on je poslužio novcu bolje nego da stoji kao simbol budućnosti pored stare obveze.
 
@@ -464,7 +540,7 @@ U tih 180 dana:
 - dodatni prihod se traži gdje je stvarno moguće
 - kućanstvo zna koji dug se napada prvi
 - veće odluke ne donose se isti dan kad se pojavi strah ili pritisak
-- kupnja Bitcoina ostaje mala ili staje, osim sitnog iznosa za učenje
+- nova kupnja Bitcoina staje, a postojeći Bitcoin ulazi u plan zatvaranja duga
 
 To nije kazna. Obitelj treba hranu, zdravlje, osnovnu radost i mir. Ali razduživanje ne smije biti samo ideja. Mora se vidjeti u kalendaru, proračunu, prodaji, navikama i razgovorima.
 
@@ -476,7 +552,7 @@ Kad zadnji dug nestane, posao nije gotov.
 
 Tada počinje sljedeći redoslijed.
 
-Prvo se davanje uspostavlja kao stvarna kategorija. Ne kao povremena gesta, nego kao dio proračuna. Cilj nije odmah dokazati savršenstvo, ali davanje mora postati normalan tok novca.
+Prvo se davanje uspostavlja kao stvarna kategorija. Ne kao povremena gesta, ne kao dio plaće i ne kao ono što ostane, nego kao 10 do 20 posto ukupnog novca kojim raspolažete. Cilj nije glumiti savršenstvo, ali Davanje mora postati vidljiva kategorija u proračunu.
 
 Zatim se gradi ravnoteža imovine. Novac, imovina koja služi životu i proizvodna imovina dobivaju svoje mjesto. Dom, auto, apartman za odmor i statusne stvari ne smiju progutati bilancu. Proizvodna imovina mora stvarno stvarati vrijednost. Novac mora biti dovoljno velik da čuva odluku.
 
@@ -504,17 +580,19 @@ To nije velik dug u apsolutnom smislu. Ali za Anu je dovoljno velik da joj plać
 
 Najgore što bi Ana mogla napraviti jest reći: dug je mali, nastavit ću kupovati Bitcoin redovito, a karticu ću malo-pomalo. Tako mali dug može trajati godinama. Navika ostaje. Kartica ostaje. Osjećaj da se mjesec krpa ostaje.
 
-Ana zato zaustavlja sve osim malog iznosa Bitcoina koji već ima. Ne kupuje ozbiljno novi Bitcoin dok dug ne nestane.
+Ana zato zaustavlja sve nove kupnje Bitcoina dok dug ne nestane.
+
+Četiristo eura Bitcoina ne ostavlja kao mali znak nade. Stavlja ga na isti papir kao svu drugu imovinu. Ako joj taj Bitcoin može ubrzati izlazak iz kartice, stomatologa i duga sestri, on služi zatvaranju duga.
 
 Prvi potez je kartica izvan novčanika i izvan mobitela.
 
 Drugi potez je popis.
 
-Treći potez je prodaja: stari mobitel, bicikl koji stoji u hodniku, nekoliko komada opreme i odjeće. Skupi 260 eura. Vraća sestri dug i zatvara dio stomatologa.
+Treći potez je prodaja: Bitcoin, stari mobitel, bicikl koji stoji u hodniku, nekoliko komada opreme i odjeće. Ne zato što joj te stvari ništa ne znače, nego zato što joj budućnost mora ponovno pripadati njoj.
 
-Zatim ide snježna gruda: stomatolog, pa kartica.
+Zatim ide snježna gruda za ono što ostane: sestra, stomatolog, pa kartica.
 
-Sedam mjeseci živi jednostavnije. Nema dostava. Nema "samo ovaj put" kupnji. Slobodna potrošnja je mala, ali nije nula. Jedan vikend zamjenjuje odlaskom roditeljima na Krk. Bitcoin ne kupuje osim jednog simboličnog iznosa od 20 eura iz stvarnog viška, čisto da ostane u dodiru s dugoročnim ciljem.
+Sedam mjeseci živi jednostavnije. Nema dostava. Nema "samo ovaj put" kupnji. Slobodna potrošnja je mala, ali nije nula. Jedan vikend zamjenjuje odlaskom roditeljima na Krk. Bitcoin ne kupuje dok dug ne nestane.
 
 Kad kartica dođe na nulu, ne događa se čudo.
 
@@ -522,7 +600,11 @@ Ali događa se nešto važnije.
 
 Sljedeća plaća ne mora prvo liječiti prošli mjesec.
 
-Ana tada povećava kategoriju Davanje s malog simboličnog iznosa na stvaran mjesečni iznos koji može nositi. Zatim gradi novčani temelj. Tek nakon toga ozbiljnije povećava Bitcoin, ne iz straha da kasni, nego iz čistog viška.
+Ana tada ne "nastavlja po starom". Gradi novčani temelj i u sljedećem koraku uvodi Davanje kao stvarnu kategoriju: 10 do 20 posto novca kojim raspolaže.
+
+Tek tada počinje njezin drugi arc. Kroz davanje ne kupuje bolju budućnost magijom. Počinje drukčije vidjeti ljude, potrebe, kupce, kolege i prilike. Duh joj se mijenja. Postaje osoba koja bolje stvara vrijednost. Netko je primijeti, upozna ili joj otvori vrata bolje plaćenog posla.
+
+Ali to ne počinje dok je kartica još otvorena.
 
 Za Anu je najvažnije da mali dug ne postane dugi dug.
 
@@ -534,7 +616,7 @@ Ali ima auto-kredit, mobitel na rate, minus od 600 eura, nekoliko pretplata i ne
 
 Najgore što Matej može napraviti jest reći: živim doma, zato si mogu priuštiti malo više. Roditeljski dom nije hotelski popust za veći auto, izlaske, dostave, klađenje i trgovanje. To je privremeni prozor u kojem može ugasiti dug prije nego ga život natjera da plati puni račun odraslosti.
 
-Prvih sedam dana ne kupuje ništa novo. Iz bankovne aplikacije izvlači zadnjih trideset dana i označuje auto, gorivo, dostave, izlaske, kladionicu, pretplate, rate, karticu, minus i kupnje kriptoimovine. Briše karticu iz mobitela. Zaustavlja klađenje, polugu i nove kupnje altcoina. Bitcoin ostavlja kao mali iznos za učenje, ali prestaje kupovati iz osjećaja da kasni.
+Prvih sedam dana ne kupuje ništa novo. Iz bankovne aplikacije izvlači zadnjih trideset dana i označuje auto, gorivo, dostave, izlaske, kladionicu, pretplate, rate, karticu, minus i kupnje kriptoimovine. Briše karticu iz mobitela. Zaustavlja klađenje, polugu, nove kupnje altcoina i nove kupnje Bitcoina. Ono što već ima u Bitcoinu ulazi u isti popis imovine kao sve drugo što može pomoći da minus i rate nestanu.
 
 Prvi dug koji napada je minus. Nakon toga mobitel na rate. Nakon toga auto mora proći pitanje: služi li poslu i životu ili samo slici koju želi imati o sebi?
 
@@ -566,7 +648,7 @@ Za nekoliko mjeseci kratkoročni dugovi nestaju.
 
 Onda dolazi najteži razgovor: stambeni kredit.
 
-Ranije bi ga nazvali normalnim. Sada ga ne mogu preskočiti. Ako ozbiljno žele čistu bilancu, moraju pitati: treba li prodati kuću, zatvoriti kredit i otići u najam?
+Ranije bi ga nazvali normalnim. Sada ga ne mogu preskočiti. Marko i Ivana ne staju nakon kartice, auta i potrošačkog kredita. Ako stambeni kredit ostaje, oni još nisu razduženi.
 
 To nije Markova Bitcoin pobjeda i nije Ivanin poraz. To nije odluka koja se donosi zato što je netko našao rečenicu u knjizi. To je obiteljski proces.
 
@@ -576,11 +658,21 @@ Ali sada imaju novo pitanje: što će nam dati veću budućnost?
 
 Kuća pod dugom ili čista bilanca?
 
-Prije odluke pišu stvarne brojeve: kolika je rata, kolika je kamata, koliko bi koštao najam, koliko bi ostalo nakon prodaje, koliko stoji preseljenje, što se događa sa školom, koliko im treba sigurnosne rezerve i mogu li isti cilj postići agresivnom otplatom bez prodaje doma.
+Kuću zato stavljaju na papir bez svetog izuzeća. Pišu stvarne brojeve: kolika je rata, kolika je kamata, koliko bi koštao najam, koliko bi ostalo nakon prodaje, koliko stoji preseljenje, što se događa sa školom, koliko im treba sigurnosne rezerve i mogu li isti cilj postići agresivnom otplatom bez prodaje doma.
 
-Ako nakon toga prodajom mogu zatvoriti kredit, zadržati kapital, otići u izvediv najam, uspostaviti ozbiljno davanje i kasnije imati zdraviji novčani sloj, tada prodaja nije pad. To nije zamjena doma Bitcoinom. To je uklanjanje duga i vraćanje slobode odlučivanja.
+Brojevi pokažu ono što su emocionalno pokušavali izbjeći: prodaja kuće može zatvoriti kredit, ostaviti ih s kapitalom i omogućiti izvediv najam.
 
-Možda će jednog dana opet kupiti nekretninu. Ali tada neće kupovati iz potrebe da budu "normalni". Kupovat će iz čiste bilance, i samo ako nekretnina kao imovina koja služi životu ne preuzme cijelu bilancu.
+Prodaju kuću.
+
+Nije jednostavno. Nitko ne kaže da je jednostavno. Ali prodaja nije pad statusa ako zatvara stanje dužnika. Odlaze u najam ne zato da bi prezreli dom, nego zato da bi budući novac ponovno pripadao njima.
+
+Nakon nula duga uvode Davanje kao 10 do 20 posto ukupnog novca. Marko kroz praksu davanja upoznaje druge ljude, bolje vidi potrebe i otvara vrata poslu koji mu prije nije bio u vidokrugu. Ne zato što je davanje čarobna formula, nego zato što se mijenja njegov kapacitet za stvaranje vrijednosti.
+
+Tek tada ozbiljnije grade Bitcoin kao glavni novac u novčanom sloju.
+
+To nije all-in kao bijeg od stvarnosti. To je puni Bitcoin standard u redoslijedu knjige: bez duga, s davanjem, s novcem kao ozbiljnom kategorijom i s potrošnom imovinom pod kontrolom.
+
+Nekoliko godina kasnije mogu ponovno kupiti kuću. Ali tada kupuju iz čiste bilance, a ne iz potrebe da budu "normalni". Kuća, auto i potrošna dobra zajedno ne smiju preuzeti više od razumne trećine njihove neto imovine.
 
 Kad to shvate, Bitcoin prestaje biti Markova tema protiv obiteljskog mira.
 
@@ -596,9 +688,15 @@ Na papiru imaju imovinu.
 
 Ali kada sve stave na jedno mjesto, vide više od 300.000 eura dugoročnih i poslovnih obveza: poslovna kreditna linija, leasing za automobil, kredit vezan uz apartman, obveze prema dobavljačima, stambeni dug i nekoliko projekata u kojima naplata kasni. U tablici potraživanja stoji 38.000 eura starijih od četrdeset pet dana.
 
+Marin i Petra nisu siromašni.
+
+Ali nisu ni slobodni dok imovina stoji pokraj 300.000 eura obveza.
+
 Marin svaki dug može objasniti.
 
 Petra više ne pita može li se objasniti. Pita mora li ostati.
+
+Njihov problem nije manjak imovine, nego zadužena imovina. Zato prvi kanonski potez nije bolja optimizacija kredita, nego likvidacija dijela imovine radi nula duga.
 
 Prvo zatvaraju poslovnu kreditnu liniju. Marin je zvao alatom, ali alat koji stalno spašava kašnjenje naplate nije alat. To je navika. Uvode strože rokove naplate, zaustavljaju projekt koji troši previše radnog kapitala, zovu klijente koji kasne i prodaju opremu koja stoji.
 
@@ -607,6 +705,10 @@ Zatim gledaju apartman.
 Na papiru je investicija. U stvarnosti je dug, sezona, čišćenje, platforme, održavanje, poruke gostiju, porez, popravci, Petrina pažnja i stalna mala briga. Prije odluke računaju bruto prihod, prazne mjesece, porez, popravke, amortizaciju namještaja i vlastito vrijeme. Tek tada vide da apartman ne nosi onoliko slobode koliko su mu pripisivali. Prodaju ga i zatvaraju dio obveza.
 
 Zatim gledaju poslovni automobil. Ako je stvarno potreban i stvara prihod, ostaje. Ako je djelomično status, ide. Računaju koliko donosi, koliko štedi, koliko košta stajanje i što se događa ako ga nema. Nema više skrivanja iza poslovnog jezika.
+
+Financijska imovina i Bitcoin također ulaze u istu provjeru. Nema posebnog mentalnog sefa u kojem Bitcoin stoji čist, dok su obveze u drugom dijelu papira. Ako im dio Bitcoina ili financijske imovine može brže vratiti čistu bilancu, to se mora ozbiljno razmotriti.
+
+Prodaja imovine radi čiste bilance nije pad statusa. To je povratak u slobodu.
 
 Na kraju gledaju i privatni dom pod dugom. I on ulazi u istu raspravu. Ne zato što dom nije važan, nego zato što čist život bez duga postaje važniji od slike stabilnosti koja se održava obvezama.
 
@@ -626,6 +728,42 @@ Bitcoin im više nije protuteža kaosu.
 
 Postaje glavni novac u čistijoj bilanci.
 
+## Dvije budućnosti
+
+Ovo poglavlje traži teške poteze.
+
+Prodati auto nije lako.
+
+Prodati Bitcoin nije lako.
+
+Prodati kuću nije lako.
+
+Preseliti se u najam nije lako.
+
+Reći poslu da više ne može živjeti na kreditnoj liniji nije lako.
+
+Zato ovu odluku ne treba gledati samo kroz sljedećih mjesec dana. Treba je staviti na papir u vremenu.
+
+Kako izgleda vaš život za pet godina ako sada stvarno izađete iz duga?
+
+Kako izgleda za deset?
+
+Kako izgleda za petnaest?
+
+Kako izgleda za dvadeset?
+
+I onda drugo pitanje.
+
+Kako izgleda vaš život za pet, deset, petnaest i dvadeset godina ako dug ostane "podnošljiv"?
+
+Kratkoročno, izlazak iz duga može izgledati kao gubitak: manji auto, prodana imovina, najam, manje komfora, manje statusa, manje priče o tome kako sve ide prema planu.
+
+Dugoročno, isti potez može biti početak slobode: čista bilanca, davanje, ravnoteža imovine, Bitcoin kao glavni novac, veći kapacitet za rizik, bolji posao, bolja sposobnost stvaranja vrijednosti i manje života koji pripada starim odlukama.
+
+Ova knjiga ne obećava da će kratki rok biti udoban.
+
+Kaže da treba pogledati dugu liniju.
+
 ## Zaključak
 
 Dug ne treba uljepšavati.
@@ -634,7 +772,7 @@ Treba ga zatvoriti.
 
 Proračun pokazuje sadašnji novac. Dug pokazuje budućnost koja je već obećana. Dok god je ta budućnost obećana, ozbiljan Bitcoin standard ne počinje.
 
-Mali iznos Bitcoina za učenje može postojati. Ali ozbiljno držanje Bitcoina dolazi nakon duga, ne prije njega.
+Bitcoin ne stoji pored duga kao znak da je budućnost ipak sigurna. Ako postoji dug, Bitcoin ulazi u plan zatvaranja duga. Ozbiljno držanje Bitcoina dolazi nakon duga, ne prije njega.
 
 Stambeni kredit nije iznimka.
 
@@ -664,7 +802,7 @@ Ovo poglavlje je provedeno kada dug više nije normalno stanje života.
 - Dug je zatvoren ili postoji najagresivniji izvediv plan zatvaranja.
 - Snježna gruda ili snježna lavina koriste se samo kao rezervni postupci kada neposredno zatvaranje nije izvedivo.
 - Bitcoin se ne koristi kao izgovor za ostanak u dugu.
-- Znate kada kupnja Bitcoina staje, kada ostaje samo mali iznos za učenje i kada prodaja dijela Bitcoina ima smisla.
+- Nova kupnja Bitcoina staje dok dug postoji, a postojeći Bitcoin ulazi u plan zatvaranja duga.
 - Stambeni kredit nije mentalno izuzet iz kategorije duga.
 
 ## Ne idite dalje ako…
