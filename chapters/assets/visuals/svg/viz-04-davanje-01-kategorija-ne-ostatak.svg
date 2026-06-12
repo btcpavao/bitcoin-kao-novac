@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Davanje kao kategorija, ne ostatak</title>
+  <desc id="desc">Usporedba davanja kao ostatka mjeseca s davanjem kao proračunskom kategorijom.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222222; }
+      .title { font-size: 30px; font-weight: 700; }
+      .head { font-size: 23px; font-weight: 700; }
+      .mid { font-size: 20px; font-weight: 650; }
+      .small { font-size: 17px; }
+      .panel { fill: #F7F7F5; stroke: #C9C9C3; stroke-width: 2.5; }
+      .box { fill: #FFFFFF; stroke: #333333; stroke-width: 2.5; }
+      .soft { fill: #FFFFFF; stroke: #8D8D86; stroke-width: 2; }
+      .line { stroke: #333333; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .empty { fill: none; stroke: #8D8D86; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+  <text x="600" y="58" text-anchor="middle" class="label title">Davanje nije ostatak mjeseca</text>
+
+  <rect x="70" y="112" width="500" height="470" rx="22" class="panel"/>
+  <text x="320" y="160" text-anchor="middle" class="label head">Ostatak mjeseca</text>
+  <rect x="135" y="205" width="165" height="54" rx="10" class="soft"/>
+  <text x="218" y="240" text-anchor="middle" class="label small">stanovanje</text>
+  <rect x="340" y="205" width="165" height="54" rx="10" class="soft"/>
+  <text x="423" y="240" text-anchor="middle" class="label small">hrana</text>
+  <rect x="135" y="290" width="165" height="54" rx="10" class="soft"/>
+  <text x="218" y="325" text-anchor="middle" class="label small">dug</text>
+  <rect x="340" y="290" width="165" height="54" rx="10" class="soft"/>
+  <text x="423" y="325" text-anchor="middle" class="label small">režije</text>
+  <path d="M 190 394 C 260 424 383 424 452 394" class="empty"/>
+  <path d="M 168 397 C 196 492 443 492 474 397" class="empty"/>
+  <text x="320" y="516" text-anchor="middle" class="label mid">Davanje čeka ostatak</text>
+  <text x="320" y="548" text-anchor="middle" class="label small">i često ne dočeka ništa.</text>
+
+  <rect x="630" y="112" width="500" height="470" rx="22" class="panel"/>
+  <text x="880" y="160" text-anchor="middle" class="label head">Kategorija u proračunu</text>
+  <rect x="695" y="205" width="165" height="54" rx="10" class="soft"/>
+  <text x="778" y="240" text-anchor="middle" class="label small">stanovanje</text>
+  <rect x="900" y="205" width="165" height="54" rx="10" class="soft"/>
+  <text x="983" y="240" text-anchor="middle" class="label small">hrana</text>
+  <rect x="695" y="290" width="165" height="54" rx="10" class="soft"/>
+  <text x="778" y="325" text-anchor="middle" class="label small">dug</text>
+  <rect x="900" y="290" width="165" height="54" rx="10" class="soft"/>
+  <text x="983" y="325" text-anchor="middle" class="label small">režije</text>
+  <rect x="797" y="388" width="165" height="70" rx="12" class="box"/>
+  <text x="880" y="417" text-anchor="middle" class="label mid">Davanje</text>
+  <text x="880" y="445" text-anchor="middle" class="label small">ima posao</text>
+  <path d="M 880 459 L 880 520" class="line"/>
+  <text x="880" y="553" text-anchor="middle" class="label small">može izaći bez panike</text>
+</svg>

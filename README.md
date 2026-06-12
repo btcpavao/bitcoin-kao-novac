@@ -1,5 +1,5 @@
 # Bitcoin kao novac
 
-Ovo je generirani javni output knjige.
+Ovaj repozitorij sadrži javni sadržaj knjige **Bitcoin kao novac**.
 
-Izvorni rukopis, uredničke bilješke i radni materijali žive u privatnom source repou. Ovaj repo sadrži samo statičku mdBook verziju za GitHub Pages.
+Poglavlja su u folderu `chapters/`.
