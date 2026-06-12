@@ -1,6 +1,6 @@
 # Predgovor
 
-Ova knjiga zove se **Bitcoin kao novac**. Njezin podnaslov je **Od držanja Bitcoina do uređenog sustava odluka**. Ta rečenica najkraće opisuje ono što sam pokušao napraviti.
+Ova knjiga zove se **Bitcoin kao novac**. Njezin podnaslov je **Od držanja Bitcoina do uređenog sustava odluka**!!! Ta rečenica najkraće opisuje ono što sam pokušao napraviti.
 
 Danas gotovo svi znaju za Bitcoin. Teško je pronaći osobu koja barem jednom nije čula tu riječ. Do nekoga je došla kroz vijesti, do nekoga kroz prijateljski razgovor, do nekoga kroz priču o cijeni, “kriptu”, upozorenjima, euforiji ili ismijavanju.
 
