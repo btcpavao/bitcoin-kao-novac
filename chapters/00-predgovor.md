@@ -302,7 +302,7 @@ Zato je moj put uzeo pauzu.
 
 Bitcoin mi se snažno vratio 2017. godine, kada je cijena ponovno ušla u javnost i kada sam vidio što se dogodilo s nečim što sam ranije gledao oko 600 dolara. Kao i mnogi, prošao sam kratku altcoin fazu. Pitao sam se je li Bitcoin možda zastario, postoje li brži, bolji, noviji projekti. Bear market 2018. bio je dobro čišćenje iluzija. Nije bio ugodan, ali je bio koristan.
 
-Nakon toga došle su ozbiljnije knjige, podcasti, Saifedean Ammous, *The Bitcoin Standard*, kasnije *The Fiat Standard*, rad u Bitcoin prostoru, dublje razumijevanje razlike između Bitcoina i kripta, i sve jasniji osjećaj da Bitcoin nije tehnološka zanimljivost nego monetarni fenomen.
+Nakon toga došle su ozbiljnije knjige, podcasti, *The Bitcoin Standard*, rad u Bitcoin prostoru, dublje razumijevanje razlike između Bitcoina i kripta, i sve jasniji osjećaj da Bitcoin nije tehnološka zanimljivost nego monetarni fenomen.
 
 Paralelno s tim, kroz proračun, YNAB, Wineabilu, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije i obične životne situacije, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
 
