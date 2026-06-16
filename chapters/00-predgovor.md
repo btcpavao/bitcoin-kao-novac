@@ -2,13 +2,13 @@
 
 Ova knjiga zove se **Bitcoin kao novac**, a njezin podnaslov mogao bi biti: **od držanja Bitcoina do uređenog sustava odluka**.
 
-To je najkraći opis onoga što sam pokušao napraviti. Ne napisati još jednu knjigu koja čovjeka uvjerava da kupi Bitcoin. Ne napisati knjigu o tradingu, ciklusima, brzom bogaćenju ili tome kako pogoditi sljedeći vrh. Ne napisati ni tehnički priručnik za ljude koji žele postati stručnjaci za svaki detalj protokola.
+To je najkraći opis onoga što sam pokušao napraviti: ne napisati još jednu knjigu koja čovjeka uvjerava da kupi Bitcoin, ne napisati knjigu o tradingu, ciklusima, brzom bogaćenju ili tome kako pogoditi sljedeći vrh, niti napisati tehnički priručnik za ljude koji žele postati stručnjaci za svaki detalj protokola.
 
 Ova knjiga nastala je iz drukčijeg pitanja:
 
 **Što ako je Bitcoin stvarno novac?**
 
-Ne investicija koju držimo sa strane. Ne “kripto” pozicija u aplikaciji. Ne priča koju pratimo kada cijena raste. Ne ideja s kojom se slažemo dok se život i dalje vodi po starim pravilima.
+Ne investicija koju držimo sa strane, ne “kripto” pozicija u aplikaciji, ne priča koju pratimo kada cijena raste i ne ideja s kojom se slažemo dok se život i dalje vodi po starim pravilima.
 
 Nego novac.
 
