@@ -1,239 +1,409 @@
 # Predgovor
 
-Ova knjiga zove se **Bitcoin kao novac**. Njezin podnaslov je **Od držanja Bitcoina do uređenog sustava odluka**. Ta rečenica najkraće opisuje ono što sam pokušao napraviti.
+Ova knjiga zove se **Bitcoin kao novac**.
 
-Danas gotovo svi znaju za Bitcoin. Teško je pronaći osobu koja barem jednom nije čula tu riječ. Do nekoga je došla kroz vijesti, do nekoga kroz prijateljski razgovor, do nekoga kroz priču o cijeni, “kriptu”, upozorenjima, euforiji ili ismijavanju.
+Njezin podnaslov mogao bi biti: **od držanja Bitcoina do uređenog sustava odluka**.
 
-Ali između toga da je čovjek čuo za Bitcoin i toga da Bitcoin doista razumije postoji velika udaljenost.
+To je najkraći opis onoga što sam pokušao napraviti. Ne napisati još jednu knjigu koja čovjeka uvjerava da kupi Bitcoin. Ne napisati knjigu o tradingu, ciklusima, brzom bogaćenju ili tome kako pogoditi sljedeći vrh. Ne napisati ni tehnički priručnik za ljude koji žele postati stručnjaci za svaki detalj protokola.
 
-Još je veća udaljenost između toga da netko **drži Bitcoin** i toga da oko Bitcoina ima uređen životni sustav.
+Ova knjiga nastala je iz drukčijeg pitanja:
 
-Ova knjiga ne nastaje prvenstveno zato da čovjeka prevede iz stanja “nemam Bitcoin” u stanje “imam Bitcoin”. Taj se prijelaz već događa i događat će se sve više. Ljudi će prvi put kupiti Bitcoin iz znatiželje, zbog razgovora s prijateljem, članka, cijene, tehnologije ili sve dublje sumnje u novac koji koriste svaki dan.
+**Što ako je Bitcoin stvarno novac?**
 
-Ova knjiga počinje na drugom mjestu.
+Ne investicija koju držimo sa strane. Ne “kripto” pozicija u aplikaciji. Ne priča koju pratimo kada cijena raste. Ne ideja s kojom se slažemo dok se život i dalje vodi po starim pravilima.
 
-Počinje ondje gdje čovjek kaže: u redu, sada imam Bitcoin. Možda malo, možda više, možda dugo, možda tek od jučer. Ali što sada s tim?
+Nego novac.
 
-Što Bitcoin znači za moj proračun? Što znači za dug? Što znači za davanje? Što znači za obitelj? Što znači za posao? Što znači za neto imovinu? Što znači za kuću, auto, štednju, rizik, sigurnost, nasljeđivanje i budućnost?
+Ako je Bitcoin novac, onda pitanje više nije samo koliko ga imamo. Pitanje je kako s njim živimo. Kako ga uklapamo u proračun. Kako se odnosimo prema dugu. Kako čuvamo višak. Kako dajemo. Kako gledamo dom, auto, posao, kapital, rizik, obitelj, budućnost i sigurnost. Kako donosimo odluke kada cijena raste, kada pada i kada se čini da se ništa ne događa.
 
-Drugim riječima: kako od stanja “držim Bitcoin” doći do stanja “imam uređen sustav odluka oko novca”?
+Drugim riječima: **kako Bitcoin prestaje biti stvar koju držimo i postaje novac oko kojega je uređen život?**
 
 To je pitanje ove knjige.
 
-I važno je odmah reći: ova knjiga nije samo za osobu u obitelji koja već sluša Bitcoin podcaste, prati cijenu, zna što su početne riječi i ima mišljenje o svakoj burzi, skrbniku i hardverskom novčaniku. Ona je i za osobu koja s njom dijeli život. Za ženu ili muža koji možda nisu jednako duboko u Bitcoinu, ali će živjeti s posljedicama odluka. Za roditelja koji se pita što će djeci ostaviti osim salda. Za poduzetnika koji osjeća da mu inflacija, porezi, dug i loš novac stalno pomiču tlo pod nogama. Za čovjeka koji nema vremena postati stručnjak za svaki tehnički detalj, ali želi znati kako ovo stvarno uklopiti u život.
+## Zašto sam napisao ovu knjigu
 
-U posljednje vrijeme često se vraćam jednoj misli koju sam čuo od Michaela Saylora. Govorio je o tome kako je osobno proveo više od tisuću sati pokušavajući objasniti Bitcoin pojedincima, poduzetnicima i korporacijama, a ipak ni u Microsoftu, nakon njegove prezentacije, nije uspio dobiti ni 0,1% podrške za ideju da tvrtka stavi Bitcoin u svoju bilancu. Rekao je i nešto još oštrije: čak i kada bi se svake godine ulagalo 100 milijardi dolara u edukaciju o Bitcoinu, to samo po sebi ne bi dovoljno pomaknulo adopciju.
+Ovu knjigu nisam napisao zato što sam tražio novu temu.
 
-Ta mi je rečenica važna jer pogađa stvarni problem. Ljudi ne odbijaju Bitcoin samo zato što im nedostaje još jedan dobar video, još jedan graf, još jedna knjiga ili još jedno objašnjenje zašto je njegova ponuda ograničena. Bitcoin je još uvijek u ranoj fazi monetizacije, a u toj fazi nosi neobičnu kombinaciju: može biti najbolji novac koji se ikada pojavio, a istodobno jedna od najvolatilnijih imovina koju običan čovjek može držati.
+Napisao sam je zato što više nisam mogao ne napisati je.
 
-Može imati volatilnost oko 40. Može godinama rasti stopama koje izgledaju nestvarno, recimo 50% godišnje u jednom duljem razdoblju, a možda 30% u nekoj zrelijoj fazi. Ali čovjek koji ga želi koristiti kao novac ne živi u prosjeku. Živi u mjesecu u kojem treba platiti stanarinu, ratu kredita, plaću zaposleniku, porez, liječenje, školu, dobavljača, popravak auta ili ljetovanje koje je djeci već obećano.
+Iza mene je više od 10.000 sati proučavanja Bitcoina, novca, ekonomije, proračuna, duga, sigurnosti, tržišta i svega što se oko toga prirodno otvara. Dio tog vremena bio je čitanje, slušanje, računanje, promatranje ciklusa, proučavanje knjiga, modela i tehničkih objašnjenja. Dio je bio rad u Bitcoin industriji. Dio je bio učenje kroz vlastite odluke, pogreške, pauze, krive pretpostavke i postupno slaganje boljeg sustava.
 
-Zbog toga velika većina ljudi nema samo informacijski problem. Ima problem bilance, vremena, uvjerenja i živaca. Jednima nedostaje dovoljno viška da izdrže velik pad bez panike. Drugima još nije jasna razlika između Bitcoina i šireg kripto šuma. Mnogi nemaju vremena sami proći stotine sati ekonomije, povijesti novca, kriptografije, energetike, sigurnosti i tržišnih ciklusa. Čak i kada čovjek počne razumijevati, obitelj, partner, posao ili dug mogu ga spriječiti da Bitcoin odmah počne koristiti kao primarni novac.
+Ali možda najvažniji dio nisu bili sati provedeni pred ekranom.
 
-U tom smislu ova knjiga namjerno pliva uzvodno. Njezina teza nije samo da Bitcoin treba držati. Teza je da ga čovjek može početi koristiti kao novac već sada, dok je još volatilan, ako prije toga uredi život oko novca dovoljno dobro da ga volatilnost ne nosi kao val. Edukacija može zapaliti uvjerenje, ali sustav je ono što uvjerenje nosi kroz padove, rastove, račune, obitelj, posao i vrijeme.
+Najvažniji dio bili su razgovori.
 
-Možda je baš tu najveća vrijednost ove knjige: ne u pokušaju da lijepim riječima ukloni strah od volatilnosti, nego u pokušaju da pokaže kako se oko visoko volatilnog, ali dugoročno snažnog novca gradi proračun, odnos prema dugu, praksa davanja, ravnoteža imovine, sigurnost, obiteljsko razumijevanje i sposobnost čekanja.
+Razgovarao sam s ljudima koji već imaju Bitcoin. S ljudima koji ga imaju malo i s ljudima kojima Bitcoin čini značajan dio imovine. S ljudima koji su duboko u temi, koji znaju argumente, čitaju knjige, razumiju proof of work, znaju razlikovati Bitcoin od “kripta” i već godinama žive s tom idejom. Razgovarao sam i s potpunim početnicima: ljudima koji su čuli za Bitcoin, ali ne znaju odakle početi; ljudima koji se boje volatilnosti; ljudima koji nemaju vremena proći stotine sati podcasta, knjiga, foruma i rasprava; ljudima koji jednostavno žele živjeti svoj život, raditi svoj posao, brinuti se za obitelj i koristiti bolji novac ako takav novac postoji.
 
-U ovoj knjizi neće biti mnogo prostora potrošeno na samu Bitcoin tehnologiju. Ne zato što tehnologija nije važna. Važna je. Ali postoje drugi radovi koji mnogo bolje i dublje objašnjavaju kriptografiju, dokaz rada, energetiku, ekonomsku teoriju, povijest novca i tehničke detalje protokola. Tko želi produbiti uvjerenje u tim smjerovima, imat će kamo ići.
+Kroz sve te razgovore počeo se ponavljati isti obrazac.
 
-Ovdje me zanima drugo pitanje: ako je Bitcoin novac, kako sada trebam živjeti?
+Problem nije bio samo u tome da ljudi ne razumiju Bitcoin.
 
-Kako smanjiti rasipanje novca? Kako povećati sposobnost stvaranja prihoda? Kako ojačati toleranciju na rizik? Kako razlikovati novac od potrošačkih i proizvodnih dobara? Kako znati gdje se Bitcoin nalazi u vlastitoj neto imovini? Što raditi kada je cijena iznad dugoročnog trenda, a svi oko nas zvuče nepobjedivo? Što raditi kada je ispod trenda, sentiment je težak, a čovjek bi najradije od svega odustao?
+Problem je često bio dublji: **manjak temeljnih principa upravljanja novcem i imovinom**.
 
-Moj vlastiti put prema tim pitanjima nije bio ravan.
+Bitcoin to ne rješava automatski.
 
-Ne mogu točno locirati dan kada sam prvi put čuo za Bitcoin. Bilo je to vrlo rano, negdje oko 2011., 2012. ili 2013. godine. U tom razdoblju moj fokus nije bio na novcu. Bio sam više u svijetu interneta, videoigara, online učenja i projekata koji su me tada zaokupljali. Bitcoin mi se u početku nije pojavio kao nešto što odmah mijenja civilizaciju. Više kao neobična internetska stvar. Nešto između tehnologije, digitalnog eksperimenta i gotovo “play money” ideje.
+Bitcoin može pomoći. Može otvoriti oči. Može promijeniti vremenski horizont. Može čovjeka natjerati da prvi put ozbiljno razmisli o novcu, inflaciji, dugu, štednji, radu i budućnosti. Ali Bitcoin sam po sebi ne uređuje proračun. Ne zatvara dug. Ne uči čovjeka davati. Ne određuje koliki dio imovine treba biti u novcu, potrošnim dobrima i proizvodnoj imovini. Ne čuva sam sebe. Ne sprječava paniku. Ne popravlja neurednu bilancu.
 
-Tek 2014. godine Bitcoin mi se vratio ozbiljnije. Tada sam prolazio kroz poduzetničko zasićenje i trebao sam predah od projekta kojim sam se intenzivno bavio. U ljeto te godine, dok sam hladio glavu, ponovno sam došao do Bitcoina.
+Bitcoin amplificira.
 
-Taj put više nije izgledao kao bezazlena internetska igra. Čitao sam o Silk Roadu, o propasti Mt. Goxa, o ljudima koji su izgubili Bitcoine, o WikiLeaksu, o američkom FBI-u i o prvim većim javnim pričama u kojima Bitcoin više nije bio samo tehnološka zanimljivost, nego nešto oko čega se već okretao ozbiljan novac, ozbiljan rizik i ozbiljna državna pažnja.
+Pojačava ono što već postoji.
 
-To mi je promijenilo percepciju. Ako se oko nečega pojavljuju tržišta, sukobi, pravni problemi, burze, države, hakeri i ljudi koji o tome govore s neobičnom ozbiljnošću, onda to možda ipak nije samo internetska igra.
+Ako čovjek ima red, Bitcoin može pojačati red. Ako ima strpljenje, Bitcoin može pojačati strpljenje. Ako zna razlikovati novac od investicije, Bitcoin može postati nevjerojatno snažan temelj imovine. Ako zna voditi proračun, zatvarati dug, davati, čekati i čuvati, Bitcoin može produbiti njegovu sposobnost da kroz vrijeme donosi bolje odluke.
 
-Tada sam počeo gledati prve konkretnije materijale. BitcoinTalk forum, predavanja Andreasa Antonopoulosa, razne tutoriale i sadržaje koji su objašnjavali što Bitcoin uopće jest. I tada sam prvi put kupio Bitcoin. Sjećam se da je cijena bila oko 600 dolara.
+Ali ako čovjek ima nered, Bitcoin može pojačati nered. Ako nema proračun, Bitcoin može postati još jedna stvar koja stvara pritisak. Ako je u dugu, volatilnost ga može natjerati da prodaje baš onda kada bi najradije držao. Ako ne zna zašto kupuje, cijena će ga voditi za nos. Ako ne zna čuvati ključeve, može izgubiti ono što je godinama slagao. Ako nema obiteljski sustav, Bitcoin može postati tajna jedne osobe umjesto novca koji služi obitelji.
+
+To sam vidio dovoljno puta da više nisam mogao odgoditi pokušaj da sve artikuliram.
+
+Ova knjiga je taj pokušaj.
+
+## Moja teza o Bitcoinu
+
+Moja osobna teza je jednostavna, iako posljedice nisu male:
+
+**Bitcoin je najbolji novac koji je čovječanstvo ikada imalo priliku koristiti.**
+
+Ne tvrdim da ga je danas lako koristiti u svakoj situaciji. Ne tvrdim da je svatko spreman držati vlastite ključeve. Ne tvrdim da je volatilnost nevažna. Ne tvrdim da će prijelaz s fiat standarda na Bitcoin standard biti ravan, brz ili bezbolan. Ne tvrdim ni da je dovoljno kupiti Bitcoin i čekati.
+
+Ali smatram da je Bitcoin monetarna tehnologija koja prvi put spaja ono što je kroz povijest bilo odvojeno.
+
+Poput zlata, Bitcoin je tvrd novac. Njegovu ponudu nije moguće proizvoljno povećati zato što nekome treba više novca, zato što država ima deficit, zato što banka želi izdati više kredita ili zato što tržište traži više jedinica. Poput fiata, Bitcoin je digitalan i može putovati kroz prostor. Ali za razliku od fiata, Bitcoin nije dug. Nije nečije obećanje. Nije saldo koji postoji zato što netko drugi vodi knjigu i dopušta pristup. U vlastitom skrbništvu, Bitcoin je novac koji čovjek može držati izravno.
+
+Zato Bitcoin ne vidim kao još jednu investiciju. Kada mijenjam eure za Bitcoin, ne doživljavam to kao ulaganje u istom smislu kao kupnju dionice, nekretnine, udjela u poslu ili stroja. To je prije razmjena slabijeg oblika novca za bolji oblik novca. Investiranje počinje onda kada novac — bilo euro, bilo Bitcoin — preuzme rizik u proizvodnoj imovini koja treba stvarati novu vrijednost.
+
+Ta razlika u jeziku mijenja sve.
+
+Ako je Bitcoin investicija, stalno pitamo kada kupiti, kada prodati, koliki je prinos i je li nešto drugo bolje raslo.
+
+Ako je Bitcoin novac, pitamo nešto drugo: kako mjeriti rad, štednju, potrošnju, dug, davanje, imovinu i budućnost u novcu koji ne nastaje iz tuđeg duga?
+
+Vjerujem da će se oko tog pitanja graditi velik dio civilizacije 21. stoljeća i kasnije. Vjerujem da će za nekoliko stotina godina ideja Bitcoin standarda ljudima biti mnogo manje kontroverzna nego što je danas. Ne zato što će svi čitati iste knjige, nego zato što će bolji novac kroz vrijeme promijeniti navike, institucije, obitelji, tržišta i način na koji ljudi razumiju budućnost.
+
+Ali od danas do tada imamo još puno živjeti.
+
+Računi i dalje dolaze svaki mjesec. Plaće su i dalje u eurima. Porezi se plaćaju u državnom novcu. Obitelji i dalje moraju razgovarati. Djeca trebaju hranu, školu, liječnika i tenisice. Poduzetnik mora platiti dobavljača, radnika i državu. Stanarina ne čeka power law. Kreditna kartica ne čeka halving. Bolest ne pita jeste li uvjereni u dugoročnu monetarnu tezu.
+
+Zato ova knjiga ne počinje euforijom.
+
+Počinje redom.
+
+## Za koga je ova knjiga
+
+Ovu knjigu pišem za dvije skupine ljudi.
+
+Prva skupina je primarna.
+
+To su ljudi koji već imaju Bitcoin.
+
+Možda ga imaju malo. Možda ga imaju puno. Možda im je Bitcoin jedan posto imovine, možda deset, možda pedeset, možda gotovo sve što smatraju novcem. Neki su ga kupili davno. Neki su ušli nedavno. Neki su prošli više ciklusa, neki još nisu doživjeli pravi pad. Neki znaju tehničke i ekonomske argumente bolje nego što ih ova knjiga može objasniti. Neki su već uvjereni da je Bitcoin najbolji novac, ali još uvijek ne znaju kako ga stvarno uklopiti u osobni, obiteljski ili poslovni život.
+
+Njima ne treba prvenstveno još jedan dokaz da Bitcoin postoji s razlogom.
+
+Njima treba pitanje:
+
+**Koristim li Bitcoin kao novac ili ga samo držim kao investiciju?**
+
+To pitanje može biti neugodno.
+
+Jer ako Bitcoin stvarno postane novac, onda se mijenja odnos prema svemu ostalom. Proračun više nije sporedna tablica. Dug više nije normalna pozadina odraslog života. Davanje više nije ono što ostane nakon što se čovjek osjeća potpuno sigurno. Nekretnina više nije automatski “najsigurnija štednja”. Posao ne smije uvijek pojesti sav kapital. Volatilnost se ne rješava emocijom, nego sustavom. Skrbništvo nije detalj za kasnije, nego odgovornost koja mora odgovarati stvarnom iznosu i stvarnoj obitelji.
+
+Neki dijelovi ove knjige ljudima koji već imaju Bitcoin možda se neće svidjeti na prvu.
+
+Možda im se neće svidjeti koliko strogo govorim o dugu. Možda im se neće svidjeti redoslijed u kojem kažem: prvo proračun, zatim dug van, zatim davanje, zatim ravnoteža imovine, zatim Bitcoin kao dominantan novac, zatim skrbništvo i sigurnost. Možda im se neće svidjeti tvrdnja da kupnja Bitcoina uz potrošački dug nije puni Bitcoin standard. Možda im se neće svidjeti ideja da dio novca mora biti namijenjen davanju. Možda im se neće svidjeti da investicija na Bitcoin standardu mora zaslužiti mjesto pored samog Bitcoina.
+
+Ali ako te principe prihvate i provedu, vjerujem da će dobiti puno više od “boljeg portfelja”.
+
+Dobit će bolji sustav odlučivanja.
+
+Postojeći Bitcoin počet će koristiti na način koji može povećati njihov stack, ali i njihovu ukupnu neto imovinu. Ne kroz žurbu, polugu i stalno traženje novog prinosa, nego kroz red, manju potrošnju budućnosti, bolje razdvajanje novca od potrošnih i proizvodnih dobara, veću sposobnost čekanja i ozbiljniju sigurnost.
+
+A uz to postoji još nešto što se teže mjeri.
+
+Postoji psihološko zadovoljstvo koje dolazi kada novac više nije magla. Kada dug više ne upravlja budućnošću. Kada davanje nije krivnja ni ostatak, nego kategorija. Kada čovjek zna zašto drži Bitcoin, kada ga ne mora prodavati iz panike i kada obitelj zna da postoji sustav, a ne samo uvjerenje jedne osobe.
+
+To zadovoljstvo nije mala stvar.
+
+Druga skupina su ljudi koji još nemaju Bitcoin ili su tek na početku.
+
+Za njih ova knjiga može biti još korisnija, ako ju shvate na pravi način.
+
+Ne mora svatko proći istu dubinu zečje rupe. Ne mora svatko odvojiti stotine ili tisuće sati na monetarnu povijest, austrijsku ekonomiju, kriptografiju, rudarenje, energetiku, forume, podcaste, cikluse, sigurnosne modele i rasprave o svakoj mogućoj temi koja se dotakne Bitcoina. Neki ljudi će to htjeti. Dobro je da postoje ljudi koji idu duboko. Ali većina ljudi ne želi svoj život pretvoriti u stalno istraživanje Bitcoina.
+
+Većina ljudi želi živjeti.
+
+Žele raditi svoj posao. Odgajati djecu. Brinuti se za roditelje. Platiti račune. Graditi obitelj. Voditi posao. Putovati. Pomagati. Učiti ono što im treba. I ako postoji bolji novac, žele ga koristiti bez toga da moraju postati monetarni povjesničari, softverski inženjeri i stručnjaci za globalne financije.
+
+To je normalno.
+
+Automobil koristimo bez toga da smo auto-inženjeri. Ne moramo znati projektirati motor da bismo vozili. Ali moramo znati dovoljno: kako se pali, kako se koči, kako se skreće, što znače znakovi, zašto se ne ulazi prebrzo u zavoj, zašto se ne vozi bez goriva, zašto se ne ignorira crvena lampica i zašto se auto ne ostavlja otključan na ulici s ključevima unutra.
+
+Vozačka škola ne proizvodi inženjere.
+
+Proizvodi ljude koji mogu sigurno koristiti snažnu tehnologiju u stvarnom svijetu.
+
+Ova knjiga želi biti nešto slično za Bitcoin kao novac.
+
+Ne moraš postati stručnjak za sve da bi Bitcoin postao tvoj primarni novac. Ali moraš naučiti dovoljno. Moraš razumjeti zašto Bitcoin vrijedi shvatiti ozbiljno. Moraš znati osnovnu ekonomsku i tehničku tezu. Moraš urediti proračun. Moraš razumjeti dug. Moraš znati zašto davanje nije sporedna tema. Moraš znati gdje Bitcoin pripada u ukupnoj imovini. Moraš znati što znači volatilnost. Moraš imati sigurnosni sustav koji odgovara tvojoj situaciji.
+
+Bez toga Bitcoin može biti previše snažan alat u neuređenim rukama.
+
+S time Bitcoin može postati novac koji mijenja život.
+
+## Vrijeme je najskuplji resurs
+
+Danas nije najteže pronaći informacije.
+
+Najteže je znati što je bitno.
+
+Bitcoin ima beskonačno mnogo ulaza. Možeš krenuti od cijene, od inflacije, od povijesti zlata, od Satoshijevog whitepapera, od proof of worka, od Lightninga, od hardverskih novčanika, od makroekonomije, od bankarskog sustava, od državnog duga, od energetike, od rudarenja, od kripto prijevara, od burzi, od poreza, od nasljeđivanja, od ciklusa, od modela cijene, od priče o Salvadoru, od Michaela Saylora, od Saifedeana Ammousa, od Jana Pritzkera, od Andreasa Antonopoulosa, od foruma, od grafova, od prijatelja koji je kupio ranije ili od vlastitog osjećaja da s novcem koji koristimo svaki dan nešto nije u redu.
+
+Svaki ulaz otvara deset novih vrata.
+
+Iza svakih vrata je nova rasprava.
+
+To može biti korisno. Ali može i pojesti godine.
+
+Ova knjiga pokušava kondenzirati dio tog puta. Ne tako da zamijeni sve druge knjige, nego da čitatelju da dovoljno dobar redoslijed. Ako poslije želi ići dublje u ekonomiju, neka čita *The Bitcoin Standard* i *The Fiat Standard*. Ako želi dublje u tehniku, neka čita *Inventing Bitcoin* i druge tehničke materijale. Ako želi istraživati sigurnost, rudarenje, Lightning ili monetarnu povijest, imat će kamo ići.
+
+Ali ne mora sve to napraviti prije nego što počne slagati vlastiti novac.
+
+Ovdje ćemo iznijeti osnovnu tezu zašto Bitcoin vrijedi koristiti kao primarni novac — i s ekonomske i s tehničke strane. Objasnit ćemo zašto je novac važan, zašto fiat novac stvara posebne probleme, zašto je Bitcoin tvrd, zašto proof of work povezuje digitalni novac s energijom, radom i vremenom, što rudari rade, zašto su čvorovi važni, zašto je ograničena ponuda presudna i zašto Bitcoin nije isto što i “kripto”.
+
+Ali nakon toga fokus se namjerno spušta na zemlju.
+
+Na proračun.
+
+Na dug.
+
+Na davanje.
+
+Na imovinu.
+
+Na volatilnost.
+
+Na sigurnost.
+
+Jer čovjek ne živi u teoriji novca. Živi u mjesecu koji treba preživjeti, u obitelji koja treba razgovarati, u poslu koji treba odluke i u budućnosti koja se gradi malim ponavljanjima.
+
+## Kako je knjiga složena
+
+Knjiga ima dva glavna dijela.
+
+Prvi dio zove se **Bezvremenski red u novcu**.
+
+Taj dio ne počinje Bitcoinom kao aplikacijom, burzom, novčanikom ili cijenom. Počinje s tri temeljna principa upravljanja novcem.
+
+Prvi princip je **proračun na ultrarazini**.
+
+To znači da novac koji sada postoji dobiva ime. Svaki euro, svaki satoshi, svaki stvarni saldo mora imati posao. Proračun ne počinje plaćom koja dolazi za pet dana, bonusom koji možda stiže ili rastom Bitcoina koji bi mogao riješiti problem. Počinje novcem koji je već tu.
+
+Proračun nas uči da saldo nije isto što i slobodan novac. Na računu može stajati 2.000 eura, ali taj novac možda već pripada stanarini, režijama, hrani, prijevozu, dugu, zdravlju, registraciji auta, budućem trošku ili davanju. Tek kada novac dobije kategoriju, prestaje glumiti slobodu koju nema.
+
+To je posebno važno za Bitcoin. Ako novac nema ime, Bitcoin lako postaje bijeg. Kupimo ga iz uvjerenja, ali onda ga prodamo zbog troška koji smo mogli vidjeti. Tada problem nije Bitcoinova volatilnost. Problem je proračun.
+
+Drugi princip je **razduživanje**.
+
+Ovo je možda najtvrđe poglavlje u knjizi.
+
+Dug je budući novac koji je već potrošen. Dug znači da budući prihod više nije slobodan. Možemo ga zvati stambeni kredit, gotovinski kredit, leasing, minus, kartica, poslovna kreditna linija, dug prema rodbini ili investicija u rast. Ali ako budući novac već ima tuđe ime, onda nije slobodan.
+
+U fiat svijetu dug često izgleda normalno. Kuća, stan, auto, apartman, oprema, sezona, kartica, rata, “samo dok se ne stabiliziramo”. Ali normalnost nije isto što i sloboda.
+
+Ova knjiga zato postavlja tvrd standard: puni Bitcoin standard ne počinje dok budući novac nije slobodan.
+
+To ne znači da su svi ljudi u istim okolnostima. Ne znači da je izaći iz duga lako. Ne znači da svatko može sve promijeniti preko noći. Ali znači da ne smijemo lagati o naravi duga. Dug je potrošena budućnost. A Bitcoin kao novac traži budućnost koja ponovno pripada čovjeku, obitelji ili poslu.
+
+Treći princip je **davanje novca**.
+
+Davanje nije ukras nakon što sve ostalo uspije. Davanje nije ostatak na kraju mjeseca. Davanje je kategorija.
+
+Ali dolazi tek nakon duga.
+
+To je važno. Dok dug stoji na bilanci, novac još nije potpuno slobodan. Čovjek može i dalje pomoći konkretnoj osobi u stvarnoj potrebi. Ako treba donijeti hranu, platiti lijek, pomoći roditelju ili susjedu, ne mora pitati tablicu smije li biti čovjek. Ali praksa sustavnog davanja u ovoj knjizi počinje nakon što dug izađe iz bilance.
+
+Zašto je davanje toliko važno u knjizi o Bitcoinu?
+
+Zato što dobar novac može čovjeka učiniti strpljivijim, ali ga ne čini automatski velikodušnijim. Ako Bitcoin postane novac, a davanje ne postane kategorija, osobni Bitcoin standard može postati samo dobro organiziran strah. Čovjek može sve bolje čuvati, sve bolje računati i sve teže pustiti novac prema drugome.
+
+Davanje štiti od toga.
+
+Dugoročno, davanje povećava sposobnost stvaranja vrijednosti za druge ljude. Uči nas vidjeti potrebe, prepoznati gdje novac može pomoći, razlikovati stvarnu pomoć od impulsa i ostati otvoren dok imovina raste. Ako Bitcoin vraća čovjeku mogućnost štednje kroz vrijeme, davanje ga podsjeća da novac nije samo za obranu vlastite budućnosti, nego i za služenje.
+
+Drugi dio knjige zove se **Bitcoin kao primarni novac**.
+
+Tu se pogled širi s mjesečnog proračuna na ukupnu imovinu.
+
+Prvo dolazi **ravnoteža imovine**.
+
+Imovinu promatramo kroz tri glavna dijela: novac, potrošna dobra i proizvodnu imovinu.
+
+Novac je ono što čuva opcionalnost i kupovnu moć. Potrošna dobra su ono što koristimo za život: dom, auto, namještaj, uređaji, odjeća, stvari koje služe obitelji, udobnosti i svakodnevici. Proizvodna imovina je ono što može stvarati novu vrijednost: posao, alati, oprema, znanje, strojevi, sustavi, udjeli u produktivnim pothvatima.
+
+U toj slici Bitcoin ima ulogu novca.
+
+To je ključno. Bitcoin nije samo još jedna stavka u investicijskom portfelju. Ako je Bitcoin najbolji novac koji poznajemo, onda on postaje središte novčanog sloja imovine. Iz toga proizlaze ozbiljna pitanja. Koliko potrošnih dobara ima smisla držati ako se odričemo tvrdog novca? Kada je dom stvarno dom, a kada glumi štedni račun? Kada je auto alat, a kada status? Kada posao zaslužuje kapital, a kada samo traži još novca jer ne znamo čekati? Kada ulaganje u proizvodnu imovinu stvarno ima smisla pored Bitcoina?
+
+Na Bitcoin standardu investicija mora zaslužiti mjesto pored novca.
+
+Nakon toga dolazi poglavlje **Bitcoin kroz vrijeme**.
+
+Tu govorimo o onome što mnoge najviše zanima: cijeni Bitcoina, očekivanom rastu, volatilnosti, ciklusima i mogućem “zakonu Bitcoina”.
+
+Ali ni to poglavlje nije napisano zato da bismo pogodili cijenu. Buduće cijene nisu obećanje. Modeli nisu proročanstva. Power law, trend, halving ritam i povijesni obrasci mogu pomoći da ne gledamo samo današnju cijenu, ali ne mogu zamijeniti proračun, likvidnost, sigurnost i zdrav razum.
+
+Cilj je prevesti Bitcoin kroz vrijeme u svakodnevni jezik odluka.
+
+Što znači ako je Bitcoin daleko iznad dugoročnog trenda? Što znači ako je ispod? Kako se ponašati kada svi oko nas zvuče nepobjedivo? Kako kada je sentiment težak, a cijena pada? Koji novac smije biti izložen volatilnosti, a koji ne smije? Kako planirati potrošnju, davanje, ulaganje i sigurnost ako vjerujemo da Bitcoin dugoročno može rasti u kupovnoj moći, ali znamo da kratkoročno može brutalno pasti?
+
+Zatim dolazi **skrbništvo i sigurnost**.
+
+Bitcoin daje čovjeku rijetku mogućnost: može držati novac bez banke, bez dopuštenja, bez posrednika i bez tuđeg obećanja. Ali ista osobina koja ga čini snažnim čini ga i ozbiljnim. Ako možeš sam držati novac, možeš ga i sam izgubiti. Ako nitko ne može zamrznuti tvoj Bitcoin, nitko ga ne može vratiti umjesto tebe ako izgubiš pristup. Ako transakcija nema službu za poništenje, onda sigurnost nije dodatak. Ona je dio novca.
+
+Zato skrbništvo dolazi nakon svega ostalog.
+
+Prvo treba znati što novac radi. Zatim treba osloboditi budućnost od duga. Zatim otvoriti kategoriju davanja. Zatim razumjeti ukupnu imovinu. Zatim gledati Bitcoin kroz vrijeme. Tek tada ima smisla graditi sigurnosni sustav koji odgovara stvarnoj osobi, stvarnoj obitelji, stvarnom poslu i stvarnom iznosu.
+
+Sigurnost nije dogma. Nije natjecanje tko ima kompliciraniji setup. Nije ni ležerno držanje svega u aplikaciji. Sigurnost znači da je vrijednost zaštićena od pogrešnih ljudi i dostupna pravim ljudima u pravom trenutku.
+
+To je obiteljsko, poslovno i ljudsko pitanje, ne samo tehničko.
+
+## Jezik ove knjige
+
+Pokušao sam ovu knjigu napisati jezikom koji može razumjeti čovjek koji nema veliku pozadinu u ekonomiji, tehnologiji ili financijama.
+
+To ne znači da ćemo izbjegavati važne termine.
+
+Nećemo.
+
+Koristit ćemo riječi poput fiat, proof of work, čvor, rudarenje, privatni ključ, javni ključ, hash, UTXO, oportunitetni trošak, neto imovina, likvidnost, volatilnost, power law, skrbništvo i kapitalna dobra.
+
+Ali kada god se pojavi riječ koja bi čitatelju mogla biti nepoznata, pokušat ćemo je odmah objasniti. Ne zato da tekst bude spor, nego zato da čovjek može nastaviti čitati bez osjećaja da je zakasnio na razgovor.
+
+Oni koji već razumiju pojmove mogu te dijelove proći brže. Oni koji ih prvi put susreću ne bi trebali morati otvarati deset drugih prozora da bi nastavili.
+
+Ovo nije knjiga za dokazivanje tko je dublje u Bitcoinu.
+
+Ovo je knjiga za korištenje Bitcoina kao novca.
+
+## Moj vlastiti put
+
+Moj put do ovog pogleda nije bio ravan.
+
+Ne mogu točno locirati dan kada sam prvi put čuo za Bitcoin. Bilo je rano, negdje između 2011. i 2013. U početku mi je izgledao kao čudna internetska stvar. Nešto između tehnologije, digitalnog eksperimenta i “play money” ideje.
+
+Ozbiljnije mi se vratio 2014. godine. Tada sam prolazio kroz poduzetničko zasićenje i trebao sam predah. Čitao sam o Silk Roadu, Mt. Goxu, WikiLeaksu, ranim pričama o burzama, hakerima, državama i ljudima koji su oko Bitcoina već vodili ozbiljne rasprave. Ako se oko nečega pojavljuju tržišta, sukobi, pravni problemi, rizik, novac i ljudi koji o tome govore s neobičnom ozbiljnošću, onda možda ipak nije samo igra.
+
+Tada sam prvi put kupio Bitcoin. Sjećam se cijene oko 600 dolara.
 
 Ali nisam imao sustav.
 
-Nisam imao proračun oko Bitcoina. Nisam imao jasnu ideju što s njim. Nisam razumio kako ga uklopiti u neto imovinu. Nisam znao kako se ponašati kroz volatilnost. Nisam imao zreli odnos prema sigurnosti. Nisam razumio razliku između “imam Bitcoin” i “Bitcoin je moj novac”. Kupio sam ga, ali nisam znao kako oko njega živjeti.
+Nisam imao proračun oko Bitcoina. Nisam znao kako ga uklopiti u neto imovinu. Nisam znao kako živjeti s volatilnošću. Nisam razumio sigurnost dovoljno zrelo. Nisam razumio razliku između “imam Bitcoin” i “Bitcoin je moj novac”.
 
-Moj Bitcoin put tada je uzeo pauzu.
+Zato je moj put uzeo pauzu.
 
-Ta pauza trajala je do zime 2017. godine. Bitcoin je tada ponovno ušao u vijesti, medije i ono što se danas naziva zeitgeist. Sjećam se osjećaja kada sam vidio da je nešto što sam 2014. kupovao po oko 600 dolara odjednom došlo na 10, 12 ili 13 tisuća dolara, a zatim blizu 20 tisuća. To je bilo više od dvadeset puta više u samo nekoliko godina. Posebno snažno me pogodilo zato što ga u međuvremenu nisam aktivno pratio.
+Bitcoin mi se snažno vratio 2017. godine, kada je cijena ponovno ušla u javnost i kada sam vidio što se dogodilo s nečim što sam ranije gledao oko 600 dolara. Kao i mnogi, prošao sam kratku altcoin fazu. Pitao sam se je li Bitcoin možda zastario, postoje li brži, bolji, noviji projekti. Bear market 2018. bio je dobro čišćenje iluzija. Nije bio ugodan, ali je bio koristan.
 
-Takav rast više nisam mogao zaboraviti.
+Nakon toga došle su ozbiljnije knjige, podcasti, Saifedean Ammous, *The Bitcoin Standard*, kasnije *The Fiat Standard*, rad u Bitcoin prostoru, dublje razumijevanje razlike između Bitcoina i kripta, i sve jasniji osjećaj da Bitcoin nije tehnološka zanimljivost nego monetarni fenomen.
 
-Ali tada još nisam bio potpuno zreo u razumijevanju Bitcoina. Krajem 2017. i početkom 2018. imao sam kratko razdoblje istraživanja drugih kriptovaluta. Kao i mnogi, mislio sam: Bitcoin je već “prvi”, možda je zastario, možda postoje brži, bolji, noviji projekti. Bear market 2018. brzo je pokazao razliku između šuma i signala. Ono malo što sam pokušao s altcoinovima prošlo je loše, ali to iskustvo mi je pomoglo. Izgubio sam dio iluzija.
+Paralelno s tim, kroz proračun, YNAB, Wineabilu, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije i obične životne situacije, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
 
-A onda su počeli dolaziti ozbiljniji materijali. Podcasti. Knjige. *The Bitcoin Standard*. Saifedeanova online akademija. Sve više sam razumijevao da Bitcoin nije samo tehnološka stvar, niti samo cjenovni graf, niti dio široke “kripto” industrije. Bitcoin je monetarni fenomen.
+Možeš imati dobru tezu i loš sustav.
 
-Jedna od stvari koja me danas najviše smeta u razgovorima o Bitcoinu jest kada se Bitcoin i “kripto” koriste kao da su ista stvar. Razumijem zašto se to događa. U javnosti se sve često stavlja u isti koš. Ali Bitcoin nije samo jedan token među milijunima. Bitcoin je protokol koji je od početka zadržao ograničenu ponudu, decentraliziranu provjeru pravila, dokaz rada i monetarnu neutralnost. Oko njega je nastao ogroman šum drugih projekata, narativa i tržišta. Ali signal je i dalje jednostavan: Bitcoin je novi oblik novca.
+Možeš biti u pravu oko Bitcoina i svejedno donositi loše odluke s novcem.
 
-Ako se taj signal izgubi u šumu “kriptovaluta”, čovjek teško može razumjeti zašto Bitcoin zaslužuje drukčiji tretman. Tada ga počne gledati kao dio investicijskog portfelja, spekulaciju ili tehnološku okladu. Ja ga ne gledam tako.
+Možeš znati zašto je fiat problem, a i dalje živjeti kao fiat čovjek: bez proračuna, s dugom, bez davanja, s imovinom zaključanom u stvarima koje ne daju mir, s Bitcoinom koji je mentalno investicija, a ne novac.
 
-Za mene Bitcoin nije investicija u istom smislu kao dionica, posao, nekretnina ili proizvodna imovina. Bitcoin je novac. Kada mijenjam eure za Bitcoin, ja ne “investiram” u Bitcoin. Ja razmjenjujem slabiji oblik novca za bolji oblik novca. Ako kasnije Bitcoin ili eure ulažem u posao, alat, kapital ili proizvodnu imovinu, tada govorimo o investiranju.
+Ova knjiga je pokušaj da skratim taj put drugima.
 
-Ta razlika u jeziku nije sitnica. Ona mijenja sve.
+Ne iz pozicije nepogrešivosti. Ne kao guru. Ne kao netko tko nikada nije krivo procijenio. Nego kao netko tko je dovoljno dugo gledao istu temu iz dovoljno kutova da vidi obrazac koji se ponavlja.
 
-Ako Bitcoin gledamo kao investiciju, pitanje je: kada kupiti, kada prodati, koliki povrat očekujem i kako ga usporediti s drugim investicijama? Ako Bitcoin gledamo kao novac, pitanje postaje drukčije: koliki dio moje neto imovine treba biti u novcu, kako mjerim potrošnju, što znači dug, gdje je stvarni višak, kada potrošiti, kada dati, kada ulagati u proizvodnu imovinu, kako razgovarati s obitelji i tko zna prvi korak ako se nešto dogodi?
+Bitcoin kao novac traži red u životu.
 
-Za poduzetnika to nije akademska razlika. Ako euro gubi kupovnu moć, ako se zalihe, oprema, najam, plaće i porezi stalno moraju planirati kroz novac koji se mijenja pod nogama, onda pitanje novca nije samo privatna štednja. Ono ulazi u cijene, marže, odluke o zapošljavanju, odnos prema dugu i sposobnost da se kaže ne lošem rastu. Bitcoin kao novac znači drukčiji odnos prema kapitalu, radu i vremenu.
+A red u životu treba služiti čovjeku, obitelji, radu i davanju.
 
-Najveći prijelom u mom razumijevanju dogodio se 2020. godine.
+## Bitcoin je kao struja
 
-Tada sam počeo raditi za Saifedeana Ammousa. Već sam pohađao njegove tečajeve na online akademiji i imao iskustva s web stranicama, edukacijskim projektima i tehničkim radom. On je tražio pomoć oko problema na stranici, ja sam se javio i tako je počela suradnja.
+Volim usporedbu Bitcoina sa strujom.
 
-U jednom trenutku pitao me kako želim biti plaćen: PayPal, Bitcoin ili neki drugi način. Pomislio sam: ako već radim s autorom *The Bitcoin Standarda*, onda ima smisla vidjeti kako izgleda biti plaćen izravno u Bitcoinu.
+Ne zato što je savršena, nego zato što pomaže uhvatiti fazu u kojoj se nalazimo.
 
-Tako je Bitcoin za mene prestao biti samo imovina koju držim i postao prihod.
+Struja je bila izvanredno korisna prije nego što ju je većina ljudi znala sigurno koristiti. Mogla je osvijetliti grad, pokrenuti tvornicu, promijeniti kuću i povećati ljudsku produktivnost. Ali prije standarda, prekidača, osigurača, utičnica, instalacija, znanja i navika, struja je bila opasna. Nije bila manje važna zato što ju je bilo teško koristiti. Ali je tražila priručnike, majstore, pravila i oprez.
 
-Kroz nekoliko mjeseci moj se angažman proširio, a fiat prihodi su se stanjili. U jednom trenutku praktički sam potrošio svu zalihu državnog novca koju sam imao, tada još u kunama. Nisam više imao izravne prihode u fiatu, ali imao sam Bitcoin štednju i Bitcoin prihode. Tada se pojavilo pitanje koje svaki Bitcoiner prije ili kasnije mora susresti ako Bitcoin želi shvatiti kao novac:
+Bitcoin je monetarna struja.
 
-Imam troškove koje moram platiti. Nemam više dovoljno fiata. Imam Bitcoin. Što sada?
+Može prenijeti vrijednost kroz prostor, preko granica i kroz vrijeme. Može čovjeku dati novac koji nije ničiji dug. Može obitelji dati dugoročni standard štednje. Može poduzetniku dati bolju riznicu. Može društvu vratiti vezu između rada, vremena, energije i novca.
 
-To je psihološki puno teže nego što izgleda izvana. Jedno je reći “Bitcoin je novac”. Drugo je platiti stvarni trošak iz Bitcoina koji može rasti u kupovnoj moći. Odmah se pojavi unutarnji glas: što ako će ovaj Bitcoin jednog dana vrijediti puno više? Što ako sada potrošim nešto što sam trebao držati? Što ako ponavljam grešku čovjeka koji je kupio pizze za Bitcoin?
+Ali ne oprašta neznanje.
 
-Tada sam počeo shvaćati da pitanje nije smije li se Bitcoin ikada trošiti.
+Ako kupuješ Bitcoin novcem koji ti treba za sljedeća tri mjeseca, volatilnost te može kazniti. Ako ga držiš na krivom mjestu, možeš ga izgubiti. Ako se zadužuješ dok slažeš stack, budućnost ti možda nije slobodna. Ako nemaš proračun, Bitcoin može postati još jedan izvor napetosti. Ako nitko u obitelji ne zna što se događa, tvoj “suvereni novac” može postati obiteljska ranjivost.
 
-Pitanje je postoji li sustav koji kaže kada, zašto, koliko i iz koje kategorije se troši.
+Zato ova knjiga nije samo argument za Bitcoin.
 
-Ako Bitcoin postane novac, on se ne može nikada trošiti samo u teoriji. Novac se koristi. Novac se štedi, troši, daje, ulaže i razmjenjuje. Pitanje nije treba li Bitcoin zauvijek stajati netaknut kao sveta stvar. Pitanje je kako ga integrirati u proračun, dug, davanje, neto imovinu, očekivanja, volatilnost i sigurnost.
+Ona je priručnik za sigurno i produktivno korištenje Bitcoina kao novca.
 
-Tu sam shvatio koliko je upravljanje novcem više psihologija nego matematika.
+Ne tvrdim da je priručnik završen za sva vremena. Bitcoin će se razvijati. Alati će se mijenjati. Regulacija će se mijenjati. Sigurnosni modeli će se poboljšavati. Ljudi će učiti. Ali osnovni redoslijed koji ova knjiga postavlja neće brzo zastarjeti.
 
-Matematiku većinom znamo. Prihod mora biti veći od rashoda. Dug košta. Treba štedjeti. Isti novac ne možemo potrošiti na dvije stvari. Bolje je kupiti jeftinije, prodati skuplje, držati dugoročno i ne paničariti.
+Prvo sadašnji novac mora dobiti ime.
 
-Ali ne živimo uvijek tako.
+Zatim budući novac mora prestati biti tuđi.
 
-Razlog je jednostavan: novac dira strah, nadu, status, sram, obitelj, sigurnost, usporedbu, krivnju, pohlepu i želju da budemo slobodni. Mnoge odluke koje poslije objasnimo racionalno zapravo su u početku bile psihološke. Ova knjiga zato nije samo skup financijskih formula. Ona je pokušaj da se oko novca postavi skup principa koji pomažu čovjeku kad emocije postanu glasne.
+Zatim dio novca mora biti otvoren prema drugima.
 
-To posebno vrijedi za volatilnost.
+Zatim treba znati što je novac, što su potrošna dobra i što je proizvodna imovina.
 
-Volatilnost Bitcoina izvor je velikog dijela sentimenta koji ljudima skida fokus s fundamentalnog pitanja: što Bitcoin zapravo radi i u kojem se vremenskom okviru to treba promatrati? Kada cijena raste, ljudi lako pomisle da su genijalni. Kada pada, lako pomisle da su sve krivo razumjeli. I u jednom i u drugom slučaju cijena počne upravljati identitetom.
+Zatim Bitcoin treba gledati kroz vrijeme, a ne samo kroz cijenu.
 
-Volatilnost nije samo problem. Ona je i znak životnosti. U prirodi je energija često divlja, promjenjiva i nepredvidljiva. Vatra može grijati kuću ili je može zapaliti. Voda može pokretati turbinu ili razoriti obalu. Razlika je u tome postoji li tehnologija, disciplina i okvir koji tu energiju usmjerava.
+Zatim ga treba čuvati tako da preživi stvarni život.
 
-S Bitcoinom je slično. Volatilnost je opasna kada čovjek nema sustav. Ako nema proračun, pad cijene postaje panika, a rast cijene postaje dopuštenje za rastrošnost. Ako ima dug, volatilnost ga može natjerati da prodaje u najgorem trenutku. Ako nema ravnotežu imovine, ne zna je li mu Bitcoin prevelik ili premalen dio života. Ako nema praksu davanja, rast cijene može samo povećati stisak. Ako nema sigurnost, veća vrijednost samo povećava posljedicu pogreške.
+To nije glamurozno.
 
-Ali kada postoje proračun, život bez duga, davanje, ravnoteža imovine, ispravno postavljena očekivanja prema dugoročnom trendu, skrbništvo i sigurnost, volatilnost postaje nešto drugo. Postaje informacija. Kada Bitcoin padne ispod trenda, ne mora se paničariti. Može se povećati neto prihod, odgoditi velika potrošnja, akumulirati iz viška i očistiti imovina koja nema funkciju. Kada Bitcoin ode iznad trenda, ne mora se poludjeti od euforije. Može se napuniti buduće kategorije, unaprijed riješiti planirane troškove, dati više, ulagati pažljivije i rebalansirati mirnije.
+Ali je moćno.
 
-Drugim riječima, nije cilj ukloniti volatilnost. Cilj je postati osoba kojoj volatilnost ne upravlja životom.
+## Kako čitati ovu knjigu
 
-Ja sam od jeseni 2020. živio kroz uzlazne i silazne periode Bitcoina koristeći ga kao stvaran novac. To iskustvo mi je izgradilo otpornost na volatilnost. Ono što čovjeka ne slomi može ga ojačati, ali samo ako iz iskustva nešto nauči. Tko kroz padove i rastove prolazi bez sustava, često samo skuplja traume. Tko prolazi sa sustavom, skuplja mudrost.
+Nemojte ovu knjigu čitati kao poziv na žurbu.
 
-Čitatelju koji se boji Bitcoina jer je volatilan rekao bih: bojati se nije čudno, ali ne treba ostati na strahu. Volatilnost se ne rješava prognozom. Rješava se time da život postane dovoljno uređen da vas ni rast ni pad ne izbace iz ravnoteže.
+Ne pokušavajte sve provesti u jednom vikendu. Ne mijenjajte obiteljski život jednom rečenicom. Ne koristite budući rast Bitcoina kao opravdanje za današnji nered. Ne preskačite poglavlja koja vam se čine manje zanimljivima samo zato što vas više privlači cijena, sigurnost ili projekcija budućnosti.
 
-A čitatelju koji je već doživio veliki pad i razočarao se rekao bih: problem vjerojatno nije bio samo pad. Problem su vjerojatno bila očekivanja. U Bitcoinu uvijek treba očekivati i veliki rast i veliki pad. Bitnije od toga što će cijena napraviti jest što ćete vi napraviti kad se to dogodi.
+Redoslijed je dio metode.
 
-Ako cijena padne, vraćam se proračunu. Ako cijena snažno naraste, vraćam se proračunu. To zvuči dosadno, ali upravo je to poanta. Proračun je mjesto gdje emocija postaje odluka.
+Ako već imate Bitcoin, čitajte s pitanjem: gdje moj postojeći sustav nije dorastao novcu koji držim?
 
-Moj osobni proračun nije teorijska stvar. Vodim ga godinama, gotovo osam godina, i vodim ga u istoj aplikaciji: YNAB-u, akronimu od You Need A Budget, odnosno “treba ti proračun”. Ne mislim da svatko mora koristiti baš taj alat. Netko će koristiti bilježnicu, netko tablicu, netko drugi softver. Bitno je da alat smanji trenje dovoljno da praksa preživi umor.
+Ako nemate Bitcoin, čitajte s pitanjem: što moram urediti da bih ga mogao koristiti kao novac, a ne kao emocionalnu okladu?
 
-Ponekad “besplatno” rješenje nije stvarno jeftinije. Ako nešto ne platimo novcem, često platimo vremenom, greškama, odgađanjem ili nejasnoćom. Dobar alat ne rješava problem umjesto čovjeka, ali može pomoći da se dobra navika zadrži.
+Ako ste poduzetnik, čitajte s pitanjem: gdje moj posao troši budućnost i gdje Bitcoin može postati riznica, a ne špekulacija?
 
-Jedan od najvažnijih principa ove knjige jest da je uvijek bolje učiti na tuđim greškama nego na vlastitim. Vlastite greške možda jesu najučinkovitiji učitelj, ali često su i najskuplji. Čovjek može preskočiti proračun, preskočiti dug, preskočiti davanje i odmah ući “all-in”. I naučit će nešto. Uvijek naučimo nešto. Pitanje je samo hoće li naučiti na lakši ili teži način.
+Ako ste muž, žena, roditelj ili član obitelji u kojoj jedna osoba razumije Bitcoin više od drugih, čitajte s pitanjem: kako ovo pretvoriti iz privatnog uvjerenja u obiteljski sustav?
 
-Ova knjiga pokušava ponuditi lakši način.
+Ova knjiga ne zamjenjuje osobni financijski, porezni, pravni ili investicijski savjet. Ne poznaje vašu cijelu situaciju. Ne zna vaše obveze, brak, posao, porezni status, zdravstvene okolnosti, nasljedne odnose ni sve rizike koje nosite. Ali može dati okvir. Može postaviti redoslijed. Može pokazati pitanja koja vrijedi postaviti prije odluka.
 
-Ne zato što sam ja sam izmislio pravila. Nisam. Mnogo toga ovdje dolazi iz tisuća godina ljudskog iskustva s novcem, dugom, radom, davanjem, štednjom, obitelji, rizikom i vremenom. Ja sam te principe čitao, slušao, učio, primjenjivao i vidio da funkcioniraju. Bitcoin je nova tehnologija i novi monetarni fenomen, ali čovjek koji ga koristi nije nova vrsta bića. Još uvijek ima obitelj, strahove, želje, navike, slabosti, talente, dugove, rad, odnose i vrijeme.
+Najvažnije: može pomoći da Bitcoin ne koristite kao bijeg od stvarnosti, nego kao bolji novac unutar stvarnosti.
 
-Ova knjiga ne pokušava čitatelja uvjeriti da bude hrabar bez temelja. Ona pokušava pokazati redoslijed.
+## Početak
 
-Prvo proračun. Zatim dug. Zatim davanje. Zatim ravnoteža imovine. Zatim razumijevanje Bitcoinova rasta, volatilnosti i vremena. Zatim skrbništvo, sigurnost, obitelj i nasljeđivanje.
+Bitcoin može biti temelj civilizacije u 21. stoljeću.
 
-Tek tada držanje Bitcoina počinje prerastati u nešto veće: uređen sustav odluka.
+Ali za vas ne počinje civilizacijom.
 
-Davanje je u moj život ušlo kao praksa, ne kao teorija. Nakon što sam se razdužio, počeo sam dio novca sustavno držati u fondu za davanje. Ne kao slučajni višak. Ne kao impuls. Nego kao kategoriju. Dok sam ocu pomagao u prodaji njegovih slika na Rabu, počeo sam kupcima dodavati male poklone: razglednicu, nešto sitno, nešto što nije bilo uvjet kupnje i nije očekivalo ništa zauzvrat. Iznos nije bio velik, ali bio je planiran.
+Počinje saldom koji sada imate.
 
-Primijetio sam nešto zanimljivo. Ljudi su se bolje osjećali. Neki su se vraćali. Neki su doveli prijatelje. Prodaja slika je išla bolje, ali još važnije, ja sam bolje radio taj posao. Davanje nije promijenilo samo njih. Promijenilo je mene. Učinilo me otvorenijim, pažljivijim, boljim u odnosu s ljudima. Počeo sam razumijevati da davanje ne djeluje samo kao izlaz novca iz proračuna. Ono oblikuje osobu koja upravlja novcem.
+Počinje računima koji čekaju.
 
-U ovoj knjizi davanje zato nije dodatak na kraju. Ono je temelj.
+Počinje dugom koji možda stoji u pozadini.
 
-Proračun bez davanja može postati kontrola. Bitcoin bez davanja može postati stisnuta šaka. Tvrdi novac bez velikodušnosti može stvoriti tvrdog čovjeka. A cilj ove knjige nije samo bolja bilanca, nego bolji čovjek.
+Počinje kategorijom koju još niste imenovali.
 
-Drugi važan princip je dug.
+Počinje razgovorom s osobom s kojom dijelite život.
 
-Nakon godina proučavanja Bitcoina, rada s ljudima i vlastitog iskustva, duboko vjerujem da dug i Bitcoin imaju vrlo opasan odnos. Bitcoin traži dugi vremenski horizont. Dug ga skraćuje. Bitcoin traži unutarnju disciplinu. Dug uvodi vanjski pritisak. Bitcoin traži sposobnost čekanja. Dug traži redovitu uplatu bez obzira na stanje tržišta, zdravlje, posao ili obitelj.
+Počinje pitanjem što vaš novac mora napraviti prije sljedeće uplate.
 
-Opasna mi je ideja da se Bitcoin nikada ne smije prodati, nego se protiv njega treba zaduživati. U određenim vrlo specifičnim okolnostima netko može koristiti financijske instrumente na sofisticiran način, ali kao opće životno pravilo to može biti katastrofalno. Dug nije samo kamata. Dug je psihološko stanje. Dug je budući novac koji više nije slobodan.
+Ako Bitcoin jednog dana postane globalni standard, povijest će možda pisati o protokolu, rudarenju, državama, institucijama, cijenama, energetskim tržištima i velikim prijelazima. Ali osobni Bitcoin standard neće početi u povijesnoj knjizi.
 
-S tim je povezana i jedna šira stvar: novac ne dolazi iz izolacije. Novac dolazi od ljudi.
+Počet će za kuhinjskim stolom.
 
-To sam učio kroz poduzetništvo, klijente, kupce, projekte i tržište. Novac je medij razmjene između ljudi. Mi ljudi vrednujemo stvari i usluge. Vrednujemo ih različito, i upravo zato razmjena postoji. Gotovo ništa što koristimo u svakodnevnom životu nismo sami napravili. Netko je dizajnirao uređaj na kojem pišemo. Netko je proizveo stol za kojim sjedimo. Netko je isporučio struju, internet, hranu, odjeću, softver, knjige, alate i prostor. Ideja da možemo biti potpuno samostalni vrlo je zavodljiva, ali je pogrešna. Bogatstvo su, u velikoj mjeri, drugi ljudi.
+Otvorenom aplikacijom.
 
-U ovoj knjizi važno je stalno se vraćati na stvaranje vrijednosti. Prihod dolazi kada nekome stvorimo vrijednost koju on dobrovoljno prepoznaje i plaća. Netko dobiva proizvod, uslugu, rješenje, znanje, pomoć ili olakšanje, a mi dobivamo novac kao znak da je ta vrijednost prepoznata.
+Komadom papira.
 
-Bitcoin ne bi smio biti bijeg od toga.
+Iskrenim pogledom u vlastiti novac.
 
-Često sam viđao ljude koji računaju koliko im Bitcoina treba da se “umirove” i da više nikada ne moraju raditi. Razumijem privlačnost te ideje. Tko ne bi htio sigurnost? Ali ako Bitcoin postane samo maštanje o tome da više ne moramo stvarati vrijednost za druge, nešto smo promašili.
-
-Jedan od najvećih izvora zadovoljstva i sreće jest dobro obavljen posao. Ne bilo kakav posao. Ne besmislen rad pod prisilom. Nego osjećaj da smo nekome stvarno pomogli, nešto riješili, nešto stvorili, nekome olakšali život ili zadovoljili stvarnu potrebu. Kada drugi ljudi to vrednuju i za to plate, novac nije znak grabeži. Novac je znak uspjele razmjene.
-
-Ako imamo velik Bitcoin saldo, ali nemamo osjećaj da doprinosimo drugima, taj saldo može postati dosada, strah, izolacija ili stalno pitanje što sada. Dobar novac daje sigurnost, ali sigurnost sama po sebi nije smisao života. Smisao dolazi iz služenja, stvaranja, obitelji, vještine, odnosa i odgovornosti.
-
-Dobar novac ne smije nas učiniti ljudima koji bježe od rada. Treba nas učiniti ljudima koji mogu bolje birati rad, bolje služiti i bolje stvarati vrijednost.
-
-Ova knjiga je podjednako za pojedinca, za obitelj i za osobu koja vodi posao.
-
-Pojedinac mora znati upravljati novcem jer svaki pojedinac živi među drugim ljudima. Obitelj mora znati upravljati novcem jer se prava imovina ne stvara samo jednim velikim uvidom jedne osobe, nego zajedničkim razumijevanjem, povjerenjem i ponavljanjem. Posao mora znati upravljati novcem jer je posao rad s ljudima: klijentima, kupcima, partnerima, zaposlenicima, dobavljačima i zajednicom.
-
-U mnogim razgovorima s Bitcoinerima vidio sam jednu neizrečenu situaciju. U obitelji često postoji jedna osoba, vrlo često muškarac, koji je gotovo opsjednut Bitcoinom. Čita, sluša, prati, kupuje, uči, raspravlja, planira. S druge strane, partnerica često nije u tome na isti način. Ona mu vjeruje, ali ne zna do kraja što se događa. On zna previše da bi lako objasnio, a ona zna premalo da bi stvarno mogla sudjelovati.
-
-To nije zdrav završni sustav.
-
-To je razumljivo u početku. Netko prvi u obitelji otkrije Bitcoin, uči i preuzme odgovornost. Ali ako Bitcoin postane važan dio obiteljske imovine, onda ne smije zauvijek ovisiti samo o jednoj glavi, jednoj lozinki, jednom uređaju, jednom načinu razmišljanja i jednoj osobi koja “sve zna”.
-
-Znati nešto nije isto što i znati to prenijeti.
-
-To je jedan od razloga zašto ova knjiga postoji: da koncepte destilira u oblik koji može razumjeti i osoba koja nije tehnička, i partner koji nije opsjednut Bitcoinom, i dijete koje tek uči novac, i poduzetnik koji nema vremena postati stručnjak za svaki detalj.
-
-Skrbništvo, sigurnost, obitelj i nasljeđivanje zato su dio knjige o novcu, a ne tehnički dodatak. Tehnički dio jest važan, ali još važnije pitanje je: kako urediti sustav tako da ljudi koji nisu jednako tehnički spretni znaju što napraviti u pravom trenutku?
-
-Ova knjiga ne inzistira na jednom univerzalnom rješenju za sve. Ne tvrdim da svatko u svakom trenutku mora samostalno držati sav svoj Bitcoin bez ikakve pomoći. Niti tvrdim da je skrbnik uvijek dobro rješenje. Niti da je svaka institucija opasna. Niti da je svaki financijski instrument povezan s Bitcoinom isto što i Bitcoin. Stvarnost je složenija.
-
-Postoje vlastiti posjed, skrbnička rješenja, hibridni modeli i financijski instrumenti povezani s Bitcoinom. Svi imaju prednosti i mane. Ne postoji jedno rješenje za svaku osobu, obitelj, posao i fazu života. Postoji samo potreba da se razumije što se radi, zašto se radi, koji se rizik preuzima i tko zna prvi korak ako se nešto dogodi.
-
-Ne želim u samu knjigu zakovati previše imena uređaja, aplikacija, skrbnika, pružatelja usluga ili financijskih instrumenata. Taj se sloj mijenja prebrzo. Na stranici koja prati ovu knjigu nastojat ću držati ažurirane vodiče s konkretnijim alatima i praktičnim koracima koji u određenom trenutku imaju smisla. Knjiga treba dati okvir koji sporije stari.
-
-Roditeljima koji čitaju ovu knjigu želim posebno reći: veća vrijednost za djecu nije samo količina Bitcoina koju ćete im ostaviti. Veća vrijednost je ono što ćete ih naučiti o novcu, radu, odnosima, zahvalnosti, stvaranju vrijednosti, davanju i odgovornosti. Imovina bez pravila može postati teret. Bitcoin bez razumijevanja može postati izvor svađe, straha ili brzog rasipanja. Ako djeci ostavimo samo vrijednost, a ne ostavimo im način razmišljanja, možda im nismo dali ono najvažnije.
-
-Djeci ne treba prenijeti samo Bitcoin. Treba im prenijeti pravila. A pravila se ne prenose jednim razgovorom. Prenose se vremenom, ponavljanjem, primjerom i strpljenjem.
-
-Isto vrijedi za primanje. Ako netko jednog dana naslijedi Bitcoin ili bilo koju drugu vrijednost, mora znati primiti. Primanje nije pasivno. Čovjek može primiti površno, bez razumijevanja i bez osjećaja odgovornosti. A može primiti zahvalno, svjestan da vrijednost nije došla ni iz čega.
-
-Sve važnija mi je praksa zahvalnosti.
-
-Jedna jednostavna praksa koju smatram korisnom jest zapisivanje zahvalnosti: tri stvari na kojima sam zahvalan, šest dana u tjednu. Ne mora biti veliko. Dapače, važno je vidjeti male stvari. Kada čovjek vježba zahvalnost za ono što već ima, lakše prima bez srama i lakše daje bez stiska. Zahvalnost mijenja unutarnji odnos prema novcu.
-
-Davanje, primanje i zahvalnost povezani su. Čovjek koji ne zna primiti često ne zna ni dati bez kontrole. Čovjek koji ne zna dati često ne zna ni primiti bez straha. Zahvalnost uči oba smjera.
-
-Danas bih sebi iz 2014. rekao nešto vrlo jednostavno: naišao si na stvar civilizacijske važnosti. Bitcoin je tada bio kao dijete od pet godina, a mogao bi izrasti u višestoljetnog mudraca koji mijenja ljudsku koordinaciju. Nemoj ga tretirati kao igru. Nemoj ga samo kupiti i zaboraviti. Uhvati se posla. Napravi proračun. Ne diži kredit. Počni davati. Uči. Radi. Razmišljaj u desetljećima.
-
-Možda bih si rekao i nešto radikalnije: sav novac koji imaš prebaci u Bitcoin i prilagodi potrošnju i prihode prema njegovoj kupovnoj moći. Da sam to tada napravio savršeno, danas bih vjerojatno bio u potpuno drugačijoj financijskoj poziciji.
-
-Ali to nije cijela istina. Jer možda tada nisam bio osoba koja bi to znala nositi. Možda sam morao proći krive pretpostavke, altcoin fazu, volatilnost, rad za Bitcoin, trošenje Bitcoina, razduživanje, davanje i proračun da bih uopće razumio što ova knjiga treba biti.
-
-Ovo nije knjiga koju piše netko tko je od prvog dana sve znao. Ona nastaje iz vlastitog puta, pogrešaka, faza, učenja i sve jasnijeg uvjerenja da Bitcoin nije samo nešto što treba držati. Bitcoin je nešto oko čega treba naučiti živjeti.
-
-Poseban razlog zašto ovu knjigu pišem na hrvatskom jest praznina koju vidim oko sebe. Na hrvatskom jeziku gotovo da nema praktičnih knjiga o Bitcoinu, pogotovo ne iz perspektive: kako Bitcoin koristiti kao novac. Postoji puno sadržaja o cijeni, spekulaciji, tehnologiji, politici, ekonomiji i “kriptu”, ali vrlo malo onoga što običnom čovjeku, obitelji ili poduzetniku pomaže odgovoriti na pitanje: kako ovo stvarno uklopiti u svakodnevni život?
-
-Hrvatsko izdanje je za mene prirodan početak. Hrvatski je moj jezik. Ovdje živim, ovdje razgovaram s ljudima, ovdje vidim konkretne obrasce: odnos prema dugu, nekretninama, autima, štednji, poslu, obitelji i sigurnosti. Kasnije ova knjiga može izaći i na drugim jezicima. Ali prvo želim da bude dobra ovdje, među ljudima čije okolnosti poznajem izravno.
-
-Ideja za knjigu nastajala je godinama. U razgovorima s Bitcoinerima, klijentima, prijateljima i ljudima koji tek ulaze u ovu temu, neprestano sam ponavljao iste stvari. U jednom trenutku shvatio sam da to više ne smije ostati samo u razgovorima i bilješkama. Treba postati sustav. Treba postati tekst. Treba postati nešto čemu se čovjek može vraćati, označavati, provjeravati i primjenjivati.
-
-Postoji i osobniji, vrlo iskren razlog. Volio bih da ljudi koji već drže Bitcoin postanu bolji Bitcoineri, ne u smislu identiteta, slogana ili pripadnosti plemenu, nego u smislu kvalitete odluka. Manje prisilnih prodaja u lošem trenutku. Manje situacija u kojima proračun nije postojao, dug je stisnuo, stvarni višak nije bio jasan ili je sigurnosni sustav bio prekrhak. Više reda kod onih koji imaju mogućnost ući dublje u Bitcoin, a kod ljudi koji su već u njemu više sposobnosti stvaranja vrijednosti, veći prihodi i stabilniji život.
-
-To je dobro za njih, ali je dobro i za mene. Ne moram se pretvarati da sam neutralan promatrač. Dio sam Bitcoin mreže. Što je više ljudi razumije, koristi, čuva i prenosi na zreliji način, to je mreža jača, korisnija i otpornija. Što više ljudi stvara stvarnu vrijednost i dio te vrijednosti čuva u Bitcoinu, to i moj Bitcoin ima veću kupovnu moć i više prilika da ga koristim kao novac u stvarnom svijetu.
-
-Zbog toga želim da se ova knjiga slobodno dijeli. Njezin sadržaj bit će otvoreno dostupan online. Ne zato da bi knjiga bila “besplatna stvar” koju se zaboravi u otvorenoj kartici, nego zato što želim da dođe do ljudi kojima bi meni ovakav tekst 2014. godine mnogo značio. Dobra ideja se ne troši dijeljenjem. Ako vam nešto iz ove knjige pomogne, slobodno to koristite, dijelite, objašnjavajte, šaljite i gradite dalje.
-
-Ova knjiga nije knjiga o tome kako se brzo obogatiti. Nije savjet za trgovanje. Nije poziv na polugu. Nije porezni, pravni ni investicijski priručnik. Ona je praktični vodič za čovjeka koji želi Bitcoin shvatiti ozbiljno kao novac i zatim postaviti pitanje koje je puno važnije od same cijene:
-
-**Kako sada trebam živjeti?**
-
-Uspjeh ove knjige nije da se složite sa svakom rečenicom. Nije ni da odmah promijenite cijeli život. Uspjeh je da nakon čitanja imate manje magle: da znate gdje je novac, što je dug, što je stvarni višak, koliko možete dati, gdje je Bitcoin, tko mu može pristupiti i što vaša obitelj treba znati.
-
-Cilj nije samo imati više Bitcoina.
-
-Cilj je postati bolji upravitelj vrijednosti.
-
-A to je svrha ove knjige.
+I prvom odlukom da budućnost više ne trošimo prije nego što stigne.
