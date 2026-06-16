@@ -1,7 +1,3 @@
-Pročitao sam postojeće poglavlje i napisao novu, proširenu verziju. Zadržao sam njegovu osnovnu namjeru: Bitcoin prvo treba shvatiti kao pitanje novca, a ne kao pitanje cijene; knjiga zatim vodi čitatelja kroz redoslijed proračun → dug → davanje → ravnoteža imovine → Bitcoin kroz vrijeme → skrbništvo. ([GitHub][1]) U tekst sam ugradio Ammousove okvire: tvrdi novac, utrživost kroz vrijeme i prostor, fiat kao dugovni sustav, „fiat mining” kao kreditna ekspanzija, odvajanje novca i duga, te dokaz rada i energiju kao temelj Bitcoinove sigurnosti.      Tehnički dio je pisan u duhu objašnjenja kakvo daje *Inventing Bitcoin*: od problema dvostruke potrošnje, preko digitalnih potpisa i čvorova, do rudarenja, proof-of-worka i podešavanja težine; za osnovu protokola koristio sam i Satoshijev whitepaper. 
-
----
-
 # Zašto Bitcoin kao novac
 
 Bitcoin se često prvi put susretne kroz cijenu.
@@ -321,5 +317,3 @@ Ali upravo zato ga ne smije ni koristiti površno.
 Ova knjiga polazi od jednostavne pretpostavke: Bitcoin može biti izvanredan novac, ali čovjek prvo mora dovesti vlastiti novac u red. Tvrdi novac traži tvrd odnos prema stvarnosti. Proračun, dug, davanje, ravnoteža imovine, razumijevanje volatilnosti i sigurno skrbništvo nisu sporedne teme. To su osigurači, prekidači i instalacije monetarne struje.
 
 Bitcoin može osvijetliti kuću. Ali prvo treba urediti instalacije.
-
-[1]: https://github.com/btcpavao/bitcoin-kao-novac/blob/main/chapters/01-zasto-bitcoin-kao-novac.md "bitcoin-kao-novac/chapters/01-zasto-bitcoin-kao-novac.md at main · btcpavao/bitcoin-kao-novac · GitHub"
