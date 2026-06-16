@@ -1,343 +1,325 @@
+Pročitao sam postojeće poglavlje i napisao novu, proširenu verziju. Zadržao sam njegovu osnovnu namjeru: Bitcoin prvo treba shvatiti kao pitanje novca, a ne kao pitanje cijene; knjiga zatim vodi čitatelja kroz redoslijed proračun → dug → davanje → ravnoteža imovine → Bitcoin kroz vrijeme → skrbništvo. ([GitHub][1]) U tekst sam ugradio Ammousove okvire: tvrdi novac, utrživost kroz vrijeme i prostor, fiat kao dugovni sustav, „fiat mining” kao kreditna ekspanzija, odvajanje novca i duga, te dokaz rada i energiju kao temelj Bitcoinove sigurnosti.      Tehnički dio je pisan u duhu objašnjenja kakvo daje *Inventing Bitcoin*: od problema dvostruke potrošnje, preko digitalnih potpisa i čvorova, do rudarenja, proof-of-worka i podešavanja težine; za osnovu protokola koristio sam i Satoshijev whitepaper. 
+
+---
+
 # Zašto Bitcoin kao novac
 
-Postoje trenuci u povijesti kada se pojavi nova tehnologija i isprva izgleda kao alat za usku skupinu ljudi. Zatim se s vremenom pokaže da nije riječ samo o alatu, nego o novom sloju civilizacije.
+Bitcoin se često prvi put susretne kroz cijenu.
 
-Pismo je u početku moglo izgledati kao način bilježenja robe, dugova i dogovora. Kasnije je postalo način prenošenja znanja kroz stoljeća. Tiskarski stroj je mogao izgledati kao učinkovitija metoda umnažanja knjiga. Kasnije je promijenio obrazovanje, znanost, vjeru, politiku i odnos običnog čovjeka prema znanju. Električna energija je mogla izgledati kao način da se noću upali svjetlo. Kasnije je preoblikovala industriju, gradove, domove, medicinu i komunikaciju. Internet je mogao izgledati kao mreža za akademike, programere i čudake. Kasnije je postao globalna infrastruktura za komunikaciju, trgovinu, učenje, rad i koordinaciju.
+Netko čuje da je „narastao”. Netko drugi čuje da je „pao”. Jedan ga vidi kao investiciju, drugi kao špekulaciju, treći kao tehnološki eksperiment, četvrti kao internetski novac za ljude koji ne vjeruju bankama. Sve to može biti dio priče, ali ništa od toga nije početak priče.
 
-Bitcoin na početku izgleda kao cijena na ekranu.
+Početak je pitanje: **što je novac?**
 
-Netko ga prvi put vidi kao graf. Netko kao špekulaciju. Netko kao digitalnu imovinu. Netko kao “nešto što je nekad bilo jeftino, a sada je skupo”. Netko kao opasnost. Netko kao priliku. Netko kao još jednu internetsku modu.
+Ako čovjek ne razumije novac, Bitcoin mu izgleda kao broj na ekranu. Ako razumije novac, Bitcoin počinje izgledati kao nešto puno veće: pokušaj da se ljudima vrati novac koji nije ničiji dug, ničija politička naredba i ničija privilegija.
 
-Ali takav pogled promašuje najvažnije pitanje.
+To ne znači da će svatko odmah koristiti Bitcoin kao svakodnevni novac. Ne znači ni da je Bitcoin jednostavan, bez rizika ili spreman za svakoga u svakoj situaciji. Naprotiv. Bitcoin je tehnologija koja daje veliku slobodu, ali i veliku odgovornost. U tom smislu Bitcoin je danas sličan struji u njezinim ranim godinama.
 
-Najvažnije pitanje nije: “Koliko Bitcoin danas vrijedi u eurima ili dolarima?”
+Struja je bila golemo civilizacijsko otkriće prije nego što ju je većina ljudi znala sigurno koristiti. Prije prekidača, osigurača, standarda, utičnica, uputa i navika, struja je bila korisna, ali opasna. Mogla je osvijetliti grad, pokrenuti tvornicu i promijeniti život obitelji, ali se njome nije smjelo rukovati nepažljivo.
 
-Najvažnije pitanje je: što se događa kada čovječanstvo prvi put dobije novac koji nije ničiji dug, nije pod ničijim dekretom, nema središnjeg izdavatelja, ne može se proizvoljno umnožiti i može se prenositi preko svijeta bez dopuštenja?
+Bitcoin je monetarna struja. Može prenijeti vrijednost kroz prostor, preko granica i kroz vrijeme, bez dopuštenja banke, države ili posrednika. Ali kao i struja, ne oprašta neznanje. Ako izgubiš privatne ključeve, ne postoji služba za korisnike koja ti ih vraća. Ako kupiš Bitcoin novcem koji ti treba za stanarinu, hranu ili otplatu duga, volatilnost te može natjerati na lošu odluku. Ako ga koristiš bez plana, Bitcoin ti neće nužno donijeti slobodu. Može ti samo pojačati nered koji već postoji u tvom novcu.
 
-To pitanje nije samo investicijsko. Nije samo tehničko. Nije samo političko. To je civilizacijsko pitanje.
+Zato ova knjiga nije samo knjiga o Bitcoinu. Ovo je priručnik za korištenje Bitcoina kao novca na siguran i produktivan način.
 
-Jer novac nije sporedna stvar.
+Da bismo do toga došli, prvo moramo razumjeti zašto bi Bitcoin uopće mogao biti superioran novac.
 
-Novac je jedan od glavnih načina na koji ljudi međusobno surađuju kroz vrijeme. On povezuje radnika s kupcem, štedišu s budućom potrošnjom, roditelja s djecom, poduzetnika s projektom, proizvođača s tržištem, sadašnjost s budućnošću. Novac je jezik kojim društvo svakoga dana govori što je vrijedno, što je rijetko, što se traži, što se nudi, što treba čuvati, što treba proizvesti i što treba prestati raditi.
+## Novac nije isto što i bogatstvo
 
-Kada je novac loš, cijeli taj jezik postaje mutniji.
+Ljudi često koriste riječ „novac” kao da je isto što i bogatstvo. Ali novac nije bogatstvo samo po sebi. Bogatstvo su hrana, kuće, alati, strojevi, znanje, energija, odnosi, zemlja, vrijeme i proizvodi ljudskog rada. Novac je sredstvo kojim to bogatstvo mjerimo, čuvamo i razmjenjujemo.
 
-Kada se novac stalno stvara kroz dug, ljudi sve teže razlikuju stvarno bogatstvo od kreditne ekspanzije. Kada novac gubi kupovnu moć, štednja postaje kazna, a zaduživanje se počinje činiti razumnim. Kada cijene više ne nose jasne informacije, ljudi se sve teže orijentiraju. Kada se budućnost stalno diskontira, kratkoročne odluke postaju normalne. Kada ljudi osjećaju da novac “mora raditi” samo zato da ne bi nestajao, počinju kupovati stvari koje ne razumiju, ulaziti u rizike koje ne bi inače preuzeli i pretvarati život u stalnu obranu od propadanja kupovne moći.
+Novac postoji zato što izravna razmjena ne može nositi složenu ekonomiju. Ako ja imam cipele, a trebam kruh, moram pronaći pekara koji baš sada treba cipele. To se zove problem dvostruke podudarnosti potreba. Novac rješava taj problem tako što postaje dobro koje ljudi prihvaćaju ne zato što ga žele potrošiti izravno, nego zato što znaju da će ga drugi prihvatiti kasnije.
 
-Bitcoin nije rješenje za svaku ljudsku slabost. Ne čini čovjeka automatski mudrim, discipliniranim, poštenim, velikodušnim ili strpljivim.
+Dobar novac zato mora biti **utrživ**. Utrživost znači da nešto možeš lako zamijeniti za druga dobra bez velikog gubitka vrijednosti. Dobar novac je utrživ kroz tri dimenzije.
 
-Ali Bitcoin mijenja nešto temeljno: vraća mogućnost novca koji ne ovisi o obećanju izdavatelja.
+Prva je utrživost kroz prostor: možeš li ga poslati ili prenijeti daleko? Druga je utrživost kroz vrijeme: može li zadržati kupovnu moć u budućnosti? Treća je utrživost kroz veličinu: možeš li ga koristiti i za male i za velike transakcije?
 
-## Za koga je ova knjiga?
+Ako novac dobro putuje kroz prostor, ali loše čuva vrijednost kroz vrijeme, ljudi ga mogu koristiti za plaćanja, ali ne žele u njemu štedjeti. Ako dobro čuva vrijednost kroz vrijeme, ali ga je teško prenijeti kroz prostor, ljudi ga žele držati, ali im za trgovinu trebaju posrednici. Povijest novca može se čitati kao povijest traženja dobra koje najbolje rješava te tri dimenzije.
 
-Ova knjiga je za dvije vrste čitatelja.
+Zlato je stoljećima pobjeđivalo zato što ga je teško proizvesti, ne trune, lako se prepoznaje, dijeli se na manje jedinice i nitko ga ne može stvoriti političkom odlukom. Zlato je bilo tvrd novac.
 
-Prvi je čitatelj koji još nema Bitcoin ili ga ima vrlo malo, ali naslućuje da se tu događa nešto važno. Možda ga je strah. Možda misli da je Bitcoin isto što i ostatak “kripto” tržišta. Možda ne zna odakle početi.
+Tvrdi novac je novac čiju ponudu nije lako povećati. Ako ljudi počnu više cijeniti zlato, rudari ne mogu preko noći stvoriti deset puta više zlata. Moraju pronaći nalazišta, kopati, trošiti energiju, vrijeme i kapital. Upravo zato zlato dobro čuva vrijednost kroz vrijeme.
 
-Drugi je čitatelj koji Bitcoin već ima, ali oko njega nema red. Možda ga drži kao štednju, ali i dalje živi u dugu. Možda vjeruje u Bitcoin, ali nema proračun. Možda zna čuvati ključ, ali ne zna objasniti obitelji što učiniti ako ga sutra nema. Možda ima snažno uvjerenje, ali nema sustav.
+Ali zlato ima problem: fizičko je. Teško ga je slati preko oceana. Teško ga je koristiti u digitalnoj ekonomiji. Teško ga je nositi, provjeravati i čuvati u velikim količinama. Kako je svjetska trgovina rasla, zlato je završavalo u trezorima, a ljudi su počeli razmjenjivati potvrde, bankovne zapise i dugove koji su predstavljali zlato. U jednom trenutku novac više nije bio zlato u ruci, nego obećanje da netko negdje drži zlato.
 
-Obje vrste čitatelja trebaju isto početno pitanje: ne samo kako doći do Bitcoina, nego kako urediti život tako da Bitcoin u njemu može postati dobar novac.
+Tu počinje moderna priča o fiatu.
 
-Bitcoin je snažan novac. Kao i svaka snažna stvar, ne postaje dobar ili loš samo po sebi, nego prema sustavu u koji ulazi. Električna energija može osvijetliti kuću ili ozlijediti čovjeka. Problem nije u snazi, nego u načinu uporabe. Tako i Bitcoin može biti izvor mira ili pojačivač nereda.
+## Fiat: novac kao obećanje budućeg novca
 
-## Kako čitati ovu knjigu
+Fiat novac je novac koji vrijedi zato što ga nameće politički i bankarski sustav. To nije samo papirnata novčanica. Danas je većina fiat novca digitalni zapis u bankovnim knjigama. Ali bit fiat sustava nije u tome je li novac papirnat ili digitalan. Bit je u tome što se fiat novac stvara kroz dug.
 
-Ova knjiga nije napisana samo da se pročita. Napisana je da se provede.
+Kada banka odobri kredit, ona najčešće ne uzima već postojeći novac nekog štediše i predaje ga dužniku. Ona stvara novi depozit. Drugim riječima, u sustav ulazi novi novac jer je netko obećao da će u budućnosti vratiti novac. Budući novac počinje se tretirati kao sadašnji novac.
 
-Najbolje ju je prvo pročitati cijelu, od početka do kraja. Prvo čitanje daje mapu. Pokazuje zašto proračun dolazi prije duga, zašto dug dolazi prije davanja, zašto davanje dolazi prije ravnoteže imovine i zašto se Bitcoin kao primarni novac ne uvodi u život koji još nema osnovni red.
+To je srce fiat standarda: **obećanja buduće isplate koriste se kao sadašnji novac**.
 
-![Mapa knjige koja prikazuje redoslijed: Proračun, Dug, Davanje, Ravnoteža imovine, Bitcoin kroz vrijeme, Skrbništvo i Trideset godina kasnije.](assets/visuals/svg/00-mapa-knjige.svg)
+Zato fiat sustav prirodno potiče dug. Ako se novi novac stvara kreditom, tada oni koji mogu stvarati ili dobivati kredit imaju prednost. Banke, države, velike korporacije i financijski bliski igrači dolaze do novog novca prije drugih. Oni mogu kupovati imovinu, plaćati troškove i širiti svoje bilance prije nego što rast ponude novca prođe kroz cijene. Oni koji samo štede u novcu dobivaju drugi kraj štapa: njihov novac se razrjeđuje.
 
-*Redoslijed knjige nije dekoracija. Prvi dio postavlja prag, drugi dio integrira Bitcoin, a zaključak pokazuje plodove ponovljenih odluka.*
+To ne znači da je svaki kredit loš. Kredit može biti koristan kada netko tko je već odgodio potrošnju posudi stvarno ušteđenu vrijednost nekome tko ju može produktivno upotrijebiti. Problem nastaje kada se kredit pretvori u sam novac, a dug postane temelj monetarnog sustava.
 
-Nakon prvog čitanja vratite se na prvo mjesto gdje vaš život još nije usklađen s redoslijedom. Ako ne vodite proračun, ne počinjete od skrbništva. Ako još živite u dugu kao normalnom stanju, ne počinjete od punog Bitcoin standarda. Ako davanje nema svoju kategoriju i stvarne transakcije, drugi dio knjige još nema dovoljno zdrav temelj.
+Tada cijela kultura počinje trošiti budućnost u sadašnjosti.
 
-Redoslijed je namjeran. Možete se ne složiti sa svakom tvrdnjom u ovoj knjizi. To je u redu. Ali okvir knjige ne može se provesti preskakanjem koraka. Bitcoin možete imati i prije nego što provedete prvi dio. Možete imati mali iznos za učenje, naviku i razumijevanje. Ali ozbiljan osobni Bitcoin standard počinje tek kada proračun postoji, dug izlazi iz života, a davanje prestaje biti samo dobra ideja.
+Obitelj kupuje kuću budućim prihodima. Student kupuje obrazovanje budućim prihodima. Država kupuje politički mir budućim porezima. Korporacija kupuje rast budućim novčanim tokovima. S vremenom sve više odluka postaje ovisno o tome može li se dug refinancirati, može li se kamata podnijeti i može li se budućnost još malo povući u sadašnjost.
 
-Ova knjiga je zato namjerno čvrsta u redoslijedu. Ne zato da bi bila oštra prema čovjeku, nego zato da bi bila oštra prema neredu koji čovjeku krade vrijeme.
+Fiat novac zato nije neutralan alat. On mijenja ponašanje. Ako novac stalno gubi vrijednost, štednja postaje kažnjena. Ako je dug sustavno nagrađen, razduživanje izgleda iracionalno. Ako se novac stvara bez jasnog oportunitetnog troška, ljudi gube osjećaj da svaka odluka ima cijenu.
 
-Novac prije cijene
+Oportunitetni trošak znači: najbolja propuštena alternativa. Ako potrošim sto eura danas, ne gubim samo sto eura. Gubim sve ono što je tih sto eura moglo postati da sam ih čuvao, uložio ili dao nekoj drugoj namjeni. Zdrav novac nas stalno podsjeća na oportunitetni trošak. Loš novac ga skriva.
 
-Da bismo razumjeli Bitcoin, ne treba početi s tehnologijom. Treba početi s novcem.
+Fiat je imao jednu veliku prednost: dobro je putovao kroz prostor. Bankovni zapisi, kartice, SWIFT, centralne banke i platne mreže omogućile su globalnu trgovinu bez stalnog premještanja fizičkog zlata. Ali cijena te prostorne učinkovitosti bila je ogromna: novac je postao dug, štednja je oslabjela, a upravljanje novcem sve se više pretvorilo u upravljanje obvezama.
 
-Novac nastaje zato što ljudi žele surađivati. Svaki čovjek ne može sam proizvesti sve što mu treba. Netko zna uzgojiti hranu. Netko zna popraviti motor. Netko zna graditi kuću. Netko zna programirati. Netko zna liječiti. Netko zna učiti djecu. Netko zna organizirati posao. Netko zna prodati. Netko zna čuvati.
+Bitcoin pokušava riješiti upravo taj problem: zadržati digitalnu prostornu utrživost fiata, ali vratiti tvrdoću novca koju je imalo zlato.
 
-Kada ljudi razmjenjuju dobra i usluge, pojavljuje se problem: nije uvijek lako pronaći osobu koja ima ono što vama treba i kojoj baš u tom trenutku treba ono što vi nudite. Ako pekar treba cipele, a postolar ne treba kruh, razmjena se zaustavlja. Novac rješava taj problem. On je dobro koje ljudi prihvaćaju ne zato što ga nužno žele potrošiti odmah, nego zato što znaju da ga drugi ljudi također prihvaćaju.
+## Bitcoin kao digitalni tvrdi novac
 
-Novac zato nije samo “sredstvo plaćanja”. On je most između različitih ljudi, različitih potreba i različitih trenutaka u vremenu.
+Bitcoin je digitalni novac s unaprijed poznatom i strogo ograničenom ponudom. Nikada neće postojati više od 21 milijun bitcoina. Svaki bitcoin dijeli se na 100 milijuna manjih jedinica koje se zovu satoshiji. Jedan satoshi je najmanja osnovna jedinica Bitcoina.
 
-Dobar novac mora biti utrživ. To znači da ga se lako može prodati, odnosno zamijeniti za druga dobra. Što je novac utrživiji, to ga više ljudi želi držati. Dobar novac je prepoznatljiv, djeljiv, prenosiv, trajan, rijedak i teško ga je proizvoljno umnožiti. Ali najvažnije od svega: dobar novac mora dobro čuvati kupovnu moć kroz vrijeme.
+To ograničenje nije obećanje kompanije. Nije politika centralne banke. Nije zakonska uredba. To je pravilo protokola koje provjeravaju tisuće računala u mreži. Ako netko pokuša stvoriti više bitcoina nego što pravila dopuštaju, čvorovi ga odbijaju.
 
-Ako novac ne čuva kupovnu moć, čovjek bježi od novca. Troši ga, ulaže ga, zadužuje se, kupuje imovinu, kupuje stvari, kupuje “za svaki slučaj”, kupuje jer se boji da će sutra isti novac vrijediti manje. Takav novac ne potiče mirno planiranje. On potiče žurbu.
+Čvor je računalo koje pokreće Bitcoin softver i samostalno provjerava pravila mreže. Čvor provjerava jesu li transakcije valjane, jesu li potpisi ispravni, pokušava li netko potrošiti isti bitcoin dvaput, je li blok ispravno rudaren i stvara li rudar više novih bitcoina nego što smije.
 
-Ako novac dobro čuva kupovnu moć, čovjek može čekati. Može štedjeti. Može odgoditi potrošnju. Može planirati dalje. Može reći “ne” lošem poslu, lošoj investiciji, lošem dugu, lošoj kupnji i lošem trenutku. Dobar novac ne uklanja potrebu za radom. Naprotiv, on rad čini smislenijim jer plod rada ne propada tako lako kroz vrijeme.
+To je ključna razlika između Bitcoina i fiat sustava. U fiat sustavu korisnik na kraju mora vjerovati instituciji koja vodi knjigu. U Bitcoinu korisnik može sam provjeravati knjigu. Ne mora vjerovati da je ponuda ograničena. Može pokrenuti čvor i provjeriti.
 
-Zato pitanje Bitcoina nije samo pitanje jedne digitalne imovine.
+Bitcoin nije samo digitalna verzija zlata. Bitcoin je digitalni tvrdi novac koji se može slati internetom.
 
-Pitanje Bitcoina je pitanje može li čovjek ponovno imati novac koji ga ne tjera u stalni bijeg od novca.
+Zlato je tvrdo, ali fizičko. Fiat je digitalan, ali mekan. Bitcoin pokušava biti tvrd i digitalan u isto vrijeme.
 
-Što je Bitcoin?
+To je Bitcoinova monetarna teza u jednoj rečenici.
 
-Bitcoin je monetarna mreža i novac te mreže.
+## Problem digitalnog novca: kako spriječiti dvostruku potrošnju?
 
-To znači da riječ “Bitcoin” označava nekoliko povezanih stvari. Označava pravila sustava. Označava mrežu računala koja ta pravila provjeravaju. Označava digitalni novac koji se prenosi unutar te mreže. Označava javnu knjigu transakcija u kojoj se vidi povijest vlasništva. Označava i globalni dogovor milijuna ljudi da ta pravila vrijede.
+Da bismo razumjeli zašto je Bitcoin tehnološki važan, moramo razumjeti problem koji rješava.
 
-Najkraće rečeno: Bitcoin je novac s unaprijed poznatim pravilima koji se može primati, slati i čuvati bez središnje institucije.
+Digitalne stvari lako se kopiraju. Ako ti pošaljem fotografiju, ja ju i dalje mogu imati. Ako ti pošaljem PDF, ja mogu zadržati kopiju. To je korisno za informacije, ali katastrofalno za novac. Ako digitalni novac mogu kopirati, onda ga mogu potrošiti dvaput.
 
-Nitko ne može jednostavno odlučiti da će sutra postojati dvostruko više Bitcoina. Nitko ne može promijeniti vašu transakciju zato što mu se ne sviđa. Nitko ne može proizvoljno poništiti pravila mreže bez toga da ga drugi sudionici odbiju. Nitko ne mora vjerovati središnjem uredu da vodi knjigu pošteno, jer pravila mogu provjeravati korisnici.
+To se zove problem dvostruke potrošnje.
 
-Bitcoin je prvi globalni digitalni novac koji se ne oslanja na povjerenje u izdavatelja.
+Prije Bitcoina, digitalni novac je taj problem rješavao centralnim posrednikom. Banka, kartična kuća ili platna institucija vodi glavnu knjigu i odlučuje koja je transakcija valjana. Ako pokušam isti novac potrošiti dvaput, posrednik odlučuje koja transakcija vrijedi.
 
-To zvuči jednostavno, ali posljedice su ogromne.
+Bitcoin je prvi sustav koji je praktično riješio taj problem bez centralnog posrednika.
 
-Do Bitcoina je digitalni novac uvijek bio nečija obveza. Novac na bankovnom računu je zapis u bankarskom sustavu. Elektroničko plaćanje je prijenos potraživanja unutar mreže financijskih institucija. Kartica, aplikacija i internetsko bankarstvo mogu biti praktični, ali ne uklanjaju činjenicu da je sustav hijerarhijski: netko vodi račun, netko odobrava, netko može blokirati, netko ima konačnu riječ.
+Ne tako da je uklonio knjigu, nego tako da je knjigu učinio javnom, provjerljivom i jako skupom za krivotvorenje.
 
-Bitcoin uvodi drukčiju arhitekturu.
+## Privatni ključevi, javni ključevi i potpisi
 
-On ne pita tko ste, gdje živite, kojoj banci pripadate, tko vam je poslodavac, imate li račun, jeste li poželjni klijent, jeste li dovoljno važni i slaže li se netko s vama. Bitcoin pita jednostavnije pitanje: je li transakcija valjana prema pravilima mreže?
+Bitcoin se temelji na kriptografiji. Kriptografija je znanost o sigurnoj komunikaciji i matematičkom dokazivanju. U Bitcoinu ona omogućuje da dokažeš pravo trošenja bez otkrivanja tajne kojom trošiš.
 
-Ako jest, mreža je može prihvatiti.
+Svaki korisnik ima privatni ključ. Privatni ključ je tajni broj koji daje kontrolu nad bitcoinima. Iz privatnog ključa može se izvesti javni ključ, a iz javnog ključa adresa. Adresa je nešto poput javne lokacije na koju drugi mogu poslati bitcoin.
 
-Zašto je ograničena ponuda važna?
+Kada trošiš bitcoin, tvoj novčanik napravi digitalni potpis. Digitalni potpis je matematički dokaz da osoba koja šalje transakciju zna privatni ključ, ali bez otkrivanja tog ključa. Mreža može provjeriti potpis javnim informacijama, ali ne može iz potpisa izračunati privatni ključ.
 
-Jedno od najpoznatijih svojstava Bitcoina je ograničena ponuda: maksimalno može postojati 21 milijun bitcoina.
+Zato u Bitcoinu vlasništvo znači kontrola privatnog ključa.
 
-Ali sama rijetkost nije dovoljna. Mnogo stvari je rijetko, pa nisu dobar novac. Važna je kombinacija: rijetkost, provjerljivost, prenosivost, djeljivost, sigurnost i rastuće prihvaćanje.
+Ako držiš privatne ključeve, imaš izravnu kontrolu nad bitcoinima. Ako ih ne držiš, nego ih za tebe drži burza, aplikacija ili skrbnik, tada nemaš bitcoin u najstrožem smislu. Imaš potraživanje prema nekome tko obećava da će ti bitcoin isporučiti kada ga zatražiš.
 
-Kod državnog novca, ponuda se mijenja političkim i bankarskim procesima. Novi novac najčešće ulazi u sustav kroz kredit, dug, državne programe, financijska tržišta i bankarski sustav. Većina ljudi ne vidi izravno kako se to događa. Osjete posljedice kasnije: veće cijene, skuplje stanovanje, veća potreba za ulaganjem, normaliziran dug, pritisak da novac ne stoji, sve veći osjećaj da običan rad teško hvata korak s imovinom.
+Ta razlika je presudna. Bitcoin ponovno odvaja sadašnji novac od obećanja budućeg novca. Bitcoin u vlastitom skrbništvu je sadašnja imovina. Bitcoin na tuđoj platformi je kreditni odnos.
 
-Kod Bitcoina su pravila izdavanja javna, poznata i provjerljiva.
+## UTXO: Bitcoin nije bankovni račun
 
-Novi bitcoin nastaje kroz rudarenje. Rudari ulažu stvarnu energiju i računalnu snagu kako bi sudjelovali u sigurnosti mreže i predlagali nove blokove transakcija. Za to mogu dobiti nagradu prema pravilima protokola. Ta nagrada se približno svake četiri godine prepolavlja. Taj događaj zove se prepolavljanje. Kroz vrijeme se izdavanje novog bitcoina smanjuje, sve dok ukupna ponuda ne dođe do konačne granice.
+Bitcoin se često zamišlja kao sustav računa: „imam 0,1 BTC na svom računu”. To je korisna mentalna slika za početak, ali tehnički nije točna.
 
-Ovdje je važan princip: Bitcoin ne prilagođava ponudu ljudskim željama. Ljudi se moraju prilagoditi njegovim pravilima.
+Bitcoin koristi model koji se zove UTXO. To je kratica od *unspent transaction output*, što znači nepotrošeni izlaz transakcije. Jednostavnije: Bitcoin se sastoji od „komadića” vrijednosti koji su nastali u prethodnim transakcijama i još nisu potrošeni.
 
-U državnom novcu, kada se pojavi pritisak, sustav često pokušava stvoriti više novca, više kredita, više likvidnosti, više odgode. U Bitcoinu nema odbora koji može reći: “Ovaj put ćemo povećati ponudu jer okolnosti to zahtijevaju.”
+Ako ti netko pošalje 0,05 BTC, u mreži nastaje jedan nepotrošeni izlaz od 0,05 BTC koji možeš potrošiti samo ti, jer samo ti imaš privatni ključ koji odgovara uvjetima tog izlaza. Kada kasnije želiš potrošiti 0,02 BTC, tvoj novčanik uzima taj izlaz od 0,05 BTC kao ulaz nove transakcije, šalje 0,02 BTC primatelju, a ostatak vraća tebi kao novi izlaz. Taj ostatak zove se „kusur”, isto kao kad platiš novčanicom većom od cijene proizvoda.
 
-To mnogima zvuči kruto.
+Ovo je važno jer pokazuje da Bitcoin nije samo tablica salda. Bitcoin je lanac provjerljivih prijenosa vlasništva.
 
-Ali upravo je ta krutost izvor povjerenja.
+## Transakcije, mempool i blokovi
 
-Dobro pravilo nije dobro zato što se svaki put savija prema trenutnom pritisku. Dobro pravilo je dobro zato što ljudi znaju da ih neće izdati baš onda kada bi ga najviše željeli promijeniti.
+Kada pošalješ bitcoin, tvoj novčanik sastavlja transakciju i potpisuje ju privatnim ključem. Ta transakcija zatim putuje mrežom. Čvorovi ju primaju i provjeravaju.
 
-Bitcoin kao energetski novac
+Ako je ispravna, ulazi u mempool. Mempool je privremena čekaonica za valjane, ali još nepotvrđene transakcije. Svaki čvor ima svoj mempool. To nije centralna baza podataka, nego skup transakcija koje čekaju da ih rudari uključe u blok.
 
-Jedna od najdubljih stvari kod Bitcoina jest to što digitalni novac povezuje s fizičkim svijetom kroz energiju.
+Blok je paket transakcija. Otprilike svakih deset minuta jedan rudar pronađe valjan blok i pošalje ga mreži. Čvorovi tada provjeravaju cijeli blok. Ako je blok valjan, dodaju ga u svoj lanac blokova.
 
-Na internetu je gotovo sve lako kopirati. Slika, tekst, datoteka, poruka, pjesma, kod — sve se može umnožiti gotovo bez troška. To je čudesno za komunikaciju i znanje, ali je problem za novac. Ako digitalni novac možete kopirati kao datoteku, onda on ne može biti novac. Novac mora biti rijedak. Mora biti jasno tko ga ima i ne smije se moći potrošiti dvaput.
+Blockchain je lanac blokova. Svaki blok sadrži kriptografski otisak prethodnog bloka. Taj otisak zove se hash.
 
-Bitcoin taj problem rješava dokazom rada.
+Hash je rezultat matematičke funkcije koja od bilo kakvih podataka napravi kratak digitalni otisak. Ako promijeniš i najmanji detalj u podacima, hash se potpuno promijeni. Hash je lako provjeriti, ali ga je praktično nemoguće unaprijed pogoditi. Upravo ta osobina omogućuje proof of work.
 
-Dokaz rada znači da je za dodavanje novih blokova u povijest Bitcoina potrebno uložiti stvarni računalni rad, a taj rad troši energiju. Rudari se natječu u rješavanju teškog računalnog problema. Taj problem nije “koristan” u svakodnevnom smislu kao izgradnja kuće ili proizvodnja hrane. Njegova je korisnost u tome što napad na povijest mreže čini skupim, a provjeru pravila jeftinom.
+## Rudarenje nije „stvaranje Bitcoina iz ničega”
 
-To je iznimno važno.
+Bitcoin mining, ili rudarenje, često se objašnjava kao proces stvaranja novih bitcoina. To je djelomično točno, ali nije dovoljno.
 
-Bitcoin nije siguran zato što netko obećava da će biti pošten. Siguran je zato što je varanje skupo, a provjera je dostupna.
+Rudari rade tri stvari.
 
-Svaki korisnik može pokrenuti puni čvor. Puni čvor je program koji provjerava pravila Bitcoina: jesu li transakcije valjane, jesu li blokovi valjani, je li ponuda u skladu s pravilima i pokušava li netko napraviti nešto što mreža ne dopušta. Čvor ne mora vjerovati rudaru. Čvor provjerava.
+Prvo, skupljaju valjane transakcije u blok. Drugo, natječu se tko će prvi pronaći dokaz rada za taj blok. Treće, ako uspiju, dobivaju nagradu: nove bitcoine po pravilima protokola i transakcijske naknade iz transakcija u bloku.
 
-Rudarenje je skupo. Provjera je jeftina.
+Dokaz rada, odnosno proof of work, znači da je rudar morao potrošiti stvarnu računalnu energiju kako bi pronašao valjano rješenje. Rudari ne rješavaju zadatak jednom pametnom formulom. Oni pokušavaju golemi broj mogućnosti. Mijenjaju jedan broj u bloku, koji se zove nonce, i stalno računaju hash dok ne pronađu hash koji je dovoljno „nizak”, odnosno koji zadovoljava cilj težine.
 
-To je jedna od najljepših asimetrija Bitcoina.
+Nonce znači „number used once”, broj koji se koristi jednom. U rudarenju je to broj koji rudar mijenja kako bi dobio drugačiji hash.
 
-Napadač mora uložiti ogromnu količinu energije, opreme, koordinacije i novca kako bi pokušao promijeniti povijest. Obični korisnik može s relativno malo resursa provjeriti da pravila nisu prekršena.
+Važno je razumjeti asimetriju: teško je pronaći valjan dokaz rada, ali ga je lako provjeriti. Rudar može potrošiti mnogo energije i vremena da pronađe blok. Čvor može u djeliću sekunde provjeriti je li blok stvarno valjan.
 
-U tom smislu Bitcoin pretvara energiju u vremenski poredak. Rudari ne “stvaraju vrijednost” magično. Oni sudjeluju u izgradnji sigurnosnog zida oko povijesti transakcija. Što više rada stoji iza povijesti mreže, to je skuplje vratiti se unatrag i pokušati je prepisati.
+Tu je genijalnost Bitcoina. On čini pokušaj prijevare skupim, a provjeru jeftinom.
 
-To je razlog zašto Bitcoin nije samo digitalni zapis. On je digitalni novac čija je povijest zaštićena stvarnim troškom u fizičkom svijetu.
+U fiat sustavu, moć nad knjigom proizlazi iz političke, pravne i vojne moći. U Bitcoinu, pravo predlaganja sljedećeg bloka mora se kupiti radom. Ali ni tada rudar ne može promijeniti pravila. Može samo predložiti blok. Čvorovi ga prihvaćaju ili odbijaju.
 
-Vrijeme, energija i rad
+Rudari nisu vladari Bitcoina. Rudari su ponuđači blokova. Čvorovi su suci pravila.
 
-Da bismo razumjeli zašto je to važno, treba razlikovati energiju, snagu, rad i vrijeme.
+## Podešavanje težine: srce Bitcoinove monetarne politike
 
-Energije u svemiru ima mnogo. Ali ljudsko vrijeme je ograničeno. Nitko ne može proizvesti dodatne sate vlastitog života. Možemo bolje koristiti vrijeme. Možemo pomoću alata, znanja i energije povećati što u tom vremenu možemo napraviti. Ali samo vrijeme ne možemo umnožiti.
+Ako cijena Bitcoina naraste, više rudara želi rudariti. U običnom tržištu, kada nešto postane profitabilnije proizvoditi, proizvodnja raste. Ako poraste cijena bakra, rudnici pokušavaju proizvesti više bakra. Ako poraste cijena pšenice, poljoprivrednici sade više pšenice.
 
-Civilizacija napreduje kada ljudi sve bolje koriste energiju kako bi povećali korisnost svog ograničenog vremena. Vatra, kotač, plug, vodeni mlin, parni stroj, elektrana, motor, računalo, internet — sve su to načini da ljudski rad postane produktivniji. Više korisnog rada u manje vremena znači viši životni standard.
+Kod Bitcoina to ne funkcionira tako.
 
-Novac se tu pojavljuje kao sredstvo koordinacije. On pomaže ljudima odlučiti gdje usmjeriti rad, vrijeme, kapital i energiju. Ako je novac dobar, koordinacija je jasnija. Ako je novac loš, koordinacija je iskrivljena.
+Ako se više rudara uključi, blokovi bi se u početku pronalazili brže. Ali Bitcoin svakih 2016 blokova, otprilike svaka dva tjedna, automatski podešava težinu rudarenja. Ako su blokovi dolazili prebrzo, težina raste. Ako su dolazili presporo, težina pada. Cilj je da prosječno vrijeme između blokova ostane oko deset minuta.
 
-Bitcoin u tu sliku unosi nešto novo: digitalni novac koji se ne oslanja na povjerenje u središnju instituciju, nego na kombinaciju energije, kriptografije, mrežnog konsenzusa i dobrovoljne provjere pravila.
+To znači da povećana potražnja za Bitcoinom ne stvara više bitcoina. Ona stvara više sigurnosti. Više rudara znači više energije i računalne snage koja štiti povijest transakcija, ali raspored izdavanja novih bitcoina ostaje isti.
 
-To ne znači da je svaka potrošena jedinica energije automatski dobra. Energija uvijek ima oportunitetni trošak. Ali pitanje Bitcoina nije: “Troši li Bitcoin energiju?” Naravno da troši. Svaka ozbiljna civilizacijska infrastruktura troši energiju. Pitanje je: što dobivamo zauzvrat?
+To je razlog zašto je Bitcoin jedinstven monetarni fenomen. On je digitalna roba čija se proizvodnja ne može povećati zato što je cijena porasla. Kod svih drugih roba veća potražnja potiče veću ponudu. Kod Bitcoina veća potražnja potiče veću sigurnost.
 
-Ako Bitcoin omogućuje globalni novac koji ne može proizvoljno biti razvodnjen, koji može čuvati kupovnu moć kroz vrijeme, koji može prenijeti vrijednost preko prostora bez dopuštenja i koji milijuni ljudi mogu provjeravati, tada njegova potrošnja energije nije slučajna mana. Ona je dio sigurnosnog modela.
+Novi bitcoini ulaze u opticaj kroz nagradu za blok. Ta nagrada se otprilike svake četiri godine prepolavlja. To se zove halving. Prepolavljanje postupno smanjuje stopu izdavanja novih bitcoina dok se ne približimo maksimalnoj ponudi od 21 milijun.
 
-Bitcoin koristi energiju kako bi novac postao teže pokvarljiv.
+Zato Bitcoin nije samo „rijedak”. Njegova je rijetkost programabilna, javna i provjerljiva.
 
-Što Bitcoin čini drukčijim od “kripta”
+## Energija, snaga, rad i vrijeme
 
-U javnosti se Bitcoin često stavlja u istu košaru s “kriptom”. To je razumljivo, ali zbunjujuće.
+Bitcoin koristi energiju. To nije greška. To je temelj dizajna.
 
-Bitcoin je nastao kao pokušaj stvaranja elektroničkog gotovinskog sustava bez središnje strane. Njegov glavni problem je monetarni: kako imati digitalni novac koji nije ničiji dug, koji se ne može proizvoljno umnožiti i koji se može prenositi bez dopuštenja.
+Energija je sposobnost obavljanja rada. Snaga je brzina kojom se energija koristi. Rad je potrošnja energije kroz vrijeme za postizanje nekog učinka. Proof of work povezuje digitalnu knjigu s fizičkim svijetom tako što zahtijeva da se za pravo predlaganja blokova potroši stvarna energija, stvarna oprema i stvarno vrijeme.
 
-Velik dio šireg kripto svijeta ima drukčiji karakter. Tamo često postoje osnivači, zaklade, kompanije, prethodno izdani tokeni, česti eksperimenti, promjenjiva pravila, marketing, rizični financijski proizvodi, obećanja visokih prinosa i stalna potraga za “sljedećom velikom stvari”.
+Bez tog troška, digitalnu knjigu bilo bi lako napadati. Ako je jeftino predlagati lažne povijesti, ljudi će ih predlagati. Ako je jeftino stvarati nove jedinice novca, netko će ih stvarati. Ako je jeftino mijenjati pravila, pravila će se mijenjati.
 
-Ova knjiga nije knjiga o kriptu.
+Bitcoin kaže: možeš pokušati, ali moraš platiti tržišnu cijenu rada.
 
-Ova knjiga je o Bitcoinu kao novcu.
+Ovdje se često javlja prigovor: „Ali taj rad nije koristan.” To promašuje poantu. Rudarenje nije korisno zato što proizvodi neki drugi izračun koji bismo mogli koristiti za znanost, medicinu ili vremensku prognozu. Korisno je zato što čini monetarnu povijest skupom za krivotvorenje.
 
-To ne znači da se u svijetu drugih digitalnih projekata ne mogu pojaviti korisne ideje. Ali za osobni novčani standard potrebno je nešto drugo od stalnog eksperimentiranja. Potreban je novac čija pravila nisu podložna raspoloženju osnivača, trendovima tržišta, novim rundama financiranja ili obećanjima o budućoj korisnosti.
+Kao što brava nije korisna zato što proizvodi toplinu, nego zato što čini provalu skupljom, tako proof of work nije koristan zato što „računa nešto zanimljivo”, nego zato što čini prijevaru skupljom od poštenog sudjelovanja.
 
-Ako nešto želite držati kao novac, ne želite da sutra morate pratiti glasanje tima, promjenu politike izdavanja, novu upravljačku odluku, novu marketinšku kampanju i novu tehničku migraciju. Želite pravila koja možete razumjeti i provjeriti. Želite stabilnost protokola, ne uzbuđenje novog proizvoda.
+Bitcoin rudarenje također ima posebnu osobinu: može se odvijati gotovo bilo gdje gdje postoje struja i internet. Rudari se natječu za najjeftiniju energiju jer je energija njihov najveći trošak. To ih prirodno gura prema izvorima energije koji su jeftini, viškovni, udaljeni, slabo iskorišteni ili teško prenosivi. Bitcoin ne traži da se energija dovede u veliki grad kako bi bila monetizirana. Rudar može doći do energije.
 
-Bitcoin nije zanimljiv zato što se najbrže mijenja.
+To ne znači da je svako rudarenje automatski dobro, jeftino ili bez oportunitetnog troška. Oportunitetni trošak energije ovisi o mjestu i vremenu. Ako se energija može bolje iskoristiti za kućanstva, industriju ili grijanje, tada Bitcoin mora konkurirati tim potrebama. Ali ako je energija udaljena, viškovna ili bi se inače bacila, Bitcoin može postati kupac zadnjeg utočišta. On može pretvoriti lokalno neiskorištenu energiju u globalno utrživ novac.
 
-Zanimljiv je zato što se, u najvažnijim monetarnim pravilima, ne mijenja lako.
+To je jedan od najvažnijih razloga zašto je Bitcoin drukčiji od fiata. Fiat monetizira dug. Bitcoin monetizira energiju, rad i vrijeme.
 
-Zašto je Bitcoin civilizacijski važan?
+## Bitcoin kao sustav pravila bez vladara
 
-Civilizacija nije samo skup zgrada, zakona, institucija i tehnologija. Civilizacija je dugoročna suradnja velikog broja ljudi. A dugoročna suradnja traži sposobnost planiranja.
+U fiat sustavu pravila novca mogu se promijeniti. Kamatne stope, količina novca, bankovna pravila, uvjeti spašavanja banaka, zamrzavanje računa, kapitalne kontrole i monetarna politika ovise o institucijama. Te institucije čine ljudi. Ljudi imaju interese, strahove, pritiske i poticaje.
 
-Planiranje traži vrijeme. Vrijeme traži štednju. Štednja traži novac koji može prenijeti vrijednost iz sadašnjosti u budućnost.
+Bitcoin ne uklanja ljudsku prirodu. On ju ograničava pravilima koja svatko može provjeriti.
 
-Kada novac slabi, ljudi sve više moraju misliti kratkoročno. Ne zato što su loši, nego zato što ih sustav gura u taj smjer. Ako novac gubi kupovnu moć, štednja u novcu postaje neugodna. Ako je dug normaliziran, budućnost se prodaje unaprijed. Ako cijene imovine rastu brže od plaća, ljudi osjećaju da moraju žuriti. Ako se životni standard održava kreditom, mir postaje krhak. Ako je novac stalno političko pitanje, tada i osobni život postaje sve više izložen tuđim odlukama.
+Svatko može pokrenuti čvor. Svatko može pokušati rudariti. Svatko može primiti transakciju. Svatko može poslati transakciju ako ima privatne ključeve. Svatko može pročitati pravila. Nitko ne može jednostavno nazvati Bitcoin i tražiti da mu se poništi transakcija, poveća saldo ili promijeni maksimalna ponuda.
 
-Dobar novac ne rješava sve te probleme preko noći.
+To je značenje izraza „pravila bez vladara”.
 
-Ali dobar novac mijenja poticaje.
+Naravno, Bitcoin nije magija. Softver pišu ljudi. Novčanike izrađuju ljudi. Burze vode ljudi. Drugi slojevi i skrbničke usluge uvode nove rizike. Ljudi mogu pogriješiti, izgubiti ključeve, pasti na prijevaru, preuzeti prevelik rizik ili pogrešno razumjeti tehnologiju. Ali bazni sloj Bitcoina radi nešto što prije nije postojalo: omogućuje globalni monetarni sustav u kojem se konačno poravnanje može dogoditi bez centralnog izdavatelja.
 
-S tvrdim novcem, štednja ponovno postaje razumna. Strpljenje ponovno dobiva smisao. Dug se vidi jasnije. Potrošnja dobiva stvarniji oportunitetni trošak. Kapital se mora pažljivije ulagati. Proizvodnja postaje važnija od financijskog inženjeringa. Obitelj može planirati dalje. Poduzetnik može mjeriti ulaganje u odnosu na novac koji ima vlastiti dugoročni standard. Radnik može čuvati plod rada u obliku koji ne traži stalni bijeg.
+Konačno poravnanje znači da je transakcija završena u osnovnom novcu, a ne samo u nečijem obećanju. Kada plaćaš karticom, konačno poravnanje ne događa se u trenutku kada vidiš kvačicu na ekranu. Iza toga stoje banke, kartične mreže, rokovi, mogućnost povrata, naknade i međubankovno poravnanje. Kada Bitcoin transakcija dobije dovoljno potvrda na lancu, ona postaje dio javne povijesti koju bi napadač morao ponovno izgraditi skupljim radom da bi ju promijenio.
 
-U takvom svijetu ljudi još uvijek griješe. I dalje postoje rizici. I dalje postoje loši poslovi, loše odluke, bolesti, nesreće, sukobi, pohlepa i neznanje. Bitcoin nije kraj ljudske prirode.
+Potvrda znači da je transakcija uključena u blok. Svaki novi blok nakon toga dodaje novu potvrdu. Što je više potvrda, to je skuplje promijeniti povijest.
 
-Ali bolji novac može smanjiti količinu nereda koji nastaje iz lošeg novca.
+Bitcoinova konačnost nije metafizički apsolutna. Ona je ekonomska. Nakon dovoljno potvrda, promjena povijesti postaje toliko skupa i nepraktična da ju korisnici tretiraju kao konačnu.
 
-To je civilizacijska važnost Bitcoina: on otvara mogućnost da novac ponovno bude neutralniji temelj suradnje, a ne stalni izvor iskrivljenja.
+## Zašto Bitcoin nije samo „još jedna kriptovaluta”
 
-Zašto onda ova knjiga ne počinje kupnjom Bitcoina?
+Mnogi ljudi prvi put upoznaju Bitcoin zajedno s tisućama drugih „kripto” projekata. To stvara zbrku. Ako postoji tisuće tokena, zašto bi Bitcoin bio poseban?
 
-Ako je Bitcoin toliko važan, zašto ova knjiga ne kaže odmah: kupite Bitcoin, čuvajte ga i čekajte?
+Odgovor je u svrsi i pravilima.
 
-Zato što dobar novac ne uklanja potrebu za dobrim odlukama.
+Bitcoin nije nastao kao kompanija koja izdaje tokene kako bi financirala razvoj proizvoda. Nije nastao s marketinškim timom, upravom, zakladom ili obećanjem prinosa. Bitcoin je nastao kao otvoreni monetarni protokol. Njegova ključna inovacija nije „blockchain” kao baza podataka, nego digitalna oskudica bez centralnog izdavatelja.
 
-Naprotiv, povećava je.
+Mnogi kripto projekti pokušavaju optimizirati brzinu, aplikacije, fleksibilnost, pametne ugovore ili neke druge funkcije. Neke od tih stvari mogu biti tehnički zanimljive. Ali često dolaze uz cijenu: veće povjerenje u osnivače, manje decentralizacije, promjenjivu monetarnu politiku, složenije napade ili veću ovisnost o infrastrukturi.
 
-Ako čovjek nema proračun, ne zna što njegov novac treba raditi. Ako nosi dug, dio njegove budućnosti već pripada drugima. Ako ne daje, tvrd novac može lako zatvoriti srce i pretvoriti svaki trošak u unutarnju borbu. Ako ne razumije neto imovinu, može imati Bitcoin i svejedno biti nelikvidan, neuravnotežen ili izložen riziku koji ne razumije. Ako ne razumije volatilnost, rast cijene može ga učiniti neopreznim, a pad cijene uplašenim. Ako nema sigurnosni plan, njegova obitelj može ovisiti o jednoj osobi, jednoj lozinki, jednom uređaju ili jednoj neprovjerenoj pretpostavci.
+Bitcoin je konzervativan jer pokušava biti novac. Novac ne treba stalno mijenjati pravila. Novac treba biti pouzdan. Što više vrijednosti ljudi spremaju u monetarni sustav, to je važnije da se pravila ne mijenjaju lako.
 
-Dobar novac u neuređenom životu može pojačati neuređenost.
+Kod aplikacije, promjena može biti prednost. Kod novca, promjenjivost pravila može biti katastrofa.
 
-Zato ova knjiga ne počinje pitanjem: “Koliko Bitcoina trebate imati?”
+## Pitanja tvrdog novca
 
-Počinje pitanjem: “Što vaš sadašnji novac treba raditi?”
+Kada se netko prvi put susretne s idejom tvrdog novca, prirodno se vraća nekoliko pitanja.
 
-To je skromnije pitanje. Ali je temeljno.
+Zašto je važno da je ponuda ograničena? Zar ekonomiji ne treba više novca kako raste? Zar deflacija ne znači da će ljudi prestati trošiti? Kako društvo financira investicije bez kreditne ekspanzije? Ako je zlato bilo tvrdo, zašto ga je fiat zamijenio? Zašto Bitcoin mora trošiti energiju? Može li nešto tako volatilno stvarno postati novac?
 
-Jer prije nego što Bitcoin postane vaš primarni novac, morate znati što je novac uopće radio u vašem životu do sada. Je li služio miru ili panici? Je li služio obitelji ili statusu? Je li služio slobodi ili dugu? Je li služio stvaranju vrijednosti ili bijegu od straha? Je li služio dugoročnom planu ili kratkoročnom impulsu?
+Ova knjiga neće odgovoriti na sva moguća pitanja o monetarnoj teoriji, Bitcoinu, bankarstvu i povijesti novca. Za to postoje cijele knjige. Ali moramo dati dovoljno dobar radni odgovor da čitatelj može razumjeti zašto Bitcoin zaslužuje ozbiljno mjesto u osobnom, obiteljskom ili poslovnom upravljanju novcem.
 
-Bez tih pitanja, Bitcoin lako ostaje samo pozicija u aplikaciji.
+Odgovor počinje ovako: društvu ne treba novac čija se količina stalno povećava. Društvu trebaju dobra, usluge, kapital, energija, znanje i produktivni ljudi. Ako ekonomija proizvede više dobara, a količina novca ostane ista, cijene tih dobara mogu padati. To nije problem. To znači da novac kupuje više.
 
-S tim pitanjima, Bitcoin može postati dio sustava odluka.
+Ljudi neće prestati trošiti samo zato što novac može vrijediti više u budućnosti. Ljudi trebaju jesti, živjeti, putovati, raditi, graditi, liječiti se, učiti i uživati u životu. Ali tvrđi novac ih potiče da pažljivije biraju kada troše, zašto troše i što dobivaju zauzvrat. On ne ukida potrošnju. On smanjuje besmislenu potrošnju.
 
-Bitcoin kao novac, ne kao bijeg
+Tvrdi novac vraća vrijeme u odluke. Ako novac dobro čuva vrijednost, budućnost postaje jasnija. Ako budućnost postaje jasnija, čovjek može planirati. Ako može planirati, lakše smanjuje dug, gradi kapital, podiže obitelj, pokreće posao i služi drugima.
 
-Mnogi ljudi u Bitcoin dolaze kroz nezadovoljstvo.
+Zato novac nije samo financijski alat. Novac oblikuje vremenski horizont osobe.
 
-Nezadovoljni su inflacijom. Nezadovoljni su bankama. Nezadovoljni su državnim novcem. Nezadovoljni su tržištima. Nezadovoljni su politikom. Nezadovoljni su osjećajem da rade sve što “treba”, a ipak im budućnost izmiče.
+Loš novac čovjeka gura prema sadašnjosti: potroši prije nego izgubi vrijednost, zaduži se prije nego cijene porastu, riskiraj jer štednja nema smisla. Dobar novac čovjeka uči čekanju: razmisli, usporedi, čuvaj, investiraj, planiraj.
 
-To nezadovoljstvo može biti korisno jer otvara oči.
+Bitcoin je pokušaj da se takav novac vrati u digitalno doba.
 
-Ali ne smije ostati glavni izvor odluka.
+## Ali Bitcoin je volatilan
 
-Ako Bitcoin postane samo bijeg od sustava, čovjek može postati gorak, nestrpljiv, zatvoren i opsjednut cijenom. Ako Bitcoin postane novac oko kojega se gradi red, tada nezadovoljstvo može sazreti u disciplinu.
+Ovdje dolazimo do važne napetosti.
 
-Razlika je velika.
+Ako je Bitcoin superioran novac, zašto mu cijena toliko oscilira? Kako nešto može biti novac ako u jednoj godini naraste nekoliko puta, a zatim padne 50% ili više?
 
-Bijeg kaže: “Sustav je loš, zato ću sve staviti u Bitcoin i čekati da se svijet promijeni.”
+Odgovor je da Bitcoin još nije zreli globalni novac. On je monetarna tehnologija u fazi usvajanja. Njegova dugoročna ponuda je stabilna i predvidljiva, ali njegova potražnja još nije stabilna. Kada nova tehnologija pokušava monetizirati globalno, cijena kroz postojeći fiat sustav može biti vrlo promjenjiva.
 
-Red kaže: “Sustav ima ozbiljne probleme, zato ću urediti svoj proračun, izaći iz duga, davati, mjeriti neto imovinu, razumjeti Bitcoin kroz vrijeme, čuvati ga odgovorno i prenositi pravila onima za koje sam odgovoran.”
+Volatilnost znači da se kupovna moć ili tržišna cijena brzo i snažno mijenja. Kod Bitcoina je volatilnost posljedica toga što tržište još pokušava shvatiti koliko vrijedi digitalni, ograničeni, globalni, neovisni novac. Jedan dan ga ljudi tretiraju kao rizičnu tehnološku okladu. Drugi dan kao zaštitu od inflacije. Treći dan kao imovinu za špekulaciju. Četvrti dan kao novac za ljude izvan bankarskog sustava.
 
-Prvo je reakcija.
+Ta nestabilnost ne poništava Bitcoinovu monetarnu tezu, ali mijenja način na koji ga odgovorna osoba treba koristiti.
 
-Drugo je standard.
+Bitcoin može biti superioran novac u dizajnu, a istovremeno prerizičan za nekoga tko nema proračun, ima kratkoročne dugove, nema rezervu i ne zna čuvati ključeve.
 
-Ova knjiga govori o drugome.
+Zato ova knjiga ne počinje rečenicom: „Kupi Bitcoin.”
 
-Što znači da Bitcoin postane primarni novac?
+Počinje pitanjem: „Je li tvoj novac spreman za Bitcoin?”
 
-Bitcoin kao primarni novac ne znači da se svaki račun odmah plaća Bitcoinom. Ne znači da morate odbaciti bankovni račun, prestati koristiti euro ili sve prodati. Ne znači da se stvarni život mora nasilno prilagoditi ideji.
+## Bitcoin ne popravlja neuredan proračun
 
-Bitcoin kao primarni novac znači da Bitcoin postaje glavni novčani standard u vašem razmišljanju.
+Ako osoba ne zna gdje joj novac odlazi, Bitcoin neće riješiti problem. Ako troši više nego što zarađuje, Bitcoin neće riješiti problem. Ako dugovima financira stil života, Bitcoin neće riješiti problem. Ako nema nikakvu evidenciju o obvezama, rokovima, rezervama i ciljevima, Bitcoin može postati samo još jedna stavka kaosa.
 
-To se događa postupno.
+Bitcoin je moćan novac, ali moćan novac pojačava osobu koja ga koristi.
 
-Prvo počnete razlikovati novac od investicije. Zatim počnete vidjeti da euro nije neutralna mjerna jedinica, nego državni novac koji se mijenja kroz vrijeme. Zatim počnete promatrati svoju neto imovinu kao cjelinu. Zatim shvatite da svaka velika potrošnja ima oportunitetni trošak u Bitcoinu. Zatim počnete pitati: je li ova kupnja, ovo ulaganje, ovaj dug, ova poslovna odluka i ovaj način života bolji od držanja boljeg novca?
+Ako ga koristi nestrpljiva osoba, pojačat će nestrpljenje. Ako ga koristi pohlepna osoba, pojačat će pohlepu. Ako ga koristi osoba bez plana, pojačat će paniku. Ako ga koristi osoba s dugovima, kratkim horizontom i lošom evidencijom, volatilnost ju može prisiliti da prodaje u najgorem trenutku.
 
-To pitanje nije jednostavno. Ne znači da nikada ne treba trošiti. Ne znači da nikada ne treba ulagati. Ne znači da je svaki satoshi svetinja koju se ne smije dotaknuti. Takav odnos bi stvorio novu vrstu straha.
+Ali ako ga koristi osoba koja zna voditi proračun, razumije dug, ima rezervu, zna što posjeduje, što duguje i zašto nešto kupuje, Bitcoin može postati iznimno moćan alat. Može postati novac koji ne služi samo za špekulaciju, nego za mjerenje, čuvanje i raspoređivanje vrijednosti kroz vrijeme.
 
-Dobar novac ne treba obožavati.
+Zato je jezgra ove knjige upravljanje novcem.
 
-Treba ga koristiti mudro.
+## Kako je složena ova knjiga
 
-Bitcoin kao primarni novac znači da vaš novac više nije samo ostatak nakon potrošnje. On postaje središnji dio plana. Potrošnja se usklađuje s njim. Dug se mjeri protiv njega. Davanje se uključuje u njega. Imovina se ravna prema njemu. Volatilnost se čita kroz njega. Sigurnost se gradi oko njega. Obitelj uči jezik koji ga može razumjeti.
+Ova knjiga ima dva dijela.
 
-Tada Bitcoin prestaje biti samo nešto što imate.
+Prvi dio ne počinje tehnikom kupnje Bitcoina, nego temeljnim principima upravljanja novcem. Prije nego što čovjek koristi tvrdi novac, mora naučiti tvrdo upravljati novcem.
 
-Postaje nešto oko čega donosite odluke.
+Prvi princip je **vođenje proračuna na ultrarazini**. To znači da svakom novcu dajemo namjenu. Ne gledamo samo koliko ukupno imamo, nego gdje je novac, čemu služi, kada će se koristiti i što mu je alternativa. Učimo pratiti novac kroz vrijeme. Učimo da sto eura danas nije samo sto eura danas, nego i sve ono što tih sto eura može postati za mjesec, godinu ili deset godina. Time uvodimo oportunitetni trošak u svakodnevne odluke.
 
-Zašto je potreban osobni Bitcoin standard?
+Drugi princip je **razduživanje**. Dug je trošenje budućeg novca. Ponekad može biti produktivan, ali dug za potrošnju i stil života zarobljava buduće vrijeme. Ako želiš koristiti Bitcoin kao novac, moraš prestati ovisiti o novcu koji još nisi zaradio. Inače ćeš u trenucima volatilnosti morati prodavati imovinu kako bi servisirao stare odluke. Razduživanje je vraćanje budućnosti sebi.
 
-Globalni Bitcoin standard, ako se ikada dogodi u širokom smislu, neće doći svima odjednom. Ljudi neće istog dana promijeniti način na koji zarađuju, štede, troše, računaju, ulažu i čuvaju vrijednost. Svijet se ne mijenja ravnom crtom.
+Treći princip je **davanje novca**. U proračunu ćemo uspostaviti pravilo da jedan dio novčanog salda uvijek ima namjenu za davanje. To nije sporedna moralna dekoracija. Davanje trenira sposobnost stvaranja vrijednosti za druge ljude. Ono nas uči vidjeti potrebe, rješavati probleme i ne pretvoriti štednju u strah. Dugoročno, osoba koja redovito daje ne postaje manje produktivna, nego sposobnija prepoznati gdje vrijednost treba teći. Davanje je praksa koja novac ponovno povezuje sa služenjem.
 
-Ali pojedinac može početi prije svijeta.
+Drugi dio knjige prelazi na korištenje Bitcoina kao novca unutar šire slike imovine.
 
-Obitelj može početi prije države.
+Prvo ćemo naučiti koncept **ravnoteže ukupne imovine**. Imovinu ćemo promatrati kao sastavljenu od tri dijela: novac, potrošna dobra i kapitalna dobra. Novac je ono čime čuvamo opcionalnost i mjerimo vrijednost. Potrošna dobra su dobra koja koristimo za život i koja se troše: hrana, odjeća, stanovanje, automobili, uređaji, putovanja. Kapitalna dobra su dobra koja nam pomažu proizvoditi više vrijednosti u budućnosti: alati, oprema, poslovni sustavi, strojevi, znanje, procesi, udjeli u produktivnim pothvatima.
 
-Poduzetnik može početi prije tržišta.
+U toj ravnoteži Bitcoin ima ulogu novca. To znači da ga ne promatramo samo kao investiciju, nego kao najlikvidniji i najtvrđi dio imovine. Iz te perspektive učimo što znači trošiti Bitcoin na potrošna dobra, a što znači ulagati Bitcoin u kapitalna dobra. Na Bitcoin standardu potrošnja postaje ozbiljnija jer se odričemo novca koji bi mogao rasti u kupovnoj moći. Ali ulaganje također postaje ozbiljnije jer kapitalno dobro mora stvarno opravdati trošak tvrdog novca.
 
-Osobni Bitcoin standard ne znači da je sve oko vas već na Bitcoinu. Znači da vi počinjete graditi pravila oko najboljeg novca koji poznajete. Ne čekate da svijet postane savršen. Ne čekate da volatilnost nestane. Ne čekate da svi razumiju. Ne čekate da svaki trgovac prima Bitcoin. Ne čekate da sve bude jednostavno.
+Nakon toga objasnit ćemo očekivani rast Bitcoina kroz vrijeme, njegovu volatilnost i cikluse. Promatrat ćemo potencijalni „zakon Bitcoina” ne kao magično jamstvo, nego kao hipotezu: od početka mreže vidimo pravilnosti u rastu, usvajanju, skaliranju i cijeni. Pokazat ćemo što bi se moglo dogoditi ako Bitcoin nastavi rasti prema dosadašnjim dugoročnim obrascima, ali i kako se odgovorno odnositi prema tome. Buduće cijene nisu obećanje. One su scenariji za planiranje. Ono što je za ovu knjigu važno jest kako volatilnost prevesti u proračun, rezerve, rokove i odluke.
 
-Počinjete tamo gdje imate stvarnu kontrolu.
+Na kraju ćemo raspraviti praktično držanje Bitcoina: skrbništvo i sigurnost. Skrbništvo znači: tko ima kontrolu nad ključevima? Sigurnost znači: kako spriječiti krađu, gubitak, paniku, tehničku pogrešku i loše nasljeđivanje? Ne postoji jedno rješenje za sve. Student, obitelj, poduzetnik i tvrtka nemaju isti rizik, isti iznos, istu odgovornost ni isti tehnički kapacitet. Cilj nije kopirati tuđi model, nego izgraditi sigurnosni model za vlastitu situaciju.
 
-U svom proračunu.
+## Bitcoin kao primarni novac
 
-U svom dugu.
+Konačni cilj ove knjige nije da čitatelj „ima malo Bitcoina”. To može biti početak, ali nije cilj.
 
-U svom davanju.
+Cilj je razumjeti što bi značilo da Bitcoin postane primarni novac osobe, obitelji ili biznisa.
 
-U svojoj neto imovini.
+Primarni novac je novac u kojem mjeriš svoj rad, štednju, troškove, investicije i budućnost. Danas većina ljudi primarno razmišlja u eurima, dolarima ili nekoj drugoj fiat valuti. Čak i kada kupe Bitcoin, često ga mentalno mjere samo kroz fiat cijenu. Pitaju: koliko moj Bitcoin vrijedi u eurima?
 
-U svojim pravilima za volatilnost.
+Bitcoin standard počinje kada se pitanje polako okrene: koliko moj euro vrijedi u satoshijima? Koliko me ovaj trošak košta u budućoj kupovnoj moći? Koliko kapitalno dobro mora proizvesti da opravda trošak tvrdog novca? Koliko sigurnosti trebam prije nego što povećam izloženost? Koliko duga moram ukloniti prije nego što mogu mirno štedjeti?
 
-U svom sigurnosnom planu.
+To ne dolazi preko noći. Ne treba glumiti da živimo u svijetu u kojem je Bitcoin već svugdje prihvaćen, stabilan i jednostavan. Još uvijek živimo u fiat svijetu. Plaće, porezi, računi, knjigovodstvo, banke i svakodnevne cijene uglavnom su fiat. Bitcoin se koristi unutar tog svijeta, ne izvan njega.
 
-U razgovoru s obitelji.
+Ali upravo zato treba priručnik. Kao što su ljudi morali naučiti sigurno koristiti struju u svijetu koji još nije bio potpuno elektrificiran, tako danas moramo naučiti sigurno koristiti Bitcoin u svijetu koji još uvijek radi na fiat standardu.
 
-To je dovoljno skromno da se može početi danas i dovoljno ozbiljno da kroz desetljeća može promijeniti cijeli život.
+## Zaključak: zašto Bitcoin, ali ne bez reda
 
-Što ova knjiga želi napraviti
+Bitcoin je superioran kandidat za novac zato što kombinira osobine koje su kroz povijest bile odvojene.
 
-Ova knjiga ne pokušava dokazati sve što se o Bitcoinu može dokazati. Ne pokušava zamijeniti tehničke knjige, monetarnu teoriju, pravni savjet, porezni savjet ili osobnu odgovornost. Ne pokušava vam reći koliko će Bitcoin vrijediti određenog datuma. Ne pokušava vas natjerati na jednu univerzalnu odluku.
+Kao zlato, teško ga je proizvesti i nečija politička odluka ne može ga jednostavno umnožiti. Kao fiat, može se slati digitalno kroz prostor. Za razliku od zlata, ne treba centralizirane trezore da bi putovao svijetom. Za razliku od fiata, nije dug koji netko drugi mora ispuniti. Za razliku od bankovnih zapisa, može se držati izravno. Za razliku od većine financijske imovine, nema upravu, bilancu, dividendu, dospijeće ni kreditni rizik izdavatelja.
 
-Ova knjiga želi napraviti nešto drugo.
+Bitcoin nije savršen. Volatilan je. Tehnički je zahtjevan. Skrbništvo može biti opasno. Drugi slojevi i usluge uvode nove kompromise. Države ga mogu regulirati, oporezivati ili napadati. Ljudi ga mogu pogrešno koristiti. Ali njegova osnovna monetarna inovacija ostaje: prvi put imamo digitalni novac koji nije ničiji dug i čiju ponudu može provjeravati svatko.
 
-Želi vam pomoći da Bitcoin prestane biti maglovita ideja i postane uređen sustav odluka.
+To je dovoljno važno da ga ozbiljan čovjek ne smije ignorirati.
 
-Zato redoslijed nije slučajan.
+Ali upravo zato ga ne smije ni koristiti površno.
 
-Prvo dolazi proračun, jer bez proračuna ne znate što novac radi.
+Ova knjiga polazi od jednostavne pretpostavke: Bitcoin može biti izvanredan novac, ali čovjek prvo mora dovesti vlastiti novac u red. Tvrdi novac traži tvrd odnos prema stvarnosti. Proračun, dug, davanje, ravnoteža imovine, razumijevanje volatilnosti i sigurno skrbništvo nisu sporedne teme. To su osigurači, prekidači i instalacije monetarne struje.
 
-Zatim dug, jer dug znači da je dio budućnosti već potrošen.
+Bitcoin može osvijetliti kuću. Ali prvo treba urediti instalacije.
 
-Zatim davanje, jer tvrdi novac bez otvorene ruke može stvoriti tvrdog čovjeka.
-
-Zatim ravnoteža imovine, jer Bitcoin ne živi u praznini, nego u ukupnoj bilanci čovjeka, obitelji ili posla.
-
-Zatim Bitcoin kroz vrijeme, jer Bitcoin se ne može razumjeti samo kroz današnju cijenu.
-
-Zatim skrbništvo i sigurnost, jer novac koji se ne može sigurno prenijeti kroz vrijeme i obitelj nije dovršen sustav.
-
-Na kraju dolaze priče iz budućnosti, ne kao obećanje, nego kao slika. Slika onoga što se može dogoditi kada se mala pravila primjenjuju dugo.
-
-Bitcoin je velik zato što otvara mogućnost boljeg novca.
-
-Ali vaš život se ne mijenja samim postojanjem boljeg novca.
-
-Mijenja se kada bolji novac dobije bolja pravila.
-
-Zato ova knjiga počinje jednostavno: ne s prognozom, ne s uzbuđenjem, ne s panikom, nego s redom.
-
-Ako Bitcoin vrijedi ozbiljno shvatiti kao novac, tada prvo pitanje nije što će tržište napraviti sutra.
-
-Prvo pitanje je:
-
-Što će vaš sadašnji novac napraviti danas?
+[1]: https://github.com/btcpavao/bitcoin-kao-novac/blob/main/chapters/01-zasto-bitcoin-kao-novac.md "bitcoin-kao-novac/chapters/01-zasto-bitcoin-kao-novac.md at main · btcpavao/bitcoin-kao-novac · GitHub"
