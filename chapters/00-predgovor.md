@@ -1,6 +1,6 @@
 # Predgovor
 
-Ova knjiga zove se **Bitcoin kao novac**, a njezin podnaslov mogao bi biti: **od držanja Bitcoina do uređenog sustava odluka**.
+Ova knjiga zove se **Bitcoin kao novac**, a njezin podnaslov je: **od držanja Bitcoina do uređenog sustava odluka**.
 
 To je najkraći opis onoga što sam pokušao napraviti: ne napisati još jednu knjigu koja čovjeka uvjerava da kupi Bitcoin, ne napisati knjigu o tradingu, ciklusima, brzom bogaćenju ili tome kako pogoditi sljedeći vrh, niti napisati tehnički priručnik za ljude koji žele postati stručnjaci za svaki detalj protokola.
 
