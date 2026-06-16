@@ -304,7 +304,7 @@ Bitcoin mi se snažno vratio 2017. godine, kada je cijena ponovno ušla u javnos
 
 Nakon toga došle su ozbiljnije knjige, podcasti, *The Bitcoin Standard*, rad u Bitcoin prostoru, dublje razumijevanje razlike između Bitcoina i kripta, i sve jasniji osjećaj da Bitcoin nije tehnološka zanimljivost nego monetarni fenomen.
 
-Paralelno s tim, kroz proračun, YNAB, Wineabilu, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije i obične životne situacije, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
+Paralelno s tim, kroz proračun, YNAB, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije i obične životne situacije, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
 
 Možeš imati dobru tezu i loš sustav.
 
