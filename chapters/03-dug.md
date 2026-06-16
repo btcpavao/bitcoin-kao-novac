@@ -64,7 +64,7 @@ To nije Bitcoin standard.
 
 To je fiat bilanca s Bitcoin ukrasom.
 
-Prema podacima iz Eurobarometra koje je naveo Hrvatski sabor, oko **16% hrvatskih građana** ulagalo je u kriptovalute. Ali “ima kripto” ne znači “ima Bitcoin kao novac”. To može značiti 100 eura na burzi, altcoin portfelj, stablecoin, trgovanje, izgubljen novčanik ili ozbiljna štednja.
+Prema podacima iz Eurobarometra koje je naveo Hrvatski sabor, oko **16% hrvatskih građana** ulagalo je u kriptovalute. Ali “ima kriptovalute” ne znači “ima Bitcoin kao novac”. To može značiti 100 eura na burzi, portfelj drugih kriptovaluta, kriptovalutu vezanu uz fiat valutu, trgovanje, izgubljen novčanik ili ozbiljnu štednju.
 
 Ova knjiga ne govori o tome da čovjek “ima nešto Bitcoina”.
 
@@ -118,17 +118,17 @@ On kaže: ako novac ponovno može biti tvrd, onda ne moramo glumiti da je dom š
 
 ## Fiat novac se širi
 
-Saifedean Ammous u *The Fiat Standard* opisuje fiat kao sustav u kojem se novi novac stvara kroz kredit. Novac se ne stvara prvenstveno printanjem novčanica, nego izdavanjem duga; kredit tretira buduće obećanje plaćanja kao sadašnji novac. 
+Saifedean Ammous u *The Fiat Standard* opisuje fiat kao sustav u kojem se novi novac stvara kroz kredit. Novac se ne stvara prvenstveno tiskanjem novčanica, nego izdavanjem duga; kredit tretira buduće obećanje plaćanja kao sadašnji novac.
 
 To je srce problema duga.
 
 Fiat sustav potiče čovjeka da potroši budućnost, jer sama tehnologija novca funkcionira tako da se budućnost vuče u sadašnjost.
 
-Zato CPI nije dovoljno dobar način da vidimo gubitak kupovne moći. Ammous izričito tvrdi da je mjerenje potrošačke inflacije nedovoljno za mjerenje štete fiata, jer se cijene mijenjaju i zbog pada vrijednosti novca i zbog rasta produktivnosti; povećanje ponude monetarne jedinice bolji je proxy za razrjeđivanje vrijednosti koju drže štediše. U istom odlomku navodi da je prosječna godišnja inflacija ponude novca za glavne valute od 1965. do 2020. bila **7,44% za SAD**, **7,79% za eurozonu**, **10,87% za Ujedinjeno Kraljevstvo**, a ponderirani prosječni fiat korisnik trpio je oko **13,72%** godišnje inflacije ponude novca. 
+Zato indeks potrošačkih cijena nije dovoljno dobar način da vidimo gubitak kupovne moći. Ammous izričito tvrdi da je mjerenje potrošačke inflacije nedovoljno za mjerenje štete fiata, jer se cijene mijenjaju i zbog pada vrijednosti novca i zbog rasta produktivnosti; povećanje ponude monetarne jedinice bolje je mjerilo razrjeđivanja vrijednosti koju drže štediše. U istom odlomku navodi da je prosječna godišnja inflacija ponude novca za glavne valute od 1965. do 2020. bila **7,44% za SAD**, **7,79% za eurozonu**, **10,87% za Ujedinjeno Kraljevstvo**, a ponderirani prosječni fiat korisnik trpio je oko **13,72%** godišnje inflacije ponude novca.
 
-Ako gledamo sam euro, blaga slika M3 od nastanka eura može dati oko 5% godišnje. Ali to nije cijela priča. Monetarna baza eura, M0, pokazuje oštriji režim: prema ECB podacima, M0 je u ožujku 2002. bio oko **415,6 milijardi eura**, u svibnju 2026. oko **4.103 milijarde eura**, a na vrhuncu u studenom 2022. oko **6.386 milijardi eura**. To znači da je od 2002. do 2026. monetarna baza narasla gotovo **9,9 puta**, približno **9,9% godišnje**, a do vrhunca 2022. oko **15,4 puta**, približno **14,1% godišnje**. ([Trading Economics][4])
+Ako gledamo sam euro, blaga slika M3 od nastanka eura može dati oko 5% godišnje. Ali to nije cijela priča. Monetarna baza eura, M0, pokazuje oštriji režim: prema podacima Europske središnje banke, M0 je u ožujku 2002. bio oko **415,6 milijardi eura**, u svibnju 2026. oko **4.103 milijarde eura**, a na vrhuncu u studenom 2022. oko **6.386 milijardi eura**. To znači da je od 2002. do 2026. monetarna baza narasla gotovo **9,9 puta**, približno **9,9% godišnje**, a do vrhunca 2022. oko **15,4 puta**, približno **14,1% godišnje**. ([Trading Economics][4])
 
-Ova knjiga zato ne polazi od pitanja: koliko je CPI?
+Ova knjiga zato ne polazi od pitanja: koliki je indeks potrošačkih cijena?
 
 Polazi od pitanja: koliko se novac širi?
 
@@ -285,7 +285,7 @@ Obitelj bez duga može raditi takve poteze.
 
 Obitelj s dugom ne može.
 
-Dug ne pita je li Bitcoin iznad ili ispod trenda. Dug ne čeka bear market. Dug ne razumije ciklus. Dug ne daje popust zato što ste platili u dobrom trenutku. Dug je linearna obveza u nelinearnom svijetu.
+Dug ne pita je li Bitcoin iznad ili ispod trenda. Dug ne čeka tržište pada. Dug ne razumije ciklus. Dug ne daje popust zato što ste platili u dobrom trenutku. Dug je linearna obveza u nelinearnom svijetu.
 
 Zato je najam, u ovom standardu, privremeni alat slobode. Nije religija. Nije ideal sam po sebi. Najam daje mobilnost i mogućnost upravljanja troškom kroz cikluse. Kad Bitcoin novac dovoljno naraste, obitelj može ponovno kupiti dom — ali tada gotovinom, bez duga, i samo ako dom ne prelazi razumnu trećinu ukupne imovine.
 
@@ -415,7 +415,7 @@ Ali u hrvatskoj raspravi najam se često odbacuje unaprijed, kao da je sama rije
 
 To je fiat mentalitet nekretnine kao identiteta.
 
-Na Bitcoin standardu najam ima drukčiju ulogu. On daje mobilnost. Omogućuje da lokacija postane varijabla. Omogućuje da se poznati trošak stanovanja plaća unaprijed kada je Bitcoin iznad trenda. Omogućuje da obitelj u bear marketu smanji prodaju Bitcoina i akumulira više.
+Na Bitcoin standardu najam ima drukčiju ulogu. On daje mobilnost. Omogućuje da lokacija postane varijabla. Omogućuje da se poznati trošak stanovanja plaća unaprijed kada je Bitcoin iznad trenda. Omogućuje da obitelj u razdoblju pada smanji prodaju Bitcoina i akumulira više.
 
 Najam je most.
 
@@ -457,7 +457,7 @@ To je glavni novac obitelji.
 
 I sada vrijeme radi drukčije.
 
-Ako je Bitcoin ispod trenda, žive mirno i štede više. Ako je iznad trenda, plaćaju najam unaprijed, pune poznate obveze, daju iz fonda i čuvaju sljedeći bear market. Ako im prihodi rastu jer više ne rade iz straha od rate nego iz sposobnosti stvaranja vrijednosti, novi novac ulazi u isti redoslijed: davanje, Bitcoin novac, ravnoteža imovine.
+Ako je Bitcoin ispod trenda, žive mirno i štede više. Ako je iznad trenda, plaćaju najam unaprijed, pune poznate obveze, daju iz fonda i čuvaju sljedeće razdoblje pada. Ako im prihodi rastu jer više ne rade iz straha od rate nego iz sposobnosti stvaranja vrijednosti, novi novac ulazi u isti redoslijed: davanje, Bitcoin novac, ravnoteža imovine.
 
 Ako model knjige stoji, obitelj A nakon trideset godina ima otplaćenu nekretninu i možda nešto Bitcoina.
 
@@ -579,7 +579,7 @@ Prodati poslovnu opremu koja ne radi nije kraj ambicije.
 
 Prodati zemljište koje “se ne prodaje” možda je prvi čin financijske zrelosti.
 
-Prodati dio Bitcoina radi zatvaranja duga nije izdaja Bitcoina.
+Prodati Bitcoin radi zatvaranja duga nije izdaja Bitcoina.
 
 Bitcoin pored duga nije standard.
 
