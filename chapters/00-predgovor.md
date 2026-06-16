@@ -154,7 +154,7 @@ Danas nije najteže pronaći informacije.
 
 Najteže je znati što je bitno.
 
-Bitcoin ima beskonačno mnogo ulaza. Možeš krenuti od cijene, od inflacije, od povijesti zlata, od Satoshijevog whitepapera, od proof of worka, od Lightninga, od hardverskih novčanika, od makroekonomije, od bankarskog sustava, od državnog duga, od energetike, od rudarenja, od kripto prijevara, od burzi, od poreza, od nasljeđivanja, od ciklusa, od modela cijene, od priče o Salvadoru, od Michaela Saylora, od Saifedeana Ammousa, od Yana Pritzkera, od foruma, od grafova, od prijatelja koji je kupio ranije ili od vlastitog osjećaja da s novcem koji koristimo svaki dan nešto nije u redu.
+Bitcoin ima beskonačno mnogo ulaza. Možeš krenuti od cijene, od inflacije, od povijesti zlata, od Satoshijevog whitepapera, od proof of worka, od Lightninga, od hardverskih novčanika, od makroekonomije, od bankarskog sustava, od državnog duga, od energetike, od rudarenja, od kripto prijevara, od burzi, od poreza, od nasljeđivanja, od ciklusa, od modela cijene, od priče o Salvadoru, od Michaela Saylora, od foruma, od grafova, od prijatelja koji je kupio ranije ili od vlastitog osjećaja da s novcem koji koristimo svaki dan nešto nije u redu.
 
 Svaki ulaz otvara deset novih vrata.
 
