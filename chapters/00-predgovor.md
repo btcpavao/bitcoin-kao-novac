@@ -246,7 +246,7 @@ Na Bitcoin standardu investicija mora zaslužiti mjesto pored novca.
 
 Nakon toga dolazi poglavlje **Bitcoin kroz vrijeme**.
 
-Tu govorimo o onome što mnoge najviše zanima: cijeni Bitcoina, očekivanom rastu, volatilnosti, ciklusima i mogućem “zakonu Bitcoina”.
+Tu govorimo o onome što mnoge najviše zanima: cijeni Bitcoina, očekivanom rastu, volatilnosti, ciklusima i mogućem “zakonu potencije”.
 
 Ali ni to poglavlje nije napisano zato da bismo pogodili cijenu. Buduće cijene nisu obećanje. Modeli nisu proročanstva. Power law, trend, halving ritam i povijesni obrasci mogu pomoći da ne gledamo samo današnju cijenu, ali ne mogu zamijeniti proračun, likvidnost, sigurnost i zdrav razum.
 
