@@ -192,7 +192,7 @@ Prvi dio zove se **Bezvremenski red u novcu**.
 
 Taj dio ne počinje Bitcoinom kao aplikacijom, burzom, novčanikom ili cijenom. Počinje s tri temeljna principa upravljanja novcem.
 
-Prvi princip je **proračun na ultrarazini**.
+Prvi princip je **proračun nulte razine**.
 
 To znači da novac koji sada postoji dobiva ime. Svaki euro, svaki satoshi, svaki stvarni saldo mora imati posao. Proračun ne počinje plaćom koja dolazi za pet dana, bonusom koji možda stiže ili rastom Bitcoina koji bi mogao riješiti problem. Počinje novcem koji je već tu.
 
