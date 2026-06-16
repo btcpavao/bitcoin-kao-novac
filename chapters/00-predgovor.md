@@ -162,7 +162,7 @@ Iza svakih vrata je nova rasprava.
 
 To može biti korisno. Ali može i pojesti godine.
 
-Ova knjiga pokušava kondenzirati dio tog puta. Ne tako da zamijeni sve druge knjige, nego da čitatelju da dovoljno dobar redoslijed. Ako poslije želi ići dublje u ekonomiju, neka čita *The Bitcoin Standard* i *The Fiat Standard*. Ako želi dublje u tehniku, neka čita *Inventing Bitcoin* i druge tehničke materijale. Ako želi istraživati sigurnost, rudarenje, Lightning ili monetarnu povijest, imat će kamo ići.
+Ova knjiga pokušava kondenzirati dio tog puta. Ne tako da zamijeni sve druge knjige, nego da čitatelju da dovoljno dobar redoslijed. Ako poslije želi ići dublje u ekonomiju, neka čita *The Bitcoin Standard*. Ako želi dublje u tehniku, neka čita *Inventing Bitcoin* i druge tehničke materijale. Ako želi istraživati sigurnost, rudarenje, Lightning ili monetarnu povijest, imat će kamo ići.
 
 Ali ne mora sve to napraviti prije nego što počne slagati vlastiti novac.
 
@@ -304,7 +304,7 @@ Bitcoin mi se snažno vratio 2017. godine, kada je cijena ponovno ušla u javnos
 
 Nakon toga došle su ozbiljnije knjige, podcasti, *The Bitcoin Standard*, rad u Bitcoin prostoru, dublje razumijevanje razlike između Bitcoina i kripta, i sve jasniji osjećaj da Bitcoin nije tehnološka zanimljivost nego monetarni fenomen.
 
-Paralelno s tim, kroz proračun, YNAB, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije i obične životne situacije, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
+Paralelno s tim, kroz vođenje proračuna, rad, obitelj, razgovore, vlastite odluke, primanje dijela prihoda u Bitcoinu, prodaje, kupnje, greške, sigurnosne lekcije te vlastita i tuđa iskustva kojima sam svjedočio, sve više mi je postajalo jasno da Bitcoin traži puno više od uvjerenja.
 
 Možeš imati dobru tezu i loš sustav.
 
@@ -334,7 +334,7 @@ Može prenijeti vrijednost kroz prostor, preko granica i kroz vrijeme. Može čo
 
 Ali ne oprašta neznanje.
 
-Ako kupuješ Bitcoin novcem koji ti treba za sljedeća tri mjeseca, volatilnost te može kazniti. Ako ga držiš na krivom mjestu, možeš ga izgubiti. Ako se zadužuješ dok slažeš stack, budućnost ti možda nije slobodna. Ako nemaš proračun, Bitcoin može postati još jedan izvor napetosti. Ako nitko u obitelji ne zna što se događa, tvoj “suvereni novac” može postati obiteljska ranjivost.
+Ako kupuješ Bitcoin novcem koji ti treba za sljedeća tri mjeseca, volatilnost te može kazniti. Ako ga držiš na krivom mjestu, možeš ga izgubiti. Ako se zadužuješ dok slažeš stack, budućnost ti možda nije slobodna. Ako držiš Bitcoin dok imaš dug, rast cijene Bitcoina potaknut će te na još veće zaduživanje. Ako nemaš proračun, Bitcoin može postati još jedan izvor napetosti. Ako nitko u obitelji ne zna što se događa, tvoj “suvereni novac” može postati obiteljska ranjivost.
 
 Zato ova knjiga nije samo argument za Bitcoin.
 
