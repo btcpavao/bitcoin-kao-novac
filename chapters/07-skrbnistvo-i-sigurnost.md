@@ -200,7 +200,7 @@ Pravni dokument ne smije nepromišljeno otkrivati tehničke tajne. Tehnička taj
 
 Nasljeđivanje je možda najmanje uzbudljiv dio Bitcoina.
 
-Ali je jedan od najljubavnijih.
+Ali je jedan od najkonkretnijih izraza brige.
 
 Sigurnost nije izraz nepovjerenja prema ljudima. Ona je izraz brige za ljude koji će možda jednoga dana morati čuvati ono što ste vi gradili.
 
