@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Skrbništvo i sigurnost - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html" class="active"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="skrbništvo-i-sigurnost"><a class="header" href="#skrbništvo-i-sigurnost">Skrbništvo i sigurnost</a></h1>
+<p>Nakon proračuna, duga, davanja, ravnoteže imovine i razumijevanja Bitcoina kroz vrijeme dolazi pitanje koje se ne može preskočiti: kako čuvati novac koji sve više zauzima središnje mjesto u životu?</p>
+<p>Bitcoin čovjeku daje rijetku mogućnost. Vrijednost može držati bez banke, bez dopuštenja, bez posrednika i bez tuđeg obećanja. Ali ista osobina koja ga čini snažnim čini ga i ozbiljnim. Ako možete sami držati novac, možete ga i sami izgubiti. Ako možete poslati vrijednost bez posrednika, pogrešna transakcija nema službu za poništenje. Ako nitko ne može zamrznuti vaš Bitcoin, nitko ga ne može vratiti umjesto vas ako izgubite pristup.</p>
+<p>To nije razlog za strah. To je razlog za red.</p>
+<p>Ovo poglavlje ne počinje uređajem. Ne počinje popisom novčanika. Ne počinje tvrdnjom da svaka osoba u svakom trenutku mora držati sav Bitcoin na isti način. Počinje jednostavnijim pitanjem: koji sigurnosni sustav odgovara stvarnoj osobi, stvarnom iznosu, stvarnoj obitelji, stvarnom poslu i stvarnom vremenskom horizontu?</p>
+<p>Skrbništvo dolazi zadnje zato što veći Bitcoin saldo traži ozbiljniji sustav. Dok je iznos malen, dovoljno je učiti i ne raditi očite pogreške. Kada Bitcoin postaje primarni novac, pitanje više nije samo koji novčanik koristiti. Pitanje je tko ima put, kako se sustav oporavlja i kako obitelj postupa kada osoba koja najviše zna nije dostupna.</p>
+<p>Sigurnost nije dogma. Sigurnost je sposobnost da vrijednost bude zaštićena od pogrešnih ljudi i dostupna pravim ljudima u pravom trenutku.</p>
+<p>To je glavna rečenica ovog poglavlja.</p>
+<h2 id="zašto-skrbništvo-i-sigurnost"><a class="header" href="#zašto-skrbništvo-i-sigurnost">Zašto skrbništvo i sigurnost?</a></h2>
+<p>Većina ljudi u Bitcoin ulazi kroz cijenu, uvjerenje, znatiželju ili osjećaj da državni novac više nije dovoljno dobro mjesto za dugoročnu štednju. U prvim mjesecima najviše gledaju graf, kupnje, padove, rast i vlastitu neto imovinu. To je razumljivo.</p>
+<p>Ali kada Bitcoin prestane biti samo pozicija u aplikaciji i počne postajati novac, pitanje se mijenja.</p>
+<p>Više nije dovoljno pitati koliko ga imam.</p>
+<p>Treba pitati gdje je, tko mu može pristupiti, što se događa ako mene nema i mogu li ga koristiti bez panike.</p>
+<p>Stanje prije sigurnosti često izgleda bezazleno. Bitcoin je na mjenjačnici jer je ondje kupljen. Mali iznos je na telefonu jer je tako praktično. Početne riječi za oporavak nalaze se negdje u ladici. Fotografija početnih riječi možda je jednom bila poslana samome sebi, za svaki slučaj. E-pošta koristi lozinku koja se koristi i drugdje. Dvofaktorska provjera uključena je na nekim mjestima, ali ne svugdje. Partner zna da Bitcoin postoji, ali ne zna što bi napravio ako se dogodi hitna situacija. Djeca ne znaju ništa. Obiteljski dokumenti ne spominju ništa. Poslovni Bitcoin, ako postoji, stoji u sustavu koji razumije samo jedna osoba.</p>
+<p>To stanje može trajati dugo bez problema.</p>
+<p>Upravo zato je opasno.</p>
+<p>Dok se ništa ne dogodi, izgleda kao da sustav radi. Ali zapravo nije testiran gubitak telefona. Nije testirana obnova novčanika. Nije testirano slanje većeg iznosa. Nije testirano pitanje što se događa ako je vlasnik bolestan, odsutan ili mrtav. Nije testirano što bi partner napravio kada bi primio lažnu poruku podrške. Nije testirano što bi poslovni partner napravio kada bi trebala hitna transakcija, a osoba koja sve zna nije dostupna.</p>
+<p>Prije sigurnosti, čovjek često ima dvije lažne sigurnosti. Prva je tehnička ležernost: imam aplikaciju i lozinku, bit će dobro. Druga je tehnička oholost: moj sustav je toliko kompliciran da sam siguran. Obje mogu biti krhke. Ležeran sustav može pasti na krađi ili gubitku. Prekompliciran sustav može pasti na ljudskoj zbrci.</p>
+<p>Dobar sigurnosni sustav ne mora biti savršen. Mora biti razumljiv, provjerljiv i prikladan iznosu koji čuva.</p>
+<p>Mora imati slojeve. Mora imati pravila. Mora imati oporavak. Mora imati barem minimalan plan za obitelj ili ovlaštene osobe. Mora imati godišnju provjeru. I mora biti dovoljno jednostavan da ga prava osoba može provesti kada okolnosti nisu idealne.</p>
+<h2 id="jedna-osoba-nije-sustav"><a class="header" href="#jedna-osoba-nije-sustav">Jedna osoba nije sustav</a></h2>
+<p>Ako cijeli Bitcoin sustav postoji samo u glavi jedne osobe, tada obitelj nema sigurnosni sustav. Ima ovisnost o jednoj osobi.</p>
+<p>To može izgledati dovoljno dok je iznos malen, osoba zdrava i život miran. Ali Bitcoin kao obiteljski novac mora moći preživjeti dan kada okolnosti nisu idealne.</p>
+<p>Obitelj ne mora znati sve tehničke detalje. Ne mora svaka osoba znati potpisivati transakciju, razumjeti svaki uređaj ili znati svaku sigurnosnu odluku. Nije ni mudro da se sve tajne dijele svima. Sigurnost i privatnost i dalje su važne.</p>
+<p>Ali mora postojati put.</p>
+<p>Tko se zove? Gdje su upute? Što se ne smije napraviti? Što se smije otvoriti? Koji su rokovi? Gdje su dokumenti? Tko zna da sustav postoji? Kako se sprječava da panika postane sigurnosni propust?</p>
+<p>To je razlika između tajnosti i sigurnosti.</p>
+<p><img src="assets/visuals/svg/07-jedna-osoba-nije-sustav.svg" alt="Dijagram koji uspoređuje krhki Bitcoin sustav u glavi jedne osobe s obiteljskim sustavom koji uključuje upute, oporavak, pravu osobu i testiranje." /></p>
+<p><em>Ako cijeli Bitcoin sustav postoji samo u glavi jedne osobe, obitelj nema sustav nego ovisnost o toj osobi.</em></p>
+<p>Tajnost kaže: nitko ne smije znati ništa.</p>
+<p>Sigurnost kaže: pogrešni ljudi ne smiju imati pristup, a pravi ljudi moraju imati put kada dođe pravi trenutak.</p>
+<p>U mnogim obiteljima jedna osoba prva otkrije Bitcoin. Čita, sluša, kupuje, povlači, uči o novčanicima i sigurnosti. Druga osoba možda vjeruje, ali ne sudjeluje jednako. U početku je to normalno. Netko mora prvi naučiti. Ali ako Bitcoin postane važan dio obiteljske imovine, takav odnos ne smije ostati završno stanje.</p>
+<p>Znati nešto nije isto što i izgraditi sustav.</p>
+<p>Sustav počinje onda kada odgovornost više ne ovisi samo o memoriji, zdravlju, raspoloženju i dostupnosti jedne osobe.</p>
+<h2 id="slojevi-skrbništva"><a class="header" href="#slojevi-skrbništva">Slojevi skrbništva</a></h2>
+<p>Skrbništvo počinje pitanjem čemu određeni Bitcoin služi.</p>
+<p>Ako je namjena različita, sigurnosni model treba biti različit.</p>
+<p>Mali iznos za učenje i plaćanje ne treba isti sigurnosni sustav kao obiteljska imovina koju ne planirate pomicati godinama. Novac koji ćete možda koristiti ovaj mjesec ne treba isti pristup kao Bitcoin koji treba preživjeti bolest, smrt ili poslovnu promjenu. Ako sve držite u jednom sloju, ili praktičan sloj postaje prevelik, ili dugoročni trezor postaje prečesto otvaran.</p>
+<p>Prvi sloj je dnevni sloj. To je mali iznos za učenje, plaćanje, Lightning, probne transakcije i osjećaj da Bitcoin nije samo apstraktna imovina. Dnevni sloj može biti na mobilnom novčaniku ili drugom jednostavnom alatu. Njegov glavni rizik je da na praktičnom mjestu ostane iznos koji čovjek ne može mirno izgubiti.</p>
+<p>Drugi sloj je srednjoročni sloj. To je Bitcoin koji može služiti planiranim većim troškovima, poslovnoj likvidnosti, prijelaznim odlukama ili dijelu novca koji se povremeno miče. Taj sloj može biti u vlastitom posjedu, kod ozbiljnijeg skrbnika ili u hibridnom rješenju, ovisno o znanju, iznosu i namjeni.</p>
+<p>Treći sloj je dugoročni trezor. To je Bitcoin koji nije tu za svakodnevnu praktičnost. On treba imati trenje. Ako ga je lako pomaknuti u pet minuta, možda nije dovoljno odvojen od impulsa, umora, prijevare ili pritiska. Dugoročni trezor može uključivati hardverske novčanike, višestruki potpis, profesionalno potpomognuto skrbništvo, pravnu dokumentaciju i jasne nasljedne upute.</p>
+<p>Složenost nije znak zrelosti sama po sebi.</p>
+<p>Prikladnost je znak zrelosti.</p>
+<p>Početnik s manjim iznosom može imati jednostavan sustav koji je bolji od naprednog sustava koji ne razumije. Obitelj sa značajnijim iznosom možda treba hibridni model u kojem dio odgovornosti nosi vlastiti posjed, dio dokumentacija, a dio profesionalna pomoć. Poduzetnik s poslovnom riznicom mora razlikovati privatni i poslovni Bitcoin, pravne obveze i operativne ovlasti.</p>
+<p>Ne bira se model iz ponosa.</p>
+<p>Bira se model iz funkcije.</p>
+<h2 id="samostalno-skrbništvo-skrbnik-i-hibridni-modeli"><a class="header" href="#samostalno-skrbništvo-skrbnik-i-hibridni-modeli">Samostalno skrbništvo, skrbnik i hibridni modeli</a></h2>
+<p>Bitcoin omogućuje samostalno skrbništvo. To je jedna od njegovih najvažnijih osobina. Čovjek može držati privatne ključeve i ne ovisiti o posredniku. U povijesti novca rijetko je postojala mogućnost da obična osoba drži globalno prenosivu, teško zapljenjivu i digitalno salabilnu vrijednost bez računa kod institucije.</p>
+<p>Ali mogućnost nije isto što i obveza za svaki iznos i svaku osobu u svakom trenutku.</p>
+<p>Samostalno skrbništvo daje najveću kontrolu, ali i najveću odgovornost. Skrbnik može smanjiti dio tehničke odgovornosti, ali uvodi rizik druge strane: povjerenje, dostupnost, regulaciju, pravila platforme, poslovni rizik i mogućnost da pristup bude ograničen. Hibridni modeli mogu kombinirati prednosti i mane: dio je u vlastitom posjedu, dio kod skrbnika, dio u višestrukom potpisu, dio uz profesionalnu pomoć.</p>
+<p>Povijest Bitcoina dala je dovoljno opomena da skrbnički rizik nije teorija. Ekosustav je danas zreliji nego prije, institucije su ozbiljnije, a alati bolji, ali sama činjenica da je skrbnik velik ili poznat ne uklanja potrebu za razumijevanjem rizika druge strane.</p>
+<p>S druge strane, ni samostalni posjed nije magično rješenje ako je loše izveden. Početne riječi fotografirane mobitelom, zapisane u digitalnoj bilješci, poslane e-poštom ili spremljene u oblak nisu ozbiljan trezor. Hardverski novčanik nije cijeli sustav. On je alat. Sustav uključuje oporavak, sigurnosne kopije, digitalne račune, privatnost, obitelj, pravila transakcija i dokumentaciju.</p>
+<p>Zrelost nije u tome da se ponosno držimo jednog modela bez obzira na okolnosti.</p>
+<p>Zrelost je u tome da znamo zašto je određeni dio Bitcoina ondje gdje jest.</p>
+<h2 id="dvije-strane-dobre-sigurnosti"><a class="header" href="#dvije-strane-dobre-sigurnosti">Dvije strane dobre sigurnosti</a></h2>
+<p>Dobra sigurnost mora istodobno riješiti dvije suprotne stvari.</p>
+<p>Mora otežati pristup pogrešnim ljudima i olakšati pristup pravim ljudima u pravom trenutku.</p>
+<p>Ako sustav previše olakša pristup, rizik krađe raste. Ako je najveći dio Bitcoina dostupan iz jedne aplikacije, jedne lozinke, jednog uređaja ili jedne kopije početnih riječi, napadaču ne treba pobijediti cijeli sustav. Dovoljno je pronaći jednu slabu točku.</p>
+<p>Ako sustav previše oteža pristup, rizik gubitka raste. Ako ni vlasnik ne zna mirno objasniti postupak, ako partner ne zna prvi korak, ako su lokacije nejasne, ako postoji previše tajnih elemenata i premalo dokumentacije, sustav može biti težak za napadača, ali jednako tako težak za obitelj.</p>
+<p>To nije potpuna sigurnost.</p>
+<p>To je složenost s lijepim imenom.</p>
+<p>Dobar Bitcoin trezor nije samo težak za lopova. Dobar Bitcoin trezor je razumljiv pravoj osobi u pravom trenutku.</p>
+<h2 id="kako-uspostaviti-sigurnosni-sustav"><a class="header" href="#kako-uspostaviti-sigurnosni-sustav">Kako uspostaviti sigurnosni sustav?</a></h2>
+<p>Sigurnost se ne uspostavlja velikim skokom. Uspostavlja se nizom malih, provjerljivih koraka. Nakon svakog koraka trebate imati malo više jasnoće, malo manje panike i malo bolji sustav nego prije.</p>
+<p>Najveća pogreška u ovom dijelu nije jednostavan sustav. Jednostavan sustav može biti potpuno prikladan za mali iznos i početnika. Najveća pogreška je neprovjeren sustav. Sustav koji izgleda dobro samo zato što nikada nije bio testiran.</p>
+<p>Prvi korak je zapisati gdje je Bitcoin sada.</p>
+<p>Ne treba zapisivati tajne. Ne treba zapisivati početne riječi. Ne treba sve staviti u isti dokument. Ovdje se zapisuje karta sustava, ne ključ sustava. Zapišite koji Bitcoin je na mjenjačnici ili kod skrbnika, koji je u mobilnom novčaniku, koji je u hardverskom novčaniku, koji je u dugoročnom trezoru, tko zna da to postoji i kada je zadnji put testiran pristup.</p>
+<p>Kada prvi put vidite kartu, stres se obično smanji. Možda stanje nije idealno, ali više nije magla. Ono što je zapisano može se poboljšati.</p>
+<p>Drugi korak je razdvojiti Bitcoin po namjeni.</p>
+<p>Odredite što je dnevni sloj, što je srednjoročni sloj, a što je dugoročni trezor. Na praktičnim mjestima ne treba stajati iznos koji ne možete podnijeti izgubiti. Dugoročni trezor ne treba biti jednako brz kao novčanik za male transakcije.</p>
+<p>Treći korak je odabrati model skrbništva za svaki sloj.</p>
+<p>Mali iznos može ostati jednostavan. Obiteljski iznos možda traži jači vlastiti postav ili hibridno rješenje. Veći obiteljsko-poslovni sustav možda traži višestruki potpis, profesionalnu pomoć, pravne dokumente i odvojene ovlasti. Ne kopirajte tuđi sustav samo zato što zvuči napredno. Pitajte što vaš život stvarno može održavati.</p>
+<p>Četvrti korak je testirati oporavak.</p>
+<p>Ono što nije testirano nije sigurnosni sustav, nego pretpostavka. Testiranje ne mora uključivati veliki iznos. Dovoljno je s malim iznosom naučiti obnoviti novčanik iz sigurnosne kopije, poslati probnu transakciju, provjeriti adresu i razumjeti što znači da aplikacija nije isto što i vlasništvo.</p>
+<p>Peti korak je zaštititi digitalne temelje.</p>
+<p>E-pošta, lozinke, dvofaktorska provjera, računalo, telefon i pristup burzama ili skrbnicima dio su Bitcoin sigurnosti. Ako je e-pošta slaba, napadač možda ne mora pobijediti vaš trezor. Dovoljno je preuzeti račun koji služi kao ulaz u druge sustave. Dobra praksa ne mora biti dramatična: jedinstvene lozinke, kvalitetan upravitelj lozinki, dvofaktorska provjera koja nije samo SMS gdje je moguće, oprez s linkovima i jasna pravila za podršku.</p>
+<p>Šesti korak je napisati upute za izvanrednu situaciju.</p>
+<p>Te upute ne trebaju sadržavati privatne ključeve ili početne riječi. Njihova svrha nije dati lopovu pristup. Njihova svrha je pomoći pravoj osobi da ne napravi nepovratnu pogrešku. Upute trebaju reći što se ne smije napraviti: ne fotografirati početne riječi, ne slati ih nikome, ne upisivati ih na internet, ne vjerovati hitnim porukama podrške, ne žuriti. Trebaju reći koga kontaktirati, gdje su netajni dokumenti, koji su slojevi sustava i koji je prvi siguran korak.</p>
+<p>Sedmi korak je uvesti godišnju provjeru.</p>
+<p>Sigurnost nije jednokratni projekt. Jednom godišnje treba mirno proći kroz sustav. Jesu li uređaji dostupni? Znate li gdje su sigurnosne kopije? Jesu li e-pošta i lozinke pod kontrolom? Jesu li kontakti aktualni? Zna li partner prvi korak? Je li se Bitcoin iznos toliko promijenio da stari sloj više nije prikladan? Je li se poslovni rizik promijenio? Je li nešto postalo prekomplicirano?</p>
+<p>Godišnja provjera ne postoji zato da stalno mijenjate sustav. Postoji zato da sustav ne zastari dok se život mijenja.</p>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Najprije napravite kartu, ne trezor. Zapišite gdje je Bitcoin sada: što je na mjenjačnici ili kod skrbnika, što je u mobilnom novčaniku, što je u hardverskom novčaniku, što je u dugoročnom sloju, tko zna da taj sloj postoji i kada je zadnji put provjeren pristup. U taj dokument ne stavljajte početne riječi, privatne ključeve ili lozinke. Karta nije ključ.</p>
+<p>Zatim svaku lokaciju povežite s namjenom. Mali iznos za učenje i plaćanje može biti praktičan. Srednjoročni sloj mora biti dostupan, ali ne impulzivan. Dugoročni trezor mora imati trenje, oporavak i jasne upute za izvanrednu situaciju. Ako ne znate čemu neki sloj služi, ne znate ni kakva mu sigurnost treba.</p>
+<p>Odmah uklonite očite pogreške. Početne riječi ne smiju biti fotografirane, poslane e-poštom, spremljene u oblak, u nezaštićenu bilješku ili u isti dokument u kojem opisujete sustav. Lozinke za račune povezane s Bitcoinom ne smiju biti ponovljene lozinke. Dvofaktorska provjera ne smije biti naknadna misao.</p>
+<p>Napravite mali test oporavka ili barem jasnu proceduru za njega. Ako je iznos malen, testirajte obnovu novčanika s malim iznosom. Ako je sustav veći i složeniji, ne improvizirajte sami usred nervoze; definirajte tko provjerava postupak, kojim redom i bez otkrivanja nepotrebnih tajni.</p>
+<p>Napišite upute za pravu osobu. Te upute ne daju pristup lopovu. One govore što se ne smije napraviti, koga kontaktirati, gdje su netajni dokumenti, koji slojevi postoje i koji je prvi siguran korak. Ako partner, član obitelji ili ovlaštena osoba ne zna ni prvi korak, sustav još nije obiteljski sustav.</p>
+<p>Na kraju odredite godišnji datum provjere. Sigurnost ne treba živjeti u stalnoj napetosti. Treba imati miran ritam u kojem se provjeri jesu li uređaji, dokumenti, kontakti, lozinke, oporavak i obiteljsko znanje još uvijek u skladu sa stvarnim životom.</p>
+<h2 id="najčešće-pogreške"><a class="header" href="#najčešće-pogreške">Najčešće pogreške</a></h2>
+<p>Prva pogreška je držati previše Bitcoina na mjestu koje je napravljeno za praktičnost. Telefon je odličan za male iznose. Mjenjačnica je korisna za kupnju, prodaju i neke prijelazne situacije. Ali praktično mjesto nije dugoročni trezor.</p>
+<p>Druga pogreška je pretjerano komplicirati prerano. Početnik koji odmah složi sustav koji ne razumije može biti u većoj opasnosti od početnika koji ima jednostavniji, ali testiran postav. Složenost treba zaraditi razumijevanjem.</p>
+<p>Treća pogreška je vjerovati da hardverski novčanik rješava sve. Uređaj je alat. Sustav uključuje početne riječi, sigurnosne kopije, digitalne račune, privatnost, obitelj, pravila transakcija i oporavak.</p>
+<p>Četvrta pogreška je tajiti sve od svih zauvijek. Privatnost je važna. Ali ako nitko ne zna da plan postoji, tada ni najpošteniji nasljednik ne može znati prvi korak.</p>
+<p>Peta pogreška je donositi sigurnosne odluke usred tržišne euforije ili panike. Najbolji trenutak za poboljšanje sigurnosti je miran trenutak, ne trenutak kada vas tržište ili internet emocionalno gura.</p>
+<h2 id="nasljeđivanje"><a class="header" href="#nasljeđivanje">Nasljeđivanje</a></h2>
+<p>Bitcoin bez nasljednog puta nije dovršen obiteljski novac.</p>
+<p>To ne znači da djeci, partneru ili rodbini treba dati sve tajne. Ne znači da obitelj mora imati pristup dok za to nema potrebe. Ne znači da se privatnost žrtvuje u ime udobnosti.</p>
+<p>Ali znači da imovina ne smije nestati zato što je osoba koja ju je razumjela nestala prije nego što je sustav prenijela.</p>
+<p>Nasljeđivanje počinje prije pravnih dokumenata. Počinje obiteljskim jezikom. Obitelj treba razumjeti da Bitcoin postoji, zašto postoji, koji dio imovine predstavlja i što se u izvanrednoj situaciji ne smije napraviti. Kasnije dolaze dokumenti, odvjetnici, oporuke, ovlaštene osobe, profesionalni skrbnici ili drugi modeli. Ali prvi sloj je uvijek isti: pravi ljudi moraju znati da postoji put.</p>
+<p>Pravni dokument ne smije nepromišljeno otkrivati tehničke tajne. Tehnička tajna ne smije biti toliko odvojena od pravnog i obiteljskog konteksta da nitko ne zna da je važna. Dobar sustav odvaja pristup, upute i ovlasti. Jedan dokument može reći što postoji i koga kontaktirati. Drugi element može sadržavati tehnički dio. Treći element može zahtijevati više osoba ili koraka.</p>
+<p>Nasljeđivanje je možda najmanje uzbudljiv dio Bitcoina.</p>
+<p>Ali je jedan od najkonkretnijih izraza brige.</p>
+<p>Sigurnost nije izraz nepovjerenja prema ljudima. Ona je izraz brige za ljude koji će možda jednoga dana morati čuvati ono što ste vi gradili.</p>
+<h2 id="tri-zamišljene-situacije"><a class="header" href="#tri-zamišljene-situacije">Tri zamišljene situacije</a></h2>
+<p>Isti sigurnosni princip izgleda drukčije na različitim razinama. Ana ne treba isti sustav kao Marin i Petra. Marko i Ivana ne trebaju kopirati napredni poslovni trezor, ali više ne smiju imati sustav koji razumije samo jedna osoba. Sigurnost mora rasti zajedno s iznosom, odgovornošću i životom.</p>
+<h3 id="ana-jednostavan-postav-koji-prvi-put-ima-red"><a class="header" href="#ana-jednostavan-postav-koji-prvi-put-ima-red">Ana: jednostavan postav koji prvi put ima red</a></h3>
+<p>Ana sada živi drukčije nego na početku knjige. Proračun joj više nije novost. Dug koji joj je visio nad plaćom zatvoren je. Davanje je počelo skromno, ali redovito. Bitcoin više ne kupuje iz panike, nego iz viška koji stvarno postoji. Njezin saldo još nije velik, ali dovoljno je velik da zaslužuje red.</p>
+<p>Prije sigurnosnog pregleda imala je mali dio Bitcoina na mjenjačnici i mali dio u mobilnom novčaniku. Početne riječi imala je zapisane na papiru, ali nije bila potpuno sigurna gdje je najbolje držati taj papir. Jednom je napravila fotografiju, pa ju je kasnije obrisala, ali nije znala je li to dovoljno. Nije imala test oporavka. Njezina sestra znala je da Ana ima nešto Bitcoina, ali ne bi znala što napraviti ako bi se Ani nešto dogodilo.</p>
+<p>Anin prvi korak nije bila kupnja najskupljeg uređaja. Prvo je napravila kartu. Zapisala je gdje je svaki dio Bitcoina, bez otkrivanja početnih riječi. Vidjela je da joj je dnevni sloj prevelik. Na telefonu je držala iznos koji bi je stvarno zabolio da izgubi. Taj iznos je smanjila. Na telefonu je ostavila samo malo za učenje i eventualna mala plaćanja.</p>
+<p>Zatim je napravila testni novčanik s vrlo malim iznosom. Zapisala je početne riječi. Obrisala je novčanik. Vratila ga je. Poslala je mali iznos natrag. Prvi put je shvatila razliku između aplikacije i oporavka. Bitcoin više nije izgledao kao nešto što postoji samo zato što aplikacija pokazuje broj.</p>
+<p>Najvažnija promjena dogodila se s obitelji. Ana nije sestri dala početne riječi. Nije joj dala pristup. Ali rekla joj je da postoji uputa za izvanrednu situaciju. U toj uputi nije bilo tajni za krađu. Pisalo je što se ne smije napraviti, koga kontaktirati i zašto se ne smije žuriti.</p>
+<p>Anin sustav nije završni sustav za cijeli život. Ako joj Bitcoin saldo naraste, ako se uda, ako dobije veću imovinu ili ako njezino dijete odraste, sustav će se morati promijeniti. Ali sada ima nešto što prije nije imala: početni sigurnosni red koji odgovara njezinoj stvarnoj situaciji.</p>
+<h3 id="marko-i-ivana-obiteljski-sustav-koji-više-ne-ovisi-o-jednoj-osobi"><a class="header" href="#marko-i-ivana-obiteljski-sustav-koji-više-ne-ovisi-o-jednoj-osobi">Marko i Ivana: obiteljski sustav koji više ne ovisi o jednoj osobi</a></h3>
+<p>Marko i Ivana su nakon izlaska iz duga počeli sporije i urednije graditi Bitcoin poziciju. Proračun im je pokazivao stvarni višak. Davanje je postalo stalna kategorija. Ravnoteža imovine naučila ih je da ne smiju sve gurati u potrošna dobra. Bitcoin kroz vrijeme pomogao im je da cijenu gledaju kao signal, a ne kao svakodnevnu dramu.</p>
+<p>Ipak, sigurnost je kod njih imala tihu pukotinu. Marko je znao gotovo sve, Ivana je znala premalo. Nije to bilo zato što Marko nije vjerovao Ivani. Bilo je zato što je on bio više zainteresiran za tehnički dio. On je kupovao Bitcoin, povlačio ga, čitao o novčanicima i pratio tržište. Ivana je podržavala smjer, ali bi u praksi rekla: ti to bolje znaš. Ta rečenica zvučala je normalno dok je iznos bio malen. S rastom imovine postala je rizik.</p>
+<p>Prvo su razdvojili slojeve. Na telefonu je ostao mali dnevni iznos. Srednjoročni sloj stavili su u postav koji Marko zna koristiti, a Ivana može razumjeti kroz upute. Dugoročni dio počeli su seliti u sporiji model. Nisu odmah otišli u najkompliciranije rješenje. Napravili su plan prijelaza.</p>
+<p>Najveća promjena nije bila tehnička. Bila je razgovor. Jednu večer, nakon što su djeca otišla spavati, Marko je Ivani objasnio sustav bez žargona. Nije joj pokazivao sve tajne. Objasnio je slojeve. Objasnio je što nikada ne smije napraviti. Objasnio je da početne riječi nisu nešto što se šalje, fotografira ili govori. Objasnio je da se u slučaju njegove smrti ne smije žuriti i da postoji dokument s prvim korakom.</p>
+<p>Ivana je tada prvi put rekla da joj nije problem što ne zna sve. Problem je bio što nije znala ni što ne smije napraviti.</p>
+<p>To je bila srž.</p>
+<p>Obitelj ne treba odmah postati tehnički tim. Ali mora znati dovoljno da ne napravi nepovratnu štetu.</p>
+<p>Napravili su dokument za izvanrednu situaciju. U njemu su bili kontakti, opis slojeva, popis institucija ili servisa, uputa da se ništa ne dira u panici i jasne zabrane. Početne riječi nisu stavili u taj dokument. Tehničke tajne ostale su odvojene. Ali dokument je Ivani dao mir: ako se nešto dogodi, nije sama u magli.</p>
+<p>Uveli su i godišnju obiteljsku provjeru. Ne s djecom u punom tehničkom detalju, nego kao obiteljsko pravilo odgovornosti. Djeca su učila osnovno: privatnost, ne govoriti iznose, ne vjerovati internetu, ne klikati hitne poruke, ne fotografirati važne dokumente. Marko i Ivana nisu od djece stvarali čuvare trezora. Učili su ih kulturi sigurnosti.</p>
+<p>To je obiteljski napredak: ne samo više Bitcoina, nego manje zbrke oko Bitcoina.</p>
+<h3 id="marin-i-petra-veća-imovina-traži-profesionalniji-ritam"><a class="header" href="#marin-i-petra-veća-imovina-traži-profesionalniji-ritam">Marin i Petra: veća imovina traži profesionalniji ritam</a></h3>
+<p>Marin i Petra imaju drukčiji problem od Ane. Njihov problem nije premalen iznos. Njihov problem je složenost. Nakon prvih poglavlja pojednostavili su dug, uredili proračun, počeli sustavno davati i jasnije razlikovati novac, potrošna dobra i proizvodnu imovinu. Bitcoin je postao ozbiljan dio njihove neto imovine. Uz privatnu imovinu postoji i poslovni kontekst: Marinova tvrtka ima novčani tok, opremu, zaposlenike i dio riznice u Bitcoinu.</p>
+<p>Prije sigurnosnog pregleda sustav je izgledao impresivno, ali nije bio dovoljno uređen. Postojalo je nekoliko novčanika, više uređaja, jedan stari zapis početnih riječi, dio Bitcoina kod institucija, dio u vlastitom posjedu, dio vezan uz poslovne odluke i nekoliko dokumenata koji nisu govorili istim jezikom. Marin je znao mnogo. Petra je znala dovoljno da bude zabrinuta. Računovođa je znao da Bitcoin postoji, ali ne i kako su slojevi odvojeni. Odvjetnik nije imao ažuriranu sliku. Poslovni partner znao je da postoji riznica, ali ne i što se događa ako Marin nije dostupan.</p>
+<p>To nije bila neodgovornost. To je bila prirodna posljedica rasta. Sustavi koji nastaju kroz godine često nose tragove prošlih odluka. Ono što je bilo dovoljno za mali iznos nije dovoljno za veliku obiteljsku i poslovnu imovinu. Ono što je bilo dovoljno za jednu osobu nije dovoljno za obitelj, posao i nasljeđivanje.</p>
+<p>Prvi potez bio je odvajanje privatnog i poslovnog Bitcoina. Sve što pripada tvrtki mora imati vlastitu evidenciju, vlastita pravila i vlastite ovlaštene osobe. Privatni dugoročni trezor ne smije biti pomiješan s poslovnom likvidnošću. Poslovna likvidnost ne smije ovisiti o uređaju koji se nalazi u privatnoj ladici. Računovodstvo, pravne obveze i stvarni pristup moraju govoriti istim jezikom.</p>
+<p>Zatim su složili slojeve. Privatni dnevni sloj je malen. Srednjoročni sloj pokriva planirane obiteljske potrebe i razdoblja kada Bitcoin možda treba koristiti za unaprijed pripremljene troškove. Dugoročni trezor postao je sporiji. Kod dijela imovine uveli su profesionalno potpomognuti model s višestrukim potpisom i jasnim dokumentima oporavka. Nisu sve predali jednoj instituciji. Nisu ni sve držali sami iz ponosa.</p>
+<p>Kombinirali su modele prema funkciji.</p>
+<p>Petra je inzistirala na jednom pravilu: ako sustav ne može objasniti normalna odrasla osoba u stresu, sustav je prekompliciran. To nije značilo da sve mora biti jednostavno. Značilo je da dokumentacija mora biti jasna, da su uloge definirane i da postupak ne ovisi o Marinovu pamćenju.</p>
+<p>U poslovnom dijelu uveli su pravila odobravanja. Mali operativni iznosi imaju jednostavniji postupak. Veći iznosi traže dvije ovlaštene osobe ili unaprijed definiran proces. Dugoročna poslovna riznica ne dira se za kratkoročne potrebe bez odluke i dokumentiranog razloga. Ako tvrtka koristi financijske instrumente povezane s Bitcoinom, oni se vode kao financijski instrumenti s vlastitim rizicima, ne kao zamjena za Bitcoin u trezoru.</p>
+<p>Marin je ranije volio sofisticiranost. Sada je naučio da sigurnost nije dokaz tehničke nadmoći. Sigurnost je upravljanje ljudskom stvarnošću. U njihovoj stvarnosti postoje djeca, zaposlenici, porezne obveze, poslovni partneri, pravni dokumenti, tržišna volatilnost, putovanja, umor, moguća bolest i smrt. Sustav koji ignorira te stvari nije sofisticiran. On je samo tehnički zanimljiv.</p>
+<p>Za Marina i Petru sigurnost nije završila jednim projektom. Uveli su godišnji pregled. Ako im Bitcoin značajno naraste kao udio neto imovine, pregled će možda biti češći. Ako se pojavi novi skrbnički model, proučit će ga u mirnom razdoblju. Ako se promijeni obitelj, posao ili pravni okvir, sustav će se prilagoditi. Njihov cilj nije trajni postav. Njihov cilj je održiva sigurnosna arhitektura.</p>
+<h2 id="zaključak"><a class="header" href="#zaključak">Zaključak</a></h2>
+<p>Bitcoin sigurnost je odgovornost da vrijednost bude zaštićena i dostupna pravim ljudima u pravom trenutku.</p>
+<p>To ne znači da sve mora biti savršeno. Znači da ne smije biti prepušteno slučaju.</p>
+<p>Nakon čitanja nemojte odmah sve mijenjati. Najprije zapišite stanje. Gdje je dnevni sloj? Gdje je srednjoročni sloj? Gdje je dugoročni trezor? Tko zna što? Tko ne zna ništa? Koji je najveći rizik: krađa, gubitak, nesposobnost ili zbrka?</p>
+<p>Tek kada vidite stanje, donesite jednu ili dvije razborite promjene.</p>
+<p>Najbolji sigurnosni sustav nije onaj koji izgleda najnaprednije, nego onaj koji možete održavati kroz stvarni život.</p>
+<p>Bitcoin bez sigurnosti može postati izvor straha. Bitcoin sa sigurnošću postaje novac koji može mirno čekati, služiti, prelaziti kroz vrijeme i ostati dostupan pravim ljudima kada je najpotrebnije.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada Bitcoin više nije samo u glavi jedne osobe.</p>
+<ul>
+<li>Postoji skrbnički model primjeren iznosu, obitelji i namjeni.</li>
+<li>Postoje upute za izvanrednu situaciju.</li>
+<li>Postoji put oporavka koji je testiran malim iznosom ili jasnom procedurom.</li>
+<li>Postoji godišnja provjera sustava.</li>
+<li>Partner, obitelj ili ovlaštene osobe imaju prvi korak bez otkrivanja nepotrebnih tajni.</li>
+<li>Zna se što se događa u slučaju bolesti, smrti, panike ili hitne transakcije.</li>
+<li>Znate gdje je svaki sloj Bitcoina i čemu služi.</li>
+<li>Početne riječi, privatni ključevi i lozinke nisu spremljeni u digitalnom obliku koji može lako procuriti.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako…</a></h2>
+<p>Ne idite dalje ako ne znate gdje je svaki dio Bitcoina. Ne idite dalje ako su početne riječi u oblaku, fotografiji, e-pošti, poruci ili nezaštićenoj bilješci. Ne idite dalje ako je najveći dio Bitcoina na mjestu koje je napravljeno za praktičnost.</p>
+<p>Ne idite dalje ako nitko osim vas ne zna prvi korak. Tajnost nije isto što i sigurnost. Ako prava osoba u stvarnoj krizi ne zna što ne smije napraviti, sustav može pasti upravo onda kada treba raditi.</p>
+<p>Ne idite dalje ako je sustav toliko kompliciran da ga ne možete mirno objasniti bez otkrivanja tajni. Složenost koja nije provjerena nije sigurnost. Ona je samo odgođena zbrka.</p>
+<p>Skrbništvo je provedeno kada pogrešni ljudi nemaju pristup, a pravi ljudi nisu ostavljeni u magli.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="06-bitcoin-kroz-vrijeme.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="08-trideset-godina-kasnije.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="06-bitcoin-kroz-vrijeme.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="08-trideset-godina-kasnije.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

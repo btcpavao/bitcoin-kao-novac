@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Poslovni novac ne ulazi ravno u kuću</title>
+  <desc id="desc">Dijagram prikazuje kako poslovni saldo prolazi kroz poreze, doprinose, plaće, dobavljače, leasing i poslovnu rezervu prije vlasničke isplate i osobnog proračuna.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222222; }
+      .title { font-size: 30px; font-weight: 700; }
+      .mid { font-size: 20px; font-weight: 650; }
+      .small { font-size: 17px; }
+      .box { fill: #FFFFFF; stroke: #333333; stroke-width: 2.4; }
+      .soft { fill: #F6F6F3; stroke: #B9B9B4; stroke-width: 2; }
+      .line { stroke: #333333; stroke-width: 2.7; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#FFFFFF"/>
+  <text x="600" y="62" text-anchor="middle" class="label title">Poslovni novac ne ulazi ravno u kuću</text>
+  <text x="600" y="101" text-anchor="middle" class="label small">Obitelj smije planirati tek s novcem koji je stvarno isplaćen.</text>
+
+  <rect x="72" y="310" width="212" height="92" rx="10" class="box"/>
+  <text x="178" y="348" text-anchor="middle" class="label mid">poslovni saldo</text>
+  <text x="178" y="377" text-anchor="middle" class="label small">nije osobna sigurnost</text>
+  <path d="M 284 356 L 352 356" class="line"/>
+
+  <rect x="376" y="154" width="390" height="404" rx="14" class="soft"/>
+  <text x="571" y="196" text-anchor="middle" class="label mid">prvo posao plaća svoje obveze</text>
+  <g class="label small">
+    <rect x="422" y="230" width="126" height="52" rx="8" class="box"/>
+    <text x="485" y="263" text-anchor="middle">PDV</text>
+    <rect x="594" y="230" width="126" height="52" rx="8" class="box"/>
+    <text x="657" y="263" text-anchor="middle">porezi</text>
+    <rect x="422" y="304" width="126" height="52" rx="8" class="box"/>
+    <text x="485" y="337" text-anchor="middle">doprinosi</text>
+    <rect x="594" y="304" width="126" height="52" rx="8" class="box"/>
+    <text x="657" y="337" text-anchor="middle">plaće</text>
+    <rect x="422" y="378" width="126" height="52" rx="8" class="box"/>
+    <text x="485" y="411" text-anchor="middle">dobavljači</text>
+    <rect x="594" y="378" width="126" height="52" rx="8" class="box"/>
+    <text x="657" y="411" text-anchor="middle">leasing</text>
+    <rect x="472" y="464" width="198" height="52" rx="8" class="box"/>
+    <text x="571" y="497" text-anchor="middle">poslovna rezerva</text>
+  </g>
+
+  <path d="M 766 356 L 834 356" class="line"/>
+  <rect x="852" y="286" width="178" height="140" rx="10" class="box"/>
+  <text x="941" y="344" text-anchor="middle" class="label mid">vlasnička</text>
+  <text x="941" y="374" text-anchor="middle" class="label mid">isplata</text>
+  <path d="M 941 426 L 941 500" class="line"/>
+
+  <rect x="790" y="518" width="302" height="96" rx="10" class="soft"/>
+  <text x="941" y="556" text-anchor="middle" class="label mid">osobni proračun</text>
+  <text x="941" y="586" text-anchor="middle" class="label small">kuća planira s ovim novcem</text>
+</svg>

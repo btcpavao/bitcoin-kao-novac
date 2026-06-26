@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Proračun - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html" class="active"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="proračun"><a class="header" href="#proračun">Proračun</a></h1>
+<h2 id="zašto-uopće-vodimo-proračun"><a class="header" href="#zašto-uopće-vodimo-proračun">Zašto uopće vodimo proračun?</a></h2>
+<p>Proračun vodimo zato da bismo prestali donositi novčane odluke samo prema stanju na računu i počeli ih donositi prema stvarnim namjenama novca koji već imamo. Stanje na računu govori samo gdje se novac nalazi i koliko ga ima u tom trenutku, ali ne govori što taj novac mora napraviti prije sljedeće uplate, koje obveze već čekaju, koji su troškovi predvidivi, koliko novca doista možemo potrošiti bez posljedica i postoji li stvarni višak koji se može usmjeriti u štednju, Bitcoin, davanje, otplatu duga ili neku drugu odluku.</p>
+<p><img src="assets/visuals/png/02-proracun-01-zasto-vodimo-proracun.png" alt="Fotografija kućnog stola s proračunskim notesom, kalkulatorom, kovanicama i karticama koje predstavljaju namjenu, podatke, planiranje i Bitcoin." /></p>
+<p><em>Proračun pretvara stanje na računu u skup namjena, podataka i odluka.</em></p>
+<p>Ako osoba na računu vidi 1.200 eura, taj iznos može izgledati kao slobodan novac, ali nakon raspodjele može se pokazati da 450 eura pripada stanarini, 140 eura režijama, 300 eura hrani, 80 eura prijevozu, 60 eura zdravlju, 100 eura otplati duga i 70 eura trošku koji je već dogovoren, ali još nije plaćen. Iznos na računu se nije promijenio, ali se promijenilo njegovo značenje. Prije proračuna to je bio jedan broj. Nakon proračuna to je skup konkretnih namjena.</p>
+<p><img src="assets/visuals/png/02-proracun-02-saldo-u-kategorije.png" alt="Fotografija proračunskog notesa i omotnica s euro kovanicama koje prikazuju raspodjelu salda u više namjena." /></p>
+<p><em>Iznos na računu dobiva značenje tek kada se rasporedi u kategorije.</em></p>
+<p>Svrha proračuna nije da život postane savršeno predvidiv. Troškovi će se mijenjati, prihodi mogu kasniti, neki mjeseci će biti skuplji, neke procjene će biti pogrešne, a neke kategorije će se morati prilagoditi. Proračun ne uklanja promjene, nego daje način da se promjene provedu jasno. Ako neka kategorija nema dovoljno novca, proračun ne mora značiti da se kupnja ne smije dogoditi, nego traži da se vidi iz koje druge kategorije novac dolazi. Time svaka odluka postaje konkretnija, jer se vidi što se dobiva i čega se odriče.</p>
+<p>Drugi razlog za proračun jest stvaranje podataka. Bez evidencije, osoba se najčešće oslanja na dojam: otprilike zna koliko zarađuje, otprilike zna koliko troši, otprilike zna što bi trebalo ostati i otprilike zna zašto novac nestane. Takav dojam ponekad može biti blizu istine, ali nije dovoljno precizan za ozbiljnije odluke. Nakon nekoliko mjeseci redovitog vođenja proračuna počinju se vidjeti obrasci: koliko stvarno odlazi na hranu, koliko na auto, koliko na izlaske, koliko na zdravlje, koliko na dug, koliko na davanje i koliko novca u prosjeku ostaje nakon osnovnih troškova.</p>
+<p>Treći razlog je planiranje unaprijed. Većina problema s novcem ne nastaje zato što se dogodilo nešto potpuno nepoznato, nego zato što poznati ili vjerojatni troškovi nisu dobili mjesto u planu. Registracija auta, osiguranje, školske stvari, Božić, rođendani, gume, servis, zdravstveni pregledi, godišnji odmor, popravci u stanu, zamjena mobitela i veći kućanski uređaji nisu svakomjesečni troškovi, ali nisu ni potpuno neočekivani. Proračun ih pretvara iz povremenog pritiska u mjesečnu pripremu.</p>
+<p>Četvrti razlog je odvajanje kratkoročnog novca od dugoročnog novca. Novac koji mora platiti najam, hranu, režije ili poznati trošak u sljedećih nekoliko mjeseci nema istu ulogu kao novac koji može čekati više godina. To je posebno važno kada se u život uvodi Bitcoin. Bitcoin može u kratkom roku znatno mijenjati kupovnu moć, a istodobno ga se u ovoj knjizi promatra kao novac s dugoročnim potencijalom rasta kupovne moći. Upravo zato treba znati koji novac ima kratak rok, koji novac je rezerva, koji novac je dugoročna imovina i koji se iznos može usmjeriti u Bitcoin bez narušavanja svakodnevnih obveza.</p>
+<p>Proračun, dakle, vodimo zato da sadašnji novac dobije namjenu, da transakcije ostave trag, da odluke ne ovise samo o osjećaju, da se budući troškovi počnu pripremati prije nego što dođu i da Bitcoin ne ulazi u neuređen novčani sustav kao još jedna nejasna odluka. Kada je proračun postavljen, on ne služi samo kontroli potrošnje, nego i boljem razumijevanju vlastitog novčanog života.</p>
+<h2 id="Što-proračun-zapravo-jest"><a class="header" href="#Što-proračun-zapravo-jest">Što proračun zapravo jest</a></h2>
+<p>Proračun je sustav u kojem se novac koji stvarno postoji raspoređuje u namjene, a zatim se kroz redovito bilježenje transakcija provjerava je li plan ostao usklađen sa stvarnim stanjem na računima. On nije prognoza budućih prihoda, nije popis želja i nije pokušaj da se unaprijed pogodi svaka pojedinost idućih nekoliko mjeseci, nego način da se vidi koliko novca trenutno postoji i što taj novac treba napraviti.</p>
+<p>Proračun počinje sadašnjim novcem. Ne počinje plaćom koja treba sjesti za pet dana, očekivanom uplatom klijenta, bonusom, rastom cijene Bitcoina ili pretpostavkom da će se neki trošak možda ipak odgoditi. Takvi događaji mogu kasnije promijeniti proračun, ali nisu dio početne raspodjele dok se stvarno ne dogode. U proračun se najprije unosi ono što je već dostupno: gotovina u novčaniku, novac na tekućem računu, novac na štednom računu iz kojeg će se plaćati poznate obveze i drugi novčani računi koji su dio svakodnevnog novčanog toka.</p>
+<p>Temeljno pravilo proračuna nulte osnove jednostavno je: svaki euro koji postoji dobiva zadatak. To ne znači da svaka kategorija mora biti savršeno pogođena, niti znači da se plan tijekom mjeseca ne smije mijenjati, nego znači da novac ne ostaje neodređen. Ako se prihod pojavi kasnije, tada se raspoređuje kasnije. Ako se trošak pokaže većim od očekivanog, proračun se prilagođava tako da se jasno vidi iz koje se druge kategorije novac prebacuje.</p>
+<p>Veći iznos na računu ne mijenja ovo pravilo. Račun na kojem se nalazi 10.000 eura ne govori sam po sebi koliko je novca slobodno, jer dio može pripadati budućem servisu auta, školi, najmu, pričuvu, zdravstvenim troškovima, poslovnim obvezama, rezervi, davanju ili planiranoj kupnji Bitcoina. Veći iznos bez kategorija daje samo grubi osjećaj sigurnosti, dok raspodjela po kategorijama pokazuje koje su odluke već donesene, koje obveze čekaju i gdje se nalazi stvarni višak.</p>
+<h2 id="računi-i-kategorije"><a class="header" href="#računi-i-kategorije">Računi i kategorije</a></h2>
+<p>Jedna od prvih razlika koju treba usvojiti jest razlika između računa i kategorije. Račun govori gdje se novac nalazi, a kategorija govori čemu je novac namijenjen. Tekući račun, gotovina, štedni račun, poslovni račun, račun na mjenjačnici i Bitcoin novčanik su mjesta na kojima se može nalaziti novac ili imovina. Hrana, stanovanje, prijevoz, zdravlje, dug, davanje, budući troškovi, rezerva i Bitcoin su namjene.</p>
+<p><img src="assets/visuals/png/02-proracun-03-racun-nije-kategorija.png" alt="Fotografija stola s novčanikom, karticom, mobitelom i omotnicama koje razlikuju račune od namjena novca." /></p>
+<p><em>Račun i kategorija daju dvije različite, ali jednako važne informacije.</em></p>
+<p>U YNAB-u se ta razlika može uredno postaviti kroz dvije cjeline: gotovina i praćenje. Gotovina obuhvaća račune na kojima se nalazi novac koji se može rasporediti u proračun, primjerice novac u novčaniku, tekući račun, štedni račun ili drugi račun iz kojeg se plaćaju troškovi. Praćenje služi za imovinu i obveze koje su važne za ukupnu sliku, ali se ne koriste kao svakodnevni novac za raspodjelu po kategorijama. U praćenju se mogu voditi vrijednost nekretnine, dugoročni Bitcoin koji ne planirate trošiti, udio u poslu, ulaganja, zajam koji ste dali, kredit, kartica, minus ili druga obveza.</p>
+<p><img src="assets/visuals/png/02-proracun-04-ynab-gotovina-pracenje.png" alt="Fotografija registratora s gotovinom, karticom, kućom, uređajem za čuvanje Bitcoina i papirima za praćenje imovine i obveza." /></p>
+<p><em>Gotovina upravlja svakodnevnim odlukama, a praćenje pokazuje širu bilancu.</em></p>
+<p>Ova razlika sprječava miješanje likvidnosti i ukupne imovine. Nekretnina može povećavati neto imovinu, ali ne plaća račun za hranu idući tjedan. Kredit smanjuje neto imovinu, ali nije kategorija iz koje se plaća gorivo. Bitcoin može biti dugoročna imovina, ali dok ga ne želite koristiti za svakodnevne obveze, nije dobro da u proračunu glumi novac za režije. Ako se Bitcoin jednoga dana koristi kao primarni novac za redovita plaćanja, tada se može tretirati kao dio gotovine, ali dok je primarno dugoročna imovina, urednije ga je voditi u praćenju.</p>
+<p>Na primjer, osoba može imati 2.300 eura na tekućem računu. Bez proračuna taj iznos govori samo da novca ima. Nakon raspodjele isti iznos može značiti 700 eura za stanovanje, 250 eura za režije, 420 eura za hranu, 180 eura za prijevoz, 150 eura za zdravlje, 200 eura za dug, 100 eura za davanje, 180 eura za buduće troškove i 120 eura za slobodnu potrošnju. Saldo je isti, ali odluka više nije ista, jer se prije svake kupnje ne gleda samo stanje računa, nego i stanje kategorije iz koje se kupnja plaća.</p>
+<p>Ako kategorija ima dovoljno novca, kupnja je već pokrivena planom. Ako kategorija nema dovoljno novca, kupnja nije nužno zabranjena, ali tada treba odlučiti iz koje druge kategorije se novac prebacuje. To je važan dio proračuna, jer svaka promjena plana pokazuje oportunitetni trošak odluke: novac koji ide u jednu stvar više ne može istodobno ići u drugu.</p>
+<h2 id="osobni-i-poslovni-proračun"><a class="header" href="#osobni-i-poslovni-proračun">Osobni i poslovni proračun</a></h2>
+<p>Ako osoba vodi posao, obrt ili firmu, osobni i poslovni proračun ne treba miješati u isti sustav. Poslovanje treba imati svoj zaseban proračun, a privatni život svoj zaseban proračun. To vrijedi i kada je vlasnik ista osoba, jer novac firme i novac kućanstva nemaju istu funkciju, isti ritam, iste obveze ni iste odluke.</p>
+<p><img src="assets/visuals/png/02-proracun-05-poslovni-i-privatni-proracun.png" alt="Fotografija dvaju notesâ na stolu koji odvajaju poslovni proračun od privatnog proračuna i osobne isplate." /></p>
+<p><em>Poslovanje i kućanstvo trebaju odvojene proračune, račune i kategorije.</em></p>
+<p>U praksi to znači da firma ima vlastite račune, vlastite kategorije i vlastiti tjedni ili mjesečni pregled. Privatni proračun počinje tek onim novcem koji je stvarno isplaćen vlasniku ili zaposleniku kao osobni prihod. Novac koji stoji na poslovnom računu ne treba se doživljavati kao osobni višak samo zato što mu vlasnik može pristupiti. Taj novac prije svega pripada poslovanju dok se ne donese jasna odluka o isplati.</p>
+<p>Poslovni proračun može biti postavljen na višoj razini od osobnog proračuna, osobito na početku. Nije nužno odmah razraditi svaku sitnu poslovnu stavku, ali treba jasno vidjeti glavne namjene poslovnog novca. Kategorije mogu biti plaće, vanjski suradnici, dobavljači, najam prostora, oprema, računalni programi, alati, zalihe, marketing, prodaja, razvoj proizvoda, održavanje, edukacija, putovanja, povrati kupcima, pričuva za slabije mjesece, otplata poslovnog duga, ulaganje u rast poslovanja i vlasnička isplata.</p>
+<p>Neke firme će trebati vrlo malo kategorija, dok će druge trebati detaljniji sustav po projektima, klijentima, odjelima ili linijama prihoda. Važno je da poslovni proračun pokaže može li firma redovito podmirivati svoje obveze, financirati rad, podnijeti slabiji mjesec i planirati veće odluke bez oslanjanja na privatni novac.</p>
+<p>Privatni proračun tada ima svoje kategorije: stanovanje, režije, hrana, prijevoz, zdravlje, obitelj, djeca, dug, davanje, budući troškovi, slobodna potrošnja, likvidna rezerva i Bitcoin. Takav privatni proračun ne pokušava upravljati firmom, nego kućanstvom. U njega ne ulaze svi poslovni prihodi, nego samo osobni prihod koji je stvarno prebačen iz poslovanja u privatni život.</p>
+<p>Ovo razdvajanje posebno je važno kod promjenjivih prihoda. Dobar poslovni mjesec ne znači automatski da je i privatni proračun dobio višak. Prvo se mora vidjeti što taj novac treba napraviti u poslovanju, a tek zatim koliko se može isplatiti vlasniku. Ako se ta razlika ne poštuje, poslovni račun lako postane produžetak privatne potrošnje, a privatni proračun počne računati na novac koji je zapravo trebao ostati u firmi.</p>
+<h2 id="prve-kategorije"><a class="header" href="#prve-kategorije">Prve kategorije</a></h2>
+<p>Prvi proračun ne treba imati previše detalja, ali treba imati dovoljno kategorija da pokazuje stvarne obrasce potrošnje. Ako kategorija ima premalo, sve se sakrije u nekoliko širokih skupina i proračun ne pomaže u odlučivanju. Ako ih ima previše, sustav se može početi doživljavati kao administrativni teret. Početak treba biti dovoljno jednostavan da ga je moguće održavati i dovoljno konkretan da se iz njega nešto može naučiti.</p>
+<p>Osnovni skup osobnih kategorija može uključivati stanovanje, režije, hranu, prijevoz, zdravlje, obitelj ili djecu, dug, davanje, buduće troškove, slobodnu potrošnju, likvidnu rezervu i Bitcoin. Nakon toga se kategorije prilagođavaju stvarnom životu. Osoba koja živi s roditeljima možda treba posebne kategorije za auto, izlaske, uređaje, edukaciju i odlazak od doma. Podstanar treba najam, polog, selidbu i opremanje stana. Osoba koja radi samostalno treba poseban poslovni proračun, a u osobnom proračunu treba jasno vidjeti koliko si redovito isplaćuje za privatni život. Obitelj koja živi između dvije države treba putovanja, pomoć roditeljima, račune u dvije države i troškove održavanja imovine. Vlasnik nekretnine treba pričuvu, popravke, osiguranje i održavanje.</p>
+<p>Kategorije se kasnije mogu razdvajati kada podaci pokažu da je to korisno. Hrana se može podijeliti na trgovinu i restorane. Prijevoz se može podijeliti na gorivo, javni prijevoz, servis, registraciju i gume. Zdravlje se može podijeliti na lijekove, preglede i stomatologa. Djeca mogu imati vrtić, školu, odjeću, aktivnosti, izlete i poklone. Takvo razdvajanje ima smisla kada pomaže u odlučivanju, ali ne treba ga uvoditi samo zato da bi proračun izgledao detaljno.</p>
+<p>Posebnu pažnju treba dati budućim troškovima. Registracija auta, osiguranje, školske stvari, Božić, rođendani, gume, servis, zdravstveni pregledi, godišnji odmor, popravci u stanu, zamjena mobitela i veći kućanski uređaji nisu iznenađenja u punom smislu riječi, jer se većina njih može očekivati. Možda ne znate točan iznos ili datum, ali znate da će takvi troškovi doći. Proračun ih pretvara iz povremenog pritiska u mjesečni ritam. Trošak od 600 eura za šest mjeseci može postati 100 eura mjesečno, a godišnji odmor od 1.200 eura može postati 100 eura mjesečno tijekom godine.</p>
+<h2 id="raspodjela-novca"><a class="header" href="#raspodjela-novca">Raspodjela novca</a></h2>
+<p>Kada su računi uneseni i kategorije postavljene, sljedeći korak je raspodijeliti sav novac koji trenutno postoji. To znači da se ukupni iznos raspoloživ u gotovinskim računima namjenjuje kategorijama dok ne ostane ništa neraspoređeno. Ostatak od nula ne znači da nemate novca, nego da sav novac ima posao.</p>
+<p>Ako se pojavi kategorija za koju ne znate koliko joj treba, počnite s procjenom i kasnije je ispravite na temelju stvarnih transakcija. Proračun se ne uspostavlja zato što već znate sve odgovore, nego zato da biste ih s vremenom dobili. Prvi mjesec često pokazuje osnovnu sliku, tri mjeseca već pokazuju obrasce, šest mjeseci bolje pokazuje stvarni višak, a godina dana otkriva sezonske troškove koji se ne vide u jednom mjesecu.</p>
+<p>Kod promjenjivih prihoda treba biti oprezniji. Dobar mjesec ne treba odmah proglasiti uobičajenim mjesecom. Prvo treba pokriti slabije mjesece, osnovne troškove, poslovne obveze ako ih imate, rezervu i buduće troškove, a tek zatim govoriti o stvarnom višku. U suprotnom se lako dogodi da se najbolji mjesec potroši kao da će se ponavljati, dok se slabiji mjesec kasnije pokriva dugom ili prodajom imovine.</p>
+<h2 id="kako-se-unosi-transakcija"><a class="header" href="#kako-se-unosi-transakcija">Kako se unosi transakcija</a></h2>
+<p>Proračun nije samo plan na početku mjeseca. Plan postaje koristan tek kada se svaka stvarna transakcija redovito unosi u evidenciju. Svaka transakcija treba imati datum, primatelja, kategoriju, napomenu, račun i iznos. Datum govori kada se transakcija dogodila, primatelj govori kome je novac plaćen ili tko je novac uplatio, kategorija govori kojoj namjeni transakcija pripada, napomena kratko opisuje što se dogodilo, račun pokazuje odakle je novac izašao ili kamo je ušao, a iznos se vodi kao odljev ili priljev.</p>
+<p>Primjer je jednostavan. Ako ste platili kavu 5 eura iz gotovine, otvorite račun gotovine i unesete novu transakciju. Datum je dan kada ste platili, primatelj je kafić, kategorija može biti izlasci, kafići i restorani, napomena može biti “kava”, a iznos je 5 eura kao odljev, jer je novac izašao iz gotovine. Nakon tog unosa stanje gotovine smanjuje se za 5 eura, a kategorija iz koje je kava plaćena također se smanjuje za isti iznos.</p>
+<p>Ako je ista transakcija od 5 eura zapravo sadržavala 4 eura za kavu i 1 euro napojnice, transakciju je bolje podijeliti po stvarnoj namjeni. Četiri eura idu u kategoriju izlasci, kafići i restorani, a jedan euro ide u kategoriju davanja. Ukupni odljev s računa gotovine i dalje je 5 eura, ali kategorije pokazuju precizniju sliku: 4 eura potrošena su na izlazak, a 1 euro je davanje. Takva podjela je korisna jer kasniji izvještaji neće napojnicu prikazivati kao običan trošak kafića, nego kao ono što ona u vašem sustavu jest.</p>
+<p><img src="assets/visuals/png/02-proracun-06-unos-transakcije.png" alt="Fotografija računa za kavu, euro kovanica i notesâ koji prikazuju podjelu jedne transakcije na trošak i davanje." /></p>
+<p><em>Transakcija treba pokazati i mjesto novca i stvarnu namjenu troška.</em></p>
+<p>Ista struktura vrijedi za priljeve. Kada sjedne plaća, honorar, uplata klijenta, poklon, povrat novca od kupnje ili bilo koji drugi primitak, unose se datum, primatelj odnosno uplatitelj, napomena i iznos kao priljev. Takav priljev najčešće se ne smješta odmah u hranu, stanovanje, prijevoz ili Bitcoin, nego ulazi u preostalo za raspodjelu. Tek nakon toga novac se raspoređuje u kategorije. Plaća zato nije slobodan novac samim time što je sjela na račun; ona najprije postaje novac koji čeka raspored, a tek nakon raspodjele postaje novac za hranu, stanovanje, dug, davanje, buduće troškove, rezervu ili Bitcoin.</p>
+<p>Treba razlikovati i prijenos između računa od stvarnog prihoda ili rashoda. Ako podignete 100 eura s tekućeg računa i stavite ih u novčanik, to nije trošak, nego prijenos iz jednog gotovinskog računa u drugi. Ukupni proračun se ne mijenja, jer novac nije potrošen, nego je promijenio mjesto. Isto vrijedi ako prebacite novac sa štednog računa na tekući račun. Kategorije se mijenjaju samo kada se novac stvarno potroši, primi ili namjenski preraspodijeli.</p>
+<p>Najvažnije pravilo kod transakcija jest da se ne odgađaju predugo. Transakcija unesena istoga dana najčešće je točna, dok transakcija unesena nakon tri tjedna često postaje pogađanje. Što je dulji razmak između potrošnje i unosa, to proračun više ovisi o sjećanju, a manje o evidenciji. U praksi je dovoljno stvoriti naviku da se transakcije unose odmah nakon plaćanja ili barem jednom dnevno, a računi poravnaju jednom tjedno.</p>
+<h2 id="poravnanje-računa"><a class="header" href="#poravnanje-računa">Poravnanje računa</a></h2>
+<p>Poravnanje znači da se stanje u proračunu uspoređuje sa stvarnim stanjem na računu, kartici, gotovini ili drugom izvoru podataka. Ako bankovna aplikacija pokazuje 842,30 eura, a proračun pokazuje 847,30 eura, razliku treba pronaći. Možda nedostaje transakcija od 5 eura, možda je transakcija unesena dvaput, možda je iznos pogrešan, možda je novac prebačen između računa, a nije označen kao prijenos. Poravnanje nije poseban financijski događaj, nego provjera da brojevi kojima se služite za odlučivanje odgovaraju stvarnosti.</p>
+<p>Gotovina se također treba poravnavati, iako je kod nje dopušteno više praktičnosti. Ako u proračunu piše da u novčaniku imate 63 eura, a stvarno imate 59 eura, razliku treba objasniti ili ispraviti. Kod gotovine se male razlike mogu dogoditi zbog zaokruživanja, sitnih kupnji ili zaboravljenih napojnica, ali ako se to ponavlja, sustav ne pokazuje stvarnu potrošnju i treba ga pojednostaviti ili ažurnije voditi.</p>
+<p>Poravnanje je posebno važno prije većih odluka. Ako razmišljate o kupnji Bitcoina, većoj otplati duga, putovanju, popravku auta ili većem daru, korisno je najprije poravnati račune, jer odluka donesena na netočnim brojevima može izgledati razumno samo zato što dio potrošnje još nije unesen.</p>
+<h2 id="Što-podaci-počnu-pokazivati"><a class="header" href="#Što-podaci-počnu-pokazivati">Što podaci počnu pokazivati</a></h2>
+<p>Kada se proračun vodi redovito, nakon nekoliko mjeseci nastaje skup podataka koji omogućuje bolje planiranje. U početku je najvažnije samo rasporediti novac i unositi transakcije, ali s vremenom postaje jednako važno gledati što ti podaci pokazuju. U YNAB-u i u sličnim sustavima korisni su pregledi potrošnje, kretanja potrošnje, neto imovine, prihoda naspram rashoda i starosti novca.</p>
+<p><img src="assets/visuals/png/02-proracun-08-podaci-kroz-vrijeme.png" alt="Fotografija proračunskog notesa, vremenske crte, mjesečnih papirića, računa i jednostavnog grafa koji prikazuju podatke kroz vrijeme." /></p>
+<p><em>Proračun postaje korisniji kako se u njemu skuplja više stvarnih podataka.</em></p>
+<p>Raščlamba potrošnje pokazuje koliko je potrošeno po kategorijama u određenom razdoblju. Možete gledati zadnja tri mjeseca, šest mjeseci, dvanaest mjeseci, tekuću godinu, prošlu godinu ili razdoblje koje sami odaberete. Takav pregled pokazuje koliko je novca otišlo u svaku kategoriju, koliki je udio pojedine kategorije u ukupnoj potrošnji te kolika je prosječna mjesečna ili dnevna potrošnja. Ako se, primjerice, čini da restorani nisu veliki trošak, raščlamba potrošnje može pokazati da su u šest mjeseci postali jedna od većih kategorija, što tada omogućuje konkretniju odluku.</p>
+<p>Kretanje potrošnje pokazuje kako se potrošnja mijenja kroz vrijeme. Kada proračun postoji dovoljno dugo, moguće je vidjeti koliko je ukupno potrošeno u pojedinom mjesecu i kako se taj mjesec uspoređuje s prosjekom. U jednom mjesecu potrošnja može biti 18 posto viša od prosjeka zbog registracije auta, ljetovanja ili opremanja stana, dok drugi mjesec može biti 12 posto niža jer nije bilo većih troškova. Isti pregled može se gledati i za pojedinu kategoriju, primjerice hranu, prijevoz, zdravlje ili restorane, pa se vidi raste li neka kategorija postupno ili je samo jedan mjesec odstupao.</p>
+<p>Neto imovina pokazuje odnos ukupne imovine i ukupnih obveza. Imovina uključuje gotovinu, novac na računima, Bitcoin, ulaganja, nekretnine i drugu praćenu imovinu, dok obveze uključuju kredite, dugove na karticama, minuse, zajmove i druge dugoročne ili kratkoročne obveze. Neto imovina je razlika između toga dvoje. Ako postoje dugovi, oni smanjuju ukupnu sliku; ako se dugovi otplate, neto imovinu čine novac i imovina koja ostaje. Praćenje neto imovine kroz vrijeme pomaže vidjeti povećava li se stvarna financijska pozicija ili samo raste saldo na jednom računu dok se obveze drugdje povećavaju.</p>
+<p>Prihodi i rashodi prikazuju novac koji ulazi i novac koji izlazi. Na strani prihoda može se vidjeti koliko je došlo iz plaće, honorara, poslovnih uplata, najma, darova ili drugih izvora, i to po mjesecima. Koristan je i prosjek prihoda po izvoru, kao i ukupni prosječni prihod u razdoblju koje promatrate. Na strani rashoda vide se troškovi po kategorijama i po mjesecima, prosjek po kategoriji, ukupni trošak po kategoriji i ukupni rashodi. Kada se od prihoda oduzmu rashodi, dobiva se neto prihod u smislu proračuna, odnosno razlika između onoga što je ušlo i onoga što je izašlo u promatranom razdoblju.</p>
+<p>Starost novca pokazuje koliko dugo novac u prosjeku ostaje u sustavu prije nego što se potroši. U praksi se taj podatak može gledati po mjesecima, primjerice za zadnjih šest mjeseci, pa se vidi kreće li se broj dana prema gore ili prema dolje. Ako novac odlazi čim sjedne, starost novca je niska i proračun vjerojatno još nema dovoljno prostora. Ako novac ostaje dulje u kategorijama prije nego što se potroši, to može značiti da se obveze bolje pripremaju unaprijed. Taj pokazatelj nije cilj sam po sebi, ali pomaže u razumijevanju tempa kojim novac ulazi i izlazi.</p>
+<p>Svi ovi pregledi postaju korisniji što se proračun dulje vodi. Jedan mjesec daje početnu sliku, ali nije dovoljan za zaključke o godišnjem životu. Tri mjeseca otkrivaju ponavljanja. Šest mjeseci bolje pokazuje što je stvarni višak. Godina dana uključuje sezonske troškove, blagdane, odmore, registracije, veće račune i druge stavke koje se ne pojavljuju svaki mjesec. Zato proračun nije samo alat za kontrolu današnje potrošnje, nego i način da buduće planiranje ima bolju osnovu.</p>
+<h2 id="bitcoin-u-proračunu"><a class="header" href="#bitcoin-u-proračunu">Bitcoin u proračunu</a></h2>
+<p>Bitcoin u proračunu treba voditi prema ulozi koju stvarno ima. Ako ga trenutno držite kao dugoročnu imovinu, može biti dio praćenja imovine i ulaziti u izračun neto imovine. Ako ga koristite za redovita plaćanja ili ako želite dio svakodnevnog novca držati u Bitcoinu, tada se može postaviti kao račun u gotovini, ali to ima smisla tek kada ste spremni prihvatiti da se iz tog računa stvarno plaćaju kratkoročne obveze.</p>
+<p>Nova kupnja Bitcoina treba imati svoju kategoriju. Time se jasno vidi kupuje li se Bitcoin iz stvarnog viška ili iz novca koji je bio potreban za druge obveze. Ako postoji potrošački dug, minus, dug na kartici ili nepoznati mjesečni trošak, kupnja Bitcoina mora se promatrati zajedno s tim obvezama, jer proračun ne pita samo vjerujete li u Bitcoin, nego iz kojeg novca ga kupujete. Učenje, mala redovita kupnja ili tehničko upoznavanje s novčanikom mogu imati smisla i ranije, ali iznosi moraju biti takvi da ne narušavaju hranu, stanovanje, otplatu duga, rezervu i druge osnovne kategorije.</p>
+<p>Ovo je posebno važno zato što Bitcoin može znatno mijenjati kupovnu moć u kratkom roku. U okviru teze ove knjige Bitcoin ima očekivani dugoročni trend rasta kupovne moći, ali taj dugoročni pogled ne uklanja kratkoročnu volatilnost. Novac koji treba platiti najam idući mjesec, registraciju za tri mjeseca ili zdravstveni trošak koji je već poznat ne treba se ponašati kao novac koji može mirno čekati više godina. Proračun zato pomaže razdvojiti novac s kratkim rokom od novca koji smije imati dug rok.</p>
+<p><img src="assets/visuals/png/02-proracun-09-bitcoin-i-rokovi-novca.png" alt="Fotografija stola s odvojenim pretincima za kratkoročni, srednjoročni i dugoročni novac te karticom za Bitcoin." /></p>
+<p><em>Bitcoin u proračunu treba voditi prema stvarnoj ulozi i vremenskom roku novca.</em></p>
+<p>Kada Bitcoin postupno postaje primarni novac, potreba za proračunom ne nestaje, nego postaje veća. Ako se prihod, štednja ili dio imovine drže u novcu čija se kupovna moć u kratkom roku može snažno mijenjati, tada osoba mora još bolje znati koliki su joj stvarni mjesečni rashodi, koji troškovi dolaze u sljedećih nekoliko mjeseci, kolika je potrebna likvidna rezerva, koji dio imovine ne smije biti prodan u nepovoljnom trenutku i koji dio se može držati dugoročno. Život s Bitcoinom kao primarnim novcem traži da planiranje unaprijed postane redovita navika, a ne izvanredna aktivnost kada se pojavi problem.</p>
+<h2 id="tjedni-ritam"><a class="header" href="#tjedni-ritam">Tjedni ritam</a></h2>
+<p>Proračun je najlakše održavati ako ima jednostavan tjedni ritam. Jednom tjedno treba otvoriti proračun, unijeti transakcije koje nedostaju, poravnati račune, provjeriti kategorije koje su pri kraju i odlučiti treba li novac premjestiti iz jedne kategorije u drugu. Takav pregled ne mora trajati dugo, ali mora biti redovit. Ako se proračun otvara samo kada nastane problem, tada najčešće služi za objašnjavanje onoga što se već dogodilo, umjesto za usmjeravanje onoga što se tek treba dogoditi.</p>
+<p><img src="assets/visuals/png/02-proracun-07-tjedni-ritam.png" alt="Fotografija tjednog planera, kartica zadataka, računa, kovanica i strelica koje prikazuju redoviti tjedni pregled proračuna." /></p>
+<p><em>Proračun je najlakše održavati kroz kratak i ponovljiv tjedni ritam.</em></p>
+<p>Tjedni pregled može ići ovim redom: prvo se provjere stanja računa i unesu nedostajuće transakcije, zatim se poravnaju gotovina, banka i kartice, nakon toga se pogledaju kategorije s manjkom ili preniskim ostatkom, pa se odlučuje hoće li se smanjiti potrošnja ili prebaciti novac iz druge kategorije. Na kraju se provjeravaju budući troškovi, dug, davanje, rezerva i Bitcoin. Ako postoji zajednički novac u braku, obitelji ili kućanstvu, isti pregled treba barem povremeno raditi zajedno, jer proračun koji postoji samo u glavi jedne osobe nije dovoljan za odluke koje pogađaju više ljudi.</p>
+<p>Mjesečni pregled ima širu svrhu. Tada se uspoređuje plan s ostvarenjem, gledaju se raščlamba potrošnje, kretanje potrošnje, prihodi i rashodi, promjena neto imovine i starost novca. Ne treba svaki mjesec donositi velike zaključke, ali treba primijetiti ponavljaju li se iste razlike. Ako je hrana svaki mjesec veća od plana, možda plan nije realan. Ako se slobodna potrošnja stalno pokriva iz rezerve, rezerva zapravo nije rezerva. Ako se Bitcoin kupuje redovito, ali se kartica također povećava, kupnja Bitcoina možda ne dolazi iz viška nego iz odgođenog troška.</p>
+<p>Kod poslovnog proračuna tjedni ili mjesečni ritam treba biti odvojen od privatnog pregleda. U poslovnom pregledu provjeravaju se poslovni prihodi, naplata, dobavljači, plaće, zalihe, projekti, očekivani troškovi, poslovna rezerva i iznos koji se može isplatiti vlasniku. Tek kada je taj iznos stvarno isplaćen, on ulazi u privatni proračun kao osobni priljev.</p>
+<h2 id="primjeri"><a class="header" href="#primjeri">Primjeri</a></h2>
+<p>Zamislimo osobu koja ima 352 eura do sljedeće plaće: 312 eura na računu i 40 eura u gotovini. Prvi proračun ne bi trebao početi pitanjem koliko se može potrošiti, nego pitanjem što tih 352 eura mora napraviti do sljedeće uplate. Ako treba 120 eura za hranu, 45 eura za gorivo, 60 eura za režije, 30 eura za lijek, 40 eura za dug i 20 eura za obiteljski trošak, tada preostaje mnogo manje slobodnog novca nego što saldo na početku sugerira. U takvoj situaciji proračun ne stvara dodatni novac, ali sprječava da se mali višak zamijeni za osjećaj veće sigurnosti.</p>
+<p>Drugi primjer je osoba koja živi s roditeljima i ima niže životne troškove. Takva situacija može biti velika prednost ako se koristi za stvaranje rezerve, izlazak iz duga, pripremu odlaska od doma i postupnu kupnju Bitcoina iz stvarnog viška. Ista situacija može postati problem ako se niži troškovi pretvore u višu potrošnju na izlaske, dostave, uređaje i pretplate, jer tada prednost roditeljskog doma ne gradi buduću slobodu nego samo smanjuje osjećaj posljedica. Proračun u tom primjeru treba imati kategoriju za odlazak od doma, osnovnu rezervu, prijevoz, slobodnu potrošnju, davanje i Bitcoin, kako bi se jasno vidjelo koliko sadašnja prednost doista pomaže.</p>
+<p>Treći primjer je obitelj sa srednjim prihodom, djecom, autom, režijama, kreditom i redovitim neplaniranim troškovima. Kod takve obitelji proračun često najviše pomaže u razgovoru, jer kategorije smanjuju potrebu da se svaka kupnja tumači iz početka. Ako postoji kategorija za dječju odjeću, servis auta, hranu, izlaske, školu, darove, davanje i Bitcoin, lakše je vidjeti što je stvarni prioritet, a što je samo trenutno najglasnija potreba. Kada kategorija nije dovoljna, obitelj ne mora raspravljati apstraktno o tome troši li netko previše, nego konkretno odlučuje iz koje se druge kategorije novac prebacuje.</p>
+<p>Četvrti primjer je poduzetnik ili par s više imovine, poslovnim prihodima, nekretninom, Bitcoinom i većim brojem odluka. U takvom slučaju postoje dva proračuna. Firma ima proračun za plaće, dobavljače, zalihe, prostor, opremu, marketing, razvoj, održavanje, pričuvu za slabije mjesece i vlasničku isplatu. Privatni proračun ima kategorije za stanovanje, hranu, djecu, auto, zdravlje, dug, davanje, rezervu i Bitcoin. Kada se ta dva proračuna ne miješaju, lakše je vidjeti koliko firma stvarno može isplatiti vlasniku, koliko obitelj stvarno troši i koliko se Bitcoina može kupiti iz viška koji ne ugrožava ni poslovanje ni privatni život.</p>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Prvi potez je popisati račune. Otvorite bankovnu aplikaciju, provjerite gotovinu, pogledajte kartice, štedne račune, poslovni račun ako ga imate, Bitcoin novčanik i sve druge račune na kojima se nalazi novac ili obveza. U osobni proračun najprije unesite gotovinske račune, odnosno one s kojih stvarno plaćate privatni život. Imovinu i obveze koje nisu dio svakodnevne raspodjele unesite u praćenje.</p>
+<p>Drugi potez je odlučiti treba li vam i zaseban poslovni proračun. Ako vodite firmu ili poslovanje, nemojte poslovni račun samo dodati u privatni proračun kao još jedan izvor novca. Napravite odvojeni poslovni proračun, s vlastitim kategorijama i vlastitim pregledom, pa u privatni proračun unosite samo ono što je stvarno isplaćeno kao osobni prihod.</p>
+<p>Treći potez je napraviti početne privatne kategorije. One ne moraju biti savršene, ali trebaju pokriti stanovanje, režije, hranu, prijevoz, zdravlje, dug, davanje, buduće troškove, slobodnu potrošnju, rezervu i Bitcoin. Ako imate djecu, posao, nekretninu, promjenjiv prihod ili život između dvije države, dodajte kategorije koje odražavaju te okolnosti.</p>
+<p>Četvrti potez je rasporediti sav novac koji postoji. Nemojte raspoređivati plaću koja nije sjela, uplatu klijenta koja kasni ili bonus koji nije potvrđen. Kada novac dođe, ući će kao priljev u preostalo za raspodjelu i tada će dobiti zadatak.</p>
+<p>Peti potez je unositi svaku transakciju. Hrana ide u hranu, gorivo u prijevoz, lijekovi u zdravlje, kartica u dug, napojnica u davanje, a kupnja Bitcoina u kategoriju za Bitcoin ili u praćenje imovine, ovisno o tome kako je sustav postavljen. Ako jedna transakcija ima više namjena, podijelite je po kategorijama.</p>
+<p>Šesti potez je jednom tjedno poravnati račune. Stanje u proračunu treba odgovarati stvarnom stanju u banci, gotovini, kartici i drugim računima. Ako ne odgovara, pronađite razliku dok je još svježa.</p>
+<p>Sedmi potez je nakon prvih mjesec dana pogledati podatke, ali bez prenaglih zaključaka. Prvi mjesec najčešće služi za upoznavanje vlastitog novčanog toka. Nakon tri mjeseca već se mogu vidjeti obrasci, nakon šest mjeseci stvarniji višak, a nakon godinu dana sezonski troškovi.</p>
+<h2 id="kada-je-poglavlje-provedeno"><a class="header" href="#kada-je-poglavlje-provedeno">Kada je poglavlje provedeno</a></h2>
+<p>Ovo poglavlje je provedeno kada proračun više nije samo ideja, nego redovita navika. To znači da raspoređujete samo novac koji stvarno postoji, da svaki euro ima kategoriju, da razlikujete gotovinu od praćenja imovine i obveza, da svaki odljev ima datum, primatelja, kategoriju, napomenu i račun iz kojeg je plaćen, da priljeve najprije vodite kroz preostalo za raspodjelu, da podijeljene transakcije dijelite prema stvarnoj namjeni i da račune poravnavate barem jednom tjedno.</p>
+<p>Ako vodite poslovanje, ovo poglavlje je provedeno tek kada poslovni i privatni proračun više nisu pomiješani. Poslovanje treba imati vlastiti proračun, vlastite račune, vlastite kategorije i vlastiti pregled. Privatni proračun treba počinjati osobnim prihodima koji su stvarno isplaćeni iz poslovanja ili primljeni iz drugog izvora.</p>
+<p>Također znači da znate svoj stvarni mjesečni trošak, da budući troškovi imaju kategorije, da dug nije skriven u minimalnim uplatama, da davanje ima svoje mjesto, da kupnja Bitcoina dolazi iz jasne kategorije, da razlikujete novac s kratkim rokom od novca koji može čekati dugo i da redovito gledate raščlambu potrošnje, kretanje potrošnje, neto imovinu, prihode i rashode te starost novca.</p>
+<p>Ako proračun još postoji samo u glavi, ako troškovi ne ulaze u kategorije, ako trošite novac koji još nije stigao, ako ne znate stvarni višak, ako Bitcoin kupujete iz neodređenog ostatka ili ako se poslovni i osobni novac miješaju bez jasne isplate, tada je bolje ostati na ovom poglavlju još neko vrijeme. Sljedeće odluke, osobito one o dugu, davanju, ravnoteži imovine i Bitcoinu kao primarnom novcu, bit će kvalitetnije kada se temelje na točnim podacima o sadašnjem novcu.</p>
+<p>Proračun ne mora biti složen da bi bio koristan. Dovoljno je da pokazuje gdje je novac, čemu je namijenjen, što se stvarno dogodilo i kako se odluke ponavljaju kroz vrijeme. Kada to postoji, planiranje unaprijed postupno postaje normalan dio života, a Bitcoin se može uvoditi u sustav koji već zna svoje obveze, rokove, višak i rizike.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="01-zasto-bitcoin-kao-novac.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="03-dug.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="01-zasto-bitcoin-kao-novac.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="03-dug.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

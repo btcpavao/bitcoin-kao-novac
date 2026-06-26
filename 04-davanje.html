@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Davanje - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html" class="active"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="davanje"><a class="header" href="#davanje">Davanje</a></h1>
+<p>Davanje nije ono što ostane na kraju mjeseca.</p>
+<p>Ali prije toga treba reći još jednu stvar: ovo poglavlje počinje tek nakon nula duga na bilanci.</p>
+<p>Ako još imate dug, vratite se na prethodno poglavlje. Ne zato što ne smijete pomoći čovjeku u stvarnoj potrebi. Pomozite kao što ste i dosad pomagali: kad vam savjest kaže, kad vidite konkretnu osobu, kad treba donijeti hranu, platiti račun, pomoći roditelju ili učiniti nešto dobro. Ali to nije praksa sustavnog davanja o kojoj govori ovo poglavlje.</p>
+<p>Dok postoji dug, nema programa davanja.</p>
+<p>Nema simboličnog iznosa.</p>
+<p>Nema malog iznosa da se &quot;čuva srce&quot;.</p>
+<p>Nema 10 eura da se naviknete na treći korak.</p>
+<p>Prvo dug van.</p>
+<p>Zatim Davanje.</p>
+<p>To treba biti neugodno jasno, jer inače davanje lako postane lijepa riječ kojom čovjek izbjegne glavnu stvar: budući novac još nije slobodan.</p>
+<h2 id="novac-ne-ostatak"><a class="header" href="#novac-ne-ostatak">Novac, ne ostatak</a></h2>
+<p>Kada ova knjiga kaže Davanje, misli na novac.</p>
+<p>Vrijeme, volontiranje, preporuka, mentorstvo, prijevoz, prisutnost i pomoć bez naknade mogu biti dobri. Ponekad su i bolji od novca. Ali nisu ova kategorija. U ovoj knjizi Davanje je novac koji ima ime u proračunu i stvarno izlazi prema drugima.</p>
+<p>Proračun dolazi prvi zato što sav novac mora imati namjenu prije transakcije. Nula eura ostaje bez imena. Ako novac ide u stanovanje, ne ide u hranu. Ako ide u rezervu, ne ide u potrošnju. Ako ide u Bitcoin, ne ide u Davanje. Ako ide u Davanje, više ne stoji u vlastitom krugu.</p>
+<p>Davanje ne može biti ono što preživi kraj mjeseca.</p>
+<p>Ako davanje čeka kraj mjeseca, najčešće neće dočekati ništa. Stanarina neće čekati. Hrana neće čekati. Režije neće čekati. Registracija, stomatolog, škola, prijevoz, bolest, roditelji, djeca i neočekivani troškovi neće čekati. Sve što nema kategoriju mora se boriti za ostatke.</p>
+<p>Zato Davanje mora postati kategorija.</p>
+<p><img src="assets/visuals/svg/viz-04-davanje-01-kategorija-ne-ostatak.svg" alt="Usporedba prikazuje davanje kao prazan ostatak na kraju mjeseca i davanje kao imenovanu kategoriju među drugim proračunskim obvezama." /></p>
+<p><em>Davanje koje čeka ostatak mjeseca često ne dočeka ništa. Kategorija mu daje posao prije nego što novac nestane u drugim zahtjevima.</em></p>
+<p>Ne zato da bi čovjek izgledao velikodušno.</p>
+<p>Ne zato da bi kupio mir.</p>
+<p>Ne zato da bi pokazao da je bolji od drugih.</p>
+<p>Nego zato da novac ne završi uvijek u istom krugu: ja, moja sigurnost, moja imovina, moj Bitcoin, moja budućnost.</p>
+<p>Bitcoin sam po sebi ne stvara velikodušnost. Bolji novac ne zamjenjuje karakter. Samo povećava važnost karaktera. Ako loš novac ljude tjera u žurbu, dobar novac može iskušati čovjeka na drugoj strani: da previše čuva, previše računa i sve teže pusti novac prema drugome.</p>
+<p>Ako svaki mjesec znate koliko ste Bitcoina kupili, ali ne znate koliko je novca stvarno otišlo prema ljudima kojima ste mogli pomoći, to još nije puni Bitcoin standard. To je selektivna disciplina.</p>
+<p>Davanje zato nije ukras. Ono štiti od toga da osobni Bitcoin standard postane dobro organiziran strah.</p>
+<h2 id="zašto-davanje-dolazi-treće"><a class="header" href="#zašto-davanje-dolazi-treće">Zašto davanje dolazi treće</a></h2>
+<p>Davanje dolazi nakon proračuna jer bez proračuna ne znate iz čega dajete.</p>
+<p>Ako ne znate što novac mora napraviti, lako ćete dati novac koji pripada stanarini, hrani, porezu, registraciji auta, zdravlju, djeci, rezervi ili drugoj obvezi. To nije zdrava velikodušnost. To je nered koji se lijepo osjeća nekoliko minuta, a kasnije se vrati kao pritisak.</p>
+<p>Davanje dolazi nakon duga jer novac pod dugom nije slobodan.</p>
+<p>Nula duga znači nula duga. Ne samo nula kartice. Ne samo nula minusa. Ne samo nula potrošačkog kredita. Stambeni kredit je dug. Poslovni kredit je dug. Leasing je dug. Kreditna linija je dug. Dug prema rodbini je dug. Obveza koju plaćate budućim novcem i dalje je dug, čak i kada je društvo naziva normalnom.</p>
+<p>Dok dug stoji na bilanci, ovo poglavlje ne uvodi praksu davanja. Čovjek može pomoći konkretnoj osobi kada se pojavi stvarna potreba, ali ne otvara kategoriju Davanje kao treći korak knjige. Treći korak počinje tek kada budući novac prestane pripadati prošlim odlukama.</p>
+<p>Ne treba glumiti velikodušnost s novcem koji je već obećan banci, kartici, leasingu, rodbini, dobavljaču, porezu, plaćama, doprinosima ili poslovnoj kreditnoj liniji.</p>
+<p>To ne umanjuje davanje.</p>
+<p>Upravo suprotno.</p>
+<p>Davanje treba slobodnu podlogu da bi postalo disciplina, a ne improvizacija.</p>
+<p>Zato redoslijed ostaje strog:</p>
+<ul>
+<li>proračun</li>
+<li>dug van</li>
+<li>davanje</li>
+<li>ravnoteža imovine</li>
+<li>Bitcoin kao dominantan novac u toj ravnoteži</li>
+</ul>
+<p><img src="assets/visuals/svg/viz-04-davanje-02-redoslijed-davanja.svg" alt="Stepenice prikazuju redoslijed: proračun, dug van, davanje, ravnoteža imovine i Bitcoin kao dominantan novac." /></p>
+<p><em>Davanje nije početak reda. Ono je prvi veliki test nakon što proračun postoji i dug je izašao iz bilance.</em></p>
+<p>Strog redoslijed ne znači hladnoću prema stvarnom životu. Ako je roditelj bolestan, ako susjed nema hrane ili ako se pred vama pojavi konkretna potreba, ne morate pitati tablicu smijete li biti čovjek. Ali knjiga vas ne uvodi u sustav davanja dok ste u stanju duga. Tada je glavni zadatak izaći iz duga u najkraćem ljudski mogućem vremenu.</p>
+<p>Kada dug nestane, ne smije se dogoditi da sav oslobođeni prostor ode u potrošnju, rezervu i Bitcoin.</p>
+<p>Dio novca mora dobiti novu namjenu.</p>
+<p>Ta namjena zove se Davanje.</p>
+<h2 id="pravilo-10-do-20-posto-novca"><a class="header" href="#pravilo-10-do-20-posto-novca">Pravilo 10 do 20 posto novca</a></h2>
+<p>Davanje u ovoj knjizi nije postotak plaće.</p>
+<p>Nije postotak prihoda.</p>
+<p>Nije postotak viška.</p>
+<p>Nije ono što ostane nakon što se čovjek osjeća sigurno.</p>
+<p>Pravilo je drukčije: nakon nula duga, 10 do 20 posto novca kojim raspolažete treba biti namijenjeno za Davanje.</p>
+<p>Novac kojim raspolažete je novac koji stvarno stoji u vašoj bilanci i kojem dajete namjenu u proračunu. To može biti novac na računu, gotovina, novac koji je odvojen za poznate kategorije i, u punijem Bitcoin standardu, Bitcoin kao glavni oblik novca. Nije riječ o tome da se svaki dan panično preračunava saldo. Riječ je o tome da vaš novčani sloj ima kategoriju koja stvarno pripada drugima.</p>
+<p>Ako imate 1.000 eura novca kojim raspolažete, Davanje treba biti 100 do 200 eura.</p>
+<p>Ako imate 10.000 eura novca, Davanje treba biti 1.000 do 2.000 eura.</p>
+<p>Ako imate 200.000 eura novca, Davanje treba biti 20.000 do 40.000 eura.</p>
+<p>To ne znači da sav taj novac mora izaći isti dan. Kategorija može imati redoviti dio, otvoreni dio i dio koji čeka stvarnu potrebu. Ali znači da taj novac više nije nejasna rezerva za vlastiti komfor, dodatnu akumulaciju ili osjećaj sigurnosti. Ima ime. Ima smjer. Pripada disciplini otvorene ruke.</p>
+<p>Ovdje se vidi zašto poglavlje o ravnoteži imovine dolazi odmah nakon davanja. U ovoj knjizi novac treba biti najmanje jedna trećina ukupne imovine. Dom, auto i potrošna dobra ne smiju pojesti cijelu bilancu. Proizvodna imovina ne smije glumiti novac. Novac mora ponovno postati ozbiljna kategorija.</p>
+<p>Ako ukupna imovina iznosi 600.000 eura, novac bi trebao biti najmanje 200.000 eura. Ako je Davanje 10 do 20 posto novca, kategorija Davanje iznosi 20.000 do 40.000 eura.</p>
+<p>Zato prag jedne šezdesetine ukupne imovine nije sporedna matematika. Ako netko tvrdi da ima ozbiljan sustav davanja, a kategorija Davanje je ispod jedne šezdesetine ukupne imovine, treba provjeriti što se dogodilo. Ili novac nije postao ozbiljna trećina imovine, ili Davanje nije 10 do 20 posto novca, ili je kategorija ostala premala da bi stvarno mijenjala čovjekov kapacitet.</p>
+<p>To je tvrdo pravilo.</p>
+<p>Ali nije batina za čovjeka.</p>
+<p>Ovo nije mjera vrijednosti osobe. Nije natjecanje u iznosima. Nije individualni financijski, porezni ni pravni savjet. Ovo je metodologija knjige. Ako želite graditi osobni Bitcoin standard kako ga ova knjiga opisuje, Davanje nije inspirativna fusnota. Ono je jedna od glavnih kategorija sustava.</p>
+<h2 id="kategorija-ne-raspoloženje"><a class="header" href="#kategorija-ne-raspoloženje">Kategorija, ne raspoloženje</a></h2>
+<p>Davanje koje ovisi o raspoloženju bit će neujednačeno.</p>
+<p>Neki mjesec dat ćete puno jer vas je nešto pogodilo. Drugi mjesec ništa jer ste umorni, cijena Bitcoina je pala, došao je račun ili se niste sjetili. Treći mjesec dat ćete iz krivnje, četvrti iz pritiska, peti zato što netko zna pogoditi vašu slabost. Tako davanje ostaje reakcija.</p>
+<p>Kategorija mijenja stvar.</p>
+<p>Kada u proračunu stoji &quot;Davanje&quot;, taj novac već ima posao. Ne pripada restoranu, novoj odjeći, dodatnoj kupnji Bitcoina, statusnom predmetu ili nejasnoj rezervi. Ne treba svaki put prolaziti istu unutarnju raspravu. Može otići kada se pojavi stvarna potreba.</p>
+<p>U praksi to izgleda vrlo obično:</p>
+<ul>
+<li>račun u trgovini za stariju susjedu</li>
+<li>školski izlet za dijete čiji roditelji kasne s plaćanjem</li>
+<li>lijekovi za nekoga tko ih odgađa</li>
+<li>anonimna uplata obitelji koja prolazi teško razdoblje</li>
+<li>knjiga, edukacija ili prvi alat za osobu koja želi učiti</li>
+<li>pomoć roditelju, rođaku ili prijatelju u stvarnoj potrebi</li>
+<li>podrška župi, Caritasu, lokalnoj udruzi, obitelji, stipendiji ili projektu koji poznajete</li>
+<li>hardverski novčanik za osobu koja već ima dovoljno Bitcoina da ga treba ozbiljnije čuvati</li>
+</ul>
+<p>Ali davanje ne smije ostati zatvoreno u krugu ljudi koji već razumiju Bitcoin. Ako pomažemo samo ljudima koji dijele naš pogled na novac, možda ne dajemo iz ljubavi nego iz identiteta.</p>
+<p>Dobro je imati dva dijela kategorije.</p>
+<p>Jedan dio može biti planiran: redovita pomoć, zajednica, obitelj, župa, Caritas, lokalni projekt, stipendija, edukacija ili netko koga ste odlučili nositi kroz dulje vrijeme.</p>
+<p>Drugi dio može biti otvoren za stvarne potrebe koje se pojave tijekom mjeseca.</p>
+<p>Ako je sve unaprijed zaključano, možete proći pokraj stvarne potrebe. Ako je sve potpuno otvoreno, kategorija može postati kaotična. Dobar proračun ostavlja prostor i za pravilo i za trenutak.</p>
+<p>Davanje treba stvarne transakcije.</p>
+<p>Nije dovoljno misliti da biste dali kada bi se pojavila prava prilika. Nije dovoljno imati dobre namjere. Ako kategorija mjesecima stoji puna, a novac nikada ne izlazi, nešto nije provedeno. Možda nemate jasne smjerove. Možda čekate savršenu potrebu. Možda vam je teško pustiti novac. To treba vidjeti bez drame.</p>
+<p>Proračun ne služi samo tome da pronađe višak. Služi i tome da pokaže kada se višak ne želi pomaknuti.</p>
+<h2 id="davanje-nije-iskupljenje-za-zaradu"><a class="header" href="#davanje-nije-iskupljenje-za-zaradu">Davanje nije iskupljenje za zaradu</a></h2>
+<p>Davanje ne znači da je novac prljav dok se ne podijeli.</p>
+<p>Pošteno zarađen novac ne treba iskupljenje. Ako vam je netko platio jer ste mu riješili problem, držali rok, preuzeli rizik, olakšali posao, isporučili dobar proizvod ili bili korisni, taj novac već nosi trag rada, koristi i povjerenja.</p>
+<p>Loše zarađen novac donacija ne popravlja.</p>
+<p>Pošteno zarađen novac donacija ne pere.</p>
+<p>Na slobodnom tržištu veći prihod, kada nastaje iz dobrovoljne razmjene i stvarne koristi, znači da je čovjek stvorio puno vrijednosti za druge ljude. To je dobro. Kupac se vraća jer mu je lakše. Klijent plaća jer mu je problem riješen. Poslodavac plaća više jer je rad korisniji. Profit nije sramota ako dolazi iz služenja, rizika, odgovornosti i povjerenja.</p>
+<p>Davanje zato nije suprotnost stvaranju bogatstva.</p>
+<p>Davanje trenira čovjeka da bolje vidi potrebe drugih. Tko bolje vidi potrebe, bolje razumije kako služiti, raditi, prodavati, graditi proizvod, držati riječ, preuzeti rizik i stvarati vrijednost. Davanje širi mrežu odnosa, ali ne kao tehnika manipulacije. Ono otvara čovjeka prema stvarnosti drugih ljudi.</p>
+<p>Ponekad ćete u davanju pogriješiti.</p>
+<p>Možda ćete dati osobi kojoj novac nije pomogao. Možda ćete prekasno vidjeti da bi bolje bilo platiti račun izravno, kupiti hranu, ponuditi posao, preporuku, mentorstvo ili reći ne. Nije svako davanje najbolje za primatelja. Ali praksa davanja je formativna za davatelja: uči ga gledati izvan sebe, donositi bolje odluke, prepoznati potrebe i razlikovati pomoć od omogućavanja nereda.</p>
+<p>To nije magijska formula.</p>
+<p>Ne dajete 10 do 20 posto da biste se sigurno obogatili.</p>
+<p>Ali ne smije se ni iz straha od takve zloupotrebe izbrisati glavna teza: Davanje povećava kapacitet čovjeka za stvaranje vrijednosti, a taj kapacitet kroz vrijeme može povećati prihod, mrežu povjerenja, toleranciju na rizik i slobodu.</p>
+<h2 id="granice-davanja"><a class="header" href="#granice-davanja">Granice davanja</a></h2>
+<p>Davanje nije isto što i pristajanje na svaku molbu.</p>
+<p>To treba reći jasno, posebno ljudima koji teško govore ne.</p>
+<p>Postoji davanje koje pomaže. Postoji davanje koje odgađa nečiju odgovornost. Postoji i &quot;davanje&quot; koje zapravo kupuje mir ili hrani strah da će vas netko odbaciti ako odbijete.</p>
+<p>Ali prosudba mora ostati ponizna. Nisu sve potrebe plod neurednosti. Ljudi mogu biti u potrebi zbog bolesti, otkaza, smrti u obitelji, razvoda, tuđe nepravde, rata, nesreće ili okolnosti koje nisu sami birali. Granice ne služe tome da se čovjek uzdigne iznad onoga koji traži pomoć. Služe tome da pomoć bude stvarna.</p>
+<p>Kategorija Davanje ne znači da svatko ima pravo na vaš novac.</p>
+<p>Ona znači da ste vi unaprijed odlučili kako dio novca treba ići prema drugima. I dalje morate prosuđivati. Nekad je dobro dati bez puno pitanja. Nekad je bolje platiti račun izravno, kupiti hranu, ponuditi posao ili sjesti s osobom i pomoći joj složiti prvi korak. Nekad je bolje reći ne.</p>
+<p><img src="assets/visuals/svg/viz-04-davanje-04-molba-odluka.svg" alt="Tok odluke pokazuje kako jedna molba može voditi prema davanju, drukčijem obliku pomoći ili poštenom odbijanju." /></p>
+<p><em>Molba nije automatska obveza. Dobra granica pomaže da pomoć bude stvarna, a ne samo reakcija na pritisak.</em></p>
+<p>Dar ne traži povrat.</p>
+<p>Zajam traži jasan povrat.</p>
+<p>Posao traži stvarnu vrijednost.</p>
+<p>Mentorstvo traži odgovornost.</p>
+<p>Preporuka traži povjerenje.</p>
+<p>Stvaranje prilike traži provjeru je li osoba spremna nositi priliku.</p>
+<p>Ako nekome otvarate vrata kod klijenta, posuđujete alat ili dajete preporuku, na stol stavljate i svoje ime. Ne dajte preporuku osobi kojoj ne biste dali posao pred vlastitim kupcem.</p>
+<p>Ako netko želi posudbu koju ne može vratiti, bolje je znati da je to dar ili je uopće ne dati. Nije pošteno nekoga zvati dužnikom ako oboje zapravo znate da neće moći vratiti. Ili darujte bez skrivene kontrole, ili odbijte bez lažnog zajma.</p>
+<p>Ako se u obitelji pomoć stalno pretvara u očekivanje, treba postaviti granicu prije nego što odnos postane gorak. Posebno ako radite u inozemstvu, granica nije sebičnost. Ona štiti da pomoć roditeljima ili rodbini ne pojede vaš proračun, brak, plan povratka i budućnost djece.</p>
+<p>Kod većih ili dugotrajnijih davanja vrijedi provjeriti stvarni učinak osobe, organizacije ili projekta kojem dajete. Ne zbog sumnjičavosti, nego zbog odgovornosti. Ako vas netko požuruje, izaziva krivnju, traži veći iznos na temelju telefonskog poziva, poruke, kućnog posjeta ili traži da pomoć ostane skrivena od vaše obitelji, stanite i provjerite s osobom od povjerenja. Dobra potreba može izdržati razumnu provjeru.</p>
+<p>Jedno jednostavno pravilo pomaže: Davanje ne smije razbiti proračun, ali mora biti stvarno.</p>
+<p><img src="assets/visuals/svg/viz-04-davanje-03-stvarno-i-odrzivo.svg" alt="Linija prikazuje tri zone davanja: ono koje razbija proračun, ono koje je stvarno i održivo te ono koje je premalo da traži odluku." /></p>
+<p><em>Zdrava praksa nije iznos iz dojma. Ona traži da Davanje bude stvarna kategorija koja ne ruši kuću, ali nije samo dobra namjera.</em></p>
+<p>Ako vas davanje tjera u minus, karticu, preskakanje računa, diranje hrane, goriva, lijekova, dječjih obveza ili nužne rezerve, iznos ili način nisu zdravi. Ako davanje nikada ne traži nikakvu odluku, možda je iznos premalen ili je kategorija postala administracija. Između te dvije krajnosti nalazi se dobra praksa.</p>
+<p>Ako ste u braku ili dijelite kućni budžet, kategorija Davanje ne smije biti tajna odluka jedne osobe. To mora biti dogovor koji oboje mogu mirno nositi.</p>
+<h2 id="davanje-i-bitcoin"><a class="header" href="#davanje-i-bitcoin">Davanje i Bitcoin</a></h2>
+<p>Bitcoin mijenja psihologiju davanja.</p>
+<p>Kod novca koji gubi vrijednost ljudi često troše jer ne žele držati nešto što se topi. Kod Bitcoina je iskušenje drukčije: ako novac može rasti kroz vrijeme, svako davanje može izgledati skupo. 100 eura danas nije samo 100 eura. U glavi postaje buduća kupovna moć koju ste možda mogli zadržati.</p>
+<p>To pitanje nije glupo.</p>
+<p>Isti novac ne može istodobno kupiti Bitcoin i pomoći čovjeku. To je oportunitetni trošak. Ali ako se svaka pomoć pretvori u tablicu propuštenog rasta, Davanje više nije ljudska odluka nego beskrajna obrana salda.</p>
+<p>Ako vas Davanje potpuno zaustavi, Bitcoin je počeo upravljati vama.</p>
+<p>Ovo nije optužba, nego test smjera. Ako vas davanje zaustavlja zato što obitelj nema proračun, rezervu, dogovor ili čistu bilancu, to nije škrtost. To je signal da redoslijed još nije proveden. Ali ako vam je nakon nula duga lakše povećati Bitcoin nego držati Davanje kao 10 do 20 posto novca, problem nije u monetarnoj tezi nego u zatvorenoj ruci.</p>
+<p>Osobni Bitcoin standard ne smije značiti da sve osim akumulacije izgleda kao pogreška. Novac čuva vrijednost, ali i omogućuje dobre odluke u vremenu u kojem živite. Ako nikada ne možete dati jer bi taj novac možda vrijedio više za deset godina, niste slobodni. Samo ste zamijenili jedan pritisak drugim.</p>
+<p>Bitcoin može čuvati vrijednost, ali ne stvara vrijednost umjesto čovjeka. Samo držanje Bitcoina nije zamjena za korisnost. Kupac koji se vraća, klijent kojem je posao olakšan, mladi radnik koji je naučio vještinu, susjed kojem je mjesec postao lakši, dijete koje nije osramoćeno pred razredom: tu se vidi vrijednost koju čovjek stvara ili oslobađa.</p>
+<p>Monetarna ispravnost nije moralna zrelost.</p>
+<p>Dobar novac ne može umjesto vas služiti kupcu, klijentu, obitelji, susjedu ili zajednici.</p>
+<p>Kasnije, kada je bilanca čista i Bitcoin ima ozbiljno mjesto u neto imovini, dio davanja može doći i iz Bitcoina, osobito ako je kupovna moć narasla i ravnoteža imovine traži prilagodbu. Ali davanje iz Bitcoina ne smije biti jednostrana odluka tehnički jačeg člana obitelji. Prije toga oboje trebaju razumjeti iznos, pristup, porezne posljedice i što se događa ako taj Bitcoin više nije u obiteljskoj rezervi.</p>
+<p>Ako dajete iz Bitcoina, nemojte to raditi pod pritiskom ni uz pomoć nepoznate osobe. Nitko tko prima pomoć ne smije tražiti vaše riječi za oporavak, lozinke ili pristup novčaniku. Kod većih darova, prodaje Bitcoina ili prekograničnih uplata treba provjeriti porezne, pravne, bankovne i rezidentne posljedice za stvarni slučaj.</p>
+<p>Ako Bitcoin padne, kategorija Davanje može se preračunati u redovitoj provjeri, ali ne nestaje iz života. Pad cijene može promijeniti iznos. Ne smije izbrisati pravilo. Inače davanje nije kategorija nego luksuz uzlaznog tržišta.</p>
+<p>Ako Bitcoin raste, kategorija ne ostaje zauvijek na početnom iznosu samo zato što vam je sve teže pustiti novac koji se dobro čuva. Davanje raste s novcem kojim raspolažete, obiteljskim dogovorom i stvarnom odgovornošću, a ne s dnevnim osjećajem.</p>
+<p>Ako vas dobar novac nauči samo čuvati, a ne i služiti, nije vas oslobodio.</p>
+<h2 id="davanje-rad-i-mirovina"><a class="header" href="#davanje-rad-i-mirovina">Davanje, rad i mirovina</a></h2>
+<p>Davanje mijenja i odnos prema radu.</p>
+<p>Ako je prihod nastao iz stvarne koristi drugima, rad nije samo sredstvo za osobnu sigurnost. Rad je mjesto na kojem čovjek stvara vrijednost. Davanje ga podsjeća da novac ne dolazi iz apstraktne tablice, nego iz odnosa s ljudima: kupcima, klijentima, kolegama, dobavljačima, obitelji i zajednicom.</p>
+<p>Zato u Bitcoin standardu mirovina nije ideal u smislu da čovjek jedva čeka prestati stvarati vrijednost. Stariji čovjek možda ne radi isto što je radio mlad. Možda više ne radi fizički naporno, možda manje radi operativno, možda više savjetuje, prenosi iskustvo, povezuje ljude, ulaže, mentorira ili čuva obiteljsku mudrost. Ali arbitrarna ideja da je cilj financijske slobode prestati biti koristan strana je ovoj knjizi.</p>
+<p>Ako čovjek jednog dana ima 10, 20 ili 30 godina životnih troškova u Bitcoinu, svakodnevni rad možda više neće značajno povećavati njegov Bitcoin saldo. Ali Davanje ostaje važno. Ono ga čuva od zatvaranja u saldo i trenira da dio vrijednosti ostavi pod razumnim rizikom, investira u ljude, projekte, posao, znanje i prilike koje mogu stvoriti novu vrijednost.</p>
+<p>Čovjek koji daje lakše vidi gdje vrijednost treba nastati.</p>
+<p>Čovjek koji samo čuva može prestati vidjeti ljude.</p>
+<h2 id="prvi-potezi"><a class="header" href="#prvi-potezi">Prvi potezi</a></h2>
+<p>Prvi potez ovisi o jednom pitanju: imate li dug?</p>
+<p>Ako imate bilo kakav dug na bilanci, ovo poglavlje još nije vaš program. Ne otvarajte sustavnu kategoriju Davanje. Ne uvodite simbolični iznos. Pomozite konkretnoj osobi ako vam se stvarna potreba pojavi pred očima, ali glavni zadatak ostaje isti: vratite se na poglavlje Dug i izađite iz duga.</p>
+<p>Ako nemate dug, napravite sljedeće:</p>
+<ol>
+<li>Otvorite proračun nulte razine.</li>
+<li>Popišite ukupnu imovinu.</li>
+<li>Provjerite je li novac najmanje jedna trećina ukupne imovine.</li>
+<li>Izračunajte 10 do 20 posto novca kojim raspolažete.</li>
+<li>Provjerite da kategorija Davanje nije ispod praga jedne šezdesetine ukupne imovine ako tvrdite da gradite ozbiljan sustav davanja.</li>
+<li>Otvorite kategoriju Davanje.</li>
+<li>Podijelite je na planirani dio i otvoreni dio ako to pomaže.</li>
+<li>Neka iz kategorije izađe stvarna novčana transakcija.</li>
+<li>Zapišite što se dogodilo.</li>
+</ol>
+<p>Nakon toga pitajte:</p>
+<p>Je li ovo davanje pomoglo ili je hranilo nered?</p>
+<p>Treba li idući put dati dar, platiti račun, ponuditi posao, dati preporuku, mentorirati, postaviti uvjet ili reći ne?</p>
+<p>Kome moj rad stvarno služi?</p>
+<p>Kome bih mogao služiti bolje zbog većeg reda u novcu?</p>
+<p>Ako živite s roditeljima, dodajte i ovo pitanje: sudjelujem li pošteno u kući? Hrana, režije ili dogovoreni doprinos roditeljima nisu Davanje. To je dio odraslosti. Davanje dolazi tek nakon što roditeljski dom prestane biti izgovor za osobni luksuz.</p>
+<p>Ako vodite posao, odvojite osobno davanje od poslovnog. Osobno davanje ne ide iz novca firme. Poslovno davanje ide tek nakon dogovora s računovođom, uredne likvidnosti, dokumentacije, poreza, PDV-a, plaća, doprinosa, dobavljača i svih poslovnih obveza. Donacije, sponzorstva, stipendije, poklonjeni alat, edukacije, pomoć fizičkim osobama i davanja zaposlenicima mogu imati različit tretman. To nije područje za improvizaciju.</p>
+<p>Ako živite između dvije države, veće darove, prodaju Bitcoina i prekogranične uplate provjerite u državama koje su uključene.</p>
+<h2 id="ana-davanje-nakon-nula-duga"><a class="header" href="#ana-davanje-nakon-nula-duga">Ana: davanje nakon nula duga</a></h2>
+<p>Ana nije počela davati zato što je imala puno novca.</p>
+<p>Počela je davati nakon što je zatvorila karticu, dug prema sestri i račun stomatologu.</p>
+<p>To je važno. Dok je bila u dugu, nije uvodila mali simbolični iznos. Pomagala je kad bi se pred njom pojavila stvarna potreba, ali nije glumila treći korak knjige. Njezina prva zadaća bila je izaći iz duga.</p>
+<p>Kada je zadnji dug nestao, plaća joj je i dalje bila skromna. Najam, režije, hrana, prijevoz i zdravlje i dalje su tražili pažnju. Ali prvi put novac nije curio kroz staru odluku.</p>
+<p>U mjesecu nakon razduživanja raspolaže s 1.120 eura plaće i malim ostatkom od prethodnog mjeseca. U proračunu nulte razine imenuje sve: stanovanje, hranu, prijevoz, režije, zdravlje, mali novčani temelj, Bitcoin i Davanje.</p>
+<p>Za Davanje odvaja 120 eura.</p>
+<p>To nije 120 eura iz dojma.</p>
+<p>To nije 120 eura zato što se osjeća bogato.</p>
+<p>To je otprilike desetina novca kojim taj mjesec raspolaže.</p>
+<p>Na papiru je taj iznos neugodan. U njoj je još neugodniji. Jedan glas kaže da će joj baš taj novac zatrebati. Drugi kaže da je to premalo da bi imalo smisla. Treći kaže da bi odgovorna osoba sve stavila u Bitcoin.</p>
+<p>Proračun joj pomaže da ne sluša nijedan od tih glasova predugo.</p>
+<p>Tih 120 eura nije uzeto od stanarine, hrane ili zdravlja. Imalo je svoje mjesto prije transakcija. Prvi dio odlazi za namirnice starijoj susjedi. Drugi dio za školski izlet djetetu iz kvarta čiji roditelji kasne s plaćanjem. Ostatak čeka do kraja mjeseca, ali ne kao nejasan ostatak. Čeka kao imenovana kategorija.</p>
+<p>Kad se vrati u stan, Ana otvara proračun i unosi transakciju pod Davanje.</p>
+<p>To je važan trenutak.</p>
+<p>Novac nije nestao u nejasnoj potrošnji. Nije završio na kartici. Nije otišao iz grižnje savjesti. Otišao je tamo gdje je unaprijed smio otići.</p>
+<p>Sljedećih mjeseci Ana primjećuje nešto što nije očekivala. Davanje joj ne otvara samo pogled prema susjedi i obitelji iz kvarta. Počinje bolje vidjeti potrebe ljudi na poslu: kolegicu koja se gubi u rokovima, klijenta kojem treba jasnije objašnjenje, stariju osobu kojoj jedan telefonski poziv štedi puno nervoze.</p>
+<p>Mijenja joj se duh.</p>
+<p>Ne postaje bogata zato što je dala 120 eura.</p>
+<p>Ne kupuje bolju budućnost magijom.</p>
+<p>Ali postaje osoba koja bolje vidi gdje može stvoriti vrijednost. Netko to primijeti. Kroz jedan odnos koji je nastao oko konkretne pomoći upozna osobu koja traži administrativno sposobnu, pouzdanu i pažljivu zaposlenicu. Nakon nekoliko mjeseci mijenja posao i dobiva bolju plaću.</p>
+<p>Davanje nije bilo trik za posao.</p>
+<p>Bilo je disciplina koja joj je proširila pogled.</p>
+<p>To je njezina putanja: nula duga, Davanje kao 10 do 20 posto novca, promjena duha, veći kapacitet za stvaranje vrijednosti.</p>
+<h2 id="matej-prednost-koja-može-nestati"><a class="header" href="#matej-prednost-koja-može-nestati">Matej: prednost koja može nestati</a></h2>
+<p>Matej ima plaću i još živi s roditeljima.</p>
+<p>Nakon poglavlja o dugu zatvorio je minus, mobitel na rate i auto-dug. Prestao je s klađenjem i altcoin signalima. Roditeljski dom više ne koristi kao izgovor za odgođenu odraslost.</p>
+<p>Prije Davanja prvo dogovara pošten doprinos kući. Hrana, režije i dogovor roditeljima nisu Davanje. To je odraslost.</p>
+<p>Tek nakon toga otvara kategoriju Davanje.</p>
+<p>Taj mjesec raspolaže s 1.050 eura. U proračunu imenuje sve: doprinos kući, prijevoz, hranu izvan kuće, odlazak od doma, Bitcoin, osobnu potrošnju i Davanje.</p>
+<p>U Davanje stavlja 120 eura.</p>
+<p>To ga pogađa više nego što je očekivao. Sto dvadeset eura je nekoliko izlazaka, nova oprema, više Bitcoina ili vikend koji ne mora objašnjavati nikome. Ali baš zato iznos ima odgojnu snagu. Nije simbol. Traži odluku.</p>
+<p>Prvi čin nije velik. Plaća namirnice starijem susjedu koji teško nosi vrećice i anonimno sudjeluje u trošku opreme za mladića iz kvarta koji počinje raditi.</p>
+<p>Matej prvi put jasno vidi razliku između trošenja na sebe i stvaranja prostora za drugog čovjeka.</p>
+<p>To ga ne čini starim.</p>
+<p>Čini ga odraslijim.</p>
+<p>Život s roditeljima tada prestaje biti popust za komfor i postaje prozor u kojem može izgraditi red prije nego što dođu najam, obitelj, veće obveze i veći rizici.</p>
+<h2 id="marko-i-ivana-davanje-nakon-prodaje-kuće"><a class="header" href="#marko-i-ivana-davanje-nakon-prodaje-kuće">Marko i Ivana: davanje nakon prodaje kuće</a></h2>
+<p>Kod Marka i Ivane davanje nije počelo nakon što su zatvorili samo karticu, auto i potrošački kredit.</p>
+<p>Tada još nisu bili razduženi.</p>
+<p>Stambeni kredit je ostao. Zbog toga su morali proći najteži razgovor: prodati kuću, zatvoriti kredit i otići u najam.</p>
+<p>Nije bilo jednostavno. Djeca, škola, kvart, roditelji, osjećaj doma, strah od najma i vlastita slika o sebi ušli su u razgovor. Ali nakon prodaje prvi put nisu imali budućnost prodanu banci.</p>
+<p>Tek tada otvaraju Davanje.</p>
+<p>Nakon prodaje i preseljenja u najam imaju novac kojim raspolažu. Dio je sigurnosna rezerva, dio je novac za poznate troškove, dio će kasnije biti dominantno u Bitcoinu, a dio mora biti Davanje. Ne mjere Davanje kao 120 eura mjesečne pristojnosti. Mjere ga kao 10 do 20 posto novca.</p>
+<p>To im je u početku gotovo teže od prodaje auta.</p>
+<p>Marko bi najradije što veći dio novca pretvorio u Bitcoin. Ivana želi da obitelj konačno osjeti mir. Ovaj put razgovor ne ide u stari sukob. Imaju proračun pred sobom i znaju redoslijed: nula duga, Davanje, ravnoteža imovine, Bitcoin kao glavni novac.</p>
+<p>Davanje dijele na dva dijela.</p>
+<p>Jedan dio ide u redoviti smjer koji zajedno izaberu: obitelji u stvarnoj potrebi, školske troškove djece čiji roditelji ne mogu platiti, lokalnu zajednicu i ljude koje poznaju.</p>
+<p>Drugi dio ostaje otvoren za potrebe koje se pojave.</p>
+<p>Prva veća odluka je školski izlet. U razredu njihova sina jedna obitelj ne može platiti cijeli iznos. Marko i Ivana razgovaraju s učiteljicom, plate razliku i ne traže da se zna. Djeci kod kuće objasne samo osnovno: u proračunu postoji kategorija iz koje obitelj može pomoći drugima bez panike.</p>
+<p>Sin pita znači li to da će oni imati manje za more.</p>
+<p>Ivana otvara proračun i pokazuje mu dvije kategorije. More ima svoj novac. Davanje ima svoj novac. Nisu morali jedno sakriti pod drugo.</p>
+<p>S vremenom se u kući pojavljuje novi jezik: &quot;To je želja, nije potreba.&quot; &quot;Ovo ide iz davanja.&quot; &quot;Ovo nije dobra pomoć.&quot; &quot;Ovo možemo napraviti anonimno.&quot; Djeca ne postaju mali financijski stručnjaci. Ali vide da novac nije samo za račune, želje i Bitcoin.</p>
+<p>Marku se kroz praksu davanja događa nešto važno. Upoznaje ljude koje prije ne bi upoznao. Počinje bolje razumjeti stvarne potrebe obitelji, obrtnika, nastavnika, kupaca, poslodavaca i ljudi koji rade dobro, ali nemaju priliku. Jedan od tih odnosa otvara mu vrata puno boljeg posla.</p>
+<p>Ne zato što je Davanje čarobna formula.</p>
+<p>Nego zato što ga je izvelo iz vlastite tablice u svijet stvarnih potreba.</p>
+<p>Nakon nekoliko godina Marko i Ivana imaju snažniji Bitcoin saldo, bolji prihod i mirniji sustav. Mogu ponovno kupiti kuću. Ali tada je kupuju iz čiste bilance, ne iz potrebe da budu normalni. Kuća, auto i potrošna dobra zajedno ostaju ispod razumne trećine njihove neto imovine.</p>
+<p>Davanje nije bilo prepreka Bitcoin standardu.</p>
+<p>Bilo je dio puta da Bitcoin standard ne postane tvrđava.</p>
+<h2 id="marin-i-petra-veća-imovina-traži-veća-pravila"><a class="header" href="#marin-i-petra-veća-imovina-traži-veća-pravila">Marin i Petra: veća imovina traži veća pravila</a></h2>
+<p>Marin i Petra su davali i prije nego što su uredili sustav.</p>
+<p>Njihov problem nije bila škrtost. Problem je bio nered. Nekad su dali puno, nekad ništa. Nekad iz jasne odluke, nekad iz pritiska. Nekad su pomogli dobro. Nekad su kasnije shvatili da su samo produžili tuđu neodgovornost.</p>
+<p>Budući da su imali veću imovinu, više ljudi je pretpostavljalo da mogu pomoći.</p>
+<p>Mogli su.</p>
+<p>Ali &quot;možemo&quot; nije dovoljno dobro pravilo.</p>
+<p>Nakon što su likvidirali dio imovine, zatvorili dugove i razdvojili osobni i poslovni novac, Davanje je dobilo strukturu. Njihov poslovni profit nije bio nešto čega se trebaju sramiti. Nastao je iz dobrih proizvoda, poštene usluge, rokova koje su držali, rizika koji su preuzeli i kupaca koji su im se vraćali jer su im vjerovali.</p>
+<p>Ali profit na papiru nije isto što i novac koji je slobodan. Firma može imati dobit, a čekati naplatu, dok PDV, plaće, doprinosi, dobavljači, porez i sezonska rezerva dolaze ranije. Zato osobno Davanje ne ide iz novca firme. Ide iz novca koji je stvarno isplaćen u osobni proračun.</p>
+<p>U osobnom proračunu otvaraju veliku kategoriju Davanje. Budući da im je novac postao ozbiljna kategorija imovine, Davanje više nije mali mjesečni dojam. To je 10 do 20 posto novca kojim raspolažu. Iznos je dovoljno velik da traži pravila prije transakcije.</p>
+<p>Prije iznosa definiraju smjerove.</p>
+<p>Prvi smjer je izravna pomoć ljudima u stvarnoj potrebi: liječenje, hrana, stanovanje, krizne situacije.</p>
+<p>Drugi smjer je edukacija: knjige, mentorstvo, radionice, školarine, prvi alati, prva računala, pomoć studentima.</p>
+<p>Treći smjer je učenje o novcu i Bitcoinu, ali bez nagovaranja ljudi da preskoče redoslijed. Ne žele platiti nečiju prvu kupnju Bitcoina dok osoba ima karticu, minus i nikakav proračun. Radije će platiti knjigu, radionicu, savjetovanje ili vrijeme da osoba prvo vidi svoj novac.</p>
+<p>Ta pravila ih oslobađaju.</p>
+<p>Kada dođe molba koja se uklapa, mogu dati brzo. Kada se ne uklapa, mogu reći ne bez dugog objašnjavanja. Kada nisu sigurni, mogu tražiti više informacija. Kategorija Davanje ne znači da se svaka priča mora financirati. Znači da dio novca ima zadatak, a oni imaju odgovornost dobro ga usmjeriti.</p>
+<p>Jednom ih poznanik traži novac za &quot;kratkoročni most&quot; u poslu. Marin zna da se takvi mostovi često pretvore u stalnu rupu. Umjesto novca, ponudi dva sata da zajedno prođu poslovni proračun i obveze. Poznanik se naljuti. Petra kasnije kaže da je to vjerojatno znak da novac ne bi riješio problem.</p>
+<p>Drugi put plate edukaciju mladoj osobi koja već radi, štedi i ima jasan plan. Taj iznos nije najveći koji su dali, ali je jedan od najboljih. Nakon šest mjeseci ta osoba dobije bolji posao. Ne zato što su Marin i Petra nekoga spasili, nego zato što je Davanje pogodilo osobu koja je već bila spremna preuzeti odgovornost.</p>
+<p>Treći put pomoć nije novac iz kategorije Davanje, nego stvaranje prilike. Marin mladoj obrtnici otvara vrata kod prvog ozbiljnog klijenta i posuđuje joj alat za posao koji sama još ne može financirati. To nije zamjena za Davanje kao novčanu kategoriju. To je drugi oblik pomoći koji izrasta iz istog pogleda: pomoći osobi da postane samostalnija, korisnija i sposobnija služiti drugima.</p>
+<p>Davanje mijenja i Marinov odnos prema poslu. Prije gotovo svaki projekt gleda kroz prihod, maržu, rizik i vrijeme. To su i dalje važne mjere. Profit nije krađa kada nastaje iz dragovoljne razmjene i stvarne koristi. Ali dodaje još jedno pitanje: želim li da moj rad služi ovoj vrsti klijenta, ovoj vrsti problema i ovoj vrsti svijeta?</p>
+<p>Nisu svi dobro plaćeni poslovi prošli taj test.</p>
+<p>Jedan posao odbija iako je dobro plaćen. Klijent traži praksu koju Marin ne može mirno objasniti zaposleniku, dobavljaču ni vlastitoj djeci. Taj novac bi povećao prihod, ali bi smanjio povjerenje na kojem posao stoji.</p>
+<p>Petra primjećuje da Marin nije postao manje ambiciozan.</p>
+<p>Postao je mirniji.</p>
+<p>Ambicija je dobila izlaz koji nije samo novi rast, nova oprema, nova nekretnina ili veći Bitcoin saldo. Dio rasta već ima svoje odredište.</p>
+<p>Njihova djeca to vide. Vide razgovore o tome kome dati, kako dati, kada ne dati i zašto iznos nije jedino pitanje. Vide da obitelj ne mjeri imovinu samo po tome koliko posjeduje, nego i po tome što može pokrenuti u životima drugih.</p>
+<p>Veća imovina traži bolja pravila.</p>
+<p>Veći Bitcoin saldo traži širu ruku.</p>
+<h2 id="prag-drugog-dijela"><a class="header" href="#prag-drugog-dijela">Prag drugog dijela</a></h2>
+<p>Davanje zatvara prvi dio knjige.</p>
+<p>Ako proračun ne postoji, ne znate što novac radi.</p>
+<p>Ako dug još stoji na bilanci, budućnost nije slobodna.</p>
+<p>Ako Davanje nema svoje mjesto, imovina se lako pretvori u tvrđavu.</p>
+<p>Možete čitati dalje, ali nemojte drugi dio knjige graditi kao životni sustav ako Davanje postoji samo kao ideja, ako kategorija mjesecima stoji i novac ne izlazi, ako Davanje ovisi o krivnji, pritisku ili raspoloženju, ili ako želite ravnotežu imovine bez otvorene ruke.</p>
+<p>Ako ste ovdje prepoznali da još imate dug, to nije razlog za krivnju. To je razlog za redoslijed. Vratite se na dug.</p>
+<p>Ako ste bez duga, a Davanje još nije uređeno, to nije razlog za odustajanje od knjige. To je razlog da otvorite stvarnu kategoriju, izračunate 10 do 20 posto novca kojim raspolažete i napravite prvu novčanu transakciju iz te kategorije.</p>
+<p>Tek tada Bitcoin može ući u ravnotežu imovine bez toga da postane samo još jedan način kontrole.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada Davanje više nije ostatak mjeseca.</p>
+<p>Ova lista nije test vrijednosti čovjeka. Ona je provjera redoslijeda knjige.</p>
+<ul>
+<li>Nemate dug na bilanci.</li>
+<li>Ne razlikujete &quot;dobar&quot; i &quot;loš&quot; dug kao opravdanje da neki dug trajno ostane.</li>
+<li>Proračun je proračun nulte razine: sav novac ima namjenu prije transakcije.</li>
+<li>Razumijete da Davanje u ovom poglavlju znači novac, ne volontiranje, vrijeme, opći dobar osjećaj ili namjeru da jednog dana budete velikodušni.</li>
+<li>Postoji kategorija Davanje.</li>
+<li>Kategorija Davanje iznosi 10 do 20 posto novca kojim raspolažete.</li>
+<li>Ne računate Davanje kao postotak plaće, prihoda, viška ili slobodnog dijela proračuna.</li>
+<li>Novac je najmanje jedna trećina ukupne imovine ili jasno vidite koliko ste daleko od tog okvira.</li>
+<li>Kategorija Davanje nije ispod jedne šezdesetine ukupne imovine ako tvrdite da je sustav davanja već ozbiljan.</li>
+<li>Dio davanja je planiran, a dio otvoren za stvarne potrebe.</li>
+<li>Novac iz kategorije stvarno izlazi prema ljudima, projektima ili potrebama.</li>
+<li>Znate reći ne molbi koja bi hranila nered.</li>
+<li>Razlikujete dar, zajam, posao, mentorstvo, preporuku i stvaranje prilike.</li>
+<li>Veće iznose, pritisak, hitne pozive, uplate nepoznatim osobama, poslovna davanja, davanje iz Bitcoina i prekogranične darove ne rješavate impulzivno, nego uz provjeru.</li>
+<li>Ako Bitcoin i imovina rastu, Davanje raste s novcem kojim raspolažete i obiteljskim dogovorom, a ne ostaje zauvijek na početnom iznosu.</li>
+<li>Znate razlikovati stvarno Davanje od rečenice da ćete &quot;jednog dana, kad Bitcoin dovoljno naraste&quot; biti velikodušni.</li>
+<li>Možete imenovati kome vaš rad stvarno služi i kome biste mogli služiti bolje.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako...</a></h2>
+<p>Ne idite dalje ako još imate dug i pokušavate ovo poglavlje pretvoriti u mali simbolični program davanja.</p>
+<p>Ne idite dalje ako Davanje računate kao postotak plaće, postotak viška ili ono što ostane nakon obveznih troškova.</p>
+<p>Ne idite dalje ako volontiranje, vrijeme ili mentorstvo koristite kao zamjenu za novčanu kategoriju Davanje.</p>
+<p>Ne idite dalje ako vam je lakše povećati Bitcoin saldo nego priznati da 10 do 20 posto novca treba imati otvorenu ruku.</p>
+<p>Ne idite dalje ako davanje koristite za kupnju mira, utjecaja, kontrole ili slike o sebi.</p>
+<p>Ovo poglavlje nije ukras prvog dijela knjige.</p>
+<p>Ono je test: može li čovjek koji želi tvrdi novac ostati mekan prema stvarnim ljudima, a dovoljno uređen da njegova velikodušnost ne bude kaos.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="03-dug.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="05-ravnoteza-imovine.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="03-dug.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="05-ravnoteza-imovine.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

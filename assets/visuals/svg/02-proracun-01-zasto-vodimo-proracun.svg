@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="900" version="1.1" viewBox="0 0 1600 900" width="1600">
+  <defs/>
+  <rect fill="#E9D2AF" height="900" width="1600" x="0" y="0"/>
+  <rect fill="#FFF8EA" height="816" rx="28" stroke="#B98A58" stroke-width="4" width="1516" x="42" y="42"/>
+  <g opacity="0.20" stroke="#D8BD8F" stroke-width="1">
+    <line x1="78" x2="1522" y1="185" y2="185"/>
+    <line x1="78" x2="1522" y1="265" y2="265"/>
+    <line x1="78" x2="1522" y1="345" y2="345"/>
+    <line x1="78" x2="1522" y1="425" y2="425"/>
+    <line x1="78" x2="1522" y1="505" y2="505"/>
+    <line x1="78" x2="1522" y1="585" y2="585"/>
+    <line x1="78" x2="1522" y1="665" y2="665"/>
+    <line x1="78" x2="1522" y1="745" y2="745"/>
+  </g>
+  <rect fill="#DDBB7D" height="34" opacity="0.55" rx="8" transform="rotate(-3 250 56)" width="245" x="128" y="42"/>
+  <rect fill="#DDBB7D" height="34" opacity="0.45" rx="8" transform="rotate(3 1350 56)" width="245" x="1228" y="42"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" x="80" y="105">Zašto vodimo proračun?</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="start" x="82" y="148">
+    <tspan dy="0" x="82">Proračun ne počinje kontrolom potrošnje, nego pitanjem što sadašnji</tspan>
+    <tspan dy="28" x="82">novac treba napraviti prije sljedeće uplate.</tspan>
+  </text>
+  <rect fill="#000000" height="155" opacity="0.14" rx="22" width="650" x="481" y="178"/>
+  <rect fill="#FFF8EA" height="155" rx="22" stroke="#B85F2A" stroke-width="4" width="650" x="475" y="170"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" text-anchor="start" x="515" y="220">
+    <tspan dy="0" x="515">Što novac koji već imam mora</tspan>
+    <tspan dy="34" x="515">napraviti prije nego dođe novi</tspan>
+    <tspan dy="34" x="515">novac?</tspan>
+  </text>
+  <rect fill="#000000" height="245" opacity="0.14" rx="22" width="305" x="121" y="403"/>
+  <rect fill="#F7C777" height="245" rx="22" stroke="#B85F2A" stroke-width="4" width="305" x="115" y="395"/>
+  <circle cx="267.5" cy="438" fill="#B85F2A" opacity="0.95" r="26"/>
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="267.5" y="448">N</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="267.5" y="494">Namjena</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="23" text-anchor="middle" x="267.5" y="535">
+    <tspan dy="0" x="267.5">Svaki euro dobiva</tspan>
+    <tspan dy="30" x="267.5">posao, a saldo</tspan>
+    <tspan dy="30" x="267.5">prestaje biti</tspan>
+    <tspan dy="30" x="267.5">jedini vodič.</tspan>
+  </text>
+  <rect fill="#000000" height="245" opacity="0.14" rx="22" width="305" x="461" y="403"/>
+  <rect fill="#C7E0DC" height="245" rx="22" stroke="#2F6E68" stroke-width="4" width="305" x="455" y="395"/>
+  <circle cx="607.5" cy="438" fill="#2F6E68" opacity="0.95" r="26"/>
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="607.5" y="448">P</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="607.5" y="494">Podaci</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="23" text-anchor="middle" x="607.5" y="535">
+    <tspan dy="0" x="607.5">Transakcije</tspan>
+    <tspan dy="30" x="607.5">stvaraju trag iz</tspan>
+    <tspan dy="30" x="607.5">kojeg se vide</tspan>
+    <tspan dy="30" x="607.5">obrasci potrošnje.</tspan>
+  </text>
+  <rect fill="#000000" height="245" opacity="0.14" rx="22" width="305" x="801" y="403"/>
+  <rect fill="#D8E6C9" height="245" rx="22" stroke="#5B7F4F" stroke-width="4" width="305" x="795" y="395"/>
+  <circle cx="947.5" cy="438" fill="#5B7F4F" opacity="0.95" r="26"/>
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="947.5" y="448">P</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="947.5" y="494">Planiranje</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="23" text-anchor="middle" x="947.5" y="535">
+    <tspan dy="0" x="947.5">Budući troškovi</tspan>
+    <tspan dy="30" x="947.5">dobivaju mjesečnu</tspan>
+    <tspan dy="30" x="947.5">pripremu umjesto</tspan>
+    <tspan dy="30" x="947.5">iznenađenja.</tspan>
+  </text>
+  <rect fill="#000000" height="245" opacity="0.14" rx="22" width="305" x="1141" y="403"/>
+  <rect fill="#DDD3E8" height="245" rx="22" stroke="#665981" stroke-width="4" width="305" x="1135" y="395"/>
+  <circle cx="1287.5" cy="448" fill="#665981" opacity="0.95" r="26"/>
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="1287.5" y="458">B</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="1287.5" y="504">Bitcoin</text>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="23" text-anchor="middle" x="1287.5" y="545">
+    <tspan dy="0" x="1287.5">Kratkoročni novac</tspan>
+    <tspan dy="30" x="1287.5">odvaja se od</tspan>
+    <tspan dy="30" x="1287.5">dugoročne imovine.</tspan>
+  </text>
+  <rect fill="#FFF8EA" height="70" rx="22" stroke="#B98A58" stroke-width="2" width="1080" x="260" y="710"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" x="800" y="756">manje dojma  +  više stvarnih brojeva  =  bolje odluke</text>
+</svg>

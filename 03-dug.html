@@ -1,0 +1,810 @@
+<!DOCTYPE HTML>
+<html lang="hr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dug - Bitcoin kao novac</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00-predgovor.html"><strong aria-hidden="true">1.</strong> Predgovor</a></li><li class="chapter-item expanded "><a href="01-zasto-bitcoin-kao-novac.html"><strong aria-hidden="true">2.</strong> Zašto Bitcoin kao novac</a></li><li class="chapter-item expanded affix "><li class="part-title">PRVI DIO — Bezvremenski red u novcu</li><li class="chapter-item expanded "><a href="02-proracun.html"><strong aria-hidden="true">3.</strong> Proračun</a></li><li class="chapter-item expanded "><a href="03-dug.html" class="active"><strong aria-hidden="true">4.</strong> Dug</a></li><li class="chapter-item expanded "><a href="04-davanje.html"><strong aria-hidden="true">5.</strong> Davanje</a></li><li class="chapter-item expanded affix "><li class="part-title">DRUGI DIO — Bitcoin kao primarni novac</li><li class="chapter-item expanded "><a href="05-ravnoteza-imovine.html"><strong aria-hidden="true">6.</strong> Ravnoteža imovine</a></li><li class="chapter-item expanded "><a href="06-bitcoin-kroz-vrijeme.html"><strong aria-hidden="true">7.</strong> Bitcoin kroz vrijeme</a></li><li class="chapter-item expanded "><a href="07-skrbnistvo-i-sigurnost.html"><strong aria-hidden="true">8.</strong> Skrbništvo i sigurnost</a></li><li class="chapter-item expanded affix "><li class="part-title">ZAKLJUČNI DIO</li><li class="chapter-item expanded "><a href="08-trideset-godina-kasnije.html"><strong aria-hidden="true">9.</strong> Trideset godina kasnije</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bitcoin kao novac</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/btcpavao/bitcoin-kao-novac" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dug"><a class="header" href="#dug">Dug</a></h1>
+<p>Ovo poglavlje nije neutralno.</p>
+<p>Ne pokušava dug učiniti ugodnim. Ne pokušava reći da je svaka obitelj u istim okolnostima. Ne pokušava reći da je prodati stan jednostavno, da je otići u najam lako, da je promijeniti grad mala stvar ili da će rodbina razumjeti. Ne pokušava opisati sve životne putove kao jednako dobre.</p>
+<p>Ovo poglavlje postavlja standard.</p>
+<p>Standard je tvrd:</p>
+<p><strong>Prvo proračun. Zatim dug van. Zatim davanje. Zatim ravnoteža imovine. Zatim Bitcoin kao novac. Zatim skrbništvo i sigurnost. Tek tada puni Bitcoin standard.</strong></p>
+<p>Dug je novac budućih dana koji je već dobio tuđe ime.</p>
+<p>Banka. Kartica. Leasing. Minus. Dobavljač. Roditelj. Brat. Kreditna linija. Gotovinski kredit. Auto. Apartman. Stambeni kredit. Poslovna oprema. Kat kuće. Fasada. Namještaj. Svadba. Sezona. Adaptacija. “Samo dok se malo ne stabiliziramo.”</p>
+<p>U Hrvatskoj dug rijetko ulazi u kuću kao dug. Ulazi kao normalan život.</p>
+<p>Ulazi kao stan jer nećemo valjda biti podstanari. Kao kuća jer djeci treba dvorište. Kao auto jer se mora do posla. Kao gotovinski kredit jer je trebalo zatvoriti stare obveze. Kao leasing jer ga svi poduzetnici imaju. Kao apartman jer “turizam uvijek ide”. Kao oprema jer posao mora rasti. Kao minus jer plaća stiže za tjedan dana. Kao kartica jer se rupu u mjesecu ne može ostaviti otvorenom.</p>
+<p>Nije svaki dug nastao iz bahatosti. Neki je nastao iz bolesti, selidbe, razvoda, gubitka posla, loše sezone, pogrešne procjene ili stvarne želje da obitelj dobije mir. Ali okolnost koja objašnjava dug ne mijenja njegovu narav.</p>
+<p>Dug znači da budući novac više nije slobodan.</p>
+<p>A dok budući novac nije slobodan, puni Bitcoin standard nije počeo.</p>
+<h2 id="hrvatska-slika-duga"><a class="header" href="#hrvatska-slika-duga">Hrvatska slika duga</a></h2>
+<p>Hrvatska kućanstva nisu rubno zadužena. Dug je dio normalnog financijskog krajolika.</p>
+<p>Na kraju ožujka 2026. kućanstva su bankama dugovala oko <strong>28,1 milijardu eura</strong>. Od toga je oko <strong>14,1 milijarda eura</strong> bilo u stambenim kreditima, a oko <strong>11,0 milijardi eura</strong> u gotovinskim nenamjenskim kreditima. Te dvije kategorije zajedno čine gotovo cijelu glavnu sliku duga kućanstava: dom i gotovina. Ne samo kartica. Ne samo minus. Ne samo neodgovorna potrošnja. Dom i gotovina. (<a href="https://hnb.hr/-/objava-statistickih-podataka-o-depozitima-i-kreditima-kreditnih-institucija-za-ozujak-2026" title="Objava statističkih podataka o depozitima i kreditima kreditnih institucija za ožujak 2026. godine">HNB</a>)</p>
+<p>Poduzeća su u isto vrijeme bankama dugovala oko <strong>17,9 milijardi eura</strong>. Poslovni dug ne govori jezikom kartice. On govori jezikom obrtnih sredstava, investicija, opreme, turizma, zaliha, strojeva, prostora i likvidnosti. HNB navodi da su krediti nefinancijskim društvima u godini do ožujka 2026. porasli za <strong>10,0%</strong>, uz rast investicijskih kredita i kredita za obrtna sredstva. (<a href="https://hnb.hr/-/objava-statistickih-podataka-o-depozitima-i-kreditima-kreditnih-institucija-za-ozujak-2026" title="Objava statističkih podataka o depozitima i kreditima kreditnih institucija za ožujak 2026. godine">HNB</a>)</p>
+<p>Kamate u 2026. izgledaju pitomo dok ih gledamo iz daljine. U travnju 2026. prosječna kamatna stopa na nove stambene kredite bila je <strong>2,95%</strong>. Nenamjenski i ostali krediti kućanstvima bili su na <strong>5,23%</strong>, prekoračenja po računima na <strong>5,58%</strong>, a krediti po kreditnim karticama na <strong>3,45%</strong>. Kod nefinancijskih društava prosjek je bio <strong>3,01%</strong> za kratkoročne i <strong>3,89%</strong> za dugoročne kredite. (<a href="https://hnb.hr/-/objava-statistike-kamatnih-stopa-kreditnih-institucija-za-travanj-2026-godine?utm_source=chatgpt.com" title="Objava statistike kamatnih stopa kreditnih institucija za travanj ...">HNB</a>)</p>
+<p>Bankarski sustav pita: možeš li plaćati?</p>
+<p>Ova knjiga pita nešto drugo: zašto bi budući novac uopće bio obećan?</p>
+<p>Od 2025. HNB-ova pravila ograničavaju nove kredite potrošačima tako da omjer mjesečne otplate ukupnog duga i dohotka ne smije biti veći od <strong>45% za stambene kredite</strong> i <strong>40% za nestambene kredite</strong>; omjer kredita i vrijednosti nekretnine kod kredita osiguranih nekretninom ograničen je na <strong>90%</strong>, a ročnost na <strong>30 godina</strong> za stambene i <strong>10 godina</strong> za ostale nestambene kredite. (<a href="https://hnb.hr/-/objava-statistickih-podataka-o-depozitima-i-kreditima-kreditnih-institucija-za-ozujak-2026" title="Objava statističkih podataka o depozitima i kreditima kreditnih institucija za ožujak 2026. godine">HNB</a>)</p>
+<p>To je bankarska definicija podnošljivosti.</p>
+<p>Ali podnošljivost nije sloboda.</p>
+<p>Ako kućanstvo može dati 40% ili 45% budućeg dohotka na otplatu duga, banka može reći da je kredit moguć. Ova knjiga kaže: čovjek koji toliki dio budućeg novca predaje starim odlukama još nije na Bitcoin standardu. Možda uredno plaća. Možda je dobar dužnik. Možda nikada neće ući u blokadu. Ali njegov budući novac nije njegov.</p>
+<p>To je dovoljno.</p>
+<h2 id="hrvatska-imovina-je-u-zidovima"><a class="header" href="#hrvatska-imovina-je-u-zidovima">Hrvatska imovina je u zidovima</a></h2>
+<p>Hrvatska obitelj često izgleda bogatije nego što je monetarno slobodna.</p>
+<p>Prema HNB-ovoj Anketi o financijama i potrošnji kućanstava, prosječno neto bogatstvo hrvatskog kućanstva u 2023. iznosilo je oko <strong>183,3 tisuće eura</strong>. Ali od ukupne imovine, <strong>93% čini realna imovina</strong>, a samo <strong>7% financijska imovina</strong>. Glavnu stambenu jedinicu posjeduje <strong>87% kućanstava</strong>, a <strong>26% kućanstava</strong> posjeduje i druge nekretnine. Prosječna financijska imovina kućanstva iznosi <strong>13,8 tisuća eura</strong>, pretežno u depozitima. Zaduženo je <strong>30,3% kućanstava</strong>, s medijalnim dugom od <strong>8.600 eura</strong> i prosječnim dugom od <strong>22.100 eura</strong> među zaduženima. (<a href="https://hnb.hr/-/hrvatska-narodna-banka-objavila-je-statisticke-tablice-s-rezultatima-ankete-o-financijama-i-potrosnji-kucanstava-u-republici-hrvatskoj-u-2023" title="Hrvatska narodna banka objavila je statističke tablice s rezultatima Ankete o financijama i potrošnji kućanstava u Republici Hrvatskoj u 2023.">HNB</a>)</p>
+<p>To je hrvatska slika: puno imovine na papiru, malo novca u ruci.</p>
+<p>Kuća. Stan. Zemljište. Apartman. Kat. Garaža. Auto. Alat. Malo depozita. Malo gotovine. Možda nešto kripta na aplikaciji. Možda nešto dionica. Možda treći stup. Ali novac kao ozbiljna kategorija imovine? U prosječnoj obitelji, jedva postoji.</p>
+<p>Ako prosječna hrvatska obitelj ima 183.300 eura neto imovine i 13.800 eura financijske imovine, tada bi čak i u slučaju da svu financijsku imovinu pretvori u Bitcoin imala samo oko <strong>7,5% neto imovine u Bitcoinu</strong>. Realnije, ako uopće ima Bitcoin, ima mali investicijski dodatak: nekoliko stotina, nekoliko tisuća, možda jedan do tri posto neto imovine.</p>
+<p>To nije Bitcoin standard.</p>
+<p>To je fiat bilanca s Bitcoin ukrasom.</p>
+<p>Prema podacima iz Eurobarometra koje je naveo Hrvatski sabor, oko <strong>16% hrvatskih građana</strong> ulagalo je u kriptovalute. Ali “ima kriptovalute” ne znači “ima Bitcoin kao novac”. To može značiti 100 eura na burzi, portfelj drugih kriptovaluta, kriptovalutu vezanu uz fiat valutu, trgovanje, izgubljen novčanik ili ozbiljnu štednju.</p>
+<p>Ova knjiga ne govori o tome da čovjek “ima nešto Bitcoina”.</p>
+<p>Govori o tome da novac ponovno postane novac.</p>
+<p>I da taj novac bude Bitcoin.</p>
+<h2 id="nekretnini-može-rasti-cijena-to-nije-isto-što-i-rast-vrijednosti"><a class="header" href="#nekretnini-može-rasti-cijena-to-nije-isto-što-i-rast-vrijednosti">Nekretnini može rasti cijena. To nije isto što i rast vrijednosti.</a></h2>
+<p>Ovdje treba razbiti jednu hrvatsku svetinju.</p>
+<p>Nekretnina ne raste u vrijednosti samo zato što joj raste cijena.</p>
+<p>Zgrada se troši. Krov stari. Cijevi stare. Instalacije stare. Fasada stari. Prozori stare. Parket, pločice, kupaonica, kuhinja, lift, ulaz, garaža, grijanje, izolacija — sve to kroz vrijeme traži popravak, zamjenu ili održavanje. Kao i svaka druga uporabljiva stvar, nekretnina koja se koristi troši se.</p>
+<p>Ako stan kupljen prije dvadeset godina danas ima veću cijenu, to samo po sebi ne dokazuje da je stan postao vredniji.</p>
+<p>Možda je euro izgubio kupovnu moć.</p>
+<p>Možda je monetarna masa narasla.</p>
+<p>Možda je kredit postao dostupan većem broju ljudi.</p>
+<p>Možda su plaće nominalno porasle.</p>
+<p>Možda se lokacija promijenila.</p>
+<p>Možda se kvart razvio.</p>
+<p>Možda je došao tramvaj, škola, more turista, strani kupci, novi poslovni centar ili bolja cesta.</p>
+<p>Lokacija može dobiti premiju.</p>
+<p>Zemljište može postati poželjnije.</p>
+<p>Grad može rasti.</p>
+<p>Ali sama nekretnina, kao uporabni objekt, ne pobjeđuje vrijeme. Ona ga podnosi.</p>
+<p>Zato ova knjiga ne govori: “Nekretnine rastu.”</p>
+<p>Govori: <strong>nekretninama može rasti fiat cijena.</strong></p>
+<p>To je sasvim druga rečenica.</p>
+<p>Ako je euro kroz vrijeme sve širi, a količina poželjnih lokacija ograničena, cijene nekretnina mogu rasti u eurima. Ali to ne znači da je nekretnina novac. To znači da fiat čovjek bježi iz novca u zidove jer ne vjeruje novcu.</p>
+<p>Bitcoin standard ide u suprotnom smjeru.</p>
+<p>On kaže: ako novac ponovno može biti tvrd, onda ne moramo glumiti da je dom štedni račun. Dom može biti dom. Nekretnina može služiti životu. Ali ne mora glumiti novac.</p>
+<h2 id="fiat-novac-se-širi"><a class="header" href="#fiat-novac-se-širi">Fiat novac se širi</a></h2>
+<p>Saifedean Ammous u <em>The Fiat Standard</em> opisuje fiat kao sustav u kojem se novi novac stvara kroz kredit. Novac se ne stvara prvenstveno tiskanjem novčanica, nego izdavanjem duga; kredit tretira buduće obećanje plaćanja kao sadašnji novac.</p>
+<p>To je srce problema duga.</p>
+<p>Fiat sustav potiče čovjeka da potroši budućnost, jer sama tehnologija novca funkcionira tako da se budućnost vuče u sadašnjost.</p>
+<p>Zato indeks potrošačkih cijena nije dovoljno dobar način da vidimo gubitak kupovne moći. Ammous izričito tvrdi da je mjerenje potrošačke inflacije nedovoljno za mjerenje štete fiata, jer se cijene mijenjaju i zbog pada vrijednosti novca i zbog rasta produktivnosti; povećanje ponude monetarne jedinice bolje je mjerilo razrjeđivanja vrijednosti koju drže štediše. U istom odlomku navodi da je prosječna godišnja inflacija ponude novca za glavne valute od 1965. do 2020. bila <strong>7,44% za SAD</strong>, <strong>7,79% za eurozonu</strong>, <strong>10,87% za Ujedinjeno Kraljevstvo</strong>, a ponderirani prosječni fiat korisnik trpio je oko <strong>13,72%</strong> godišnje inflacije ponude novca.</p>
+<p>Ako gledamo sam euro, blaga slika M3 od nastanka eura može dati oko 5% godišnje. Ali to nije cijela priča. Monetarna baza eura, M0, pokazuje oštriji režim: prema podacima Europske središnje banke, M0 je u ožujku 2002. bio oko <strong>415,6 milijardi eura</strong>, u svibnju 2026. oko <strong>4.103 milijarde eura</strong>, a na vrhuncu u studenom 2022. oko <strong>6.386 milijardi eura</strong>. To znači da je od 2002. do 2026. monetarna baza narasla gotovo <strong>9,9 puta</strong>, približno <strong>9,9% godišnje</strong>, a do vrhunca 2022. oko <strong>15,4 puta</strong>, približno <strong>14,1% godišnje</strong>. (<a href="https://tradingeconomics.com/euro-area/money-supply-m0" title="
+	Euro Area Base Money
+">Trading Economics</a>)</p>
+<p>Ova knjiga zato ne polazi od pitanja: koliki je indeks potrošačkih cijena?</p>
+<p>Polazi od pitanja: koliko se novac širi?</p>
+<p>Jer ako se novac širi, čovjek koji štedi u tom novcu mora trčati samo da ostane na mjestu. Zato fiat čovjek kupuje nekretninu, zemlju, dionice, apartman, auto, opremu i sve što izgleda tvrđe od novca.</p>
+<p>Bitcoin čovjek radi suprotno.</p>
+<p>On vraća novac u središte bilance.</p>
+<h2 id="Što-je-puni-bitcoin-standard"><a class="header" href="#Što-je-puni-bitcoin-standard">Što je puni Bitcoin standard</a></h2>
+<p>Puni Bitcoin standard ne znači da čovjek ima nešto Bitcoina.</p>
+<p>Ne znači da kupuje 50 eura mjesečno dok kartica nosi kamatu.</p>
+<p>Ne znači da ima stan pod kreditom, auto na leasing, gotovinski kredit, apartman s obvezom i aplikaciju s Bitcoinom.</p>
+<p>Puni Bitcoin standard u ovoj knjizi znači:</p>
+<ul>
+<li>nema duga;</li>
+<li>najmanje trećina neto imovine je u novcu;</li>
+<li>sav novac je praktički Bitcoin;</li>
+<li>euro postoji samo kao mali operativni ostatak za nekoliko dana ili najviše tjedan prosječnih troškova;</li>
+<li>10–20% ukupnog novca stoji u fondu za davanje;</li>
+<li>taj fond za davanje je također Bitcoin;</li>
+<li>ako Bitcoin raste, fond za davanje raste proporcionalno;</li>
+<li>ako Bitcoin pada, fond za davanje pada proporcionalno;</li>
+<li>imovina koja služi životu ne smije progutati bilancu;</li>
+<li>proizvodna imovina mora stvarno proizvoditi vrijednost;</li>
+<li>veći Bitcoin saldo mora imati ozbiljno skrbništvo i sigurnost.</li>
+</ul>
+<p>Ako obitelj ima 100.000 eura u novcu, ova knjiga ne zamišlja da drži 60.000 eura u banci, 20.000 eura u kešu i 20.000 eura u Bitcoinu.</p>
+<p>Zamišlja nešto puno tvrđe:</p>
+<p>99.500 eura vrijednosti je u Bitcoinu.</p>
+<p>500 eura je u eurima za nekoliko dana života.</p>
+<p>Od cijelog novčanog sloja, 10.000 do 20.000 eura vrijednosti Bitcoina pripada fondu za davanje.</p>
+<p>To nije mjesečna donacija.</p>
+<p>To nije ostatak prihoda.</p>
+<p>To nije “dat ćemo ako bude viška”.</p>
+<p>To je dio novca koji je odvojen u samoj strukturi bilance.</p>
+<p>Ako Bitcoin naraste deset puta, fond za davanje naraste deset puta.</p>
+<p>Ako Bitcoin padne prepolovljeno, fond za davanje pada prepolovljeno.</p>
+<p>Kada se iz njega daje, nadopunjuje se prema cilju. Kada ulazi novi novac, dio ulazi u davanje. Davanje nije trošak koji pokušavamo stisnuti. Davanje je stalni dio novčanog sloja.</p>
+<p>Ako prosječna hrvatska obitelj s 183.300 eura neto imovine želi doći do minimuma ove knjige, mora imati barem oko <strong>61.100 eura</strong> u novcu. Budući da je sav novac praktički Bitcoin, to znači oko 61.100 eura vrijednosti Bitcoina. Od toga je 6.100 do 12.200 eura vrijednosti Bitcoina fond za davanje.</p>
+<p>To je potpuno drugačija ideja davanja.</p>
+<p>Davanje više nije sitni komadić prihoda koji čovjek odvaja nakon što se pobrinuo za sebe.</p>
+<p>Davanje postaje dio novca koji raste zajedno s novcem.</p>
+<h2 id="bitcoin-ne-raste-ravno"><a class="header" href="#bitcoin-ne-raste-ravno">Bitcoin ne raste ravno</a></h2>
+<p>Ova knjiga ne očekuje da Bitcoin ide ravnom linijom.</p>
+<p>Očekuje dugoročni trend i valove oko trenda.</p>
+<p>Ako su ljudi spremni uzeti stambeni kredit na 20 ili 30 godina na temelju projekcije budućih plaća, kamatnih stopa, tržišta rada i cijene nekretnine, onda je pošteno staviti na stol i 20- ili 30-godišnju projekciju Bitcoina. Ne zato što je budućnost sigurna, nego zato što se svaki dug već pravi na pretpostavci o budućnosti.</p>
+<p>Prema modelu ove knjige:</p>
+<div class="table-wrapper"><table><thead><tr><th>Vrijeme</th><th style="text-align: right">Cijena Bitcoina</th><th style="text-align: right">Dugoročni trend</th><th>Položaj</th></tr></thead><tbody>
+<tr><td>3/2027</td><td style="text-align: right">71.000 $</td><td style="text-align: right">132.000 $</td><td>ispod trenda</td></tr>
+<tr><td>5/2028</td><td style="text-align: right">172.000 $</td><td style="text-align: right">174.000 $</td><td>blizu trenda</td></tr>
+<tr><td>6/2029</td><td style="text-align: right">390.000 $</td><td style="text-align: right">232.000 $</td><td>iznad trenda</td></tr>
+<tr><td>5/2030</td><td style="text-align: right">286.000 $</td><td style="text-align: right">292.000 $</td><td>blizu trenda</td></tr>
+<tr><td>2/2031</td><td style="text-align: right">225.000 $</td><td style="text-align: right">355.000 $</td><td>ispod trenda</td></tr>
+<tr><td>4/2032</td><td style="text-align: right">448.000 $</td><td style="text-align: right">459.000 $</td><td>blizu trenda</td></tr>
+<tr><td>5/2033</td><td style="text-align: right">887.000 $</td><td style="text-align: right">594.000 $</td><td>iznad trenda</td></tr>
+<tr><td>5/2034</td><td style="text-align: right">682.000 $</td><td style="text-align: right">727.000 $</td><td>blizu trenda</td></tr>
+<tr><td>3/2035</td><td style="text-align: right">594.000 $</td><td style="text-align: right">857.000 $</td><td>ispod trenda</td></tr>
+<tr><td>3/2036</td><td style="text-align: right">1.307.000 $</td><td style="text-align: right">1.053.000 $</td><td>iznad trenda</td></tr>
+<tr><td>11/2037</td><td style="text-align: right">1.801.000 $</td><td style="text-align: right">1.300.000 $</td><td>iznad trenda</td></tr>
+<tr><td>1/2039</td><td style="text-align: right">1.336.000 $</td><td style="text-align: right">1.773.000 $</td><td>ispod trenda</td></tr>
+<tr><td>2041</td><td style="text-align: right">3.340.000 $</td><td style="text-align: right">2.586.000 $</td><td>iznad trenda</td></tr>
+<tr><td>12/2042</td><td style="text-align: right">2.700.000 $</td><td style="text-align: right">3.300.000 $</td><td>ispod trenda</td></tr>
+<tr><td>4/2045</td><td style="text-align: right">5.890.000 $</td><td style="text-align: right">4.863.000 $</td><td>iznad trenda</td></tr>
+<tr><td>12/2046</td><td style="text-align: right">5.147.000 $</td><td style="text-align: right">6.160.000 $</td><td>ispod trenda</td></tr>
+<tr><td>3/2049</td><td style="text-align: right">9.766.000 $</td><td style="text-align: right">8.364.000 $</td><td>iznad trenda</td></tr>
+<tr><td>1/2051</td><td style="text-align: right">9.179.000 $</td><td style="text-align: right">10.593.000 $</td><td>ispod trenda</td></tr>
+<tr><td>3/2053</td><td style="text-align: right">15.600.000 $</td><td style="text-align: right">13.912.000 $</td><td>iznad trenda</td></tr>
+<tr><td>12/2054</td><td style="text-align: right">15.147.000 $</td><td style="text-align: right">16.966.000 $</td><td>ispod trenda</td></tr>
+<tr><td>5/2056</td><td style="text-align: right">20.500.000 $</td><td style="text-align: right">20.000.000 $</td><td>blizu trenda</td></tr>
+</tbody></table>
+</div>
+<p>Od 71.000 dolara u ožujku 2027. do 20.500.000 dolara u svibnju 2056. to je oko <strong>289 puta</strong> veća cijena, odnosno oko <strong>21,4% složeno godišnje</strong>. Ako gledamo sam trend od 132.000 dolara do 20.000.000 dolara, to je oko <strong>151 puta</strong>, odnosno oko <strong>18,8% složeno godišnje</strong>.</p>
+<p>Ovo su brojke koje mijenjaju pitanje.</p>
+<p>Ako obitelj danas ima 5.000 eura Bitcoina, ona možda ima lijepu investiciju.</p>
+<p>Ako ima 61.100 eura Bitcoin novca, ona ima početak drugog monetarnog života.</p>
+<p>Ako prosječna hrvatska obitelj svoj minimalni novčani sloj od 61.100 eura drži u Bitcoinu po 71.000 dolara, to je oko <strong>0,86 BTC</strong>. Prema modelu:</p>
+<ul>
+<li>u 2029. pri 390.000 dolara to je oko <strong>335.000</strong>;</li>
+<li>u 2031. pri 225.000 dolara to je oko <strong>193.000</strong>;</li>
+<li>u 2033. pri 887.000 dolara to je oko <strong>762.000</strong>;</li>
+<li>u 2035. pri 594.000 dolara to je oko <strong>510.000</strong>;</li>
+<li>u 2037. pri 1.801.000 dolara to je oko <strong>1,55 milijuna</strong>;</li>
+<li>u 2056. pri 20.500.000 dolara to je oko <strong>17,6 milijuna</strong>.</li>
+</ul>
+<p>To je razlog zašto dug mora izaći.</p>
+<p>Dug ne košta samo kamatu.</p>
+<p>Dug sprječava obitelj da dovoljno rano uđe u ovu monetarnu putanju.</p>
+<h2 id="potrošnja-se-vodi-prema-trendu"><a class="header" href="#potrošnja-se-vodi-prema-trendu">Potrošnja se vodi prema trendu</a></h2>
+<p>Na fiat standardu proračun služi da čovjek preživi mjesec.</p>
+<p>Na Bitcoin standardu proračun služi da čovjek upravlja vremenom.</p>
+<p>Ako je Bitcoin ispod dugoročnog trenda, obitelj smanjuje fiat prodaju, spušta troškove, povećava prihod, akumulira i čuva Bitcoin. Ne zato što želi živjeti asketski zauvijek, nego zato što je novac tada relativno jeftin u odnosu na trend.</p>
+<p>Ako je Bitcoin iznad dugoročnog trenda, obitelj plaća poznate troškove unaprijed.</p>
+<p>Najam je najbolji primjer.</p>
+<p>Obitelj koja je prodala nekretninu, zatvorila dug i otišla u najam nema banku koja joj svaki mjesec uzima ratu. Ima trošak stanovanja koji se može pregovarati. Ako je Bitcoin iznad trenda, obitelj može platiti najam šest ili dvanaest mjeseci unaprijed. Najmodavac može dati popust jer dobiva sigurnost. Obitelj dobiva mir kroz sljedeći ciklus. A prodaja Bitcoina događa se onda kada je Bitcoin skup u odnosu na svoj dugoročni trend.</p>
+<p>Primjer:</p>
+<p>Najam je 600 eura mjesečno. Godina dana je 7.200 eura. Ako obitelj plati unaprijed i dobije 10% popusta, plaća 6.480 eura.</p>
+<p>U lipnju 2029., po cijeni od 390.000 dolara, tih 6.480 eura najma košta oko <strong>0,0166 BTC</strong>.</p>
+<p>U veljači 2031., po cijeni od 225.000 dolara, isti trošak košta oko <strong>0,0288 BTC</strong>.</p>
+<p>Isti stan, ista godina najma, ali u jednom trenutku košta gotovo dvostruko više satoshija.</p>
+<p>Zato Bitcoin obitelj ne gleda samo cijenu u eurima.</p>
+<p>Gleda cijenu u satoshijima i odnos prema trendu.</p>
+<p>Isti obrazac ponavlja se kroz cikluse. U svibnju 2033., po 887.000 dolara, godišnji najam od 6.480 eura košta oko <strong>0,0073 BTC</strong>. U ožujku 2035., po 594.000 dolara, košta oko <strong>0,0109 BTC</strong>. U studenom 2037., po 1.801.000 dolara, košta oko <strong>0,0036 BTC</strong>. U siječnju 2039., po 1.336.000 dolara, košta oko <strong>0,0049 BTC</strong>.</p>
+<p>Razlika se čini mala dok se ne sjetimo da je satoshi vrijeme.</p>
+<p>Obitelj bez duga može raditi takve poteze.</p>
+<p>Obitelj s dugom ne može.</p>
+<p>Dug ne pita je li Bitcoin iznad ili ispod trenda. Dug ne čeka tržište pada. Dug ne razumije ciklus. Dug ne daje popust zato što ste platili u dobrom trenutku. Dug je linearna obveza u nelinearnom svijetu.</p>
+<p>Zato je najam, u ovom standardu, privremeni alat slobode. Nije religija. Nije ideal sam po sebi. Najam daje mobilnost i mogućnost upravljanja troškom kroz cikluse. Kad Bitcoin novac dovoljno naraste, obitelj može ponovno kupiti dom — ali tada gotovinom, bez duga, i samo ako dom ne prelazi razumnu trećinu ukupne imovine.</p>
+<p>Obitelj ne mora zauvijek biti u najmu.</p>
+<p>Ali mora izaći iz stanja u kojem joj dom financira banka, a budući novac pripada prošlosti.</p>
+<h2 id="davanje-prije-rasta"><a class="header" href="#davanje-prije-rasta">Davanje prije rasta</a></h2>
+<p>Davanje ne dolazi prije razduživanja.</p>
+<p>To ne znači da čovjek u dugu ne smije pomoći drugome. Može. Treba. Život ne prestaje biti ljudski dok se bilanca čisti. Može dati vrijeme, ručak, prijevoz, alat, znanje, pažnju, konkretnu pomoć roditelju, susjedu, prijatelju ili osobi u nevolji.</p>
+<p>Ali sustavno davanje iz ove knjige nije to.</p>
+<p>Sustavno davanje znači da je 10–20% ukupnog novca odvojeno za davanje. A u punom Bitcoin standardu sav novac je Bitcoin. To znači da 10–20% Bitcoina u novčanom sloju pripada davanju.</p>
+<p>To ne može stajati zdravo na dugu.</p>
+<p>Ako kartica nosi kamatu, ako dobavljač čeka, ako sestri nismo vratili posuđeno, ako stambeni kredit svaki mjesec prvi uzima novac, ako auto leasing stoji kao obveza, tada novac već ima neizvršena obećanja.</p>
+<p>Davanje ne smije biti duhovna maska za financijski nered.</p>
+<p>Prvo dug van.</p>
+<p>Zatim davanje.</p>
+<p>Tek tada Bitcoin saldo dobiva zdravu unutarnju arhitekturu.</p>
+<p>U ovoj knjizi davanje nije magični trik. Ali nije ni obična potrošnja. Davanje mijenja čovjekov odnos prema novcu, ljudima i riziku. Čovjek u dugu gleda obvezu. Čovjek koji daje gleda potrebu. Čovjek u dugu pita: kako da preživim ratu? Čovjek koji daje pita: kome moj rad može služiti?</p>
+<p>To mijenja prihod.</p>
+<p>Ne uvijek odmah. Ne uvijek vidljivo. Ali kroz vrijeme mijenja način na koji čovjek vidi prilike, klijente, probleme, odnose, posao, ulaganja i rizik. Čovjek bez duga i s praksom davanja ima veći kapacitet za prihod nego čovjek koji trideset godina nosi podnošljiv dug.</p>
+<p>Ako kućanstvo s dvije prosječne plaće u ožujku 2026. ima oko <strong>3.110 eura</strong> mjesečno neto, to je oko <strong>37.320 eura godišnje</strong>. Pri rastu prihoda od 3% godišnje, nakon 30 godina godišnji prihod iznosi oko <strong>90.600 eura</strong>, a kumulativni prihod oko <strong>1,78 milijuna eura</strong>. Pri rastu od 5% godišnje, godišnji prihod nakon 30 godina iznosi oko <strong>161.300 eura</strong>, a kumulativni prihod oko <strong>2,48 milijuna eura</strong>. Pri rastu od 7% godišnje, godišnji prihod nakon 30 godina iznosi oko <strong>284.100 eura</strong>, a kumulativni prihod oko <strong>3,53 milijuna eura</strong>. Prosječna neto plaća u ožujku 2026. bila je 1.555 eura, a medijalna 1.317 eura. (<a href="https://dzs.gov.hr/vijesti/prosjecna-mjesecna-neto-placa-za-ozujak-2026-iznosila-1-555-eura/2561?utm_source=chatgpt.com" title="Prosječna mjesečna neto plaća za ožujak 2026. iznosila 1 ...">dzs.gov.hr</a>)</p>
+<p>Ova knjiga ne govori: “Daj, pa ćeš automatski zaraditi više.”</p>
+<p>Govori nešto dublje:</p>
+<p>Čovjek koji nema dug, koji daje iz Bitcoin novca i koji ne živi iz mjesečne obrane, razvija kapacitet za veću vrijednost. Taj kapacitet kroz desetljeća mijenja putanju prihoda. A mala razlika u godišnjoj putanji, kroz 30 godina, postaje golema razlika u životu.</p>
+<h2 id="stambeni-kredit-nije-iznimka"><a class="header" href="#stambeni-kredit-nije-iznimka">Stambeni kredit nije iznimka</a></h2>
+<p>Ovo je najteži dio poglavlja.</p>
+<p>Stambeni kredit nije iznimka.</p>
+<p>Dom je poseban. Kredit nije.</p>
+<p>Dom ima miris, stol, djecu, zidove, susjede, školu, dvorište, balkon, pogled, terasu, garažu, maslinu, rođendane, nedjeljni ručak, obiteljske svađe, tišine, pomirenja, strahove i nadu. U Hrvatskoj dom nosi još i dodatnu težinu: “nek ima svoje”, “neće valjda biti podstanar”, “zemlja se ne prodaje”, “bolje plaćati svoje nego tuđe”, “nek ostane djeci”.</p>
+<p>Sve to treba poštovati.</p>
+<p>Ali stambeni kredit je dug.</p>
+<p>Ako je dom pod kreditom, dio budućeg novca pripada banci.</p>
+<p>Možda je kamata niska. Možda je rata manja od najma. Možda je kredit fiksan. Možda je nekretnina dobro kupljena. Možda bi najam u istom gradu bio skuplji. Možda su djeca u školi. Možda bi roditelji rekli da ste poludjeli. Možda bi susjedi pitali zašto prodajete. Možda bi cijela obitelj doživjela prodaju kao pad.</p>
+<p>Sve to može biti istina.</p>
+<p>I dalje ostaje dug.</p>
+<p>Ova knjiga ne kaže: “Prodaj dom bez razmišljanja.”</p>
+<p>Kaže: <strong>prestani ga izuzimati iz istine.</strong></p>
+<p>Najopasnija rečenica je: “Nemamo dugova, osim stambenog.”</p>
+<p>To znači: imamo dug, ali ga društvo odobrava.</p>
+<p>Bitcoin standard ne može početi tako.</p>
+<p>Ako stambeni kredit ostaje, razduživanje nije završeno. Možda još nije trenutak za prodaju. Možda najam nije izvediv. Možda se prvo mora prodati druga nekretnina, auto, apartman, oprema ili financijska imovina. Možda treba povećati prihod, preseliti se, smanjiti kvadraturu, otići u drugi grad ili agresivno otplaćivati.</p>
+<p>Ali stambeni kredit ne smije biti sveta krava.</p>
+<p>Stavlja se na isti papir kao i sve drugo.</p>
+<h2 id="lokacija-nije-zavjet"><a class="header" href="#lokacija-nije-zavjet">Lokacija nije zavjet</a></h2>
+<p>Najveći otpor prodaji doma često nije sama nekretnina.</p>
+<p>Najveći otpor je lokacija.</p>
+<p>Kvart. More. Centar. Škola. Navika. Blizina roditelja. Slika života. Ideja da se uspjeh vidi po mjestu gdje živimo. Strah da je manji grad korak unatrag. Strah da će djeca izgubiti prilike. Strah da će ljudi misliti da smo propali.</p>
+<p>Ali lokacija nije zavjet.</p>
+<p>Ako obitelj može živjeti bez duga u jeftinijem gradu, u stabilnom najmu, s većim Bitcoin saldom, s fondom za davanje i s većom slobodom rizika, tada selidba nije pad standarda. Možda je pad prestiža. Možda je pad slike o sebi. Ali može biti rast stvarne slobode.</p>
+<p>Hrvatska ima težak problem dugoročnog najma. OECD u izvještaju za Hrvatsku 2026. navodi da je oko <strong>15% stambenog fonda prazno cijele godine</strong>, oko <strong>10% stambenih jedinica koristi se za kratkoročni turistički najam</strong>, a procijenjeni manjak stanova za rezidencijalne potrebe iznosi <strong>236.731 stambenu jedinicu</strong>, oko 10% stambenog fonda. OECD također naglašava da je dugoročni privatni najam u Hrvatskoj nerazvijen i da to smanjuje mobilnost rada. (<a href="https://www.oecd.org/en/publications/oecd-economic-surveys-croatia-2026_b52e3ac0-en/full-report/tackling-housing-challenges_aa6adcb9.html?utm_source=chatgpt.com" title="OECD Economic Surveys: Croatia 2026">OECD</a>)</p>
+<p>To znači da prodaja doma i odlazak u najam nisu jednako izvedivi u Splitu, Zagrebu, Rijeci, Osijeku, Bjelovaru, Koprivnici, Vinkovcima, Požegi ili Vukovaru.</p>
+<p>Ali znači i nešto drugo: tko je spreman pomaknuti lokaciju, otvara mogućnosti koje ne postoje dok inzistira na istoj ulici.</p>
+<p>U kolovozu 2025. oglašena cijena najma u Dalmaciji bila je oko <strong>16,57 €/m²</strong>, dok je u Slavoniji i Baranji bila oko <strong>9,68 €/m²</strong>; prosječna tražena cijena najma u Hrvatskoj bila je <strong>14,71 €/m²</strong>. (<a href="https://regent.hr/blog/od-kolovoza-do-kolovoza-cijene-nekretnina-porasle-za-gotovo-10?utm_source=chatgpt.com" title="cijene nekretnina porasle za gotovo 10% - Regent">Regent</a>) U Bjelovaru su se u lipnju 2026. mogli vidjeti oglasi poput 70 m² za <strong>600 €</strong>, 75 m² za <strong>500 €</strong>, 80 m² za <strong>550 €</strong> i 54 m² za <strong>450 €</strong>. (<a href="https://www.njuskalo.hr/iznajmljivanje-stanova/bjelovar?utm_source=chatgpt.com" title="Iznajmljivanje stanova Bjelovar">Njuskalo</a>)</p>
+<p>To su oglasi, ne obećanje. Tržište se mijenja. Najam treba naći, ugovoriti i živjeti. Obitelj treba školu, posao, liječnika, zajednicu i ritam života.</p>
+<p>Ali brojke pokazuju princip:</p>
+<p><strong>Lokacija može biti alat razduživanja.</strong></p>
+<p>Ako obitelj proda stan u skupoj lokaciji, zatvori kredit, zatvori auto, zatvori kartice, preseli se u jeftiniji najam i zadrži prihod ili barem dovoljno prihoda, ona nije samo promijenila adresu.</p>
+<p>Promijenila je monetarnu sudbinu.</p>
+<p>Ljudi su kroz povijest prelazili mora, granice, ratove, gladi, države i jezike da bi svojoj djeci otvorili bolju budućnost. Preseljenje iz skuplje hrvatske lokacije u jeftiniju nije tragedija. Može biti neugodno. Može biti teško. Može tražiti poniznost. Ali nije gore od trideset godina života u dugu samo zato da se ne bi promijenila adresa.</p>
+<p>Ova knjiga ne prezire dom.</p>
+<p>Prezire laž da je mjesto važnije od slobodnog budućeg novca.</p>
+<h2 id="najam-kao-prijelaz-ne-kao-identitet"><a class="header" href="#najam-kao-prijelaz-ne-kao-identitet">Najam kao prijelaz, ne kao identitet</a></h2>
+<p>Najam nije cilj ove knjige.</p>
+<p>Najam je alat.</p>
+<p>Cilj nije biti podstanar zauvijek. Cilj je izaći iz duga, uspostaviti Bitcoin novac, davanje i ravnotežu imovine. Ako najam to omogućuje, najam je dobar alat. Ako najam pojede proračun, destabilizira obitelj i stvara stalnu tjeskobu, tada nije dobar alat.</p>
+<p>Ali u hrvatskoj raspravi najam se često odbacuje unaprijed, kao da je sama riječ znak poraza.</p>
+<p>To je fiat mentalitet nekretnine kao identiteta.</p>
+<p>Na Bitcoin standardu najam ima drukčiju ulogu. On daje mobilnost. Omogućuje da lokacija postane varijabla. Omogućuje da se poznati trošak stanovanja plaća unaprijed kada je Bitcoin iznad trenda. Omogućuje da obitelj u razdoblju pada smanji prodaju Bitcoina i akumulira više.</p>
+<p>Najam je most.</p>
+<p>Na kraju nekoliko ciklusa, ako je Bitcoin novac narastao, obitelj može ponovno kupiti nekretninu. Ali tada je kupuje gotovinom. Bez kredita. Bez banke. Bez toga da budućih 20 ili 30 godina pripada prošloj odluci.</p>
+<p>I kupuje je samo ako nekretnina ne preuzima bilancu.</p>
+<p>Dom koji čini 20% ili 25% ukupne imovine i kupljen je gotovinom nije isti dom kao dom koji čini 90% imovine i još je pod kreditom.</p>
+<p>Izvana može biti ista kuća.</p>
+<p>Unutra je drugačiji život.</p>
+<h2 id="dvije-obitelji-kroz-trideset-godina"><a class="header" href="#dvije-obitelji-kroz-trideset-godina">Dvije obitelji kroz trideset godina</a></h2>
+<p>Zamislimo dvije obitelji.</p>
+<p>Obitelj A živi normalno.</p>
+<p>Ima stan pod kreditom. Rata je podnošljiva. Auto je na kredit ili leasing. Ima malo gotovinskog duga, ali ništa strašno. Ima nešto Bitcoina, ali ne previše, jer se ne može. Ima more ako ide dobro. Ima školu, posao, rodbinu, kvartu poznate kafiće i osjećaj da život ide redom.</p>
+<p>Trideset godina plaća.</p>
+<p>Možda nikada ne kasni. Možda nikada nije u blokadi. Možda stan ili kuća na kraju stvarno budu njihovi. Ali tih trideset godina budući novac dolazi s tuđim imenom na vrhu. Davanje nikada ne postane 10–20% Bitcoin novca jer Bitcoin novac nikada ne nastane u toj mjeri. Bitcoin ostaje dodatak. Nekretnina ostaje glavni saldo. Dug određuje koliko se rizika smije preuzeti. Posao se bira prema rati. Klijenti se trpe zbog obveza. Veće odluke prolaze kroz pitanje: možemo li platiti sve ovaj mjesec?</p>
+<p>Obitelj B napravi rez.</p>
+<p>Prodaje nekretninu pod kreditom. Zatvara kredit. Zatvara gotovinske dugove, kartice, leasing i sve ostale obveze. Selidba nije ugodna. Možda idu iz Zagreba u Bjelovar, iz Splita u Solin ili dalje, iz Rijeke u manji grad, s obale u unutrašnjost, iz centra u rub. Možda djeca mijenjaju školu. Možda rodbina ne razumije. Možda se nekoliko godina živi jednostavnije.</p>
+<p>Ali bilanca je čista.</p>
+<p>Tada uvode davanje: 10–20% Bitcoin novca. Ne prihoda. Ne ostatka. Novca.</p>
+<p>Zatim slažu imovinu: najmanje trećina neto imovine u novcu, a sav novac praktički Bitcoin. Euro samo za nekoliko dana života. Imovina koja služi životu pod kontrolom. Proizvodna imovina samo ondje gdje stvarno stvara vrijednost.</p>
+<p>Njihov Bitcoin saldo više nije 2.000 ili 5.000 eura u aplikaciji.</p>
+<p>To je glavni novac obitelji.</p>
+<p>I sada vrijeme radi drukčije.</p>
+<p>Ako je Bitcoin ispod trenda, žive mirno i štede više. Ako je iznad trenda, plaćaju najam unaprijed, pune poznate obveze, daju iz fonda i čuvaju sljedeće razdoblje pada. Ako im prihodi rastu jer više ne rade iz straha od rate nego iz sposobnosti stvaranja vrijednosti, novi novac ulazi u isti redoslijed: davanje, Bitcoin novac, ravnoteža imovine.</p>
+<p>Ako model knjige stoji, obitelj A nakon trideset godina ima otplaćenu nekretninu i možda nešto Bitcoina.</p>
+<p>Obitelj B nakon trideset godina ima trideset godina davanja, trideset godina života bez duga, trideset godina većeg kapaciteta za rizik, trideset godina Bitcoina kao dominantnog novca i trideset godina rasta novčanog sloja prema potencijskom zakonu.</p>
+<p>Prva obitelj izgleda normalno.</p>
+<p>Druga izgleda čudno.</p>
+<p>Ali nakon trideset godina čudna obitelj može biti slobodnija, bogatija, darežljivija i sposobnija za stvaranje generacijskog bogatstva.</p>
+<p>To je kontrast ove knjige.</p>
+<h2 id="dug-ne-košta-samo-kamatu"><a class="header" href="#dug-ne-košta-samo-kamatu">Dug ne košta samo kamatu</a></h2>
+<p>Stambeni kredit ne košta samo 2,95% kamate.</p>
+<p>Auto ne košta samo ratu.</p>
+<p>Gotovinski kredit ne košta samo 5,23%.</p>
+<p>Leasing ne košta samo mjesečni iznos.</p>
+<p>Dug košta redoslijed života.</p>
+<p>Dok dug postoji, obitelj ne može zdravo uvesti davanje iz Bitcoin novca. Ne može sav novac držati kao Bitcoin. Ne može minimum trećine imovine prebaciti u novac ako je glavnina imovine zaključana u domu pod kreditom. Ne može mirno držati volatilnost jer rata ne poznaje cikluse. Ne može preuzimati bolje rizike jer mjesečna obveza traži sigurnost. Ne može promijeniti lokaciju bez velikog straha. Ne može odbiti lošeg klijenta jednako lako. Ne može čekati bolju priliku jednako mirno.</p>
+<p>Najskuplji dio duga nije kamata.</p>
+<p>Najskuplji dio duga je vrijeme provedeno u stanju u kojem se ne može početi živjeti po novom standardu.</p>
+<p>To je osobito važno kod stambenog kredita. Trideset godina duga nije samo trideset godina otplate. To je trideset godina odgoja karaktera u kojem je podnošljiva obveza postala normalna.</p>
+<p>Dug mijenja čovjeka tiho.</p>
+<p>Ne u jednom danu.</p>
+<p>U navici.</p>
+<h2 id="prvi-potez-zatvoriti-vrata"><a class="header" href="#prvi-potez-zatvoriti-vrata">Prvi potez: zatvoriti vrata</a></h2>
+<p>Prvi potez nije kupiti Bitcoin.</p>
+<p>Prvi potez nije izračunati buduću cijenu.</p>
+<p>Prvi potez nije sanjati 2056.</p>
+<p>Prvi potez je zatvoriti vrata novom dugu.</p>
+<p>Nema novog duga.</p>
+<p>Ako kartica krpa mjesec, kartica izlazi iz života.</p>
+<p>Ako minus stoji na računu, prestaje se zvati dostupnim novcem.</p>
+<p>Ako auto zahtijeva ratu da bi slika o nama ostala netaknuta, auto ulazi u raspravu.</p>
+<p>Ako posao treba kreditnu liniju da bi prikrio lošu naplatu, preniske cijene i previše projekata, to nije rast. To je dug s poslovnim rječnikom.</p>
+<p>Ako stambeni kredit postoji, on ide na popis.</p>
+<p>Ako postoji druga nekretnina, apartman, zemljište, poslovna oprema, financijska imovina ili Bitcoin, sve ide na isti papir.</p>
+<p>Pitanje nije: što volim?</p>
+<p>Pitanje je: što može vratiti budući novac meni?</p>
+<h2 id="popis-dugova"><a class="header" href="#popis-dugova">Popis dugova</a></h2>
+<p>Svi dugovi moraju biti na jednom mjestu:</p>
+<ul>
+<li>stambeni kredit;</li>
+<li>gotovinski nenamjenski kredit;</li>
+<li>potrošački kredit;</li>
+<li>auto-kredit;</li>
+<li>leasing;</li>
+<li>minus po računu;</li>
+<li>kreditne kartice;</li>
+<li>kupnja na rate;</li>
+<li>mobitel na rate;</li>
+<li>namještaj;</li>
+<li>oprema;</li>
+<li>dug prema obitelji;</li>
+<li>dug prema prijateljima;</li>
+<li>dug prema dobavljačima;</li>
+<li>porezne i druge dospjele obveze;</li>
+<li>poslovne kreditne linije;</li>
+<li>jamstva;</li>
+<li>sudužništva;</li>
+<li>sve što traži budući novac.</li>
+</ul>
+<p>Za svaki dug treba znati iznos, ratu, kamatu, rok, kome se duguje i što se događa ako se ne plaća.</p>
+<p>Tek tada se vidi stvarno stanje.</p>
+<p>Mnogi ljudi ne žive u siromaštvu. Žive u zbrci. Imaju imovinu, ali nemaju slobodan novčani tok. Imaju stan, ali nemaju novac. Imaju apartman, ali nemaju mir. Imaju Bitcoin, ali imaju i karticu. Imaju posao, ali dobavljači čekaju. Imaju auto, ali buduća plaća već pripada leasingu.</p>
+<p>Kada sve dođe na papir, dug prestaje biti magla.</p>
+<h2 id="prodaja-nije-poraz"><a class="header" href="#prodaja-nije-poraz">Prodaja nije poraz</a></h2>
+<p>Ako dug može izaći prodajom imovine, prodaja je prvi ozbiljan scenarij.</p>
+<p>Ne snježna gruda.</p>
+<p>Ne lavina.</p>
+<p>Ne “polako ćemo”.</p>
+<p>Prvo pitanje je: može li se dug zatvoriti sada?</p>
+<p>Prodati auto nije poraz ako auto drži budućnost u rati.</p>
+<p>Prodati drugi auto nije siromaštvo ako obitelj može živjeti s jednim.</p>
+<p>Prodati apartman nije izdaja investicije ako apartman nosi dug, sezonu, održavanje, poruke gostiju, čišćenje, popravke i stalnu brigu.</p>
+<p>Prodati poslovnu opremu koja ne radi nije kraj ambicije.</p>
+<p>Prodati zemljište koje “se ne prodaje” možda je prvi čin financijske zrelosti.</p>
+<p>Prodati Bitcoin radi zatvaranja duga nije izdaja Bitcoina.</p>
+<p>Bitcoin pored duga nije standard.</p>
+<p>Ako Bitcoin može vratiti budući novac vama, tada je poslužio slobodi.</p>
+<p>Tek nakon što dug nestane, Bitcoin može postati glavni novac obitelji.</p>
+<h2 id="poslovni-dug-mora-izgubiti-lijepi-rječnik"><a class="header" href="#poslovni-dug-mora-izgubiti-lijepi-rječnik">Poslovni dug mora izgubiti lijepi rječnik</a></h2>
+<p>Poslovni dug često zvuči bolje od osobnog.</p>
+<p>Rast. Poluga. Likvidnost. Investicija. Skaliranje. Oprema. Vozni park. Sezona. Kapacitet. Projekt. Obrtna sredstva.</p>
+<p>Ponekad je to stvarno. Posao može trebati alat. Stroj može povećati proizvodnju. Kombi može nositi prihod. Zaliha može podići maržu. Kratko premošćivanje može imati smisla ako je naplata sigurna.</p>
+<p>Ali poslovni dug mora proći test žrtve.</p>
+<p>Biste li za isti cilj radili dodatne sezone?</p>
+<p>Biste li smanjili vlastiti komfor?</p>
+<p>Biste li prodali višak opreme?</p>
+<p>Biste li digli cijene?</p>
+<p>Biste li zatvorili klijenta koji kasni?</p>
+<p>Biste li smanjili broj projekata?</p>
+<p>Biste li priznali da proizvod nema dovoljno kupaca?</p>
+<p>Biste li čekali i akumulirali kapital bez duga?</p>
+<p>Ako ne biste, možda dug nije alat. Možda je samo način da se želja ne susretne s vlastitom cijenom.</p>
+<p>Poslovni dug mora proći i test kapaciteta: donosi li više naplativog rada, bolju maržu, kraći rok isporuke, stabilniji novčani tok ili stvaran pristup tržištu? Ili samo kupuje dojam ozbiljnosti?</p>
+<p>Leasing kombija koji svaki dan nosi posao nije isto što i leasing auta koji nosi vlasnikovu sliku o sebi.</p>
+<p>Kreditna linija koja jednom premosti naplatu nije isto što i kreditna linija koja stalno skriva loše cijene i slabu naplatu.</p>
+<p>Posao treba stvarati vrijednost.</p>
+<p>Ne gutati budući obiteljski novac.</p>
+<h2 id="kada-prodaja-doma-ima-smisla"><a class="header" href="#kada-prodaja-doma-ima-smisla">Kada prodaja doma ima smisla</a></h2>
+<p>Prodaja doma pod kreditom ima smisla kada:</p>
+<ul>
+<li>zatvara stambeni kredit;</li>
+<li>zatvara ostale dugove;</li>
+<li>ostavlja značajan Bitcoin novčani sloj;</li>
+<li>omogućuje stabilan najam;</li>
+<li>otvara davanje;</li>
+<li>smanjuje mjesečni pritisak;</li>
+<li>daje obitelji sposobnost da drži Bitcoin kroz vrijeme;</li>
+<li>ne zamjenjuje banku novom stambenom krhkošću.</li>
+</ul>
+<p>Ako obitelj proda stan za 220.000 eura, zatvori 110.000 eura kredita, zatvori 20.000 eura ostalih dugova, plati selidbu i ulazak u najam, i ostane s 80.000 eura slobodnog kapitala, to je ozbiljna promjena stanja. Taj kapital može postati Bitcoin novac. Iz njega se može formirati fond za davanje. Obitelj može ući u novi standard.</p>
+<p>Ako obitelj proda stan za 220.000 eura, zatvori 200.000 eura kredita, zatvori još 10.000 eura dugova i ostane gotovo bez kapitala, a zatim ulazi u skup najam, prodaja nije automatski sloboda. Možda još uvijek ima smisla ako se seli u znatno jeftiniju lokaciju. Ali tada nije poanta prodaja sama po sebi. Poanta je cijeli prijelaz: nula duga, stabilan najam, Bitcoin novac, davanje.</p>
+<p>Dom se ne prodaje da bi se ispunila rečenica iz knjige.</p>
+<p>Dom se prodaje ako prodaja stvarno otvara standard knjige.</p>
+<p>Ali dom se ne izuzima iz rasprave samo zato što boli.</p>
+<h2 id="tri-hrvatske-priče"><a class="header" href="#tri-hrvatske-priče">Tri hrvatske priče</a></h2>
+<p>Brojke bez priča ostaju hladne. Priče bez brojki postanu magla. Zato ćemo uzeti tri zamišljene hrvatske obitelji: niži kraj, sredinu i viši imovinski sloj.</p>
+<p>Ove priče nisu recept za svakoga. One pokazuju što znači stvarno primijeniti redoslijed.</p>
+<h3 id="1-niži-kraj-sara-i-ivan"><a class="header" href="#1-niži-kraj-sara-i-ivan">1. Niži kraj: Sara i Ivan</a></h3>
+<p>Sara i Ivan imaju jedno dijete i žive u Zagrebu u najmu od 850 eura. Zajedno zarađuju oko 2.650 eura neto, približno dvije medijalne plaće prema DZS-ovoj medijalnoj neto plaći od 1.317 eura u ožujku 2026. (<a href="https://dzs.gov.hr/vijesti/prosjecna-mjesecna-neto-placa-za-ozujak-2026-iznosila-1-555-eura/2561?utm_source=chatgpt.com" title="Prosječna mjesečna neto plaća za ožujak 2026. iznosila 1 ...">dzs.gov.hr</a>)</p>
+<p>Nemaju nekretninu. Imaju auto-kredit, karticu, minus i dug za namještaj. Ukupno duguju 18.000 eura. Imaju 2.000 eura Bitcoina i 700 eura u banci.</p>
+<p>Njihova prva napast je misliti da nisu tema ovog poglavlja jer nemaju stan za prodati.</p>
+<p>Ali jesu.</p>
+<p>Njihov dug nije dubok kao stambeni kredit, ali je dovoljno širok da im budući novac nije slobodan. Auto, kartica, minus i namještaj drže ih u stanju stalnog krpanja. Bitcoin od 2.000 eura stoji kao simbol budućnosti, ali budućnost je već obećana ratama.</p>
+<p>Prvi potez: nema novog duga.</p>
+<p>Drugi potez: prodaja auta. Auto je kupljen za sliku normalnog života u Zagrebu, ali nije nužan u toj formi. Prodaju ga, zatvaraju veći dio auto-kredita, kupuju skromniji rabljeni auto bez duga ili prelaze na javni prijevoz i povremeni najam auta.</p>
+<p>Treći potez: Bitcoin ulazi u plan zatvaranja duga. Teško je. Ivan osjeća da prodaje budućnost. Ali budućnost mu već jede kartica. Prodaju dio ili cijeli saldo da očiste kratkoročne obveze.</p>
+<p>Četvrti potez: lokacija.</p>
+<p>Ako ostanu u Zagrebu s najmom od 850 eura, režijama, djetetom i jednim autom, možda će se razdužiti, ali teško će brzo doći do Bitcoin novčanog sloja. Zato gledaju Bjelovar, Vinkovce, Koprivnicu, Požegu ili sličan grad. Ne zato što je svaki manji grad lak. Nego zato što se najam od 450–600 eura pojavljuje kao realna mogućnost, dok je zagrebački obiteljski najam često puno teži.</p>
+<p>Sara može dio posla raditi na daljinu. Ivan nalazi posao s nešto manjom plaćom, ali obiteljski najam pada za 300–400 eura mjesečno. Status pada. Sloboda raste.</p>
+<p>Za dvije godine nemaju dug. Nemaju veliku imovinu, ali prvi put imaju čist proračun. Uvode Bitcoin novac. Na početku je to malo: 8.000, zatim 12.000, zatim 20.000 eura vrijednosti. Fond za davanje je 10% tog Bitcoin novca. Nije velik. Ali postoji.</p>
+<p>Ako do ožujka 2027. dođu do 20.000 eura Bitcoin novca, to je oko 0,28 BTC po cijeni od 71.000 dolara. Prema modelu, taj saldo je oko 110.000 dolara u 2029., oko 250.000 dolara u 2033. i oko 5,8 milijuna dolara u 2056.</p>
+<p>Ali važnije od brojke je redoslijed: nema duga, postoji davanje, postoji Bitcoin novac, postoji proračun, postoji mobilnost.</p>
+<p>Njihova djeca rastu u kući gdje se dug ne zove normalnim.</p>
+<p>To je bogatstvo koje se ne vidi odmah.</p>
+<h3 id="2-sredina-marko-i-ivana"><a class="header" href="#2-sredina-marko-i-ivana">2. Sredina: Marko i Ivana</a></h3>
+<p>Marko i Ivana imaju dvoje djece, stan u Zagrebu, stambeni kredit, auto na kredit, gotovinski kredit za adaptaciju i 6.000 eura Bitcoina. Zajedno zarađuju oko 3.700 eura neto. Njihova neto imovina na papiru izgleda pristojno, ali novčani sloj je tanak.</p>
+<p>Stan vrijedi oko 220.000 eura. Preostali kredit je 125.000 eura. Auto i gotovinski dugovi iznose još 25.000 eura. Imaju 5.000 eura u banci i 6.000 eura Bitcoina.</p>
+<p>Normalan savjet bio bi: ostanite u stanu, refinancirajte, plaćajte uredno, malo investirajte.</p>
+<p>Ova knjiga ih tjera na teže pitanje: što bi se dogodilo da sada izađemo iz duga?</p>
+<p>Računaju.</p>
+<p>Prodaja stana: 220.000 eura.</p>
+<p>Zatvaranje stambenog kredita: 125.000.</p>
+<p>Zatvaranje auta i gotovinskog duga: 25.000.</p>
+<p>Selidba, polog, prijelazni troškovi: 7.000.</p>
+<p>Ostaje oko 63.000 eura.</p>
+<p>To je gotovo točno minimalni novčani sloj prosječnog hrvatskog kućanstva prema kanonu knjige: trećina od 183.300 eura je oko 61.100 eura. (<a href="https://hnb.hr/-/hrvatska-narodna-banka-objavila-je-statisticke-tablice-s-rezultatima-ankete-o-financijama-i-potrosnji-kucanstava-u-republici-hrvatskoj-u-2023" title="Hrvatska narodna banka objavila je statističke tablice s rezultatima Ankete o financijama i potrošnji kućanstava u Republici Hrvatskoj u 2023.">HNB</a>)</p>
+<p>Od tih 63.000 eura, gotovo sve ide u Bitcoin. Euro ostaje samo za nekoliko dana ili tjedan života. Fond za davanje postaje 6.300 do 12.600 eura vrijednosti Bitcoina. Ne kao obećanje da će jednom davati. Kao stvarna oznaka u bilanci.</p>
+<p>Ali gdje će živjeti?</p>
+<p>Ako žele isti kvart, isti standard i isti broj kvadrata, najam će ih pojesti. U Zagrebu i drugim većim gradovima obiteljski stan od 70–80 m² lako ulazi u zonu u kojoj najam i režije pojedu previše proračuna.</p>
+<p>Zato ne traže isti život bez kredita.</p>
+<p>Traže bolju bilancu.</p>
+<p>Sele u manji grad u kojem mogu unajmiti stan za 550–650 eura. Marko zadržava posao hibridno, uz povremeni odlazak u Zagreb. Ivana nalazi lokalni posao s nešto manjim prihodom. Ukupni prihod pada s 3.700 na 3.300 eura, ali dug pada na nulu, stanovanje pada, a Bitcoin novac postaje ozbiljan.</p>
+<p>Prvih godinu dana sve izgleda kao korak unatrag.</p>
+<p>Manji grad. Manje izbora. Manje restorana. Manje spontanosti. Manje dokazivanja.</p>
+<p>Ali nakon tri godine vidi se razlika: nema rata, nema kartice, nema auta na kredit, nema stambenog pritiska. Davanje postoji. Bitcoin saldo postoji. Djeca vide roditelje koji nisu robovi slike o sebi.</p>
+<p>Ako njihov Bitcoin novčani sloj od oko 63.000 eura nastane u ožujku 2027., to je oko 0,89 BTC. Prema modelu, u lipnju 2029. vrijedi oko 346.000 dolara; u svibnju 2033. oko 787.000 dolara; u studenom 2037. oko 1,6 milijuna dolara; u 2056. oko 18,2 milijuna dolara.</p>
+<p>U 2029., kada je Bitcoin iznad trenda, plaćaju godinu najma unaprijed i dobivaju popust. U 2031., kada je Bitcoin ispod trenda, ne moraju prodavati za najam jer je velik dio stanovanja već pokriven. Tada akumuliraju. U 2033., kada je Bitcoin opet iznad trenda, ponovno plaćaju unaprijed i razmatraju kupnju doma gotovinom.</p>
+<p>Ako tada kupe nekretninu od 200.000 eura, a njihov ukupni Bitcoin saldo prema modelu vrijedi oko 787.000 dolara, dom više nije 90% njihove imovine.</p>
+<p>Dom je manje od trećine.</p>
+<p>I nema kredita.</p>
+<p>Izvana, možda su ponovno vlasnici nekretnine.</p>
+<p>Unutra, to nije isti život.</p>
+<h3 id="3-viši-sloj-marin-i-petra"><a class="header" href="#3-viši-sloj-marin-i-petra">3. Viši sloj: Marin i Petra</a></h3>
+<p>Marin i Petra žive u Splitu. Marin ima firmu. Petra radi samostalno. Imaju stan pod kreditom, apartman, poslovni auto na leasing, nešto financijske imovine, 45.000 eura Bitcoina i više od 300.000 eura ukupnih obveza kad se sve zbroji: stambeni kredit, kredit vezan uz apartman, leasing, poslovna kreditna linija i dobavljači.</p>
+<p>Izvana izgledaju uspješno.</p>
+<p>Na papiru imaju imovinu.</p>
+<p>Ali novac nije slobodan.</p>
+<p>Marin može objasniti svaki dug. Apartman je investicija. Auto je poslovni. Kreditna linija je likvidnost. Stan je dom. Bitcoin je budućnost. Dobavljači su privremeno. Klijenti kasne, ali platit će.</p>
+<p>Petra postavlja drugo pitanje:</p>
+<p>Mora li išta od toga ostati?</p>
+<p>Prvo gledaju apartman. U Splitu i obalnim gradovima kratkoročni najam izgleda kao imovina, ali često nosi sezonu, održavanje, platforme, čišćenje, poruke gostiju, prazne mjesece i stalnu mentalnu prisutnost. U zemlji u kojoj je dio stambenog fonda prazan ili vezan uz kratkoročni najam, apartman može izgledati kao investicija, a zapravo vezati kapital, pažnju i dug. (<a href="https://www.oecd.org/en/publications/oecd-economic-surveys-croatia-2026_b52e3ac0-en/full-report/tackling-housing-challenges_aa6adcb9.html?utm_source=chatgpt.com" title="OECD Economic Surveys: Croatia 2026">OECD</a>)</p>
+<p>Apartman se prodaje.</p>
+<p>Zatvara se kredit vezan uz apartman i dio poslovnih obveza.</p>
+<p>Zatim poslovni auto. Ako ne proizvodi vrijednost veću od troška, ide. Marin uzima skromnije rješenje.</p>
+<p>Zatim poslovna kreditna linija. Ona više ne smije skrivati lošu naplatu. Cijene se dižu. Klijenti koji kasne gube prioritet. Projekti koji troše previše kapitala gase se.</p>
+<p>Zatim stan.</p>
+<p>Ovo je najteže. Split nije Bjelovar. Dugoročni najam je skup i plitak. Zato ne traže isti Split bez kredita.</p>
+<p>Razmatraju Solin, Kaštela, Dugopolje, zaleđe, pa čak i drugi grad. Marin dio posla može voditi izvan centra. Petra može raditi projektno. Djeca se bune. Roditelji ne razumiju. Prijatelji kažu da pretjeruju.</p>
+<p>Ali brojke su tvrde.</p>
+<p>Ako prodajom stana, apartmana, auta i dijela financijske imovine mogu zatvoriti sve obveze i ostati s nekoliko stotina tisuća eura Bitcoin novca, tada nije pitanje gube li status.</p>
+<p>Pitanje je žele li generacijski obrat.</p>
+<p>Ako nakon razduživanja imaju 300.000 eura Bitcoin novca u ožujku 2027., to je oko 4,23 BTC. Prema modelu, to je oko 1,65 milijuna dolara u 2029., oko 3,75 milijuna dolara u 2033., oko 7,6 milijuna dolara u 2037. i oko 86,6 milijuna dolara u 2056.</p>
+<p>Njihova najveća promjena nije financijska.</p>
+<p>Marin prestaje svaku priliku pretvarati u projekt.</p>
+<p>Petra prestaje tolerirati imovinu koja izgleda dobro, a uzima mir.</p>
+<p>Njihovo davanje postaje ozbiljno: ne par donacija godišnje, nego Bitcoin fond koji postoji, raste, smanjuje se s tržištem i obnavlja kroz novi novac. Daju mladima koji uče raditi, obiteljima koje stvarno trebaju pomoć, obrazovanju, ljudima koji stvaraju vrijednost.</p>
+<p>Bitcoin im više nije protuteža kaosu.</p>
+<p>Postaje novac u čistoj bilanci.</p>
+<h2 id="Što-ako-čovjek-ne-može-odmah"><a class="header" href="#Što-ako-čovjek-ne-može-odmah">Što ako čovjek ne može odmah?</a></h2>
+<p>Ne može svatko odmah prodati dom.</p>
+<p>Ne može svatko odmah preseliti djecu.</p>
+<p>Ne može svatko odmah naći stabilan najam.</p>
+<p>Ne može svatko odmah zadržati prihod u manjem gradu.</p>
+<p>Ne može svatko odmah prodati imovinu po cijeni koja zatvara sve.</p>
+<p>Ali to ne mijenja standard.</p>
+<p>Ako prodaja nije izvediva danas, stambeni kredit ne postaje ne-dug. Ulazi u najagresivniji izvediv plan razduživanja. Obitelj tada radi sve što može:</p>
+<p>prodaje drugu imovinu;</p>
+<p>prodaje auto;</p>
+<p>zatvara gotovinske kredite;</p>
+<p>gasi kartice;</p>
+<p>smanjuje lokacijski trošak kad god može;</p>
+<p>povećava prihod;</p>
+<p>priprema prodaju doma za trenutak kada ima smisla;</p>
+<p>prestaje glumiti da je puni standard počeo.</p>
+<p>Najvažnije je ne zamijeniti nemogućnost danas s izlikom zauvijek.</p>
+<p>Postoji razlika između “ne mogu još” i “ne želim dirnuti život koji me drži u dugu”.</p>
+<p>Ova knjiga napada drugo.</p>
+<h2 id="dug-kao-psihološko-stanje"><a class="header" href="#dug-kao-psihološko-stanje">Dug kao psihološko stanje</a></h2>
+<p>Dug nije samo financijski odnos.</p>
+<p>Dug je odgoj duše.</p>
+<p>Čovjek u dugu uči živjeti s tuđim pravom na svoju budućnost. Prvo ga to smeta. Kasnije se navikne. Na kraju to zove normalnim.</p>
+<p>To je najopasnije.</p>
+<p>Velik dug može probuditi čovjeka jer izgleda opasno. Plitak dug ga može uspavati jer izgleda podnošljivo. Rata je mala. Kamata nije strašna. Kartica se smanjuje. Minus ne raste. Stambeni kredit ionako svi imaju. Leasing je poslovni. Apartman će se isplatiti. Bitcoin će narasti.</p>
+<p>I tako prođe desetljeće.</p>
+<p>Zatim drugo.</p>
+<p>Zatim treće.</p>
+<p>Nije isto imati trideset godina otplate i trideset godina Bitcoin novca.</p>
+<p>Nije isto imati trideset godina bankarskog mira i trideset godina davanja.</p>
+<p>Nije isto imati trideset godina nekretnine kojoj raste fiat cijena i trideset godina novca koji prema modelu raste potencijskim zakonom.</p>
+<p>Nije isto biti vlasnik zida i vlasnik vremena.</p>
+<h2 id="snježna-gruda-i-lavina-tek-nakon-prodaje"><a class="header" href="#snježna-gruda-i-lavina-tek-nakon-prodaje">Snježna gruda i lavina tek nakon prodaje</a></h2>
+<p>Ako se dug može zatvoriti prodajom imovine, zatvara se.</p>
+<p>Ako se ne može, onda dolaze metode otplate.</p>
+<p>Snježna gruda zatvara dugove od najmanjeg prema najvećem. Daje brze pobjede. Čisti odnose. Gasi male obveze. Oslobađa mentalni prostor.</p>
+<p>Snježna lavina zatvara dugove od najskupljeg prema jeftinijem. Matematički je često bolja, posebno kod kartica, minusa i gotovinskih kredita.</p>
+<p>U oba slučaja vrijedi isto pravilo:</p>
+<p>Svi dugovi dobivaju minimum.</p>
+<p>Sav dodatni novac ide na jedan glavni dug.</p>
+<p>Kada jedan dug nestane, njegova rata ne ide u životni standard.</p>
+<p>Ide na sljedeći dug.</p>
+<p>Ne slavi se novim dugom.</p>
+<p>Ne kupuje se auto “jer smo napokon malo lakše”.</p>
+<p>Ne vraća se dostava, restoran, gadget, putovanje i oprema zato što je jedan dug nestao.</p>
+<p>Razduživanje nije uređivanje duga.</p>
+<p>Razduživanje je izlazak iz stanja duga.</p>
+<h2 id="prvih-180-dana"><a class="header" href="#prvih-180-dana">Prvih 180 dana</a></h2>
+<p>Prvih 180 dana nakon odluke treba biti sezona čišćenja.</p>
+<p>Nema novog duga.</p>
+<p>Svi dugovi su zapisani.</p>
+<p>Sva imovina je zapisana.</p>
+<p>Stambeni kredit je na stolu.</p>
+<p>Druga nekretnina je na stolu.</p>
+<p>Auto je na stolu.</p>
+<p>Bitcoin je na stolu.</p>
+<p>Poslovna oprema je na stolu.</p>
+<p>Leasing je na stolu.</p>
+<p>Lokacija je na stolu.</p>
+<p>U tih šest mjeseci obitelj ne pokušava dokazati da se stari život može nastaviti. Pokušava dokazati da je spremna za novi standard.</p>
+<p>To ne znači da kuća postaje vojni logor. Djeca ne trebaju nositi roditeljski strah. Obitelj treba hranu, zdravlje, mir, smijeh i nedjelju. Ali ne treba svaka nelagoda biti ublažena kupnjom. Ne treba svaki vikend koštati. Ne treba svaka usporedba s drugima dobiti financijski odgovor.</p>
+<p>Skromnost nije bijeda.</p>
+<p>Skromnost je trenutak kada čovjek spusti buku da bi čuo kamo mu novac ide.</p>
+<h2 id="kada-dug-nestane"><a class="header" href="#kada-dug-nestane">Kada dug nestane</a></h2>
+<p>Kada zadnji dug nestane, opasnost nije prošla.</p>
+<p>Tada dolazi iskušenje nagrade.</p>
+<p>Veći auto. Bolji stan. Novo uređenje. Putovanje. Mobitel. Restorani. Malo luksuza. “Zaslužili smo.”</p>
+<p>Možda jednom.</p>
+<p>Ali ne sada.</p>
+<p>Nakon duga dolazi davanje.</p>
+<p>Ne davanje kao 10–20% prihoda.</p>
+<p>Ne davanje kao ostatak.</p>
+<p>Ne davanje kao impuls.</p>
+<p>Davanje kao 10–20% ukupnog novca.</p>
+<p>A u ovoj knjizi novac je Bitcoin.</p>
+<p>Zatim dolazi ravnoteža imovine. Najmanje trećina neto imovine u novcu. Sav novac praktički Bitcoin. Euro samo za nekoliko dana ili tjedan troškova. Imovina koja služi životu ne smije pojesti bilancu. Proizvodna imovina ne smije postati novi idol. Nekretnina je dom, alat ili lokacijska imovina. Nije novac.</p>
+<p>Zatim dolazi Bitcoin kroz vrijeme: rast, volatilnost, ciklusi, padovi, euforija, hladnoća, strpljenje.</p>
+<p>Zatim dolazi skrbništvo i sigurnost: kako držati Bitcoin koji više nije igra, nego obiteljski novac.</p>
+<p>Tek tada puni Bitcoin standard ima tijelo.</p>
+<h2 id="zaključak"><a class="header" href="#zaključak">Zaključak</a></h2>
+<p>Dug ne treba uljepšavati.</p>
+<p>Treba ga zatvoriti.</p>
+<p>Hrvatska obitelj danas često ima imovinu, ali nema novac. Ima nekretninu, ali nema slobodan budući novac. Ima stan, kuću, zemljište ili apartman, ali financijski sloj je tanak. Ima možda nešto Bitcoina, ali ne Bitcoin kao novac.</p>
+<p>Ova knjiga traži obrat.</p>
+<p>Ne 93% imovine u zidovima i 7% u financijskoj imovini.</p>
+<p>Nego najmanje trećinu imovine u novcu.</p>
+<p>I sav taj novac praktički u Bitcoinu.</p>
+<p>Ne davanje iz prihoda.</p>
+<p>Nego davanje kao 10–20% Bitcoin novca.</p>
+<p>Ne euro kao štednju.</p>
+<p>Nego euro kao sitni operativni ostatak za nekoliko dana života.</p>
+<p>Ne nekretninu kao novac.</p>
+<p>Nego nekretninu kao imovinu koja služi životu i koja ne smije zarobiti bilancu.</p>
+<p>Ako je cijena toga prodaja doma, prodaja auta, prodaja apartmana, selidba u jeftiniji grad, nekoliko godina manjeg prestiža i neugodna obiteljska objašnjenja, onda treba postaviti pravo pitanje:</p>
+<p>Je li to stvarno gore od trideset godina duga?</p>
+<p>Ako su ljudi spremni potpisati kredit na 20 ili 30 godina jer vjeruju da će budućnost nekako nositi ratu, onda ova knjiga ima pravo staviti na stol drugu 30-godišnju sliku: nula duga, Bitcoin novac, fond za davanje, rast prihoda kroz praksu davanja, veći kapacitet za rizik, bolja ulaganja, mobilniji život i novac koji prema modelu raste prema potencijskom zakonu.</p>
+<p>Jedan život kaže:</p>
+<p>Ostat ćemo gdje jesmo. Plaćat ćemo. Bit ćemo normalni. Imat ćemo dom. Jednog dana bit će naš.</p>
+<p>Drugi život kaže:</p>
+<p>Razdužit ćemo se. Spustit ćemo sliku o sebi ako treba. Preselit ćemo se ako treba. Dat ćemo novcu novo ime. Držat ćemo Bitcoin kao novac. Davat ćemo iz Bitcoin novca. Plaćat ćemo troškove unaprijed kad je Bitcoin iznad trenda. Akumulirat ćemo kad je ispod trenda. Kupit ćemo dom ponovno tek kada ga možemo kupiti bez duga i kada ne pojede bilancu.</p>
+<p>Prvi život je lakše objasniti rodbini.</p>
+<p>Drugi je možda teži prvih nekoliko godina.</p>
+<p>Ali ova knjiga ne piše za rodbinsko odobrenje.</p>
+<p>Piše za budući novac koji još uvijek može biti slobodan.</p>
+<h2 id="kada-je-ovo-poglavlje-provedeno"><a class="header" href="#kada-je-ovo-poglavlje-provedeno">Kada je ovo poglavlje provedeno?</a></h2>
+<p>Ovo poglavlje je provedeno kada dug više nije normalno stanje.</p>
+<p>To znači:</p>
+<ul>
+<li>nema novog duga;</li>
+<li>svi dugovi su popisani;</li>
+<li>stambeni kredit nije izuzet;</li>
+<li>poslovni dug nije sakriven iza riječi “rast”;</li>
+<li>auto, leasing, kartice, minusi, gotovinski krediti i obiteljske posudbe stoje na istom papiru;</li>
+<li>sva imovina je razmotrena kao mogući alat razduživanja;</li>
+<li>prodaja doma je ozbiljno izračunata, ne emocionalno odbačena;</li>
+<li>lokacija je postala varijabla, a ne zavjet;</li>
+<li>Bitcoin se ne koristi kao izgovor da dug ostane;</li>
+<li>postojeći Bitcoin ulazi u plan zatvaranja duga;</li>
+<li>nova kupnja Bitcoina ne glumi standard dok dug postoji;</li>
+<li>davanje se ne uvodi kao sustavni fond dok dug nije na nuli;</li>
+<li>nakon nula duga, 10–20% Bitcoin novca pripada fondu za davanje;</li>
+<li>najmanje trećina neto imovine ide u novac;</li>
+<li>sav novac je praktički Bitcoin;</li>
+<li>euro ostaje samo operativni ostatak za nekoliko dana ili tjedan troškova;</li>
+<li>proračun prati gdje je Bitcoin u odnosu na dugoročni trend;</li>
+<li>kada je Bitcoin iznad trenda, poznati troškovi mogu se plaćati unaprijed;</li>
+<li>kada je Bitcoin ispod trenda, prodaja Bitcoina se smanjuje, troškovi se spuštaju, prihod se diže i akumulacija jača;</li>
+<li>puni standard čeka skrbništvo i sigurnost.</li>
+</ul>
+<h2 id="ne-idite-dalje-ako"><a class="header" href="#ne-idite-dalje-ako">Ne idite dalje ako…</a></h2>
+<p>Ne idite dalje ako još mislite da je stambeni kredit druga vrsta stvarnosti.</p>
+<p>Ne idite dalje ako vjerujete da nekretnina automatski raste u vrijednosti samo zato što joj raste cijena u eurima.</p>
+<p>Ne idite dalje ako kupujete Bitcoin dok vam kartica, minus, leasing, gotovinski kredit ili poslovna linija uzimaju budući novac.</p>
+<p>Ne idite dalje ako niste spremni staviti lokaciju na stol.</p>
+<p>Ne idite dalje ako želite Bitcoin standard bez neugodnog razgovora o kući, autu, apartmanu, poslu i rodbinskim očekivanjima.</p>
+<p>Ne idite dalje ako davanje još uvijek zamišljate kao postotak prihoda, a ne kao postotak Bitcoin novca.</p>
+<p>Ne idite dalje ako tražite knjigu koja će dug učiniti udobnijim.</p>
+<p>Ovdje se dug ne uređuje.</p>
+<p>Ovdje se budući novac vraća kući.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="02-proracun.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="04-davanje.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="02-proracun.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="04-davanje.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

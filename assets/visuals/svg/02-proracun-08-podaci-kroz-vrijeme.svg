@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="900" version="1.1" viewBox="0 0 1600 900" width="1600">
+  <defs/>
+  <rect fill="#E9D2AF" height="900" width="1600" x="0" y="0"/>
+  <rect fill="#FFF8EA" height="816" rx="28" stroke="#B98A58" stroke-width="4" width="1516" x="42" y="42"/>
+  <g opacity="0.20" stroke="#D8BD8F" stroke-width="1">
+    <line x1="78" x2="1522" y1="185" y2="185"/>
+    <line x1="78" x2="1522" y1="265" y2="265"/>
+    <line x1="78" x2="1522" y1="345" y2="345"/>
+    <line x1="78" x2="1522" y1="425" y2="425"/>
+    <line x1="78" x2="1522" y1="505" y2="505"/>
+    <line x1="78" x2="1522" y1="585" y2="585"/>
+    <line x1="78" x2="1522" y1="665" y2="665"/>
+    <line x1="78" x2="1522" y1="745" y2="745"/>
+  </g>
+  <rect fill="#DDBB7D" height="34" opacity="0.55" rx="8" transform="rotate(-3 250 56)" width="245" x="128" y="42"/>
+  <rect fill="#DDBB7D" height="34" opacity="0.45" rx="8" transform="rotate(3 1350 56)" width="245" x="1228" y="42"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" x="80" y="105">Što podaci počnu pokazivati</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="start" x="82" y="148">
+    <tspan dy="0" x="82">Što se proračun dulje vodi, to postaje korisniji za planiranje.</tspan>
+  </text>
+  <line stroke="#B98A58" stroke-linecap="round" stroke-width="8" x1="180" x2="1420" y1="380" y2="380"/>
+  <circle cx="180" cy="380" fill="#B85F2A" r="32" stroke="#FFF8EA" stroke-width="6"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" text-anchor="middle" x="180" y="310">1 mjesec</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" text-anchor="start" x="70" y="450">
+    <tspan dy="0" x="70">osnovna slika</tspan>
+  </text>
+  <circle cx="590" cy="380" fill="#2F6E68" r="32" stroke="#FFF8EA" stroke-width="6"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" text-anchor="middle" x="590" y="310">3 mjeseca</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" text-anchor="start" x="480" y="450">
+    <tspan dy="0" x="480">obrasci potrošnje</tspan>
+  </text>
+  <circle cx="1000" cy="380" fill="#5B7F4F" r="32" stroke="#FFF8EA" stroke-width="6"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" text-anchor="middle" x="1000" y="310">6 mjeseci</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" text-anchor="start" x="890" y="450">
+    <tspan dy="0" x="890">stvarniji višak</tspan>
+  </text>
+  <circle cx="1420" cy="380" fill="#665981" r="32" stroke="#FFF8EA" stroke-width="6"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" text-anchor="middle" x="1420" y="310">12 mjeseci</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" text-anchor="start" x="1310" y="450">
+    <tspan dy="0" x="1310">sezonski troškovi</tspan>
+  </text>
+  <rect fill="#000000" height="125" opacity="0.14" rx="24" width="245" x="121" y="593"/>
+  <rect fill="#F7C777" height="125" rx="24" stroke="#B85F2A" stroke-width="4" width="245" x="115" y="585"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" x="237.5" y="637">
+    <tspan dy="0" x="237.5">raščlamba</tspan>
+    <tspan dy="30" x="237.5">potrošnje</tspan>
+  </text>
+  <rect fill="#000000" height="125" opacity="0.14" rx="24" width="245" x="416" y="593"/>
+  <rect fill="#C7E0DC" height="125" rx="24" stroke="#2F6E68" stroke-width="4" width="245" x="410" y="585"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" x="532.5" y="637">
+    <tspan dy="0" x="532.5">kretanje</tspan>
+    <tspan dy="30" x="532.5">potrošnje</tspan>
+  </text>
+  <rect fill="#000000" height="125" opacity="0.14" rx="24" width="245" x="711" y="593"/>
+  <rect fill="#D8E6C9" height="125" rx="24" stroke="#5B7F4F" stroke-width="4" width="245" x="705" y="585"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" x="827.5" y="656">
+    <tspan dy="0" x="827.5">neto imovina</tspan>
+  </text>
+  <rect fill="#000000" height="125" opacity="0.14" rx="24" width="245" x="1006" y="593"/>
+  <rect fill="#DDD3E8" height="125" rx="24" stroke="#665981" stroke-width="4" width="245" x="1000" y="585"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" x="1122.5" y="656">
+    <tspan dy="0" x="1122.5">prihodi i rashodi</tspan>
+  </text>
+  <rect fill="#000000" height="125" opacity="0.14" rx="24" width="245" x="1301" y="593"/>
+  <rect fill="#EBC9BE" height="125" rx="24" stroke="#9B5143" stroke-width="4" width="245" x="1295" y="585"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" x="1417.5" y="656">
+    <tspan dy="0" x="1417.5">starost novca</tspan>
+  </text>
+  <rect fill="#FFF8EA" height="155" rx="18" stroke="#B98A58" stroke-width="2" width="470" x="940" y="112"/>
+  <line stroke="#B98A58" stroke-width="2" x1="990" x2="1360" y1="222" y2="222"/>
+  <line stroke="#B98A58" stroke-width="2" x1="990" x2="990" y1="222" y2="142"/>
+  <path d="M 996 203 L 1070 194 L 1144 184 L 1218 189 L 1292 166 L 1352 145" fill="none" stroke="#B85F2A" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <circle cx="996" cy="203" fill="#B85F2A" r="7"/>
+  <circle cx="1070" cy="194" fill="#B85F2A" r="7"/>
+  <circle cx="1144" cy="184" fill="#B85F2A" r="7"/>
+  <circle cx="1218" cy="189" fill="#B85F2A" r="7"/>
+  <circle cx="1292" cy="166" fill="#B85F2A" r="7"/>
+  <circle cx="1352" cy="145" fill="#B85F2A" r="7"/>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="1175" y="250">podaci kroz vrijeme</text>
+</svg>
