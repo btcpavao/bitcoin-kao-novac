@@ -4,7 +4,15 @@
 
 Proračun vodimo zato da bismo prestali donositi novčane odluke samo prema stanju na računu i počeli ih donositi prema stvarnim namjenama novca koji već imamo. Stanje na računu govori samo gdje se novac nalazi i koliko ga ima u tom trenutku, ali ne govori što taj novac mora napraviti prije sljedeće uplate, koje obveze već čekaju, koji su troškovi predvidivi, koliko novca doista možemo potrošiti bez posljedica i postoji li stvarni višak koji se može usmjeriti u štednju, Bitcoin, davanje, otplatu duga ili neku drugu odluku.
 
+![Fotografija kućnog stola s proračunskim notesom, kalkulatorom, kovanicama i karticama koje predstavljaju namjenu, podatke, planiranje i Bitcoin.](assets/visuals/png/02-proracun-01-zasto-vodimo-proracun.png)
+
+*Proračun pretvara stanje na računu u skup namjena, podataka i odluka.*
+
 Ako osoba na računu vidi 1.200 eura, taj iznos može izgledati kao slobodan novac, ali nakon raspodjele može se pokazati da 450 eura pripada stanarini, 140 eura režijama, 300 eura hrani, 80 eura prijevozu, 60 eura zdravlju, 100 eura otplati duga i 70 eura trošku koji je već dogovoren, ali još nije plaćen. Iznos na računu se nije promijenio, ali se promijenilo njegovo značenje. Prije proračuna to je bio jedan broj. Nakon proračuna to je skup konkretnih namjena.
+
+![Fotografija proračunskog notesa i omotnica s euro kovanicama koje prikazuju raspodjelu salda u više namjena.](assets/visuals/png/02-proracun-02-saldo-u-kategorije.png)
+
+*Iznos na računu dobiva značenje tek kada se rasporedi u kategorije.*
 
 Svrha proračuna nije da život postane savršeno predvidiv. Troškovi će se mijenjati, prihodi mogu kasniti, neki mjeseci će biti skuplji, neke procjene će biti pogrešne, a neke kategorije će se morati prilagoditi. Proračun ne uklanja promjene, nego daje način da se promjene provedu jasno. Ako neka kategorija nema dovoljno novca, proračun ne mora značiti da se kupnja ne smije dogoditi, nego traži da se vidi iz koje druge kategorije novac dolazi. Time svaka odluka postaje konkretnija, jer se vidi što se dobiva i čega se odriče.
 
@@ -30,7 +38,15 @@ Veći iznos na računu ne mijenja ovo pravilo. Račun na kojem se nalazi 10.000 
 
 Jedna od prvih razlika koju treba usvojiti jest razlika između računa i kategorije. Račun govori gdje se novac nalazi, a kategorija govori čemu je novac namijenjen. Tekući račun, gotovina, štedni račun, poslovni račun, račun na mjenjačnici i Bitcoin novčanik su mjesta na kojima se može nalaziti novac ili imovina. Hrana, stanovanje, prijevoz, zdravlje, dug, davanje, budući troškovi, rezerva i Bitcoin su namjene.
 
+![Fotografija stola s novčanikom, karticom, mobitelom i omotnicama koje razlikuju račune od namjena novca.](assets/visuals/png/02-proracun-03-racun-nije-kategorija.png)
+
+*Račun i kategorija daju dvije različite, ali jednako važne informacije.*
+
 U YNAB-u se ta razlika može uredno postaviti kroz dvije cjeline: gotovina i praćenje. Gotovina obuhvaća račune na kojima se nalazi novac koji se može rasporediti u proračun, primjerice novac u novčaniku, tekući račun, štedni račun ili drugi račun iz kojeg se plaćaju troškovi. Praćenje služi za imovinu i obveze koje su važne za ukupnu sliku, ali se ne koriste kao svakodnevni novac za raspodjelu po kategorijama. U praćenju se mogu voditi vrijednost nekretnine, dugoročni Bitcoin koji ne planirate trošiti, udio u poslu, ulaganja, zajam koji ste dali, kredit, kartica, minus ili druga obveza.
+
+![Fotografija registratora s gotovinom, karticom, kućom, uređajem za čuvanje Bitcoina i papirima za praćenje imovine i obveza.](assets/visuals/png/02-proracun-04-ynab-gotovina-pracenje.png)
+
+*Gotovina upravlja svakodnevnim odlukama, a praćenje pokazuje širu bilancu.*
 
 Ova razlika sprječava miješanje likvidnosti i ukupne imovine. Nekretnina može povećavati neto imovinu, ali ne plaća račun za hranu idući tjedan. Kredit smanjuje neto imovinu, ali nije kategorija iz koje se plaća gorivo. Bitcoin može biti dugoročna imovina, ali dok ga ne želite koristiti za svakodnevne obveze, nije dobro da u proračunu glumi novac za režije. Ako se Bitcoin jednoga dana koristi kao primarni novac za redovita plaćanja, tada se može tretirati kao dio gotovine, ali dok je primarno dugoročna imovina, urednije ga je voditi u praćenju.
 
@@ -41,6 +57,10 @@ Ako kategorija ima dovoljno novca, kupnja je već pokrivena planom. Ako kategori
 ## Osobni i poslovni proračun
 
 Ako osoba vodi posao, obrt ili firmu, osobni i poslovni proračun ne treba miješati u isti sustav. Poslovanje treba imati svoj zaseban proračun, a privatni život svoj zaseban proračun. To vrijedi i kada je vlasnik ista osoba, jer novac firme i novac kućanstva nemaju istu funkciju, isti ritam, iste obveze ni iste odluke.
+
+![Fotografija dvaju notesâ na stolu koji odvajaju poslovni proračun od privatnog proračuna i osobne isplate.](assets/visuals/png/02-proracun-05-poslovni-i-privatni-proracun.png)
+
+*Poslovanje i kućanstvo trebaju odvojene proračune, račune i kategorije.*
 
 U praksi to znači da firma ima vlastite račune, vlastite kategorije i vlastiti tjedni ili mjesečni pregled. Privatni proračun počinje tek onim novcem koji je stvarno isplaćen vlasniku ili zaposleniku kao osobni prihod. Novac koji stoji na poslovnom računu ne treba se doživljavati kao osobni višak samo zato što mu vlasnik može pristupiti. Taj novac prije svega pripada poslovanju dok se ne donese jasna odluka o isplati.
 
@@ -78,6 +98,10 @@ Primjer je jednostavan. Ako ste platili kavu 5 eura iz gotovine, otvorite račun
 
 Ako je ista transakcija od 5 eura zapravo sadržavala 4 eura za kavu i 1 euro napojnice, transakciju je bolje podijeliti po stvarnoj namjeni. Četiri eura idu u kategoriju izlasci, kafići i restorani, a jedan euro ide u kategoriju davanja. Ukupni odljev s računa gotovine i dalje je 5 eura, ali kategorije pokazuju precizniju sliku: 4 eura potrošena su na izlazak, a 1 euro je davanje. Takva podjela je korisna jer kasniji izvještaji neće napojnicu prikazivati kao običan trošak kafića, nego kao ono što ona u vašem sustavu jest.
 
+![Fotografija računa za kavu, euro kovanica i notesâ koji prikazuju podjelu jedne transakcije na trošak i davanje.](assets/visuals/png/02-proracun-06-unos-transakcije.png)
+
+*Transakcija treba pokazati i mjesto novca i stvarnu namjenu troška.*
+
 Ista struktura vrijedi za priljeve. Kada sjedne plaća, honorar, uplata klijenta, poklon, povrat novca od kupnje ili bilo koji drugi primitak, unose se datum, primatelj odnosno uplatitelj, napomena i iznos kao priljev. Takav priljev najčešće se ne smješta odmah u hranu, stanovanje, prijevoz ili Bitcoin, nego ulazi u preostalo za raspodjelu. Tek nakon toga novac se raspoređuje u kategorije. Plaća zato nije slobodan novac samim time što je sjela na račun; ona najprije postaje novac koji čeka raspored, a tek nakon raspodjele postaje novac za hranu, stanovanje, dug, davanje, buduće troškove, rezervu ili Bitcoin.
 
 Treba razlikovati i prijenos između računa od stvarnog prihoda ili rashoda. Ako podignete 100 eura s tekućeg računa i stavite ih u novčanik, to nije trošak, nego prijenos iz jednog gotovinskog računa u drugi. Ukupni proračun se ne mijenja, jer novac nije potrošen, nego je promijenio mjesto. Isto vrijedi ako prebacite novac sa štednog računa na tekući račun. Kategorije se mijenjaju samo kada se novac stvarno potroši, primi ili namjenski preraspodijeli.
@@ -95,6 +119,10 @@ Poravnanje je posebno važno prije većih odluka. Ako razmišljate o kupnji Bitc
 ## Što podaci počnu pokazivati
 
 Kada se proračun vodi redovito, nakon nekoliko mjeseci nastaje skup podataka koji omogućuje bolje planiranje. U početku je najvažnije samo rasporediti novac i unositi transakcije, ali s vremenom postaje jednako važno gledati što ti podaci pokazuju. U YNAB-u i u sličnim sustavima korisni su pregledi potrošnje, kretanja potrošnje, neto imovine, prihoda naspram rashoda i starosti novca.
+
+![Fotografija proračunskog notesa, vremenske crte, mjesečnih papirića, računa i jednostavnog grafa koji prikazuju podatke kroz vrijeme.](assets/visuals/png/02-proracun-08-podaci-kroz-vrijeme.png)
+
+*Proračun postaje korisniji kako se u njemu skuplja više stvarnih podataka.*
 
 Raščlamba potrošnje pokazuje koliko je potrošeno po kategorijama u određenom razdoblju. Možete gledati zadnja tri mjeseca, šest mjeseci, dvanaest mjeseci, tekuću godinu, prošlu godinu ili razdoblje koje sami odaberete. Takav pregled pokazuje koliko je novca otišlo u svaku kategoriju, koliki je udio pojedine kategorije u ukupnoj potrošnji te kolika je prosječna mjesečna ili dnevna potrošnja. Ako se, primjerice, čini da restorani nisu veliki trošak, raščlamba potrošnje može pokazati da su u šest mjeseci postali jedna od većih kategorija, što tada omogućuje konkretniju odluku.
 
@@ -116,11 +144,19 @@ Nova kupnja Bitcoina treba imati svoju kategoriju. Time se jasno vidi kupuje li 
 
 Ovo je posebno važno zato što Bitcoin može znatno mijenjati kupovnu moć u kratkom roku. U okviru teze ove knjige Bitcoin ima očekivani dugoročni trend rasta kupovne moći, ali taj dugoročni pogled ne uklanja kratkoročnu volatilnost. Novac koji treba platiti najam idući mjesec, registraciju za tri mjeseca ili zdravstveni trošak koji je već poznat ne treba se ponašati kao novac koji može mirno čekati više godina. Proračun zato pomaže razdvojiti novac s kratkim rokom od novca koji smije imati dug rok.
 
+![Fotografija stola s odvojenim pretincima za kratkoročni, srednjoročni i dugoročni novac te karticom za Bitcoin.](assets/visuals/png/02-proracun-09-bitcoin-i-rokovi-novca.png)
+
+*Bitcoin u proračunu treba voditi prema stvarnoj ulozi i vremenskom roku novca.*
+
 Kada Bitcoin postupno postaje primarni novac, potreba za proračunom ne nestaje, nego postaje veća. Ako se prihod, štednja ili dio imovine drže u novcu čija se kupovna moć u kratkom roku može snažno mijenjati, tada osoba mora još bolje znati koliki su joj stvarni mjesečni rashodi, koji troškovi dolaze u sljedećih nekoliko mjeseci, kolika je potrebna likvidna rezerva, koji dio imovine ne smije biti prodan u nepovoljnom trenutku i koji dio se može držati dugoročno. Život s Bitcoinom kao primarnim novcem traži da planiranje unaprijed postane redovita navika, a ne izvanredna aktivnost kada se pojavi problem.
 
 ## Tjedni ritam
 
 Proračun je najlakše održavati ako ima jednostavan tjedni ritam. Jednom tjedno treba otvoriti proračun, unijeti transakcije koje nedostaju, poravnati račune, provjeriti kategorije koje su pri kraju i odlučiti treba li novac premjestiti iz jedne kategorije u drugu. Takav pregled ne mora trajati dugo, ali mora biti redovit. Ako se proračun otvara samo kada nastane problem, tada najčešće služi za objašnjavanje onoga što se već dogodilo, umjesto za usmjeravanje onoga što se tek treba dogoditi.
+
+![Fotografija tjednog planera, kartica zadataka, računa, kovanica i strelica koje prikazuju redoviti tjedni pregled proračuna.](assets/visuals/png/02-proracun-07-tjedni-ritam.png)
+
+*Proračun je najlakše održavati kroz kratak i ponovljiv tjedni ritam.*
 
 Tjedni pregled može ići ovim redom: prvo se provjere stanja računa i unesu nedostajuće transakcije, zatim se poravnaju gotovina, banka i kartice, nakon toga se pogledaju kategorije s manjkom ili preniskim ostatkom, pa se odlučuje hoće li se smanjiti potrošnja ili prebaciti novac iz druge kategorije. Na kraju se provjeravaju budući troškovi, dug, davanje, rezerva i Bitcoin. Ako postoji zajednički novac u braku, obitelji ili kućanstvu, isti pregled treba barem povremeno raditi zajedno, jer proračun koji postoji samo u glavi jedne osobe nije dovoljan za odluke koje pogađaju više ljudi.
 

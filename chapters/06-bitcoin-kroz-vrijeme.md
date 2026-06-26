@@ -48,33 +48,55 @@ Druga je psihološka pretjeranost: cijena ponekad ode ispred stvarnog razumijeva
 
 Zato čovjek treba okvir koji mu pomaže vidjeti širu sliku.
 
-Jedan od korisnih okvira je dugoročni trend, često opisan potencijskim zakonom. Ovdje ne treba početi formulom. Model nam ne treba da bismo pogodili cijenu. Treba nam da današnju cijenu ne čitamo kao cijeli svijet.
+Za početak ne trebamo formulu. Trebamo samo jednu ideju: cijena kroz vrijeme ima kratkoročne valove i dugoročniji smjer. Taj smjer možemo nacrtati kao crtu trenda. Ona ne govori što će se dogoditi sutra. Ona samo pomaže da današnju cijenu ne čitamo izvan povijesnog konteksta.
 
-Osnovna intuicija je važnija od zapisa: Bitcoinova cijena se kroz povijest kretala oko dugoročnog obrasca, uz velike odmake iznad i ispod njega. Ponekad je tržište daleko ispred trenda. Ponekad je iza. Ponekad je blizu. Potencijski zakon ovdje nije alat za pogađanje sutrašnje cijene, nego način da današnju cijenu usporedimo s dugim ritmom.
+Osnovna intuicija je važnija od zapisa: Bitcoinova cijena se kroz povijest kretala oko dugoročnog obrasca, uz velike odmake iznad i ispod njega. Ponekad je tržište daleko ispred trenda. Ponekad je iza. Ponekad je blizu. Model nam ne treba da bismo pogodili cijenu. Treba nam da današnju cijenu ne čitamo kao cijeli svijet.
 
-Logaritamski graf samo pomaže da taj odnos uopće vidimo. Na običnom grafu veliki rast pojede sve ranije razlike. Na log-log grafu dugoročni obrazac može izgledati kao ravnija linija oko koje se tržište udaljava i vraća. Ne morate znati računati logaritme da biste razumjeli poantu: log skala stisne vrlo velike razlike da ih možemo usporediti. Ta linija nije zapovijed. Ona je karta.
+Logaritamski graf pomaže da taj odnos uopće vidimo. Na običnom grafu veliki rast pojede sve ranije razlike. Rani dio grafa izgleda kao ravna crta pri dnu, a kasniji veliki brojevi preuzmu cijelu stranicu.
 
-> [VIZUAL: Model kao kompas, ne autopilot — polustranični crno-bijeli log-log graf s dugoročnom linijom "dugi ritam" i valovitom linijom "tržišna cijena". Označiti zone "iznad trenda", "blizu trenda" i "ispod trenda". Uz graf dodati kratke negativne oznake: "nije prognoza", "nije kupi/prodaj signal", "ne mijenja proračun". Poanta: trend postavlja pitanje, ali odluka i dalje prolazi kroz proračun, dug, likvidnost, obitelj i sigurnost.]
+![Usporedba obične skale i log skale pokazuje da obična skala mjeri jednake dodatke, a log skala jednake omjere.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-01-log-skala.svg)
 
-U ovoj knjizi, kada govorimo o dugoročnom trendu, radni okvir je block-time pogled inspiriran Leo Heartovim Bitcoin Rainbow Wave modelom. To ne znači da je Leo Heart autor ove knjige, niti da se njegov model koristi kao signal za trgovanje. To znači samo da Bitcoinov dugoročni trend ne gledamo isključivo kroz kalendarske dane, nego i kroz vlastiti interni sat mreže.
+Log-log graf znači da su obje osi prikazane na log skali: i vrijeme i cijena. Takav graf ne služi tome da Bitcoin izgleda bolje, nego da se vrlo velik raspon vremena i cijena može vidjeti na jednoj stranici. Na log-log grafu dugoročni obrazac može izgledati kao ravnija linija oko koje se tržište udaljava i vraća. Ne morate znati računati logaritme da biste razumjeli poantu: log skala stisne vrlo velike razlike da ih možemo usporediti. Ta linija nije zapovijed. Ona je karta.
+
+![Dva grafa uspoređuju običnu skalu na kojoj rani podaci nestaju pri dnu i log-log skalu na kojoj se vidi dugoročniji odnos, trend i odmaci od trenda.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-02-obicni-graf-log-log.svg)
+
+Tu dolazimo do potencijskog zakona. Potencijski zakon je odnos u kojem se jedna veličina mijenja kao potencija druge veličine. Jednostavnije: ne dodaje se uvijek isti iznos, nego se odnos mijenja u omjerima. Zato power-law odnos na log-log grafu može izgledati kao ravnija linija.
+
+Teorijska pozadina tog načina gledanja nije nastala zbog Bitcoina. Geoffrey West u knjizi *Scale* popularizira širu ideju da mnogi biološki, gradski i društveni sustavi pokazuju zakone skaliranja. Giovanni Santostasi tu je intuiciju primijenio na Bitcoin kroz svoju Bitcoin Power Law Theory: cijenu, hash rate i adrese promatra kao povezane power-law odnose kroz vrijeme. To je korisna teorijska pozadina, ali ova knjiga ne treba preuzeti sav njegov prediktivni jezik. Power-law okvir ne dokazuje da se Bitcoin mora monetizirati; on samo opisuje kako je tržište do sada vrednovalo Bitcoin ako ga gledamo kroz određenu matematičku leću.
+
+U ovoj knjizi, kada govorimo o dugoročnom trendu, radni okvir je block-time pogled inspiriran Leo Heartovim, odnosno leoumovim, Bitcoin Rainbow Wave modelom i njegovim chartovima na bitcoinwave.net. To ne znači da je Leo Heart autor ove knjige, niti da se njegov model koristi kao signal za trgovanje. To znači samo da Bitcoinov dugoročni trend ne gledamo isključivo kroz kalendarske dane, nego i kroz vlastiti interni sat mreže.
 
 Bitcoin ne mjeri svoje monetarno vrijeme kalendarom, nego blokovima. Kalendar i dalje postoji za plaću, režije, porez, školu, sezonu i obiteljski život. Ali protokol diše u blokovima. Prvo gledamo gdje se Bitcoin nalazi u vlastitom halving ritmu. U block-time okviru osnovna varijabla može se zapisati ovako:
 
 ```text
-h = block height / 210.000
+h = visina bloka / 210 000
 ```
 
-Drugim riječima: broj do sada izrudarenih blokova dijeli se s 210.000, brojem blokova između dva halvinga. Svaki cijeli broj `h` označava jedan halving ciklus. Decimalni dio pokazuje koliko je Bitcoin napredovao prema sljedećem halvingu. Ako je broj blokova oko `840.000`, tada je `h = 4`. Ako je oko `945.000`, tada je `h = 4,5`, otprilike pola ciklusa kasnije. Blokovi nisu savršeno ravnomjerni u kalendarskom vremenu, ali su Bitcoinov vlastiti ritam izdavanja novog novca. Taj broj ne vodi vaš kućni budžet; on samo pokazuje gdje je mreža u svom protokolarnom vremenu.
+Drugim riječima: broj do sada izrudarenih blokova dijeli se s 210 000, brojem blokova između dva halvinga. Svaki cijeli broj `h` označava jedan halving ciklus. Decimalni dio pokazuje koliko je Bitcoin napredovao prema sljedećem halvingu. Ako je broj blokova oko `840 000`, tada je `h = 4`. Ako je oko `945 000`, tada je `h = 4,5`, otprilike pola ciklusa kasnije. Blokovi nisu savršeno ravnomjerni u kalendarskom vremenu, ali su Bitcoinov vlastiti ritam izdavanja novog novca. Taj broj ne vodi vaš kućni budžet; on samo pokazuje gdje je mreža u svom protokolarnom vremenu.
 
-> [RUBNA SHEMA: Halving clock kao vremenska crta — uska crno-bijela crta s oznakama `h = 4`, `h = 4,5` i `h = 5`. Kako čitati: cijeli brojevi označavaju halvinge, a decimalni dio kretanje prema sljedećem halvingu. Poanta: Bitcoin ima protokolarni ritam, ali ljudski proračun i dalje živi u mjesecima.]
+Razlog za korištenje blokova nije samo estetski. Kod modela koji koriste dane od Genesis Blocka, rani dani Bitcoina mogu nositi drukčiju težinu jer blokovi 2009. nisu nastajali jednoliko kao kasnije. Block-time model zato pokušava mjeriti Bitcoin prema onome što protokol stvarno broji: blokovima i halving ritmu. To ne znači da kalendarsko vrijeme nije važno. Cijena i dalje nastaje na tržištu ljudi, kapitala, regulacije, likvidnosti i očekivanja. Blokovi su prirodnija os za Bitcoinov monetarni ritam, ali nisu čarobni ključ budućnosti.
+
+![Usporedba kalendarske crte od Genesis Blocka i block-time crte pokazuje da dani mjere ljudski kalendar, a blokovi Bitcoinov halving ritam.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-03-dani-blokovi-halving-clock.svg)
 
 Za odluke u ovoj knjizi nije važno ručno računati power-law formulu. Važno je razumjeti odnos cijene prema trendu. Ako je trend 100, a tržišna cijena 130, cijena je 30% iznad trenda. Ako je trend 100, a tržišna cijena 70, cijena je 30% ispod trenda. Nijedno ni drugo nije naredba. To je samo kontekst.
 
-> [RUBNA SHEMA: R² je retrovizor — točke iz prošlosti i crta koja ih dobro opisuje, a budući dio grafa ostaje prazan s upitnikom. Poanta: dobro uklapanje u prošlosti nije jamstvo budućeg ishoda.]
+![Bilježnički prikaz računa odstupanja od trenda koristi primjer trenda od 50.000 eura i tržišne cijene od 65.000 eura, što daje 30 posto iznad trenda.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-04-odstupanje-od-trenda.svg)
 
-Za tehnički znatiželjne, u najjednostavnijem obliku power-law model kaže da se cijena uspoređuje s izrazom tipa `BTC(h) = 10^a * h^b`, odnosno u log obliku `log10(BTC) = a + b * log10(h)`. Ne morate ovo računati da biste proveli poglavlje. Parametri `a` i `b` nisu vječni. Visok R² nije proročanstvo, nego ocjena prošlog uklapanja modela u podatke. Santostasijev days-since-genesis model i Leo Heartov block-based model zato je bolje gledati kao komplementarne okvire. Za ovu knjigu važnija je praktična upotreba od rasprave koji je model elegantniji: trend je orijentir za bolja pitanja, ne stroj za predviđanje cijene.
+Za tehnički znatiželjne, u najjednostavnijem obliku power-law model kaže da se cijena uspoređuje s izrazom tipa `BTC(h) = 10^a * h^b`. U log obliku to postaje ravnija jednadžba: `log10(BTC) = a + b * log10(h)`. Ne morate ovo računati da biste proveli poglavlje. Parametri `a` i `b` nisu vječni. U javnim verzijama Leo Heartova modela pojavljuju se različiti datirani parametri, pa bi svaku konkretnu brojku trebalo vezati uz točan izvor, datum, verziju modela i izvor podataka.
 
-> [NAPOMENA ZA IZVORE: prije završne objave datirati korišteni power-law model i navesti izvor, primjerice Leo Heart / leoum, Bitcoin Rainbow Wave na TradingViewu i bitcoinwave.net; ako se spominju R², nagib, intercept, tržišna cijena ili projekcija, svaku brojku vezati uz točan datum i verziju modela.]
+![Otvorena matematička bilježnica prikazuje power-law formulu, log-oblik formule i mali log-log graf na kojem krivulja postaje ravnija linija.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-05-power-law-biljeznica.svg)
+
+R² u ovakvom modelu govori koliko se povijesna cijena dobro uklopila u odabranu matematičku formu, najčešće nakon log-transformacije. Ne govori kolika je vjerojatnost da će se budućnost dogoditi po modelu. Visok R² može objasniti zašto model vrijedi ozbiljno pogledati, ali ne može umjesto vas platiti režije, zatvoriti dug, razgovarati sa supružnikom ili izdržati pad cijene.
+
+Što model ima više prilagodbi, valova, zona i parametara, to više treba paziti na overfitting: mogućnost da model dobro opisuje prošlost upravo zato što je naknadno prilagođen prošlosti. Za ozbiljniju upotrebu modela nije dovoljno pitati koliki mu je R² na prošlim podacima. Treba pitati koliko su parametri stabilni kroz vrijeme i kako se model ponašao na podacima koji nisu služili za njegovo podešavanje.
+
+![Retrovizor prikazuje povijesne točke i uklopljenu crtu, dok buduća cesta ostaje prazna, kao podsjetnik da R kvadrat nije jamstvo budućeg ishoda.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-06-r2-retrovizor.svg)
+
+Santostasijev days-since-genesis pristup ima snagu u jednostavnosti: uzima kalendarsko vrijeme od Genesis Blocka i pokazuje dugoročnu power-law intuiciju. Leo Heartov block-based pristup mijenja vremensku os: umjesto dana koristi blokove normalizirane s 210 000 blokova po halving ciklusu, pa je prirodniji za cycle-aware čitanje halving ritma. U ovoj knjizi ta dva pristupa ne treba prikazati kao neprijatelje. Santostasi je koristan za ultra-jednostavnu dugoročnu intuiciju, a Leo Heart za block-time i ciklički okvir. Za ovu knjigu važnija je praktična upotreba od rasprave koji je model elegantniji: trend je orijentir za bolja pitanja, ne stroj za predviđanje cijene.
+
+Ako neki javni alat prikazuje obojene zone, valove, vrhove, dna ili "no-miss" područja, ova knjiga ih ne koristi kao sigurne kupi/prodaj signale. Koristi ih samo kao povijesne zone odstupanja koje mogu pomoći postaviti bolja pitanja. Model može pomoći da usporite pogled. Ne može ukloniti rizik pogrešne odluke.
+
+> [NAPOMENA ZA IZVORE: prije završne objave datirati korišteni power-law model i navesti izvor, primjerice Giovanni Santostasi, "The Bitcoin Power Law Theory", Leo Heart / leoum, Bitcoin Rainbow Wave na TradingViewu i bitcoinwave.net, te Geoffrey West, *Scale*. Ako se spominju R², nagib, intercept, tržišna cijena ili projekcija, svaku brojku vezati uz točan datum, uzorak, formulu i verziju modela.]
 
 To nije kristalna kugla.
 
@@ -87,6 +109,30 @@ U svim slučajevima, trend ne odlučuje umjesto vas.
 On samo dodaje kontekst.
 
 Taj kontekst možemo nazvati vremenski odmak. Ako je cijena daleko iznad trenda, možemo reći da tržište živi ispred dugoročnog ritma. Ako je daleko ispod, možemo reći da tržište zaostaje za dugoročnim ritmom. Ali taj jezik ne smije postati naredba. "Ispred trenda" ne znači prodaj sve. "Iza trenda" ne znači kupuj sve. Znači samo da današnju cijenu treba čitati sporije, u odnosu na proračun, dug, davanje, ravnotežu imovine i sigurnost.
+
+Ako model kaže da je današnja tržišna cijena slična razini koju bi trend pokazivao tek za, primjerice, godinu dana, to ne znači da je tržište "pogriješilo" niti da treba prodati. To samo kaže da je cijena ispred dugog ritma i da veće odluke treba dodatno ohladiti. Ako je cijena na razini koju je trend pokazivao prije godinu dana, to ne znači da je kupnja sigurna. To samo kaže da je tržište iza ritma i da prvo treba provjeriti stvarni višak, dug i likvidnost.
+
+## Kako donositi odluke kada je Bitcoin iznad, blizu ili ispod trenda?
+
+Dugoročni trend ne smije postati mehaničko pravilo, ali može biti koristan orijentir. Praktično gledano, postoje tri osnovna stanja: Bitcoin je iznad dugoročnog trenda, blizu njega ili ispod njega.
+
+Kada je Bitcoin znatno iznad dugoročnog trenda, tržište možda unaprijed cijeni budući rast. To je trenutak za trezveniji pregled, ne za automatsku prodaju. Ako je rast Bitcoina učinio da je novčani dio imovine znatno veći od planiranog, možete razmotriti što taj rast omogućuje: unaprijed riješiti stvarne buduće troškove, ojačati sigurnost, povećati davanje, smanjiti preostale obveze, ulagati u vlastitu produktivnost, pomoći djeci ili roditeljima, ili jednostavno ne raditi ništa.
+
+Važno je da odluka ne nastane iz euforije.
+
+Rast ne opravdava svaki trošak i ne čini svaku investiciju dobrom. Budući dobici još nisu vaši. Rast samo otvara dodatnu mogućnost pregleda. Tko ima sustav, može ga iskoristiti za bolju ravnotežu. Tko nema sustav, često ga iskoristi za povećanje potrošnje i rizika.
+
+Kada je Bitcoin blizu dugoročnog trenda, često nema potrebe za velikim odlukama. To je prostor običnog rada: voditi proračun, davati, graditi likvidnost, kupovati Bitcoin iz stvarnog viška, povećavati znanje, raditi na poslu, čuvati sigurnost i pregledavati imovinu. Većina života odvija se upravo u ovakvim razdobljima. Ona nisu dramatična, ali su presudna. Čovjek ne gradi Bitcoin standard samo u vrhovima i padovima, nego u normalnim mjesecima u kojima odluke djeluju male.
+
+Kada je Bitcoin znatno ispod dugoročnog trenda, tržište možda podcjenjuje budući rast. Tu je najopasnije pomiješati dobru cijenu s dozvolom za nered. Čak i kada je Bitcoin ispod izabranog modela, to ne znači da je podcijenjen u investicijskom smislu. Znači samo da je ispod jednog povijesno uklopljenog okvira koji se može pokazati pogrešnim, nepotpunim ili neprimjenjivim u novom tržišnom režimu. Novac za režije, porez, hranu, djecu i dogovorene buduće troškove ne postaje slobodan samo zato što model izgleda povoljno. Kupnja iz unaprijed planiranog stvarnog viška može biti posebno vrijedna. Kupnja iz pritiska samo vraća čovjeka u isti nered iz kojeg je knjiga pokušala izaći.
+
+Razlika nije samo u tržištu.
+
+Razlika je u stanju čovjeka.
+
+Zato ova knjiga stalno vraća na isti temelj: proračun, dug, davanje, ravnoteža imovine, trend, ulaganje i sigurnost nisu odvojene teme. One zajedno oblikuju stanje iz kojeg odlučujete.
+
+![Dijagram prikazuje tri zone cijene u odnosu na dugoročni trend: iznad, blizu i ispod trenda, uz zajednički filter proračuna, duga, likvidnosti, davanja, ravnoteže, sigurnosti i obitelji.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-07-iznad-blizu-ispod-trenda.svg)
 
 ## Dugoročni trend nije dopuštenje za kratkoročni nered
 
@@ -126,6 +172,8 @@ Ako vas rast zatiče bez proračuna, može vas učiniti neopreznim. Ako vas pad 
 
 Volatilnost ne stvara karakter. Ona ga otkriva.
 
+![Fotorealistična bilježnica na stolu prikazuje crtež olovkom s dvije osobe pred istim valom cijene; jedna stoji na krhkoj podlozi, a druga na stabilnijem sustavu.](assets/visuals/png/viz-06-bitcoin-kroz-vrijeme-08-isti-val-drukcije-stanje.png)
+
 ## Trošiti Bitcoin nije problem
 
 Jedna od najopasnijih zabluda u životu s Bitcoinom jest da je svaka prodaja ili potrošnja Bitcoina problem.
@@ -152,33 +200,13 @@ Dobar novac ne oslobađa od rasuđivanja.
 
 Dobar novac povećava važnost rasuđivanja.
 
-## Kako donositi odluke kada je Bitcoin iznad, blizu ili ispod trenda?
-
-Dugoročni trend ne smije postati mehaničko pravilo, ali može biti koristan orijentir. Praktično gledano, postoje tri osnovna stanja: Bitcoin je iznad dugoročnog trenda, blizu njega ili ispod njega.
-
-Kada je Bitcoin znatno iznad dugoročnog trenda, tržište možda unaprijed cijeni budući rast. To je trenutak za trezveniji pregled, ne za automatsku prodaju. Ako je rast Bitcoina učinio da je novčani dio imovine znatno veći od planiranog, možete razmotriti što taj rast omogućuje: ojačati davanje, financirati buduće troškove unaprijed, smanjiti preostale obveze, ulagati u vlastitu produktivnost, poboljšati sigurnosni postav, pomoći djeci ili roditeljima, ili jednostavno ne raditi ništa.
-
-Važno je da odluka ne nastane iz euforije.
-
-Rast ne opravdava svaki trošak i ne čini svaku investiciju dobrom. Budući dobici još nisu vaši. Rast samo otvara dodatnu mogućnost pregleda. Tko ima sustav, može ga iskoristiti za bolju ravnotežu. Tko nema sustav, često ga iskoristi za povećanje potrošnje i rizika.
-
-Kada je Bitcoin blizu dugoročnog trenda, često nema potrebe za velikim odlukama. To je prostor običnog rada: voditi proračun, davati, graditi likvidnost, kupovati Bitcoin iz stvarnog viška, povećavati znanje, raditi na poslu, čuvati sigurnost i pregledavati imovinu. Većina života odvija se upravo u ovakvim razdobljima. Ona nisu dramatična, ali su presudna. Čovjek ne gradi Bitcoin standard samo u vrhovima i padovima, nego u normalnim mjesecima u kojima odluke djeluju male.
-
-Kada je Bitcoin znatno ispod dugoročnog trenda, tržište možda podcjenjuje budući rast. Tu je najopasnije pomiješati dobru cijenu s dozvolom za nered. Novac za režije, porez, hranu, djecu i dogovorene buduće troškove ne postaje slobodan samo zato što model izgleda povoljno. Kupnja iz unaprijed planiranog stvarnog viška može biti posebno vrijedna. Kupnja iz pritiska samo vraća čovjeka u isti nered iz kojeg je knjiga pokušala izaći.
-
-Razlika nije samo u tržištu.
-
-Razlika je u stanju čovjeka.
-
-Zato ova knjiga stalno vraća na isti temelj: proračun, dug, davanje, ravnoteža imovine, trend, ulaganje i sigurnost nisu odvojene teme. One zajedno oblikuju stanje iz kojeg odlučujete.
-
-> [VIZUAL: Trend mijenja pitanja, ne odluku — tri stupca: "Iznad trenda", "Blizu trenda", "Ispod trenda". Svaki stupac ima dva reda: "što može značiti" i "što ne znači". Ispod stupaca ide zajednički filter: proračun, dug, likvidnost, davanje, ravnoteža, sigurnost, obitelj. Na dnu dodati upozorenje: bez duga, poluge i novca za obveze. Poanta: stanje u odnosu na trend ne daje kupi/prodaj signal, nego mijenja redoslijed pitanja.]
-
 ## Prvi potezi
 
 Trend ne treba provjeravati za svaku sitnicu. Ako odluka ne mijenja životnu sliku, ne treba joj modelska drama. Kao praktičan prag možete koristiti jednu šezdesetinu neto imovine. To je samo `neto imovina / 60`: iznos kod kojeg zastajemo i provjeravamo širu sliku. Ako neto imovina iznosi 60.000 eura, to je 1.000 eura. Ako iznosi 120.000 eura, to je 2.000 eura. Prag se može prilagoditi, ali poanta ostaje: veće odluke traže hladniju provjeru. Jedna šezdesetina nije sveta brojka. To je obrazovni filter, ne osobno investicijsko pravilo.
 
-> [RUBNA SHEMA: Prag jedne šezdesetine — mala formula `neto imovina / 60`; mala odluka ide kroz običan proračun, veća odluka prolazi dodatnu provjeru: trend, proračun, dug, davanje, ravnoteža, sigurnost i obitelj. Poanta: model se koristi za ozbiljne odluke, ne za svaku kupnju.]
+![Shema prikazuje prag jedne šezdesetine neto imovine kao filter koji odvaja manje odluke iz običnog proračuna od većih odluka koje traže dodatnu provjeru.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-09-prag-jedne-sezdesetine.svg)
+
+![Bilježnički obrazac za veću odluku ima polja za datum modela, današnju cijenu Bitcoina, vrijednost trenda, odstupanje od trenda, stanje i provjeru koristi li se dug, poluga ili novac za obveze.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-10-prije-vece-odluke.svg)
 
 Prije nego što donesete novu veću odluku o Bitcoinu, zapišite gdje se Bitcoin nalazi u odnosu na dugoročni trend: znatno iznad, blizu ili znatno ispod. Koristite isti unaprijed odabrani model, a ne onaj koji tog dana najbolje opravdava željenu odluku. Ne morate pogoditi savršenu granicu. Dovoljno je da današnju cijenu prestanete gledati kao samostalnu zapovijed.
 
@@ -210,6 +238,8 @@ Ako je Bitcoin vaš novac, držanje novca nije prazno čekanje. Bitcoin može č
 
 Proizvodna imovina i dalje ima mjesto. Posao, alati, znanje, oprema, sustavi, dobri projekti i kapital koji stvara vrijednost mogu biti iznimno korisni. Ali na Bitcoin standardu ulaganje mora biti jasnije nego na fiat standardu. Ne ulaže se zato što novac “mora raditi”. Bitcoin već radi jednu važnu stvar: čuva mogućnost odluke. Ulaže se onda kada postoji dovoljno dobra teza da će ulaganje stvoriti više kupovne moći nego držanje Bitcoina.
 
+Bitcoin može biti glavno novčano mjerilo ove knjige, ali to ne znači da svaka druga imovina radi isti posao lošije. Neke alternative mogu bolje služiti kratkom roku, regulatornoj jednostavnosti, prihodu, diverzifikaciji ili obiteljskom miru. Pitanje nije treba li ih prezirati. Pitanje je koju ulogu stvarno imaju u bilanci i mogu li opravdati rizik, vrijeme i složenost koju traže.
+
 Glavno pitanje zato glasi:
 
 Ako uložim Bitcoin, koliko Bitcoina očekujem natrag, u kojem roku i uz koji rizik?
@@ -218,7 +248,7 @@ Ako ulažete jedan Bitcoin u posao, dionicu, fond, opremu, zemljište, udio u pr
 
 Isto vrijedi i za male iznose. Ako uložite `0,01 BTC`, pitanje nije samo koliko će to vrijediti u eurima. Pitanje je hoćete li nakon vremena, rizika, poreza, naknada i uloženog truda imati više od `0,01 BTC` vrijednosti. Tako Bitcoin postaje mjerna letvica, a ne samo imovina na grafu.
 
-> [VIZUAL: Investicija mora pobijediti držanje Bitcoina — polustranični crno-bijeli dijagram grananja. Početna kutija: "1 BTC danas". Gornja grana: "držim Bitcoin" vodi prema "opcionalnost + vrijeme". Donja grana: "premještam u rizik" prolazi kroz kutije "povoljan scenarij", "nepovoljan scenarij", "vrijeme i stres", "porezi i naknade". Obje grane završavaju pitanjem: "imam li više BTC vrijednosti nego držanjem?" Poanta: povrat u eurima nije dovoljan ako je Bitcoin mjerilo.]
+![Dijagram grananja uspoređuje držanje jednog Bitcoina s premještanjem Bitcoina u rizik proizvodne imovine i završava pitanjem ima li odluka više Bitcoin vrijednosti od samog držanja.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-11-investicija-vs-drzanje-bitcoina.svg)
 
 Tu počinje investicijska teza. Ne mora biti duga. Mora biti poštena.
 
@@ -228,7 +258,7 @@ Bez kvalitativnog dijela investicija je broj bez razumijevanja.
 
 Bez kvantitativnog dijela investicija je priča bez mjere.
 
-Ako uložite `0,01 BTC` i očekujete da ćete za nekoliko godina imati `0,012 BTC` vrijednosti, očekujete dobit od `0,002 BTC` prije vremena, rizika, poreza i naknada. Ako uložite 1 BTC i očekujete da ćete za pet godina imati 1,5 BTC vrijednosti, očekujete povrat od 0,5 BTC. Ali ni to nije dovoljno. Morate znati zašto mislite da je to moguće, što se mora dogoditi u stvarnosti, kakav je rizik, koliko vremena morate potrošiti i koliko bi Bitcoin sam mogao narasti u tom razdoblju.
+Ako uložite `0,01 BTC` i očekujete da ćete za nekoliko godina imati `0,012 BTC` vrijednosti, očekujete dobit od `0,002 BTC` prije vremena, rizika, poreza i naknada. Ako uložite 1 BTC i očekujete da ćete za pet godina imati 1,5 BTC vrijednosti, očekujete povrat od 0,5 BTC. Ali ni to nije dovoljno. Morate znati zašto mislite da je to moguće, što se mora dogoditi u stvarnosti, kakav je rizik, koliko vremena morate potrošiti i kakav bi oportunitetni trošak mogao nastati ako Bitcoin u istom razdoblju nastavi monetizaciju. To nije pokušaj pogađanja cijene, nego test: je li investicija dovoljno dobra i ako novac koji napuštate nastavi jačati?
 
 Ako u državnom novcu investicija izgleda dobro, a u Bitcoinu izgleda loše, tada na Bitcoin standardu nije dobra investicija.
 
@@ -236,15 +266,15 @@ Ovo je kratko za reći, ali traži promjenu navike.
 
 ### Gdje je Bitcoin u odnosu na dugoročni trend?
 
-Prije ozbiljne investicije treba pogledati gdje se Bitcoin nalazi u odnosu na dugoročni trend.
+Prije ozbiljne investicije treba pogledati gdje se Bitcoin nalazi u odnosu na dugoročni trend. Ovdje ne ponavljamo tri stanja zato da bismo dobili drugi kupi/prodaj signal, nego zato da bismo izmjerili oportunitetni trošak izlaska iz Bitcoina.
 
-Ako je Bitcoin daleko ispod trenda, držanje Bitcoina postaje vrlo zahtjevno mjerilo. U takvom razdoblju investicija mora biti posebno uvjerljiva da bi imalo smisla premjestiti Bitcoin u drugi rizik. Nije nemoguće. Možda imate vlastiti posao s iznimno jasnim povratom. Možda imate opremu koja odmah povećava prihod. Možda imate projekt koji razumijete bolje od tržišta. Ali prag je visok.
+Ako je Bitcoin daleko ispod trenda, držanje Bitcoina postaje vrlo zahtjevno mjerilo. U takvom razdoblju investicija mora biti posebno uvjerljiva da bi imalo smisla premjestiti Bitcoin u drugi rizik. Ne zato što model zna budućnost, nego zato što je oportunitetni trošak izlaska iz Bitcoina drugačiji. Nije nemoguće. Možda imate vlastiti posao s iznimno jasnim povratom. Možda imate opremu koja odmah povećava prihod. Možda imate projekt koji razumijete bolje od tržišta. Ali prag je visok.
 
 Ako je Bitcoin daleko iznad trenda, djelomično preusmjeravanje može biti lakše opravdati. Možda je mudro financirati buduće troškove, davanje, sigurnost, proizvodnu imovinu ili obiteljski cilj. Ali ni tada se ne ulaže automatski. Visoka cijena Bitcoina ne čini svaku investiciju dobrom. Ona samo mijenja odnos oportunitetnog troška.
 
 Ako je Bitcoin blizu trenda, investicija mora stajati na vlastitoj tezi. Nema ekstremnog vjetra u leđa ni protiv nje. Tada je posebno važno razumjeti posao, povrat, rizik i vrijeme.
 
-Za vremenski horizont investicije treba procijeniti i očekivani rast samog Bitcoina. Ako ulažete na pet godina, ne pitate samo što investicija može napraviti u pet godina. Pitate i što bi Bitcoin mogao napraviti u istom razdoblju. Ako Bitcoin ima razumnu mogućnost rasta kupovne moći, investicija mora opravdati zašto je bolja od čekanja.
+Za vremenski horizont investicije treba procijeniti i oportunitetni trošak samog Bitcoina. Ako ulažete na pet godina, ne pitate samo što investicija može napraviti u pet godina. Pitate i što bi značilo da Bitcoin u istom razdoblju nastavi jačati u kupovnoj moći. Ako Bitcoin ima razumnu mogućnost rasta kupovne moći, investicija mora opravdati zašto je bolja od čekanja.
 
 Čekanje nije slabost. Na Bitcoin standardu čekanje može biti vrlo aktivna odluka. Čuvate kupovnu moć, čuvate opcionalnost, učite, radite, promatrate i ne ulazite u rizik koji ne razumijete. U državnom novcu čekanje se često kažnjava. U Bitcoinu čekanje može biti dio strategije.
 
@@ -282,13 +312,13 @@ Treba pogledati i nepovoljan scenarij.
 
 Rizik treba pokušati kvantificirati.
 
-To nije čista znanost. Uvijek postoji procjena. Investitor nikada ne zna točne vjerojatnosti. Ali pokušaj procjene već mijenja kvalitetu razmišljanja. Ne tražimo savršenu statistiku. Tražimo pošteniji razgovor s rizikom. Nije isto reći “ovo mi se čini dobro” i reći “mislim da postoji 60% šanse za povrat od 0,5 BTC, 30% šanse za mali gubitak i 10% šanse za gubitak većine uloženog iznosa”. Takva procjena može biti pogrešna, ali prisiljava vas da razmišljate jasnije.
+To nije čista znanost. Uvijek postoji procjena. Investitor nikada ne zna točne vjerojatnosti. Ali pokušaj procjene već mijenja kvalitetu razmišljanja. Ne tražimo savršenu statistiku. Tražimo pošteniji razgovor s rizikom. Nije isto reći “ovo mi se čini dobro” i reći “mislim da postoji 60% šanse za povrat od 0,5 BTC, 30% šanse za mali gubitak i 10% šanse za gubitak većine uloženog iznosa”. Takva procjena može biti pogrešna, ali prisiljava vas da razmišljate jasnije. Ove brojke nisu procjena stvarne vjerojatnosti, nego vježba razmišljanja; u stvarnom životu većina ljudi nema dovoljno podataka da pouzdano izračuna takve postotke.
 
 Idemo polako kroz mali primjer.
 
 Ulažete 1 BTC i mislite da postoji 80% šanse da u pet godina dobijete ukupno 2 BTC vrijednosti. To znači da povoljan scenarij donosi dobit od 1 BTC. Ako gledate samo taj dio, investicija izgleda odlično. Ali postoji i 20% nepovoljnog scenarija. Ako u tom scenariju vaš 1 BTC padne na 0,5 BTC, gruba računica izgleda ovako: osam puta od deset završava s 2 BTC, a dva puta od deset završava s 0,5 BTC. Prosječna slika takve procjene bila bi oko 1,7 BTC prije poreza, naknada, vremena i stresa. Ako nepovoljan scenarij nije 0,5 BTC nego nula, slika pada na oko 1,6 BTC. Ako uz to morate potrošiti 200 sati praćenja, pregovaranja, analize i stresa, rezultat se dodatno mijenja. Dvjesto sati je gotovo pet punih radnih tjedana po 40 sati. I to je dio cijene.
 
-> [RUBNA SHEMA: Povoljan scenarij nije cijela računica — jednostavna crno-bijela tablica s tri retka: 80% povoljan ishod, 20% nepovoljan ishod, dodatni trošak vremena. Bez stvarnih projekcija cijene. Poanta: rizik i vrijeme moraju ući u odluku.]
+![Bilježnička računica prikazuje grubu očekivanu vrijednost: povoljan ishod od 80 posto puta 2 BTC, nepovoljan ishod od 20 posto puta 0,5 BTC i prosječnu sliku od 1,7 BTC prije dodatnih troškova.](assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-12-gruba-ocekivana-vrijednost.svg)
 
 Dobra investicija nije ona u kojoj povoljan scenarij zvuči lijepo.
 
@@ -371,6 +401,8 @@ Ali diverzifikacija ne smije biti izgovor za površnost. Ako uložite male iznos
 Veličina ulaganja treba odgovarati snazi teze.
 
 Slabija teza znači manji iznos ili čekanje. Jača teza može opravdati veći iznos, ali i dalje unutar ravnoteže imovine. Pravilo trećina iz prethodnog poglavlja ne govori da morate imati trećinu neto imovine u proizvodnoj imovini. Govori da proizvodna imovina ne bi trebala preuzeti više od trećine. Najvažnije je imati snažan novčani temelj, najmanje trećinu neto imovine u novcu, jer upravo taj novac daje opcionalnost, mir, prostor za davanje i sposobnost da investicije ne birate iz pritiska.
+
+Brojke u ovom poglavlju služe kao obrazovni okvir knjige, a ne kao univerzalna alokacija za svaku osobu. Stvarni iznos ovisi o dobi, prihodu, obitelji, poreznom položaju, obvezama, horizontu i sposobnosti podnošenja pada.
 
 Ako nemate jasnu investiciju, držanje Bitcoina nije neaktivnost.
 
@@ -506,18 +538,26 @@ Tek tada možemo prijeći na posljednje praktično pitanje drugog dijela knjige:
 
 Ovo poglavlje je provedeno kada cijena više nije zapovijed.
 
-- Razumijete razliku između današnje cijene i dugoročnog trenda.
+Obvezno:
+
+- Razumijete razliku između današnje cijene, dugoročnog trenda i odstupanja od trenda.
+- Znate približno izračunati odstupanje u postotku: `(tržišna cijena - trend) / trend`.
 - Znate što znači kada je Bitcoin iznad, ispod ili blizu trenda.
-- Razumijete da block-time okvir koristi `h = block height / 210.000`, ali da vaš proračun i obitelj i dalje žive u kalendarskim mjesecima.
-- Razumijete vremenski odmak: ispred trenda, blizu trenda ili iza trenda nije zapovijed za kupnju ili prodaju.
+- Razumijete da "iznad trenda" nije nalog za prodaju, a "ispod trenda" nije nalog za kupnju.
 - Koristite isti unaprijed odabrani i datirani model, a ne trend koji najbolje opravdava današnju želju.
 - Za veće odluke koristite prag, primjerice jednu šezdesetinu neto imovine, prije dodatne provjere trenda.
 - Ne koristite potencijski zakon kao dozvolu za dug, polugu ili nered.
-- Razumijete da R² mjeri povijesno uklapanje modela, ne sigurnost budućeg ishoda.
 - Investicije mjerite prema Bitcoinu, ne samo prema euru.
 - Razumijete da veći očekivani povrat zahtijeva veću toleranciju na rizik i bolji sustav.
 - Ulaganje dolazi tek nakon proračuna, izlaska iz duga, davanja i ravnoteže imovine.
 - Nijedna odluka o Bitcoinu ne koristi dug, polugu ili novac koji već ima drugi zadatak.
+
+Izborno, ali korisno:
+
+- Razumijete da block-time okvir koristi `h = visina bloka / 210 000`, ali da vaš proračun i obitelj i dalje žive u kalendarskim mjesecima.
+- Razumijete zašto se mogu uspoređivati days-since-genesis modeli i block-based modeli.
+- Razumijete da R² mjeri povijesno uklapanje modela, često na log-transformiranim podacima, a ne sigurnost budućeg ishoda.
+- Razumijete vremenski odmak: ispred trenda, blizu trenda ili iza trenda nije zapovijed za kupnju ili prodaju.
 
 ## Ne idite dalje ako…
 

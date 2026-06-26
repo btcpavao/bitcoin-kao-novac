@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="900" version="1.1" viewBox="0 0 1600 900" width="1600">
+  <defs>
+    <marker id="arr_biz1" markerHeight="10" markerUnits="strokeWidth" markerWidth="10" orient="auto" refX="10" refY="5">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B85F2A"/>
+    </marker>
+    <marker id="arr_biz2" markerHeight="10" markerUnits="strokeWidth" markerWidth="10" orient="auto" refX="10" refY="5">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B85F2A"/>
+    </marker>
+  </defs>
+  <rect fill="#E9D2AF" height="900" width="1600" x="0" y="0"/>
+  <rect fill="#FFF8EA" height="816" rx="28" stroke="#B98A58" stroke-width="4" width="1516" x="42" y="42"/>
+  <g opacity="0.20" stroke="#D8BD8F" stroke-width="1">
+    <line x1="78" x2="1522" y1="185" y2="185"/>
+    <line x1="78" x2="1522" y1="265" y2="265"/>
+    <line x1="78" x2="1522" y1="345" y2="345"/>
+    <line x1="78" x2="1522" y1="425" y2="425"/>
+    <line x1="78" x2="1522" y1="505" y2="505"/>
+    <line x1="78" x2="1522" y1="585" y2="585"/>
+    <line x1="78" x2="1522" y1="665" y2="665"/>
+    <line x1="78" x2="1522" y1="745" y2="745"/>
+  </g>
+  <rect fill="#DDBB7D" height="34" opacity="0.55" rx="8" transform="rotate(-3 250 56)" width="245" x="128" y="42"/>
+  <rect fill="#DDBB7D" height="34" opacity="0.45" rx="8" transform="rotate(3 1350 56)" width="245" x="1228" y="42"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" x="80" y="105">Poslovni i privatni proračun odvojeno</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="start" x="82" y="148">
+    <tspan dy="0" x="82">Za posao se vodi zaseban proračun. Privatni proračun počinje tek</tspan>
+    <tspan dy="28" x="82">osobnim priljevom.</tspan>
+  </text>
+  <rect fill="#000000" height="450" opacity="0.14" rx="22" width="540" x="96" y="218"/>
+  <rect fill="#C7E0DC" height="450" rx="22" stroke="#2F6E68" stroke-width="4" width="540" x="90" y="210"/>
+  <text fill="#2F6E68" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" text-anchor="middle" x="360" y="285">POSLOVNI PRORAČUN</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="130" y="310"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="235" y="338">plaće</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="375" y="310"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="480" y="338">dobavljači</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="130" y="376"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="235" y="404">oprema</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="375" y="376"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="480" y="404">računalni programi</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="130" y="442"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="235" y="470">marketing</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="375" y="442"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="480" y="470">zalihe</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="130" y="508"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="235" y="536">pričuva</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="375" y="508"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="480" y="536">vlasnička isplata</text>
+  <rect fill="#000000" height="120" opacity="0.14" rx="22" width="230" x="691" y="373"/>
+  <rect fill="#FFF8EA" height="120" rx="22" stroke="#B85F2A" stroke-width="4" width="230" x="685" y="365"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" x="800" y="416">osobni priljev</text>
+  <text fill="#66736A" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="800" y="452">nakon isplate</text>
+  <line marker-end="url(#arr_biz1)" stroke="#B85F2A" stroke-width="6" x1="650" x2="675" y1="425" y2="425"/>
+  <line marker-end="url(#arr_biz2)" stroke="#B85F2A" stroke-width="6" x1="925" x2="950" y1="425" y2="425"/>
+  <rect fill="#000000" height="450" opacity="0.14" rx="22" width="540" x="976" y="218"/>
+  <rect fill="#D8E6C9" height="450" rx="22" stroke="#5B7F4F" stroke-width="4" width="540" x="970" y="210"/>
+  <text fill="#5B7F4F" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" text-anchor="middle" x="1240" y="285">PRIVATNI PRORAČUN</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1010" y="310"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1115" y="338">stanovanje</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1255" y="310"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1360" y="338">hrana</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1010" y="376"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1115" y="404">prijevoz</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1255" y="376"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1360" y="404">zdravlje</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1010" y="442"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1115" y="470">dug</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1255" y="442"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1360" y="470">davanje</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1010" y="508"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1115" y="536">rezerva</text>
+  <rect fill="#FFF8EA" height="42" rx="20" stroke="none" stroke-width="0" width="210" x="1255" y="508"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle" x="1360" y="536">Bitcoin</text>
+  <rect fill="#FFF8EA" height="62" rx="22" stroke="#B98A58" stroke-width="2" width="1110" x="245" y="740"/>
+  <text fill="#23342F" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" x="800" y="781">Poslovni račun nije privatni višak dok ne postoji jasna isplata.</text>
+</svg>

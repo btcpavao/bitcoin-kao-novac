@@ -159,3 +159,149 @@
 - Caption: Molba nije automatska obveza. Dobra granica pomaže da pomoć bude stvarna, a ne samo reakcija na pritisak.
 - Status: created / inserted
 - Napomene: Ne smije se čitati kao hladan filter protiv osobe koja traži pomoć.
+
+## Poglavlje 06-bitcoin-kroz-vrijeme
+
+### viz-06-bitcoin-kroz-vrijeme-01-log-skala
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-01-log-skala.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon objašnjenja zašto običan graf ranije razlike gura uz dno
+- Izvorni placeholder: `[BILJEŽNICA: Što radi log skala?]`
+- Naslov: Što radi log skala?
+- Alt text: Usporedba obične skale i log skale pokazuje da obična skala mjeri jednake dodatke, a log skala jednake omjere.
+- Caption: Log skala ne briše velike razlike. Sabija ih da ih možemo usporediti.
+- Status: created / inserted
+- Napomene: Čista matematička intuicija, bez prediktivne tvrdnje o Bitcoinu.
+
+### viz-06-bitcoin-kroz-vrijeme-02-obicni-graf-log-log
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-02-obicni-graf-log-log.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon definicije log-log grafa
+- Izvorni placeholder: `[VIZUAL: Obični graf skriva, log-log graf ravna]`
+- Naslov: Obični graf skriva, log-log graf ravna
+- Alt text: Dva grafa uspoređuju običnu skalu na kojoj rani podaci nestaju pri dnu i log-log skalu na kojoj se vidi dugoročniji odnos, trend i odmaci od trenda.
+- Caption: Log skala pomaže vidjeti odnos, ali ne dokazuje budućnost.
+- Status: created / inserted
+- Napomene: Ilustrativni graf, ne stvarni povijesni podaci.
+
+### viz-06-bitcoin-kroz-vrijeme-03-dani-blokovi-halving-clock
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-03-dani-blokovi-halving-clock.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon objašnjenja `h = visina bloka / 210 000`
+- Izvorni placeholder: `[RUBNA SHEMA: Dani nasuprot blokovima]` i `[RUBNA SHEMA: Halving clock kao vremenska crta]`
+- Naslov: Dani, blokovi i halving clock
+- Alt text: Usporedba kalendarske crte od Genesis Blocka i block-time crte pokazuje da dani mjere ljudski kalendar, a blokovi Bitcoinov halving ritam.
+- Caption: Dani mjere ljudski kalendar; blokovi mjere Bitcoinov halving ritam. Oba svijeta postoje.
+- Status: created / inserted
+- Napomene: [REVIEW] Broj `210 000` je protokolarni halving interval; prije tiska uskladiti s finalnim tekstom izvora.
+
+### viz-06-bitcoin-kroz-vrijeme-04-odstupanje-od-trenda
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-04-odstupanje-od-trenda.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon objašnjenja trenda 100, cijene 130 i cijene 70
+- Izvorni placeholder: `[BILJEŽNICA: Kako izračunati odstupanje od trenda]`
+- Naslov: Kako izračunati odstupanje od trenda
+- Alt text: Bilježnički prikaz računa odstupanja od trenda koristi primjer trenda od 50.000 eura i tržišne cijene od 65.000 eura, što daje 30 posto iznad trenda.
+- Caption: Iznad i ispod trenda prvo su račun na papiru, ne emocija.
+- Status: created / inserted
+- Napomene: Brojke su obrazovni primjer iz teksta, ne tržišni podatak.
+
+### viz-06-bitcoin-kroz-vrijeme-05-power-law-biljeznica
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-05-power-law-biljeznica.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon power-law formule i log oblika
+- Izvorni placeholder: `[VIZUAL: Power Law u bilježnici]`
+- Naslov: Power Law u bilježnici
+- Alt text: Otvorena matematička bilježnica prikazuje power-law formulu, log-oblik formule i mali log-log graf na kojem krivulja postaje ravnija linija.
+- Caption: Formula, ravnanje i trend služe kao okvir za pitanja, ne kao prognoza.
+- Status: created / inserted
+- Napomene: [REVIEW] Parametre `a` i `b` ne numerirati bez datiranog izvora i verzije modela.
+
+### viz-06-bitcoin-kroz-vrijeme-06-r2-retrovizor
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-06-r2-retrovizor.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon odlomka koji objašnjava R² i overfitting
+- Izvorni placeholder: `[RUBNA SHEMA: R² je retrovizor]`
+- Naslov: R² je retrovizor
+- Alt text: Retrovizor prikazuje povijesne točke i uklopljenu crtu, dok buduća cesta ostaje prazna, kao podsjetnik da R kvadrat nije jamstvo budućeg ishoda.
+- Caption: Dobro uklapanje u prošlosti nije jamstvo budućeg ishoda.
+- Status: created / inserted
+- Napomene: Namjerno ne navodi brojčani R².
+
+### viz-06-bitcoin-kroz-vrijeme-07-iznad-blizu-ispod-trenda
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-07-iznad-blizu-ispod-trenda.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: kraj sekcije "Kako donositi odluke kada je Bitcoin iznad, blizu ili ispod trenda?"
+- Izvorni placeholder: `[VIZUAL: Iznad, blizu, ispod trenda]`
+- Naslov: Iznad, blizu i ispod trenda
+- Alt text: Dijagram prikazuje tri zone cijene u odnosu na dugoročni trend: iznad, blizu i ispod trenda, uz zajednički filter proračuna, duga, likvidnosti, davanja, ravnoteže, sigurnosti i obitelji.
+- Caption: Položaj prema trendu mijenja pitanja, ali ne donosi odluku.
+- Status: created / inserted
+- Napomene: Ilustrativna krivulja i zone; ne koristiti kao stvarni model cijene.
+
+### viz-06-bitcoin-kroz-vrijeme-08-isti-val-drukcije-stanje
+
+- Datoteka: `chapters/assets/visuals/png/viz-06-bitcoin-kroz-vrijeme-08-isti-val-drukcije-stanje.png`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: kraj sekcije "Volatilnost kao test stanja"
+- Izvorni placeholder: `[VIZUAL: Isti val, drukčije stanje]`
+- Naslov: Isti val, drukčije stanje
+- Alt text: Fotorealistična bilježnica na stolu prikazuje crtež olovkom s dvije osobe pred istim valom cijene; jedna stoji na krhkoj podlozi, a druga na stabilnijem sustavu.
+- Caption: Cijena je ista; stanje čovjeka nije.
+- Status: created / inserted
+- Napomene: Generirana fotorealistična bitmapa; bez čitljivog teksta, brojki i logotipa.
+
+### viz-06-bitcoin-kroz-vrijeme-09-prag-jedne-sezdesetine
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-09-prag-jedne-sezdesetine.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: u sekciji "Prvi potezi", nakon objašnjenja praga `neto imovina / 60`
+- Izvorni placeholder: `[RUBNA SHEMA: Prag jedne šezdesetine]`
+- Naslov: Prag jedne šezdesetine
+- Alt text: Shema prikazuje prag jedne šezdesetine neto imovine kao filter koji odvaja manje odluke iz običnog proračuna od većih odluka koje traže dodatnu provjeru.
+- Caption: Model se koristi za ozbiljne odluke, ne za svaku kupnju.
+- Status: created / inserted
+- Napomene: Obrazovni filter iz teksta; nije individualno investicijsko pravilo.
+
+### viz-06-bitcoin-kroz-vrijeme-10-prije-vece-odluke
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-10-prije-vece-odluke.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: odmah nakon praga jedne šezdesetine
+- Izvorni placeholder: `[MINI-VJEŽBA: Prije veće odluke]`
+- Naslov: Prije veće odluke
+- Alt text: Bilježnički obrazac za veću odluku ima polja za datum modela, današnju cijenu Bitcoina, vrijednost trenda, odstupanje od trenda, stanje i provjeru koristi li se dug, poluga ili novac za obveze.
+- Caption: Ako veća odluka traži dug, polugu ili novac za obveze, odluka se zaustavlja.
+- Status: created / inserted
+- Napomene: Pripremljeno kao obrazac koji čitatelj može precrtati u bilježnicu.
+
+### viz-06-bitcoin-kroz-vrijeme-11-investicija-vs-drzanje-bitcoina
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-11-investicija-vs-drzanje-bitcoina.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon pitanja treba li investicija pobijediti držanje Bitcoina
+- Izvorni placeholder: `[VIZUAL: Investicija mora pobijediti držanje Bitcoina]`
+- Naslov: Investicija mora pobijediti držanje Bitcoina
+- Alt text: Dijagram grananja uspoređuje držanje jednog Bitcoina s premještanjem Bitcoina u rizik proizvodne imovine i završava pitanjem ima li odluka više Bitcoin vrijednosti od samog držanja.
+- Caption: Povrat u eurima nije dovoljan ako je Bitcoin mjerilo.
+- Status: created / inserted
+- Napomene: Ne tvrdi da je svaka druga imovina loša; traži jasniju investicijsku tezu.
+
+### viz-06-bitcoin-kroz-vrijeme-12-gruba-ocekivana-vrijednost
+
+- Datoteka: `chapters/assets/visuals/svg/viz-06-bitcoin-kroz-vrijeme-12-gruba-ocekivana-vrijednost.svg`
+- Poglavlje: `chapters/06-bitcoin-kroz-vrijeme.md`
+- Mjesto umetanja: nakon primjera povoljnog i nepovoljnog scenarija
+- Izvorni placeholder: `[BILJEŽNICA: Gruba očekivana vrijednost]`
+- Naslov: Gruba očekivana vrijednost
+- Alt text: Bilježnička računica prikazuje grubu očekivanu vrijednost: povoljan ishod od 80 posto puta 2 BTC, nepovoljan ishod od 20 posto puta 0,5 BTC i prosječnu sliku od 1,7 BTC prije dodatnih troškova.
+- Caption: Povoljan scenarij nije cijela računica.
+- Status: created / inserted
+- Napomene: Brojke su vježba razmišljanja iz teksta, ne statistička procjena stvarne vjerojatnosti.

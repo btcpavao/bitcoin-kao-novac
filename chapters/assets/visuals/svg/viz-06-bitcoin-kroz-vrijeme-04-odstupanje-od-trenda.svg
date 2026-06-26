@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Kako izračunati odstupanje od trenda</title>
+  <desc id="desc">Bilježnički prikaz pokazuje račun odstupanja od trenda s primjerom trenda od 50.000 eura i tržišne cijene od 65.000 eura.</desc>
+  <defs>
+    <style>
+      .txt { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222; }
+      .title { font-size: 28px; font-weight: 750; }
+      .h { font-size: 22px; font-weight: 700; }
+      .m { font-size: 19px; font-weight: 650; }
+      .s { font-size: 16px; }
+      .grid { stroke: #e4e4df; stroke-width: 1; }
+      .box { fill: #fff; stroke: #333; stroke-width: 2.4; rx: 8; }
+      .accent { fill: #fff2e2; stroke: #f7931a; stroke-width: 3; rx: 8; }
+      .line { stroke: #333; stroke-width: 3; fill: none; stroke-linecap: round; }
+      .trend { stroke: #f7931a; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .price { stroke: #333; stroke-width: 3; fill: none; stroke-linecap: round; stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#fff"/>
+  <g opacity="0.75">
+    <path d="M0 100 H1200 M0 140 H1200 M0 180 H1200 M0 220 H1200 M0 260 H1200 M0 300 H1200 M0 340 H1200 M0 380 H1200 M0 420 H1200 M0 460 H1200 M0 500 H1200 M0 540 H1200 M0 580 H1200" class="grid"/>
+    <path d="M80 0 V650 M120 0 V650 M160 0 V650 M200 0 V650 M240 0 V650 M280 0 V650 M320 0 V650 M360 0 V650 M400 0 V650 M440 0 V650 M480 0 V650 M520 0 V650 M560 0 V650 M600 0 V650 M640 0 V650 M680 0 V650 M720 0 V650 M760 0 V650 M800 0 V650 M840 0 V650 M880 0 V650 M920 0 V650 M960 0 V650 M1000 0 V650 M1040 0 V650 M1080 0 V650 M1120 0 V650" class="grid"/>
+  </g>
+  <text x="600" y="58" text-anchor="middle" class="txt title">Kako izračunati odstupanje od trenda</text>
+
+  <rect x="82" y="108" width="430" height="430" class="box"/>
+  <text x="122" y="158" class="txt h">Primjer u bilježnici</text>
+  <text x="122" y="210" class="txt m">1. Trend: 50.000 EUR</text>
+  <text x="122" y="252" class="txt m">2. Cijena: 65.000 EUR</text>
+  <text x="122" y="294" class="txt m">3. Razlika: 15.000 EUR</text>
+  <text x="122" y="336" class="txt m">4. 15.000 / 50.000 = 0,30</text>
+  <rect x="122" y="376" width="332" height="62" class="accent"/>
+  <text x="288" y="414" text-anchor="middle" class="txt h">30% iznad trenda</text>
+  <text x="122" y="486" class="txt s">Formula: (tržišna cijena - trend) / trend</text>
+
+  <g transform="translate(610 130)">
+    <rect x="0" y="0" width="500" height="365" class="box"/>
+    <line x1="70" y1="295" x2="430" y2="295" class="line"/>
+    <line x1="70" y1="295" x2="70" y2="55" class="line"/>
+    <path d="M 90 250 L 410 115" class="trend"/>
+    <path d="M 90 212 L 410 78" class="price"/>
+    <line x1="310" y1="118" x2="310" y2="86" stroke="#333" stroke-width="2"/>
+    <line x1="300" y1="118" x2="320" y2="118" stroke="#333" stroke-width="2"/>
+    <line x1="300" y1="86" x2="320" y2="86" stroke="#333" stroke-width="2"/>
+    <text x="335" y="105" class="txt s">odmak</text>
+    <text x="315" y="156" class="txt s">trend</text>
+    <text x="315" y="70" class="txt s">cijena</text>
+    <text x="250" y="335" text-anchor="middle" class="txt s">vrijeme</text>
+  </g>
+
+  <text x="600" y="596" text-anchor="middle" class="txt s">Iznad i ispod trenda prvo su račun na papiru, ne emocija.</text>
+</svg>

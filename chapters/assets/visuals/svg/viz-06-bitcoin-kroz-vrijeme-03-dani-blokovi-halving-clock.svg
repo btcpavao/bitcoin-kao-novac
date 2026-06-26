@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Dani nasuprot blokovima i halving sat</title>
+  <desc id="desc">Dijagram uspoređuje kalendarsku crtu s block-time crtom i pokazuje oznake h kroz halving ciklus.</desc>
+  <defs>
+    <style>
+      .txt { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #222; }
+      .title { font-size: 28px; font-weight: 750; }
+      .h { font-size: 23px; font-weight: 700; }
+      .s { font-size: 16px; }
+      .m { font-size: 19px; font-weight: 650; }
+      .panel { fill: #f7f7f4; stroke: #c9c9c3; stroke-width: 2; rx: 8; }
+      .line { stroke: #333; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .thin { stroke: #8d8d86; stroke-width: 2; fill: none; }
+      .accent { stroke: #f7931a; stroke-width: 5; fill: none; stroke-linecap: round; }
+      .box { fill: #fff; stroke: #333; stroke-width: 2.2; rx: 8; }
+      .soft { fill: #fff2e2; stroke: #f7931a; stroke-width: 2.6; rx: 8; }
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#fff"/>
+  <text x="600" y="58" text-anchor="middle" class="txt title">Dani mjere kalendar. Blokovi mjere Bitcoinov ritam.</text>
+
+  <rect x="74" y="110" width="1052" height="390" class="panel"/>
+  <text x="202" y="165" text-anchor="middle" class="txt h">Kalendarski dani</text>
+  <text x="220" y="214" class="txt s">plaća</text>
+  <text x="305" y="214" class="txt s">režije</text>
+  <text x="405" y="214" class="txt s">porez</text>
+  <text x="505" y="214" class="txt s">škola</text>
+  <line x1="160" y1="250" x2="525" y2="250" class="line"/>
+  <line x1="200" y1="232" x2="200" y2="268" class="thin"/>
+  <line x1="300" y1="232" x2="300" y2="268" class="thin"/>
+  <line x1="400" y1="232" x2="400" y2="268" class="thin"/>
+  <line x1="500" y1="232" x2="500" y2="268" class="thin"/>
+
+  <text x="830" y="165" text-anchor="middle" class="txt h">Bitcoin block-time</text>
+  <line x1="654" y1="250" x2="1030" y2="250" class="line"/>
+  <g>
+    <line x1="674" y1="228" x2="674" y2="272" class="thin"/>
+    <line x1="768" y1="228" x2="768" y2="272" class="thin"/>
+    <line x1="862" y1="228" x2="862" y2="272" class="thin"/>
+    <line x1="956" y1="228" x2="956" y2="272" class="thin"/>
+    <line x1="1030" y1="228" x2="1030" y2="272" class="thin"/>
+    <text x="674" y="306" text-anchor="middle" class="txt s">210 000</text>
+    <text x="768" y="306" text-anchor="middle" class="txt s">420 000</text>
+    <text x="862" y="306" text-anchor="middle" class="txt s">630 000</text>
+    <text x="956" y="306" text-anchor="middle" class="txt s">840 000</text>
+    <text x="1030" y="306" text-anchor="middle" class="txt s">1 050 000</text>
+  </g>
+
+  <rect x="442" y="355" width="316" height="74" class="soft"/>
+  <text x="600" y="385" text-anchor="middle" class="txt m">h = visina bloka / 210 000</text>
+  <text x="600" y="414" text-anchor="middle" class="txt s">cijeli broj = halving ciklus</text>
+
+  <g transform="translate(840 390)">
+    <circle cx="0" cy="0" r="70" fill="#fff" stroke="#333" stroke-width="3"/>
+    <path d="M -50 0 A 50 50 0 0 1 50 0" class="accent"/>
+    <line x1="0" y1="0" x2="-35" y2="-38" class="line"/>
+    <line x1="0" y1="0" x2="42" y2="18" class="thin"/>
+    <text x="-58" y="94" text-anchor="middle" class="txt s">h = 4</text>
+    <text x="0" y="-82" text-anchor="middle" class="txt s">h = 4,5</text>
+    <text x="62" y="94" text-anchor="middle" class="txt s">h = 5</text>
+  </g>
+
+  <text x="600" y="570" text-anchor="middle" class="txt s">Block-time pomaže čitati halving ritam. Kućni proračun i dalje živi u mjesecima.</text>
+</svg>
